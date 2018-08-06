@@ -1,0 +1,44 @@
+C:\Users\admin\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\admin\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\admin\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csprojResolveAssemblyReference.cache
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.homePage.resources
+C:\Users\admin\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.eventHome.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csprojResolveAssemblyReference.cache
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.eventHome.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.homePage.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\ssbacalso\source\repos\Tribes System\Tribes System\obj\Debug\Tribes_System.viewEvent.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.homePage.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.viewEvent.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\admin\Downloads\Tribes System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\admin\Downloads\Tribes System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\admin\Downloads\Tribes System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\admin\Downloads\Tribes System\Tribes System\bin\Debug\MySql.Data.dll
+C:\Users\admin\Downloads\Tribes System\Tribes System\bin\Debug\MySql.Data.xml
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes_System.eventSched.resources
+C:\Users\admin\Downloads\Tribes System\Tribes System\obj\Debug\Tribes System.csprojResolveAssemblyReference.cache
