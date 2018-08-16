@@ -24,11 +24,29 @@ namespace Tribes_System
             InitializeComponent();
         }
 
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
         private void calendar_DateChanged(object sender, DateRangeEventArgs e)
         {
             string query = "select * from event where start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
             DataTable table = new DataTable();
+            openConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            closeConnection();
             adapter.Fill(table);
 
             foreach (DataRow row in table.Rows)
@@ -61,16 +79,17 @@ namespace Tribes_System
             DataGridViewRow row = eventGrid.Rows[selectedRow];
 
             string selectQuery = "select * from event where id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
-            con.Open();
+            openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
-
+            
             while (reader.Read())
             {
                 nameLabel.Text = reader["event_name"].ToString();
                 dateLabel.Text = reader["start_date"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
             }
+            closeConnection();
         }
 
         private void eventSched_Load(object sender, EventArgs e)
