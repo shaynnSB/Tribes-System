@@ -86,5 +86,10 @@ namespace Tribes_System
         {
 
         }
+
+        private void eventGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

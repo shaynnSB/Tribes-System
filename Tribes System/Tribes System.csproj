@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEmployee.Designer.cs">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="addEvent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="editEvent.Designer.cs">
       <DependentUpon>editEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeTab.designer.cs">
+      <DependentUpon>EmployeeTab.cs</DependentUpon>
     </Compile>
     <Compile Include="eventSched.cs">
       <SubType>UserControl</SubType>
@@ -84,11 +96,17 @@
     <Compile Include="viewEvent.Designer.cs">
       <DependentUpon>viewEvent.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="addEmployee.resx">
+      <DependentUpon>addEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addEvent.resx">
       <DependentUpon>addEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editEvent.resx">
       <DependentUpon>editEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTab.resx">
+      <DependentUpon>EmployeeTab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eventSched.resx">
       <DependentUpon>eventSched.cs</DependentUpon>

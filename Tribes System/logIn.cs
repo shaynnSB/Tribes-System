@@ -101,5 +101,33 @@ namespace Tribes_System
             this.startPoint = e.Location;
             this.drag = true;
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+
+            string query = "select count(*) from accounts where acc_username ='ssbacalso' and acc_pass ='123'";
+
+            using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
+            {
+
+                DataTable dt = new DataTable();
+
+                adpt.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    this.Hide();
+                    homePage form = new homePage();
+                    form.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter correct username and password", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
     }
 }

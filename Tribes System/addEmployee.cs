@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tribes_System
 {
-    public partial class addEvent : Form
+    public partial class addEmployee : Form
     {
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
@@ -19,7 +19,9 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        public addEvent()
+        string stat = "";
+
+        public addEmployee()
         {
             InitializeComponent();
         }
@@ -71,33 +73,41 @@ namespace Tribes_System
 
         private void locBox_Click(object sender, EventArgs e)
         {
-            locBox.Clear();
-        }
-
-        private void notesBox_Click(object sender, EventArgs e)
-        {
-            notesBox.Clear();
-        }
-
-        private void nameClientBox_Click(object sender, EventArgs e)
-        {
-            nameClientBox.Clear();
+            addressBox.Clear();
         }
 
         private void conClientBox_Click(object sender, EventArgs e)
         {
-            conClientBox.Clear();
+            numBox.Clear();
         }
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text.Trim() + "','" + notesBox.Text + "','" 
-                + startDate.Text + "','" + endDate.Text + "','" + startTime.Text + "','" + endTime.Text + "','" + nameClientBox + "','" + 
-                conClientBox + "', 'Unpaid')";
-
-            executeMyQuery(insertQuery);
-            this.Close();
+            if (nameBox.Text != "" && addressBox.Text != "" && numBox.Text != "" && stat != "")
+            {
+                if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee")
+                {
+                    DialogResult dg = MessageBox.Show("Are you sure?","Alert!",MessageBoxButtons.YesNo);
+                    if(dg == DialogResult.Yes)
+                    {
+                        string insertQuery = "INSERT INTO employee(emp_name, emp_address, emp_contact, emp_status) VALUES ('" + nameBox.Text + "','" + addressBox.Text + "','" + numBox.Text + "','" + stat + "')";
+                        executeMyQuery(insertQuery);
+                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                        this.Dispose();
+                    }
+                    
+                }
+                else
+                {
+                    alertLabel.Visible = true;
+                }
+            }
+            else
+            {
+                alertLabel.Visible = true;
+            }
+            
+            
         }
 
         public void openConnection()
@@ -126,6 +136,7 @@ namespace Tribes_System
                 if (cmd.ExecuteNonQuery() == 1)
                 {
                     //MessageBox.Show("Executed");
+                    MessageBox.Show("Employee Added Successfully");
                 }
 
                 else
@@ -165,6 +176,27 @@ namespace Tribes_System
         {
             this.startPoint = e.Location;
             this.drag = true;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                this.stat = "call";
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                this.stat = "full";
+            }
         }
     }
 }

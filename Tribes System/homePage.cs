@@ -80,6 +80,10 @@ namespace Tribes_System
         private void empButt_Click(object sender, EventArgs e)
         {
             timer.Start();
+            EmployeeTab emp = new EmployeeTab();
+            emp.Location = new Point(67, 100);
+            this.Controls.Add(emp);
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
