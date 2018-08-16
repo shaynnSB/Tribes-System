@@ -36,7 +36,10 @@ namespace Tribes_System
 
         private void addEvent_Load(object sender, EventArgs e)
         {
-
+            startDate.Format = DateTimePickerFormat.Custom;
+            startDate.CustomFormat = "yyyy-MM-dd";
+            endDate.Format = DateTimePickerFormat.Custom;
+            endDate.CustomFormat = "yyyy-MM-dd";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -92,9 +95,9 @@ namespace Tribes_System
         private void addButt_Click(object sender, EventArgs e)
         {
             string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text.Trim() + "','" + notesBox.Text + "','" 
-                + startDate.Text + "','" + endDate.Text + "','" + startTime.Text + "','" + endTime.Text + "','" + nameClientBox + "','" + 
-                conClientBox + "', 'Unpaid')";
+                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','" 
+                + startDate.Text + "','" + endDate.Text + "','" + startTime.Text + "','" + endTime.Text + "','" + nameClientBox.Text + "'," + 
+                conClientBox.Text + ", 'Unpaid')";
 
             executeMyQuery(insertQuery);
             this.Close();
