@@ -75,3 +75,18 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes-System\Tribes System\obj\Debug\Tri
 C:\Users\admin\Documents\GitHub\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
 C:\Users\admin\Documents\GitHub\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.exe
 C:\Users\admin\Documents\GitHub\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\bin\Debug\MySql.Data.xml
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.csprojResolveAssemblyReference.cache
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.eventSched.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.homePage.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.pdb

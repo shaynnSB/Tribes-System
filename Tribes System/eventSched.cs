@@ -42,6 +42,8 @@ namespace Tribes_System
 
         private void calendar_DateChanged(object sender, DateRangeEventArgs e)
         {
+            eventGrid.Visible = true;
+
             string query = "select * from event where start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
             DataTable table = new DataTable();
             openConnection();
@@ -61,7 +63,7 @@ namespace Tribes_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            viewEvent form = new viewEvent();
+            editEvent form = new editEvent();
             form.ShowDialog();
         }
 
@@ -82,12 +84,16 @@ namespace Tribes_System
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
-            
+
             while (reader.Read())
             {
                 nameLabel.Text = reader["event_name"].ToString();
-                dateLabel.Text = reader["start_date"].ToString();
+                dateLabel.Text = "Start: " + reader["start_date"].ToString() + " - End: " + reader["end_date"].ToString();
+                timeLabel.Text = "Start: " + reader["start_time"].ToString() + " - End: " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
+                notesBox.Text = reader["event_notes"].ToString();
+                clientLabel.Text = reader["client_name"].ToString();
+                numLabel.Text = reader["client_contact"].ToString();
             }
             closeConnection();
         }
