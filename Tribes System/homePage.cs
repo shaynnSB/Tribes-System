@@ -79,6 +79,8 @@ namespace Tribes_System
 
         private void empButt_Click(object sender, EventArgs e)
         {
+            eventSched1.Visible = false;
+            employeeTab.Visible = true;
             timer.Start();
         }
 
@@ -89,6 +91,7 @@ namespace Tribes_System
 
         private void eventButt_Click(object sender, EventArgs e)
         {
+            employeeTab.Visible = false;
             eventSched1.Visible = true;
             timer.Start();
         }

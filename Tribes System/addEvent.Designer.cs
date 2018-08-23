@@ -55,16 +55,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.startTime = new System.Windows.Forms.MaskedTextBox();
-            this.endTime = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.startHr = new System.Windows.Forms.ComboBox();
+            this.endHr = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.endMin = new System.Windows.Forms.ComboBox();
+            this.startMin = new System.Windows.Forms.ComboBox();
+            this.endMeri = new System.Windows.Forms.ComboBox();
+            this.startMeri = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,7 +118,7 @@
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
             this.addButt.Location = new System.Drawing.Point(468, 617);
-            this.addButt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(236, 31);
             this.addButt.TabIndex = 7;
@@ -137,7 +136,7 @@
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
             this.cancelButt.Location = new System.Drawing.Point(468, 668);
-            this.cancelButt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
             this.cancelButt.TabIndex = 8;
@@ -152,7 +151,7 @@
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.Gray;
             this.nameBox.Location = new System.Drawing.Point(47, 127);
-            this.nameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(657, 27);
             this.nameBox.TabIndex = 9;
@@ -167,7 +166,7 @@
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locBox.ForeColor = System.Drawing.Color.Gray;
             this.locBox.Location = new System.Drawing.Point(47, 175);
-            this.locBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
             this.locBox.Size = new System.Drawing.Size(657, 27);
             this.locBox.TabIndex = 10;
@@ -182,7 +181,7 @@
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
             this.nameClientBox.Location = new System.Drawing.Point(47, 510);
-            this.nameClientBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(657, 27);
             this.nameClientBox.TabIndex = 11;
@@ -196,10 +195,10 @@
             this.conClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.conClientBox.Location = new System.Drawing.Point(47, 558);
-            this.conClientBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.conClientBox.Location = new System.Drawing.Point(169, 558);
+            this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.conClientBox.Name = "conClientBox";
-            this.conClientBox.Size = new System.Drawing.Size(657, 27);
+            this.conClientBox.Size = new System.Drawing.Size(535, 27);
             this.conClientBox.TabIndex = 12;
             this.conClientBox.Text = "Contact Number of Client";
             this.conClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -209,7 +208,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(422, 231);
+            this.label2.Location = new System.Drawing.Point(429, 231);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 17);
@@ -236,7 +235,7 @@
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.Gray;
             this.notesBox.Location = new System.Drawing.Point(47, 316);
-            this.notesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(657, 124);
@@ -249,7 +248,7 @@
             // 
             this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.startDate.Location = new System.Drawing.Point(123, 229);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(298, 22);
@@ -261,7 +260,7 @@
             // 
             this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.endDate.Location = new System.Drawing.Point(123, 276);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(298, 22);
@@ -415,7 +414,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(422, 279);
+            this.label7.Location = new System.Drawing.Point(429, 279);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 17);
@@ -423,32 +422,10 @@
             this.label7.Text = "-";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // startTime
+            // startHr
             // 
-            this.startTime.Location = new System.Drawing.Point(638, 229);
-            this.startTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.startTime.Mask = "90:00:00";
-            this.startTime.Name = "startTime";
-            this.startTime.Size = new System.Drawing.Size(66, 22);
-            this.startTime.TabIndex = 30;
-            this.startTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.startTime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.startTime_MaskInputRejected);
-            // 
-            // endTime
-            // 
-            this.endTime.Location = new System.Drawing.Point(638, 276);
-            this.endTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.endTime.Mask = "90:00:00";
-            this.endTime.Name = "endTime";
-            this.endTime.Size = new System.Drawing.Size(66, 22);
-            this.endTime.TabIndex = 31;
-            this.endTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.endTime.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.startHr.FormattingEnabled = true;
+            this.startHr.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -461,16 +438,16 @@
             "10",
             "11",
             "12"});
-            this.comboBox1.Location = new System.Drawing.Point(437, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(60, 24);
-            this.comboBox1.TabIndex = 32;
-            this.comboBox1.Text = "Hour";
+            this.startHr.Location = new System.Drawing.Point(449, 229);
+            this.startHr.Name = "startHr";
+            this.startHr.Size = new System.Drawing.Size(60, 24);
+            this.startHr.TabIndex = 32;
+            this.startHr.Text = "Hour";
             // 
-            // comboBox2
+            // endHr
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.endHr.FormattingEnabled = true;
+            this.endHr.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -483,17 +460,17 @@
             "10",
             "11",
             "12"});
-            this.comboBox2.Location = new System.Drawing.Point(437, 275);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(60, 24);
-            this.comboBox2.TabIndex = 33;
-            this.comboBox2.Text = "Hour";
+            this.endHr.Location = new System.Drawing.Point(449, 274);
+            this.endHr.Name = "endHr";
+            this.endHr.Size = new System.Drawing.Size(60, 24);
+            this.endHr.TabIndex = 33;
+            this.endHr.Text = "Hour";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(499, 279);
+            this.label8.Location = new System.Drawing.Point(513, 278);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 17);
@@ -504,132 +481,110 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(499, 234);
+            this.label9.Location = new System.Drawing.Point(513, 233);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 17);
             this.label9.TabIndex = 34;
             this.label9.Text = ":";
             // 
-            // comboBox3
+            // endMin
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.endMin.FormattingEnabled = true;
+            this.endMin.Items.AddRange(new object[] {
             "00",
-            "01",
-            "02",
-            "03",
-            "04",
             "05",
-            "06",
-            "07",
-            "08",
-            "09",
             "10",
-            "11",
-            "12",
-            "13",
-            "14",
             "15",
-            "16",
-            "17",
-            "18",
-            "19",
             "20",
-            "21",
-            "22",
-            "23",
-            "24",
             "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.comboBox3.Location = new System.Drawing.Point(511, 275);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(59, 24);
-            this.comboBox3.TabIndex = 37;
-            this.comboBox3.Text = "Min";
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
+            this.endMin.Location = new System.Drawing.Point(527, 274);
+            this.endMin.Name = "endMin";
+            this.endMin.Size = new System.Drawing.Size(84, 24);
+            this.endMin.TabIndex = 37;
+            this.endMin.Text = "Minutes";
             // 
-            // comboBox4
+            // startMin
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.startMin.FormattingEnabled = true;
+            this.startMin.Items.AddRange(new object[] {
             "00",
-            "01",
-            "02",
-            "03",
-            "04",
             "05",
-            "06",
-            "07",
-            "08",
-            "09",
             "10",
-            "11",
-            "12",
-            "13",
-            "14",
             "15",
-            "16",
-            "17",
-            "18",
-            "19",
             "20",
-            "21",
-            "22",
-            "23",
-            "24",
             "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.comboBox4.Location = new System.Drawing.Point(511, 230);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(59, 24);
-            this.comboBox4.TabIndex = 36;
-            this.comboBox4.Text = "Min";
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
+            this.startMin.Location = new System.Drawing.Point(527, 229);
+            this.startMin.Name = "startMin";
+            this.startMin.Size = new System.Drawing.Size(84, 24);
+            this.startMin.TabIndex = 36;
+            this.startMin.Text = "Minutes";
             // 
-            // comboBox5
+            // endMeri
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.endMeri.FormattingEnabled = true;
+            this.endMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox5.Location = new System.Drawing.Point(576, 275);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(54, 24);
-            this.comboBox5.TabIndex = 39;
+            this.endMeri.Location = new System.Drawing.Point(617, 274);
+            this.endMeri.Name = "endMeri";
+            this.endMeri.Size = new System.Drawing.Size(87, 24);
+            this.endMeri.TabIndex = 39;
+            this.endMeri.Text = "AM/PM";
             // 
-            // comboBox6
+            // startMeri
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.startMeri.FormattingEnabled = true;
+            this.startMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox6.Location = new System.Drawing.Point(576, 230);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(54, 24);
-            this.comboBox6.TabIndex = 38;
+            this.startMeri.Location = new System.Drawing.Point(617, 229);
+            this.startMeri.Name = "startMeri";
+            this.startMeri.Size = new System.Drawing.Size(87, 24);
+            this.startMeri.TabIndex = 38;
+            this.startMeri.Text = "AM/PM";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.Location = new System.Drawing.Point(46, 558);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(115, 27);
+            this.textBox1.TabIndex = 40;
+            this.textBox1.Text = "+(63)";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 743);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.endMeri);
+            this.Controls.Add(this.startMeri);
+            this.Controls.Add(this.endMin);
+            this.Controls.Add(this.startMin);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.endTime);
-            this.Controls.Add(this.startTime);
+            this.Controls.Add(this.endHr);
+            this.Controls.Add(this.startHr);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -650,7 +605,7 @@
             this.Controls.Add(this.addButt);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "addEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addEvent";
@@ -693,15 +648,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox startTime;
-        private System.Windows.Forms.MaskedTextBox endTime;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox startHr;
+        private System.Windows.Forms.ComboBox endHr;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox endMin;
+        private System.Windows.Forms.ComboBox startMin;
+        private System.Windows.Forms.ComboBox endMeri;
+        private System.Windows.Forms.ComboBox startMeri;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -52,6 +52,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.eventSched1 = new Tribes_System.eventSched();
+            this.employeeTab = new Tribes_System.EmployeeTab();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -68,10 +69,10 @@
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.empButt);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(45, 37);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelMenu.Location = new System.Drawing.Point(60, 46);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(234, 775);
+            this.panelMenu.Size = new System.Drawing.Size(312, 953);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -84,10 +85,10 @@
             this.profButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.profButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.profButt.Location = new System.Drawing.Point(0, 479);
-            this.profButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.profButt.Location = new System.Drawing.Point(0, 590);
+            this.profButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profButt.Name = "profButt";
-            this.profButt.Size = new System.Drawing.Size(244, 28);
+            this.profButt.Size = new System.Drawing.Size(325, 34);
             this.profButt.TabIndex = 6;
             this.profButt.Text = "           EDIT PROFILE";
             this.profButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,10 +104,10 @@
             this.outButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.outButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.outButt.Location = new System.Drawing.Point(0, 516);
-            this.outButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.outButt.Location = new System.Drawing.Point(0, 635);
+            this.outButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.outButt.Name = "outButt";
-            this.outButt.Size = new System.Drawing.Size(244, 28);
+            this.outButt.Size = new System.Drawing.Size(325, 34);
             this.outButt.TabIndex = 5;
             this.outButt.Text = "           LOG OUT";
             this.outButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -122,10 +123,10 @@
             this.finButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.finButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.finButt.Location = new System.Drawing.Point(0, 333);
-            this.finButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.finButt.Location = new System.Drawing.Point(0, 410);
+            this.finButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.finButt.Name = "finButt";
-            this.finButt.Size = new System.Drawing.Size(244, 37);
+            this.finButt.Size = new System.Drawing.Size(325, 46);
             this.finButt.TabIndex = 4;
             this.finButt.Text = "   FINANCES";
             this.finButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,10 +142,10 @@
             this.payButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.payButt.Location = new System.Drawing.Point(0, 279);
-            this.payButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.payButt.Location = new System.Drawing.Point(0, 343);
+            this.payButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.payButt.Name = "payButt";
-            this.payButt.Size = new System.Drawing.Size(244, 37);
+            this.payButt.Size = new System.Drawing.Size(325, 46);
             this.payButt.TabIndex = 3;
             this.payButt.Text = "   PAYROLL";
             this.payButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,10 +161,10 @@
             this.eventButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.eventButt.Location = new System.Drawing.Point(0, 224);
-            this.eventButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eventButt.Location = new System.Drawing.Point(0, 276);
+            this.eventButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventButt.Name = "eventButt";
-            this.eventButt.Size = new System.Drawing.Size(244, 37);
+            this.eventButt.Size = new System.Drawing.Size(325, 46);
             this.eventButt.TabIndex = 2;
             this.eventButt.Text = "   EVENT SCHEDULE";
             this.eventButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,10 +180,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(0, 170);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Location = new System.Drawing.Point(0, 209);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(244, 37);
+            this.button3.Size = new System.Drawing.Size(325, 46);
             this.button3.TabIndex = 1;
             this.button3.Text = "   INVENTORY";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,10 +199,10 @@
             this.empButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.empButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empButt.Location = new System.Drawing.Point(0, 115);
-            this.empButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.empButt.Location = new System.Drawing.Point(0, 142);
+            this.empButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.empButt.Name = "empButt";
-            this.empButt.Size = new System.Drawing.Size(244, 37);
+            this.empButt.Size = new System.Drawing.Size(325, 46);
             this.empButt.TabIndex = 0;
             this.empButt.Text = "   EMPLOYEES";
             this.empButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,10 +218,10 @@
             this.empIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empIcon.ForeColor = System.Drawing.Color.White;
             this.empIcon.Image = ((System.Drawing.Image)(resources.GetObject("empIcon.Image")));
-            this.empIcon.Location = new System.Drawing.Point(0, 115);
-            this.empIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.empIcon.Location = new System.Drawing.Point(0, 142);
+            this.empIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.empIcon.Name = "empIcon";
-            this.empIcon.Size = new System.Drawing.Size(45, 37);
+            this.empIcon.Size = new System.Drawing.Size(60, 46);
             this.empIcon.TabIndex = 6;
             this.empIcon.UseVisualStyleBackColor = true;
             this.empIcon.Click += new System.EventHandler(this.button2_Click);
@@ -234,10 +235,10 @@
             this.iconPanel.Controls.Add(this.payIcon);
             this.iconPanel.Controls.Add(this.invIcon);
             this.iconPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.iconPanel.Location = new System.Drawing.Point(0, 37);
-            this.iconPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPanel.Location = new System.Drawing.Point(0, 46);
+            this.iconPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconPanel.Name = "iconPanel";
-            this.iconPanel.Size = new System.Drawing.Size(45, 775);
+            this.iconPanel.Size = new System.Drawing.Size(60, 953);
             this.iconPanel.TabIndex = 5;
             // 
             // finIcon
@@ -249,10 +250,10 @@
             this.finIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finIcon.ForeColor = System.Drawing.Color.White;
             this.finIcon.Image = ((System.Drawing.Image)(resources.GetObject("finIcon.Image")));
-            this.finIcon.Location = new System.Drawing.Point(0, 333);
-            this.finIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.finIcon.Location = new System.Drawing.Point(0, 410);
+            this.finIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.finIcon.Name = "finIcon";
-            this.finIcon.Size = new System.Drawing.Size(45, 37);
+            this.finIcon.Size = new System.Drawing.Size(60, 46);
             this.finIcon.TabIndex = 10;
             this.finIcon.UseVisualStyleBackColor = true;
             // 
@@ -265,10 +266,10 @@
             this.calendarIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calendarIcon.ForeColor = System.Drawing.Color.White;
             this.calendarIcon.Image = ((System.Drawing.Image)(resources.GetObject("calendarIcon.Image")));
-            this.calendarIcon.Location = new System.Drawing.Point(0, 224);
-            this.calendarIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.calendarIcon.Location = new System.Drawing.Point(0, 276);
+            this.calendarIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.calendarIcon.Name = "calendarIcon";
-            this.calendarIcon.Size = new System.Drawing.Size(45, 37);
+            this.calendarIcon.Size = new System.Drawing.Size(60, 46);
             this.calendarIcon.TabIndex = 8;
             this.calendarIcon.UseVisualStyleBackColor = true;
             this.calendarIcon.Click += new System.EventHandler(this.calendarIcon_Click);
@@ -282,10 +283,10 @@
             this.payIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.payIcon.ForeColor = System.Drawing.Color.White;
             this.payIcon.Image = ((System.Drawing.Image)(resources.GetObject("payIcon.Image")));
-            this.payIcon.Location = new System.Drawing.Point(0, 279);
-            this.payIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.payIcon.Location = new System.Drawing.Point(0, 343);
+            this.payIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.payIcon.Name = "payIcon";
-            this.payIcon.Size = new System.Drawing.Size(45, 37);
+            this.payIcon.Size = new System.Drawing.Size(60, 46);
             this.payIcon.TabIndex = 9;
             this.payIcon.UseVisualStyleBackColor = true;
             // 
@@ -298,10 +299,10 @@
             this.invIcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.invIcon.ForeColor = System.Drawing.Color.White;
             this.invIcon.Image = ((System.Drawing.Image)(resources.GetObject("invIcon.Image")));
-            this.invIcon.Location = new System.Drawing.Point(0, 170);
-            this.invIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.invIcon.Location = new System.Drawing.Point(0, 209);
+            this.invIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.invIcon.Name = "invIcon";
-            this.invIcon.Size = new System.Drawing.Size(45, 37);
+            this.invIcon.Size = new System.Drawing.Size(60, 46);
             this.invIcon.TabIndex = 7;
             this.invIcon.UseVisualStyleBackColor = true;
             this.invIcon.Click += new System.EventHandler(this.button4_Click);
@@ -313,10 +314,10 @@
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(1051, 2);
-            this.minButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minButt.Location = new System.Drawing.Point(1401, 2);
+            this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
-            this.minButt.Size = new System.Drawing.Size(31, 34);
+            this.minButt.Size = new System.Drawing.Size(41, 42);
             this.minButt.TabIndex = 1;
             this.minButt.UseVisualStyleBackColor = true;
             this.minButt.Click += new System.EventHandler(this.minButt_Click);
@@ -328,10 +329,10 @@
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(1091, 2);
-            this.closeButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButt.Location = new System.Drawing.Point(1455, 2);
+            this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
-            this.closeButt.Size = new System.Drawing.Size(31, 34);
+            this.closeButt.Size = new System.Drawing.Size(41, 42);
             this.closeButt.TabIndex = 0;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
@@ -344,9 +345,9 @@
             this.title.Controls.Add(this.closeButt);
             this.title.Dock = System.Windows.Forms.DockStyle.Top;
             this.title.Location = new System.Drawing.Point(0, 0);
-            this.title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1125, 37);
+            this.title.Size = new System.Drawing.Size(1500, 46);
             this.title.TabIndex = 3;
             this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
             this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
@@ -360,10 +361,10 @@
             this.menuIcon.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.menuIcon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuIcon.Image = ((System.Drawing.Image)(resources.GetObject("menuIcon.Image")));
-            this.menuIcon.Location = new System.Drawing.Point(0, -4);
-            this.menuIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuIcon.Location = new System.Drawing.Point(0, -5);
+            this.menuIcon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menuIcon.Name = "menuIcon";
-            this.menuIcon.Size = new System.Drawing.Size(45, 44);
+            this.menuIcon.Size = new System.Drawing.Size(60, 54);
             this.menuIcon.TabIndex = 2;
             this.menuIcon.UseVisualStyleBackColor = true;
             this.menuIcon.Click += new System.EventHandler(this.button1_Click);
@@ -376,44 +377,54 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(279, 811);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(372, 998);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(846, 1);
+            this.panel1.Size = new System.Drawing.Size(1128, 1);
             this.panel1.TabIndex = 7;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1124, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(1499, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 774);
+            this.panel2.Size = new System.Drawing.Size(1, 952);
             this.panel2.TabIndex = 8;
             // 
             // eventSched1
             // 
-            this.eventSched1.Location = new System.Drawing.Point(83, 94);
-            this.eventSched1.Margin = new System.Windows.Forms.Padding(2);
+            this.eventSched1.Location = new System.Drawing.Point(111, 78);
+            this.eventSched1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventSched1.Name = "eventSched1";
-            this.eventSched1.Size = new System.Drawing.Size(975, 650);
+            this.eventSched1.Size = new System.Drawing.Size(1300, 800);
             this.eventSched1.TabIndex = 9;
             this.eventSched1.Visible = false;
             // 
+            // employeeTab
+            // 
+            this.employeeTab.Location = new System.Drawing.Point(125, 81);
+            this.employeeTab.Margin = new System.Windows.Forms.Padding(4);
+            this.employeeTab.Name = "employeeTab";
+            this.employeeTab.Size = new System.Drawing.Size(1300, 800);
+            this.employeeTab.TabIndex = 10;
+            this.employeeTab.Visible = false;
+            // 
             // homePage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1125, 812);
+            this.ClientSize = new System.Drawing.Size(1500, 999);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
             this.Controls.Add(this.eventSched1);
+            this.Controls.Add(this.employeeTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "homePage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homePage";
@@ -449,5 +460,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private eventSched eventSched1;
+        private EmployeeTab employeeTab;
     }
 }

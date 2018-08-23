@@ -96,10 +96,11 @@ namespace Tribes_System
         {
             string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
                 "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','" 
-                + startDate.Text + "','" + endDate.Text + "','" + startTime.Text + "','" + endTime.Text + "','" + nameClientBox.Text + "'," + 
-                conClientBox.Text + ", 'Unpaid')";
+                + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
+                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid')";
 
             executeMyQuery(insertQuery);
+            MessageBox.Show("Added Successfully");
             this.Close();
         }
 

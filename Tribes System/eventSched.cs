@@ -88,8 +88,8 @@ namespace Tribes_System
             while (reader.Read())
             {
                 nameLabel.Text = reader["event_name"].ToString();
-                dateLabel.Text = "Start: " + reader["start_date"].ToString() + " - End: " + reader["end_date"].ToString();
-                timeLabel.Text = "Start: " + reader["start_time"].ToString() + " - End: " + reader["end_time"].ToString();
+                dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
+                timeLabel.Text = reader["start_time"].ToString() + " - " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
                 notesBox.Text = reader["event_notes"].ToString();
                 clientLabel.Text = reader["client_name"].ToString();
