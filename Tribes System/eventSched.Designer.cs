@@ -194,7 +194,7 @@
             this.clientLabel.AutoSize = true;
             this.clientLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.clientLabel.Location = new System.Drawing.Point(138, 543);
+            this.clientLabel.Location = new System.Drawing.Point(138, 552);
             this.clientLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientLabel.Name = "clientLabel";
             this.clientLabel.Size = new System.Drawing.Size(33, 30);
@@ -206,7 +206,7 @@
             this.numLabel.AutoSize = true;
             this.numLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.numLabel.Location = new System.Drawing.Point(235, 574);
+            this.numLabel.Location = new System.Drawing.Point(235, 583);
             this.numLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.numLabel.Name = "numLabel";
             this.numLabel.Size = new System.Drawing.Size(33, 30);
@@ -257,7 +257,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(23, 574);
+            this.label2.Location = new System.Drawing.Point(23, 583);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(195, 30);
@@ -269,7 +269,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(23, 543);
+            this.label3.Location = new System.Drawing.Point(23, 552);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 30);
@@ -281,7 +281,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(22, 504);
+            this.label4.Location = new System.Drawing.Point(22, 513);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(228, 38);

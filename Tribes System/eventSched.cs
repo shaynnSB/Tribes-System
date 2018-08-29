@@ -44,7 +44,8 @@ namespace Tribes_System
         {
             eventGrid.Visible = true;
 
-            string query = "select * from event where start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
+            string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
+                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
             DataTable table = new DataTable();
             openConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
@@ -70,6 +71,7 @@ namespace Tribes_System
             form.amBox = amLabel.Text;
             form.clientNameBox = clientLabel.Text;
             form.numBox = numLabel.Text;
+            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
         }
 
@@ -139,10 +141,18 @@ namespace Tribes_System
 
         private void cancellationButt_Click(object sender, EventArgs e)
         {
-            string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
-            openConnection();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(cancelQuery, con);
-            closeConnection();
+            DialogResult dialogResult = MessageBox.Show("Confirm cancellation of event?", "Cancel Event", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
+                openConnection();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cancelQuery, con);
+                closeConnection();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
         }
     }
 }

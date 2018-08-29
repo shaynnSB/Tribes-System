@@ -69,7 +69,7 @@
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.Gray;
             this.notesBox.Location = new System.Drawing.Point(47, 487);
-            this.notesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(657, 124);
@@ -179,7 +179,7 @@
             this.amountBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amountBox.ForeColor = System.Drawing.Color.Gray;
             this.amountBox.Location = new System.Drawing.Point(47, 439);
-            this.amountBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.amountBox.Margin = new System.Windows.Forms.Padding(4);
             this.amountBox.Name = "amountBox";
             this.amountBox.Size = new System.Drawing.Size(657, 27);
             this.amountBox.TabIndex = 32;
@@ -193,7 +193,7 @@
             this.numClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numClientBox.ForeColor = System.Drawing.Color.Gray;
             this.numClientBox.Location = new System.Drawing.Point(47, 725);
-            this.numClientBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.numClientBox.Name = "numClientBox";
             this.numClientBox.Size = new System.Drawing.Size(657, 27);
             this.numClientBox.TabIndex = 31;
@@ -207,7 +207,7 @@
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locBox.ForeColor = System.Drawing.Color.Gray;
             this.locBox.Location = new System.Drawing.Point(47, 192);
-            this.locBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
             this.locBox.Size = new System.Drawing.Size(657, 27);
             this.locBox.TabIndex = 29;
@@ -221,7 +221,7 @@
             this.eventBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventBox.ForeColor = System.Drawing.Color.Gray;
             this.eventBox.Location = new System.Drawing.Point(47, 144);
-            this.eventBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.eventBox.Margin = new System.Windows.Forms.Padding(4);
             this.eventBox.Name = "eventBox";
             this.eventBox.Size = new System.Drawing.Size(657, 27);
             this.eventBox.TabIndex = 28;
@@ -238,7 +238,7 @@
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
             this.cancelButt.Location = new System.Drawing.Point(468, 841);
-            this.cancelButt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
             this.cancelButt.TabIndex = 27;
@@ -249,6 +249,7 @@
             // saveButt
             // 
             this.saveButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.saveButt.Enabled = false;
             this.saveButt.FlatAppearance.BorderSize = 0;
             this.saveButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.saveButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
@@ -256,7 +257,7 @@
             this.saveButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButt.ForeColor = System.Drawing.SystemColors.Control;
             this.saveButt.Location = new System.Drawing.Point(468, 790);
-            this.saveButt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveButt.Margin = new System.Windows.Forms.Padding(4);
             this.saveButt.Name = "saveButt";
             this.saveButt.Size = new System.Drawing.Size(236, 31);
             this.saveButt.TabIndex = 26;
@@ -294,7 +295,7 @@
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
             this.nameClientBox.Location = new System.Drawing.Point(47, 677);
-            this.nameClientBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(657, 27);
             this.nameClientBox.TabIndex = 30;
@@ -345,22 +346,24 @@
             // endDate
             // 
             this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDate.Location = new System.Drawing.Point(392, 241);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(311, 22);
+            this.endDate.Size = new System.Drawing.Size(311, 24);
             this.endDate.TabIndex = 49;
             this.endDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 32, 0);
             // 
             // startDate
             // 
             this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
+            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDate.Location = new System.Drawing.Point(47, 241);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(311, 22);
+            this.startDate.Size = new System.Drawing.Size(311, 24);
             this.startDate.TabIndex = 48;
             this.startDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 25, 0);
             // 
@@ -370,11 +373,13 @@
             this.startMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.startMeri.Location = new System.Drawing.Point(296, 284);
+            this.startMeri.Location = new System.Drawing.Point(271, 284);
             this.startMeri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMeri.Name = "startMeri";
-            this.startMeri.Size = new System.Drawing.Size(61, 24);
+            this.startMeri.Size = new System.Drawing.Size(86, 24);
             this.startMeri.TabIndex = 53;
+            this.startMeri.Text = "AM/PM";
+            this.startMeri.SelectedIndexChanged += new System.EventHandler(this.startMeri_SelectedIndexChanged);
             // 
             // startMin
             // 
@@ -414,7 +419,7 @@
             this.startMin.Location = new System.Drawing.Point(181, 284);
             this.startMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMin.Name = "startMin";
-            this.startMin.Size = new System.Drawing.Size(108, 24);
+            this.startMin.Size = new System.Drawing.Size(84, 24);
             this.startMin.TabIndex = 52;
             this.startMin.Text = "Min";
             // 
@@ -458,11 +463,12 @@
             this.endMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.endMeri.Location = new System.Drawing.Point(641, 284);
+            this.endMeri.Location = new System.Drawing.Point(619, 285);
             this.endMeri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endMeri.Name = "endMeri";
-            this.endMeri.Size = new System.Drawing.Size(61, 24);
+            this.endMeri.Size = new System.Drawing.Size(85, 24);
             this.endMeri.TabIndex = 57;
+            this.endMeri.Text = "AM/PM";
             // 
             // endMin
             // 
@@ -499,10 +505,10 @@
             "28",
             "29",
             "30"});
-            this.endMin.Location = new System.Drawing.Point(527, 284);
+            this.endMin.Location = new System.Drawing.Point(527, 285);
             this.endMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endMin.Name = "endMin";
-            this.endMin.Size = new System.Drawing.Size(108, 24);
+            this.endMin.Size = new System.Drawing.Size(84, 24);
             this.endMin.TabIndex = 56;
             this.endMin.Text = "Min";
             // 
@@ -576,7 +582,7 @@
             this.Controls.Add(this.title);
             this.Controls.Add(this.nameClientBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "editEvent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "editEvent";

@@ -90,11 +90,26 @@ namespace Tribes_System
             set { numClientBox.Text = value; }
         }
 
+        public string idValue
+        {
+            get { return this.idValue;  }
+            set { this.idValue = value; }
+        }
+
         private void saveButt_Click(object sender, EventArgs e)
         {
-            //string editQuery = "UPDATE event SET password = WHERE username = '";
-            //executeMyQuery(editQuery);
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("Confirm changes?", "Edit Event Details", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //string editQuery = "UPDATE event SET event_name = ,event_location = , event_notes = , start_date = , end_date = , start_time = , 
+                //end_time = , client_name = , client_contact = WHERE id_event = " + idValue;
+                //executeMyQuery(editQuery);
+                this.Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
         }
 
         public void openConnection()
@@ -140,5 +155,11 @@ namespace Tribes_System
                 closeConnection();
             }
         }
+
+        private void startMeri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+                
     }
 }
