@@ -92,6 +92,8 @@ namespace Tribes_System
         private void eventButt_Click(object sender, EventArgs e)
         {
             employeeTab.Visible = false;
+            financesUI1.Visible = false;
+            payrollUI1.Visible = false;
             eventSched1.Visible = true;
             timer.Start();
         }
@@ -111,11 +113,19 @@ namespace Tribes_System
 
         private void finButt_Click(object sender, EventArgs e)
         {
+            financesUI1.Visible = true;
+            payrollUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
             timer.Start();
         }
 
         private void payButt_Click(object sender, EventArgs e)
         {
+            payrollUI1.Visible = true;
+            financesUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
             timer.Start();
         }
 
@@ -153,6 +163,22 @@ namespace Tribes_System
         }
 
         private void calendarIcon_Click(object sender, EventArgs e)
+        {
+            employeeTab.Visible = false;
+            financesUI1.Visible = false;
+            payrollUI1.Visible = false;
+            eventSched1.Visible = true;
+        }
+
+        private void payIcon_Click(object sender, EventArgs e)
+        {
+            payrollUI1.Visible = true;
+            financesUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
+        }
+
+        private void financesUI1_Load(object sender, EventArgs e)
         {
 
         }

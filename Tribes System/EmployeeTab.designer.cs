@@ -43,7 +43,6 @@
             this.StatusLab = new System.Windows.Forms.Label();
             this.BdayLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
-            this.IDLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -171,7 +170,6 @@
             this.panel1.Controls.Add(this.StatusLab);
             this.panel1.Controls.Add(this.BdayLab);
             this.panel1.Controls.Add(this.NameLab);
-            this.panel1.Controls.Add(this.IDLab);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(750, 144);
             this.panel1.Name = "panel1";
@@ -206,7 +204,7 @@
             // 
             this.PositionLab.AutoSize = true;
             this.PositionLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PositionLab.Location = new System.Drawing.Point(6, 115);
+            this.PositionLab.Location = new System.Drawing.Point(6, 95);
             this.PositionLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PositionLab.Name = "PositionLab";
             this.PositionLab.Size = new System.Drawing.Size(74, 20);
@@ -217,7 +215,7 @@
             // 
             this.StatusLab.AutoSize = true;
             this.StatusLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLab.Location = new System.Drawing.Point(6, 94);
+            this.StatusLab.Location = new System.Drawing.Point(6, 74);
             this.StatusLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLab.Name = "StatusLab";
             this.StatusLab.Size = new System.Drawing.Size(62, 20);
@@ -228,7 +226,7 @@
             // 
             this.BdayLab.AutoSize = true;
             this.BdayLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdayLab.Location = new System.Drawing.Point(6, 73);
+            this.BdayLab.Location = new System.Drawing.Point(6, 53);
             this.BdayLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BdayLab.Name = "BdayLab";
             this.BdayLab.Size = new System.Drawing.Size(82, 20);
@@ -239,23 +237,12 @@
             // 
             this.NameLab.AutoSize = true;
             this.NameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLab.Location = new System.Drawing.Point(6, 52);
+            this.NameLab.Location = new System.Drawing.Point(6, 32);
             this.NameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLab.Name = "NameLab";
             this.NameLab.Size = new System.Drawing.Size(58, 20);
             this.NameLab.TabIndex = 20;
             this.NameLab.Text = "Name:";
-            // 
-            // IDLab
-            // 
-            this.IDLab.AutoSize = true;
-            this.IDLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IDLab.Location = new System.Drawing.Point(6, 32);
-            this.IDLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.IDLab.Name = "IDLab";
-            this.IDLab.Size = new System.Drawing.Size(31, 20);
-            this.IDLab.TabIndex = 19;
-            this.IDLab.Text = "ID:";
             // 
             // label1
             // 
@@ -311,7 +298,6 @@
         private System.Windows.Forms.Label StatusLab;
         private System.Windows.Forms.Label BdayLab;
         private System.Windows.Forms.Label NameLab;
-        private System.Windows.Forms.Label IDLab;
         private System.Windows.Forms.Label label1;
     }
 }

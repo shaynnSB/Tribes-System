@@ -7,18 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Tribes_System
 {
     public partial class editEvent : Form
     {
+        eventSched form = new eventSched();
+        MySqlConnection con = new MySqlConnection("server=localhost;database=store;user=root;password=root");
+        MySqlCommand cmd;
 
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        public editEvent()
+        public editEvent(eventSched form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,6 +52,93 @@ namespace Tribes_System
         {
             this.startPoint = e.Location;
             this.drag = true;
+        }
+
+        public string nameBox
+        {
+            get { return eventBox.Text; }
+            set { eventBox.Text = value; }
+        }
+        
+        public string locateBox
+        {
+            get { return locBox.Text; }
+            set { locBox.Text = value; }
+        }
+
+        public string amBox
+        {
+            get { return amountBox.Text; }
+            set { amountBox.Text = value; }
+        }
+
+        public string passNoteBox
+        {
+            get { return notesBox.Text; }
+            set { notesBox.Text = value; }
+        }
+
+        public string clientNameBox
+        {
+            get { return nameClientBox.Text; }
+            set { nameClientBox.Text = value; }
+        }
+
+        public string numBox
+        {
+            get { return numClientBox.Text; }
+            set { numClientBox.Text = value; }
+        }
+
+        private void saveButt_Click(object sender, EventArgs e)
+        {
+            //string editQuery = "UPDATE event SET password = WHERE username = '";
+            //executeMyQuery(editQuery);
+            this.Close();
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
         }
     }
 }

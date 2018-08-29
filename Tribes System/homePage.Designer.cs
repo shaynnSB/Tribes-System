@@ -53,6 +53,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
+            this.financesUI1 = new Tribes_System.financesUI();
+            this.payrollUI1 = new Tribes_System.payrollUI();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -72,7 +74,7 @@
             this.panelMenu.Location = new System.Drawing.Point(60, 46);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(312, 953);
+            this.panelMenu.Size = new System.Drawing.Size(312, 904);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -238,7 +240,7 @@
             this.iconPanel.Location = new System.Drawing.Point(0, 46);
             this.iconPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconPanel.Name = "iconPanel";
-            this.iconPanel.Size = new System.Drawing.Size(60, 953);
+            this.iconPanel.Size = new System.Drawing.Size(60, 904);
             this.iconPanel.TabIndex = 5;
             // 
             // finIcon
@@ -289,6 +291,7 @@
             this.payIcon.Size = new System.Drawing.Size(60, 46);
             this.payIcon.TabIndex = 9;
             this.payIcon.UseVisualStyleBackColor = true;
+            this.payIcon.Click += new System.EventHandler(this.payIcon_Click);
             // 
             // invIcon
             // 
@@ -377,7 +380,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(372, 998);
+            this.panel1.Location = new System.Drawing.Point(372, 949);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1128, 1);
@@ -390,15 +393,15 @@
             this.panel2.Location = new System.Drawing.Point(1499, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 952);
+            this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
             // eventSched1
             // 
-            this.eventSched1.Location = new System.Drawing.Point(111, 78);
+            this.eventSched1.Location = new System.Drawing.Point(126, 68);
             this.eventSched1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventSched1.Name = "eventSched1";
-            this.eventSched1.Size = new System.Drawing.Size(1300, 800);
+            this.eventSched1.Size = new System.Drawing.Size(1323, 800);
             this.eventSched1.TabIndex = 9;
             this.eventSched1.Visible = false;
             // 
@@ -411,11 +414,27 @@
             this.employeeTab.TabIndex = 10;
             this.employeeTab.Visible = false;
             // 
+            // financesUI1
+            // 
+            this.financesUI1.Location = new System.Drawing.Point(127, 124);
+            this.financesUI1.Name = "financesUI1";
+            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
+            this.financesUI1.TabIndex = 11;
+            this.financesUI1.Visible = false;
+            // 
+            // payrollUI1
+            // 
+            this.payrollUI1.Location = new System.Drawing.Point(125, 90);
+            this.payrollUI1.Name = "payrollUI1";
+            this.payrollUI1.Size = new System.Drawing.Size(1315, 800);
+            this.payrollUI1.TabIndex = 12;
+            this.payrollUI1.Visible = false;
+            // 
             // homePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1500, 999);
+            this.ClientSize = new System.Drawing.Size(1500, 950);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenu);
@@ -423,6 +442,8 @@
             this.Controls.Add(this.title);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
+            this.Controls.Add(this.financesUI1);
+            this.Controls.Add(this.payrollUI1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "homePage";
@@ -461,5 +482,7 @@
         private System.Windows.Forms.Panel panel2;
         private eventSched eventSched1;
         private EmployeeTab employeeTab;
+        private financesUI financesUI1;
+        private payrollUI payrollUI1;
     }
 }

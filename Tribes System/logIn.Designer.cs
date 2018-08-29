@@ -109,7 +109,7 @@
             // 
             this.userBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.userBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userBox.ForeColor = System.Drawing.Color.Silver;
+            this.userBox.ForeColor = System.Drawing.Color.DimGray;
             this.userBox.Location = new System.Drawing.Point(72, 222);
             this.userBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userBox.Name = "userBox";
@@ -124,7 +124,7 @@
             // 
             this.passBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passBox.ForeColor = System.Drawing.Color.Silver;
+            this.passBox.ForeColor = System.Drawing.Color.DimGray;
             this.passBox.Location = new System.Drawing.Point(72, 272);
             this.passBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passBox.Name = "passBox";

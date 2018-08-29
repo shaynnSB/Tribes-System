@@ -63,7 +63,13 @@ namespace Tribes_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            editEvent form = new editEvent();
+            editEvent form = new editEvent(this);
+            form.nameBox = nameLabel.Text;
+            form.locateBox = locLabel.Text;
+            form.passNoteBox = notesBox.Text;
+            form.amBox = amLabel.Text;
+            form.clientNameBox = clientLabel.Text;
+            form.numBox = numLabel.Text;
             form.ShowDialog();
         }
 
@@ -110,6 +116,33 @@ namespace Tribes_System
         private void nameLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void viewEquip_Click(object sender, EventArgs e)
+        {
+            viewEquipList form = new viewEquipList(this);
+            form.eventName = nameLabel.Text;
+            form.ShowDialog();
+        }
+
+        private void viewStaff_Click(object sender, EventArgs e)
+        {
+            viewStaffList form = new viewStaffList(this);
+            form.eventName = nameLabel.Text;
+            form.ShowDialog();
+        }
+
+        private void label47_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancellationButt_Click(object sender, EventArgs e)
+        {
+            string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
+            openConnection();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cancelQuery, con);
+            closeConnection();
         }
     }
 }
