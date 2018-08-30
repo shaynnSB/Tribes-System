@@ -71,7 +71,7 @@ namespace Tribes_System
             form.amBox = amLabel.Text;
             form.clientNameBox = clientLabel.Text;
             form.numBox = numLabel.Text;
-            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            //sform.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
         }
 

@@ -29,9 +29,9 @@ namespace WindowsFormsApplication2
             string myConnectionString;
             myConnectionString = "server=127.0.0.1;"
 + "uid=root;"
-+ "pwd=root;"
++  "pwd=root;"
 + "SslMode=none;"
-+ "database=tribes_system";
++ "database=db";
             conn.ConnectionString = myConnectionString;
             conn.Open();
             using (MySqlCommand cmd1 = new MySqlCommand("Select COUNT(*) FROM items where name ='" + textBox1.Text + "'", conn))
