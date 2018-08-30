@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addContent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addContent.designer.cs">
-      <DependentUpon>addContent.cs</DependentUpon>
-    </Compile>
     <Compile Include="addEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,12 +63,6 @@
     </Compile>
     <Compile Include="AddUI.designer.cs">
       <DependentUpon>AddUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="editContent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="editContent.designer.cs">
-      <DependentUpon>editContent.cs</DependentUpon>
     </Compile>
     <Compile Include="editEvent.cs">
       <SubType>Form</SubType>
@@ -111,6 +99,18 @@
     </Compile>
     <Compile Include="financesUI.Designer.cs">
       <DependentUpon>financesUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="homePage.cs">
       <SubType>Form</SubType>
@@ -168,9 +168,6 @@
     <Compile Include="ViewUI.designer.cs">
       <DependentUpon>ViewUI.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addContent.resx">
-      <DependentUpon>addContent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddUI.resx">
       <DependentUpon>AddUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="editContent.resx">
-      <DependentUpon>editContent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editEvent.resx">
       <DependentUpon>editEvent.cs</DependentUpon>
@@ -200,6 +194,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="financesUI.resx">
       <DependentUpon>financesUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="homePage.resx">
       <DependentUpon>homePage.cs</DependentUpon>

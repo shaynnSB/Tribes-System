@@ -90,34 +90,35 @@ C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes Sy
 C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
 C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.exe
 C:\Users\ssbacalso\Source\Repos\Tribes-System2\Tribes System\obj\Debug\Tribes System.pdb
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.exe.config
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.exe
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.pdb
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\MySql.Data.dll
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\MySql.Data.xml
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.csprojAssemblyReference.cache
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.Form1.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.addEmployee.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.addEvent.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.AddUI.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.Form2.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.editEvent.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.EditUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.EmployeeTab.resources
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.equipHome.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.EquipmentUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.eventSched.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.financesUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.homePage.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.payrollUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.UserControl1.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.viewEquipList.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.ViewUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.cache
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\MySql.Data.dll
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\MySql.Data.xml
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.csproj.CopyComplete
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.exe
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.pdb
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources

@@ -64,6 +64,7 @@
             this.endMeri = new System.Windows.Forms.ComboBox();
             this.startMeri = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.downBox = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,7 +76,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(40, 466);
+            this.label4.Location = new System.Drawing.Point(40, 509);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 36);
@@ -117,7 +118,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(468, 617);
+            this.addButt.Location = new System.Drawing.Point(468, 660);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(236, 31);
@@ -135,7 +136,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(468, 668);
+            this.cancelButt.Location = new System.Drawing.Point(468, 711);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
@@ -180,7 +181,7 @@
             this.nameClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameClientBox.Location = new System.Drawing.Point(47, 510);
+            this.nameClientBox.Location = new System.Drawing.Point(47, 553);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(657, 27);
@@ -195,7 +196,7 @@
             this.conClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.conClientBox.Location = new System.Drawing.Point(169, 558);
+            this.conClientBox.Location = new System.Drawing.Point(169, 601);
             this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.conClientBox.Name = "conClientBox";
             this.conClientBox.Size = new System.Drawing.Size(535, 27);
@@ -234,7 +235,7 @@
             this.notesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.Gray;
-            this.notesBox.Location = new System.Drawing.Point(47, 316);
+            this.notesBox.Location = new System.Drawing.Point(47, 367);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
@@ -277,7 +278,7 @@
             this.panel1.Location = new System.Drawing.Point(752, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 697);
+            this.panel1.Size = new System.Drawing.Size(1, 728);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -331,7 +332,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 697);
+            this.panel2.Size = new System.Drawing.Size(1, 728);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -368,7 +369,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 742);
+            this.panel4.Location = new System.Drawing.Point(1, 773);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(751, 1);
@@ -562,7 +563,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(46, 558);
+            this.textBox1.Location = new System.Drawing.Point(46, 601);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -571,11 +572,26 @@
             this.textBox1.Text = "+(63)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // downBox
+            // 
+            this.downBox.BackColor = System.Drawing.Color.LightGray;
+            this.downBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.downBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.downBox.ForeColor = System.Drawing.Color.Gray;
+            this.downBox.Location = new System.Drawing.Point(48, 320);
+            this.downBox.Margin = new System.Windows.Forms.Padding(4);
+            this.downBox.Name = "downBox";
+            this.downBox.Size = new System.Drawing.Size(657, 27);
+            this.downBox.TabIndex = 41;
+            this.downBox.Text = "Downpayment";
+            this.downBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 743);
+            this.ClientSize = new System.Drawing.Size(753, 774);
+            this.Controls.Add(this.downBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.endMeri);
             this.Controls.Add(this.startMeri);
@@ -657,5 +673,6 @@
         private System.Windows.Forms.ComboBox endMeri;
         private System.Windows.Forms.ComboBox startMeri;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox downBox;
     }
 }

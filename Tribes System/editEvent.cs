@@ -90,11 +90,13 @@ namespace Tribes_System
             set { numClientBox.Text = value; }
         }
 
-        //public string idValue
-        //{
-         //   get { return this.idValue;  }
-        //    set { this.idValue = value; }
-        //}
+        string idPassed; 
+
+        public string idValue
+        {
+            get { return this.idPassed;  }
+            set { this.idPassed = value; }
+        }
 
         private void saveButt_Click(object sender, EventArgs e)
         {

@@ -370,7 +370,7 @@ namespace WindowsFormsApplication2
                 if (e.ColumnIndex == 0)
                 {
 
-                    var a = new editContent();
+                    var a = new Form2();
                     forEdit = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                     forEditID = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                     a.Show();
@@ -448,7 +448,7 @@ namespace WindowsFormsApplication2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var a = new addContent();
+            var a = new Form1();
             a.Show();
 
         }
