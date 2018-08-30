@@ -102,10 +102,8 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.Emp
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.EquipmentUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.eventSched.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.financesUI.resources
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.homePage.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.logIn.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources
-C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.payrollUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\WindowsFormsApplication2.UserControl1.resources
@@ -122,3 +120,6 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\bin\Debug\MySql.Data.xml
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.csproj.CopyComplete
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.exe
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.equipButt.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.addViewStaff.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.salaryUI.resources

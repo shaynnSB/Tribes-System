@@ -67,7 +67,7 @@ namespace Tribes_System
                 if (dt.Rows[0][0].ToString() == "1")
                 {
                     this.Hide();
-                    homePage form = new homePage();
+                    equipButt form = new equipButt();
                     form.ShowDialog();
                     this.Close();
                 }

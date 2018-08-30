@@ -1,6 +1,6 @@
 ﻿namespace Tribes_System
 {
-    partial class homePage
+    partial class equipButt
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homePage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(equipButt));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.profButt = new System.Windows.Forms.Button();
             this.outButt = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
-            this.payrollUI1 = new Tribes_System.payrollUI();
+            this.payrollUI1 = new Tribes_System.salaryUI();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -149,7 +149,7 @@
             this.payButt.Name = "payButt";
             this.payButt.Size = new System.Drawing.Size(325, 46);
             this.payButt.TabIndex = 3;
-            this.payButt.Text = "   PAYROLL";
+            this.payButt.Text = "   SALARY";
             this.payButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.payButt.UseVisualStyleBackColor = false;
             this.payButt.Click += new System.EventHandler(this.payButt_Click);
@@ -430,7 +430,7 @@
             this.payrollUI1.TabIndex = 12;
             this.payrollUI1.Visible = false;
             // 
-            // homePage
+            // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -446,7 +446,7 @@
             this.Controls.Add(this.payrollUI1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "homePage";
+            this.Name = "equipButt";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "homePage";
             this.Load += new System.EventHandler(this.homePage_Load);
@@ -483,6 +483,6 @@
         private eventSched eventSched1;
         private EmployeeTab employeeTab;
         private financesUI financesUI1;
-        private payrollUI payrollUI1;
+        private salaryUI payrollUI1;
     }
 }

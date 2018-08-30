@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Tribes_System
 {
-    public partial class homePage : Form
+    public partial class equipButt : Form
     {
         int PW;
         bool hidden;
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        public homePage()
+        public equipButt()
         {
             InitializeComponent();
             PW = panelMenu.Width;

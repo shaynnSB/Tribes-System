@@ -162,6 +162,11 @@ namespace Tribes_System
         {
 
         }
-                
+
+        private void addStaffButt_Click(object sender, EventArgs e)
+        {
+            addViewStaff form = new addViewStaff();
+            form.ShowDialog();
+        }
     }
 }
