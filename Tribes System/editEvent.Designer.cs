@@ -113,6 +113,7 @@
             this.addEquipButt.TabIndex = 38;
             this.addEquipButt.Text = "Add List of Equipment";
             this.addEquipButt.UseVisualStyleBackColor = false;
+            this.addEquipButt.Click += new System.EventHandler(this.addEquipButt_Click);
             // 
             // label2
             // 

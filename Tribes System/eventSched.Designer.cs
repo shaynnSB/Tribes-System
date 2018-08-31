@@ -249,8 +249,9 @@
             this.viewPay.Name = "viewPay";
             this.viewPay.Size = new System.Drawing.Size(255, 38);
             this.viewPay.TabIndex = 76;
-            this.viewPay.Text = "View Payment Details";
+            this.viewPay.Text = "View Monetary Details";
             this.viewPay.UseVisualStyleBackColor = false;
+            this.viewPay.Click += new System.EventHandler(this.viewPay_Click);
             // 
             // label2
             // 

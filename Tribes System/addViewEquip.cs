@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tribes_System
 {
-    public partial class s : Form
+    public partial class addViewEquip : Form
     {
-        public s()
+        public addViewEquip()
         {
             InitializeComponent();
         }
@@ -39,6 +39,12 @@ namespace Tribes_System
         private void minButt_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void customButt_Click(object sender, EventArgs e)
+        {
+            customPack form = new customPack();
+            form.ShowDialog();
         }
     }
 }

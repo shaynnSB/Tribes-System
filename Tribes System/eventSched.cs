@@ -154,5 +154,11 @@ namespace Tribes_System
 
             }
         }
+
+        private void viewPay_Click(object sender, EventArgs e)
+        {
+            payDeets form = new payDeets();
+            form.ShowDialog();
+        }
     }
 }

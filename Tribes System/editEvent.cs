@@ -168,5 +168,11 @@ namespace Tribes_System
             addViewStaff form = new addViewStaff();
             form.ShowDialog();
         }
+
+        private void addEquipButt_Click(object sender, EventArgs e)
+        {
+            addViewEquip form = new addViewEquip();
+            form.ShowDialog();
+        }
     }
 }
