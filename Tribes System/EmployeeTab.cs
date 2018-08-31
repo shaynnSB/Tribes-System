@@ -17,7 +17,7 @@ namespace Tribes_System
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
 
         DataTable grid = new DataTable();
-        int selectedRow;
+       int selectedRow;
 
         public EmployeeTab()
         {
@@ -25,7 +25,7 @@ namespace Tribes_System
             resetTable();
         }
 
-        private void resetTable(string query = "select * from employee")
+        private void resetTable(string query = "Select items.id,items.name from items")
         {
             
             DataTable table = new DataTable();
@@ -73,6 +73,21 @@ namespace Tribes_System
         private void button2_Click(object sender, EventArgs e)
         {
             resetTable("select * from employee where id_emp = " + textBox1.Text);
+        }
+
+        private void EmployeeTab_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

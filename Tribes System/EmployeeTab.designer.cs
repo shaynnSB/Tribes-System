@@ -57,10 +57,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(138, 88);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(104, 72);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(254, 47);
+            this.button1.Size = new System.Drawing.Size(190, 38);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add New Employee";
             this.button1.UseVisualStyleBackColor = false;
@@ -74,11 +73,10 @@
             this.EmpGrid.BackgroundColor = System.Drawing.SystemColors.Control;
             this.EmpGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.EmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmpGrid.Location = new System.Drawing.Point(13, 143);
-            this.EmpGrid.Margin = new System.Windows.Forms.Padding(4);
+            this.EmpGrid.Location = new System.Drawing.Point(9, 117);
             this.EmpGrid.Name = "EmpGrid";
             this.EmpGrid.RowHeadersVisible = false;
-            this.EmpGrid.Size = new System.Drawing.Size(729, 645);
+            this.EmpGrid.Size = new System.Drawing.Size(547, 524);
             this.EmpGrid.TabIndex = 2;
             this.EmpGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -88,10 +86,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(750, 119);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(562, 97);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 25);
+            this.button2.Size = new System.Drawing.Size(121, 20);
             this.button2.TabIndex = 3;
             this.button2.Text = "Search By ID";
             this.button2.UseVisualStyleBackColor = false;
@@ -103,10 +100,9 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(1119, 118);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(839, 96);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 25);
+            this.button3.Size = new System.Drawing.Size(121, 20);
             this.button3.TabIndex = 4;
             this.button3.Text = "Search By Name";
             this.button3.UseVisualStyleBackColor = false;
@@ -114,11 +110,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(750, 88);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(562, 72);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(530, 22);
+            this.textBox1.Size = new System.Drawing.Size(398, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button4
             // 
@@ -126,13 +122,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(13, 87);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(10, 71);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 48);
+            this.button4.Size = new System.Drawing.Size(88, 39);
             this.button4.TabIndex = 8;
             this.button4.Text = "All";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // comboBox1
             // 
@@ -141,11 +137,10 @@
             "On-Call",
             "Full-Time",
             "Inactive"});
-            this.comboBox1.Location = new System.Drawing.Point(458, 88);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(344, 72);
             this.comboBox1.MaxDropDownItems = 3;
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(284, 24);
+            this.comboBox1.Size = new System.Drawing.Size(214, 21);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.Text = "Status";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -155,10 +150,9 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Tai Le", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(4, 12);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(3, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(281, 62);
+            this.label9.Size = new System.Drawing.Size(222, 49);
             this.label9.TabIndex = 72;
             this.label9.Text = "EMPLOYEES";
             // 
@@ -171,9 +165,10 @@
             this.panel1.Controls.Add(this.BdayLab);
             this.panel1.Controls.Add(this.NameLab);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(750, 144);
+            this.panel1.Location = new System.Drawing.Point(562, 117);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 645);
+            this.panel1.Size = new System.Drawing.Size(410, 524);
             this.panel1.TabIndex = 73;
             // 
             // dataGridView2
@@ -185,18 +180,16 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 238);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 193);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(530, 405);
+            this.dataGridView2.Size = new System.Drawing.Size(398, 329);
             this.dataGridView2.TabIndex = 25;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(306, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(230, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 224);
+            this.pictureBox1.Size = new System.Drawing.Size(168, 182);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
@@ -204,10 +197,9 @@
             // 
             this.PositionLab.AutoSize = true;
             this.PositionLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PositionLab.Location = new System.Drawing.Point(6, 95);
-            this.PositionLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PositionLab.Location = new System.Drawing.Point(4, 77);
             this.PositionLab.Name = "PositionLab";
-            this.PositionLab.Size = new System.Drawing.Size(74, 20);
+            this.PositionLab.Size = new System.Drawing.Size(62, 17);
             this.PositionLab.TabIndex = 23;
             this.PositionLab.Text = "Position:";
             // 
@@ -215,10 +207,9 @@
             // 
             this.StatusLab.AutoSize = true;
             this.StatusLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLab.Location = new System.Drawing.Point(6, 74);
-            this.StatusLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StatusLab.Location = new System.Drawing.Point(4, 60);
             this.StatusLab.Name = "StatusLab";
-            this.StatusLab.Size = new System.Drawing.Size(62, 20);
+            this.StatusLab.Size = new System.Drawing.Size(52, 17);
             this.StatusLab.TabIndex = 22;
             this.StatusLab.Text = "Status:";
             // 
@@ -226,10 +217,9 @@
             // 
             this.BdayLab.AutoSize = true;
             this.BdayLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdayLab.Location = new System.Drawing.Point(6, 53);
-            this.BdayLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BdayLab.Location = new System.Drawing.Point(4, 43);
             this.BdayLab.Name = "BdayLab";
-            this.BdayLab.Size = new System.Drawing.Size(82, 20);
+            this.BdayLab.Size = new System.Drawing.Size(69, 17);
             this.BdayLab.TabIndex = 21;
             this.BdayLab.Text = "Birthdate:";
             // 
@@ -237,10 +227,9 @@
             // 
             this.NameLab.AutoSize = true;
             this.NameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLab.Location = new System.Drawing.Point(6, 32);
-            this.NameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.NameLab.Location = new System.Drawing.Point(4, 26);
             this.NameLab.Name = "NameLab";
-            this.NameLab.Size = new System.Drawing.Size(58, 20);
+            this.NameLab.Size = new System.Drawing.Size(49, 17);
             this.NameLab.TabIndex = 20;
             this.NameLab.Text = "Name:";
             // 
@@ -249,15 +238,14 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 25);
+            this.label1.Size = new System.Drawing.Size(144, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = " Employee Details: ";
             // 
             // EmployeeTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
@@ -268,9 +256,9 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.EmpGrid);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeTab";
-            this.Size = new System.Drawing.Size(1300, 800);
+            this.Size = new System.Drawing.Size(975, 650);
+            this.Load += new System.EventHandler(this.EmployeeTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
