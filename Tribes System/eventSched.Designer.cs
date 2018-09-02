@@ -421,6 +421,7 @@
             this.label9.Size = new System.Drawing.Size(420, 62);
             this.label9.TabIndex = 71;
             this.label9.Text = "EVENT  SCHEDULE";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // eventSched
             // 

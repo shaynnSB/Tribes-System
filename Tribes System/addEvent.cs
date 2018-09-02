@@ -69,27 +69,27 @@ namespace Tribes_System
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            nameBox.Clear();
+            //nameBox.Clear();
         }
 
         private void locBox_Click(object sender, EventArgs e)
         {
-            locBox.Clear();
+            //locBox.Clear();
         }
 
         private void notesBox_Click(object sender, EventArgs e)
         {
-            notesBox.Clear();
+            //notesBox.Clear();
         }
 
         private void nameClientBox_Click(object sender, EventArgs e)
         {
-            nameClientBox.Clear();
+            //nameClientBox.Clear();
         }
 
         private void conClientBox_Click(object sender, EventArgs e)
         {
-            conClientBox.Clear();
+            //conClientBox.Clear();
         }
 
         private void addButt_Click(object sender, EventArgs e)

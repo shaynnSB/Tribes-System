@@ -65,6 +65,14 @@
             this.startMeri = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.downBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dateDownBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -76,7 +84,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(40, 509);
+            this.label4.Location = new System.Drawing.Point(40, 532);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 36);
@@ -118,10 +126,10 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(468, 660);
+            this.addButt.Location = new System.Drawing.Point(527, 672);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
-            this.addButt.Size = new System.Drawing.Size(236, 31);
+            this.addButt.Size = new System.Drawing.Size(177, 31);
             this.addButt.TabIndex = 7;
             this.addButt.Text = "ADD";
             this.addButt.UseVisualStyleBackColor = false;
@@ -136,10 +144,10 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(468, 711);
+            this.cancelButt.Location = new System.Drawing.Point(527, 711);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
-            this.cancelButt.Size = new System.Drawing.Size(236, 31);
+            this.cancelButt.Size = new System.Drawing.Size(177, 31);
             this.cancelButt.TabIndex = 8;
             this.cancelButt.Text = "CANCEL";
             this.cancelButt.UseVisualStyleBackColor = false;
@@ -151,12 +159,11 @@
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameBox.Location = new System.Drawing.Point(47, 127);
+            this.nameBox.Location = new System.Drawing.Point(183, 127);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(657, 27);
+            this.nameBox.Size = new System.Drawing.Size(521, 27);
             this.nameBox.TabIndex = 9;
-            this.nameBox.Text = "Name of Event";
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
@@ -166,12 +173,11 @@
             this.locBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locBox.ForeColor = System.Drawing.Color.Gray;
-            this.locBox.Location = new System.Drawing.Point(47, 175);
+            this.locBox.Location = new System.Drawing.Point(183, 175);
             this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
-            this.locBox.Size = new System.Drawing.Size(657, 27);
+            this.locBox.Size = new System.Drawing.Size(521, 27);
             this.locBox.TabIndex = 10;
-            this.locBox.Text = "Location";
             this.locBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.locBox.Click += new System.EventHandler(this.locBox_Click);
             // 
@@ -181,12 +187,11 @@
             this.nameClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameClientBox.Location = new System.Drawing.Point(47, 553);
+            this.nameClientBox.Location = new System.Drawing.Point(183, 576);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
-            this.nameClientBox.Size = new System.Drawing.Size(657, 27);
+            this.nameClientBox.Size = new System.Drawing.Size(521, 27);
             this.nameClientBox.TabIndex = 11;
-            this.nameClientBox.Text = "Name of Client";
             this.nameClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameClientBox.Click += new System.EventHandler(this.nameClientBox_Click);
             // 
@@ -196,12 +201,11 @@
             this.conClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.conClientBox.Location = new System.Drawing.Point(169, 601);
+            this.conClientBox.Location = new System.Drawing.Point(306, 624);
             this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.conClientBox.Name = "conClientBox";
-            this.conClientBox.Size = new System.Drawing.Size(535, 27);
+            this.conClientBox.Size = new System.Drawing.Size(398, 27);
             this.conClientBox.TabIndex = 12;
-            this.conClientBox.Text = "Contact Number of Client";
             this.conClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.conClientBox.Click += new System.EventHandler(this.conClientBox_Click);
             // 
@@ -235,13 +239,12 @@
             this.notesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.Gray;
-            this.notesBox.Location = new System.Drawing.Point(47, 367);
+            this.notesBox.Location = new System.Drawing.Point(183, 404);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
-            this.notesBox.Size = new System.Drawing.Size(657, 124);
+            this.notesBox.Size = new System.Drawing.Size(521, 124);
             this.notesBox.TabIndex = 24;
-            this.notesBox.Text = "Notes...";
             this.notesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.notesBox.Click += new System.EventHandler(this.notesBox_Click);
             // 
@@ -563,7 +566,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.Gray;
-            this.textBox1.Location = new System.Drawing.Point(46, 601);
+            this.textBox1.Location = new System.Drawing.Point(183, 624);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -578,20 +581,124 @@
             this.downBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.downBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downBox.ForeColor = System.Drawing.Color.Gray;
-            this.downBox.Location = new System.Drawing.Point(48, 320);
+            this.downBox.Location = new System.Drawing.Point(183, 320);
             this.downBox.Margin = new System.Windows.Forms.Padding(4);
             this.downBox.Name = "downBox";
-            this.downBox.Size = new System.Drawing.Size(657, 27);
+            this.downBox.Size = new System.Drawing.Size(522, 27);
             this.downBox.TabIndex = 41;
-            this.downBox.Text = "Downpayment";
             this.downBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(41, 129);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 25);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Event Name:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(43, 177);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 25);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Location:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(43, 322);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(143, 25);
+            this.label12.TabIndex = 44;
+            this.label12.Text = "Downpayment:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(44, 404);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 25);
+            this.label13.TabIndex = 45;
+            this.label13.Text = "Notes:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(43, 578);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 25);
+            this.label14.TabIndex = 46;
+            this.label14.Text = "Name:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(43, 626);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(102, 25);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Contact #:";
+            // 
+            // dateDownBox
+            // 
+            this.dateDownBox.BackColor = System.Drawing.Color.LightGray;
+            this.dateDownBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dateDownBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDownBox.ForeColor = System.Drawing.Color.Gray;
+            this.dateDownBox.Location = new System.Drawing.Point(261, 362);
+            this.dateDownBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dateDownBox.Name = "dateDownBox";
+            this.dateDownBox.Size = new System.Drawing.Size(444, 27);
+            this.dateDownBox.TabIndex = 48;
+            this.dateDownBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(43, 364);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(210, 25);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "Date of Downpayment:";
             // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 774);
+            this.Controls.Add(this.dateDownBox);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.downBox);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.endMeri);
             this.Controls.Add(this.startMeri);
@@ -674,5 +781,13 @@
         private System.Windows.Forms.ComboBox startMeri;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox downBox;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox dateDownBox;
+        private System.Windows.Forms.Label label16;
     }
 }

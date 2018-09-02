@@ -157,8 +157,15 @@ namespace Tribes_System
 
         private void viewPay_Click(object sender, EventArgs e)
         {
-            payDeets form = new payDeets();
+            payDeets form = new payDeets(this);
+            form.nameBox = nameLabel.Text;
+            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
