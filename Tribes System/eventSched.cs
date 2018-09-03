@@ -68,7 +68,6 @@ namespace Tribes_System
             form.nameBox = nameLabel.Text;
             form.locateBox = locLabel.Text;
             form.passNoteBox = notesBox.Text;
-            form.amBox = amLabel.Text;
             form.clientNameBox = clientLabel.Text;
             form.numBox = numLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
@@ -122,15 +121,17 @@ namespace Tribes_System
 
         private void viewEquip_Click(object sender, EventArgs e)
         {
-            viewEquipList form = new viewEquipList(this);
+            addViewEquip form = new addViewEquip(this);
             form.eventName = nameLabel.Text;
+            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
         }
 
         private void viewStaff_Click(object sender, EventArgs e)
         {
-            viewStaffList form = new viewStaffList(this);
+            addViewStaff form = new addViewStaff(this);
             form.eventName = nameLabel.Text;
+            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
         }
 

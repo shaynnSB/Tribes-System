@@ -12,9 +12,28 @@ namespace Tribes_System
 {
     public partial class addViewEquip : Form
     {
-        public addViewEquip()
+        private bool drag = false;
+        private Point startPoint = new Point(0, 0);
+        eventSched form = new eventSched();
+
+        public addViewEquip(eventSched form)
         {
             InitializeComponent();
+            this.form = form;
+        }
+
+        public string eventName
+        {
+            get { return eventLabel.Text; }
+            set { eventLabel.Text = value; }
+        }
+
+        string idPassed;
+
+        public string idValue
+        {
+            get { return this.idPassed; }
+            set { this.idPassed = value; }
         }
 
         private void confirmButt_Click(object sender, EventArgs e)

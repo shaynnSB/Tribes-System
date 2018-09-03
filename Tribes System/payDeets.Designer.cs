@@ -38,8 +38,9 @@
             this.paymentGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dateBox = new System.Windows.Forms.MaskedTextBox();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.dateBox = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.recievedBox = new System.Windows.Forms.TextBox();
             this.remAmButt = new System.Windows.Forms.Button();
@@ -63,20 +64,19 @@
             this.label9 = new System.Windows.Forms.Label();
             this.expBox = new System.Windows.Forms.ComboBox();
             this.amExpBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.totExpLabel = new System.Windows.Forms.Label();
             this.editExpButt = new System.Windows.Forms.Button();
             this.addExpButt = new System.Windows.Forms.Button();
             this.remExpButt = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.statusLabel = new System.Windows.Forms.Label();
+            this.expensesGrid = new System.Windows.Forms.DataGridView();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -216,16 +216,17 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // dateBox
+            // statusLabel
             // 
-            this.dateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dateBox.Location = new System.Drawing.Point(677, 123);
-            this.dateBox.Mask = "0000-00-00";
-            this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(262, 30);
-            this.dateBox.TabIndex = 102;
-            this.dateBox.TextChanged += new System.EventHandler(this.dateBox_TextChanged);
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.statusLabel.Location = new System.Drawing.Point(322, 25);
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(117, 36);
+            this.statusLabel.TabIndex = 103;
+            this.statusLabel.Text = "- Status";
             // 
             // label11
             // 
@@ -238,6 +239,17 @@
             this.label11.Size = new System.Drawing.Size(103, 25);
             this.label11.TabIndex = 101;
             this.label11.Text = "Date Paid:";
+            // 
+            // dateBox
+            // 
+            this.dateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.dateBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dateBox.Location = new System.Drawing.Point(677, 123);
+            this.dateBox.Mask = "0000-00-00";
+            this.dateBox.Name = "dateBox";
+            this.dateBox.Size = new System.Drawing.Size(262, 30);
+            this.dateBox.TabIndex = 102;
+            this.dateBox.TextChanged += new System.EventHandler(this.dateBox_TextChanged);
             // 
             // label10
             // 
@@ -509,13 +521,13 @@
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.expBox);
             this.tabPage2.Controls.Add(this.amExpBox);
-            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.totExpLabel);
             this.tabPage2.Controls.Add(this.editExpButt);
             this.tabPage2.Controls.Add(this.addExpButt);
             this.tabPage2.Controls.Add(this.remExpButt);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label18);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.expensesGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -561,17 +573,17 @@
             this.amExpBox.Size = new System.Drawing.Size(184, 30);
             this.amExpBox.TabIndex = 95;
             // 
-            // label8
+            // totExpLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(554, 420);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 29);
-            this.label8.TabIndex = 94;
-            this.label8.Text = "--";
+            this.totExpLabel.AutoSize = true;
+            this.totExpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totExpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.totExpLabel.Location = new System.Drawing.Point(554, 420);
+            this.totExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.totExpLabel.Name = "totExpLabel";
+            this.totExpLabel.Size = new System.Drawing.Size(31, 29);
+            this.totExpLabel.TabIndex = 94;
+            this.totExpLabel.Text = "--";
             // 
             // editExpButt
             // 
@@ -589,6 +601,7 @@
             this.editExpButt.TabIndex = 89;
             this.editExpButt.Text = "Edit";
             this.editExpButt.UseVisualStyleBackColor = false;
+            this.editExpButt.Click += new System.EventHandler(this.editExpButt_Click);
             // 
             // addExpButt
             // 
@@ -606,6 +619,7 @@
             this.addExpButt.TabIndex = 87;
             this.addExpButt.Text = "Add";
             this.addExpButt.UseVisualStyleBackColor = false;
+            this.addExpButt.Click += new System.EventHandler(this.addExpButt_Click);
             // 
             // remExpButt
             // 
@@ -623,6 +637,7 @@
             this.remExpButt.TabIndex = 86;
             this.remExpButt.Text = "Remove";
             this.remExpButt.UseVisualStyleBackColor = false;
+            this.remExpButt.Click += new System.EventHandler(this.remExpButt_Click);
             // 
             // label13
             // 
@@ -648,26 +663,14 @@
             this.label18.TabIndex = 79;
             this.label18.Text = "EXPENSES";
             // 
-            // dataGridView1
+            // expensesGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(642, 344);
-            this.dataGridView1.TabIndex = 80;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statusLabel.Location = new System.Drawing.Point(338, 25);
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(117, 36);
-            this.statusLabel.TabIndex = 103;
-            this.statusLabel.Text = "- Status";
+            this.expensesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.expensesGrid.Location = new System.Drawing.Point(18, 62);
+            this.expensesGrid.Name = "expensesGrid";
+            this.expensesGrid.RowTemplate.Height = 24;
+            this.expensesGrid.Size = new System.Drawing.Size(642, 344);
+            this.expensesGrid.TabIndex = 80;
             // 
             // payDeets
             // 
@@ -690,7 +693,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expensesGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -724,13 +727,13 @@
         private System.Windows.Forms.Label amRevLabel;
         private System.Windows.Forms.ComboBox expBox;
         private System.Windows.Forms.TextBox amExpBox;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label totExpLabel;
         private System.Windows.Forms.Button editExpButt;
         private System.Windows.Forms.Button addExpButt;
         private System.Windows.Forms.Button remExpButt;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView expensesGrid;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;

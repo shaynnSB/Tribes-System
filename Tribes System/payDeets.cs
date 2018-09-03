@@ -229,7 +229,7 @@ namespace Tribes_System
                 string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
-                MessageBox.Show("Edited Successfully");
+                MessageBox.Show("Removed Successfully");
 
                 DisplayData();
                 ClearData();
@@ -243,6 +243,77 @@ namespace Tribes_System
         private void amRevLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void addExpButt_Click(object sender, EventArgs e)
+        {
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            {
+                //string addQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+
+                //executeMyQuery(addQuery);
+                MessageBox.Show("Added Successfully");
+
+                //DisplayExpData();
+                //ClearExpData();
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Required Details!");
+            }
+        }
+
+        private void editExpButt_Click(object sender, EventArgs e)
+        {
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            {
+                //string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+
+                //executeMyQuery(editQuery);
+                MessageBox.Show("Edited Successfully");
+
+                //DisplayExpData();
+                //ClearExpData();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Update!");
+            }
+        }
+
+        private void remExpButt_Click(object sender, EventArgs e)
+        {
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            {
+                //string remQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+
+                //executeMyQuery(remQuery);
+                MessageBox.Show("Removed Successfully");
+
+                //DisplayExpData();
+                //ClearExpData();
+            }
+            else
+            {
+                MessageBox.Show("Please Select Record to Delete!");
+            }
+        }
+
+        private void DisplayExpData()
+        {
+            string query = "select id, amount, date_paid from amount_paid where event_id = " + idPassed;
+            DataTable table = new DataTable();
+            openConnection();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            closeConnection();
+            adapter.Fill(table);
+            paymentGrid.DataSource = table;
+        }
+
+        private void ClearExpData()
+        {
+            amExpBox.Text = "";
+            expBox.Text = "Category";
         }
     }
 }

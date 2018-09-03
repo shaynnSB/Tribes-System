@@ -12,9 +12,14 @@ namespace Tribes_System
 {
     public partial class addViewStaff : Form
     {
-        public addViewStaff()
+        private bool drag = false;
+        private Point startPoint = new Point(0, 0);
+        eventSched form = new eventSched();
+
+        public addViewStaff(eventSched form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void closeButt_Click(object sender, EventArgs e)
@@ -39,6 +44,20 @@ namespace Tribes_System
             else if (dialogResult == DialogResult.No)
             {
             }
+        }
+
+        public string eventName
+        {
+            get { return eventLabel.Text; }
+            set { eventLabel.Text = value; }
+        }
+
+        string idPassed;
+
+        public string idValue
+        {
+            get { return this.idPassed; }
+            set { this.idPassed = value; }
         }
     }
 }

@@ -31,10 +31,7 @@
             this.notesBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.addEquipButt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.addStaffButt = new System.Windows.Forms.Button();
-            this.amountBox = new System.Windows.Forms.TextBox();
             this.numClientBox = new System.Windows.Forms.TextBox();
             this.locBox = new System.Windows.Forms.TextBox();
             this.eventBox = new System.Windows.Forms.TextBox();
@@ -66,7 +63,7 @@
             this.notesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.Gray;
-            this.notesBox.Location = new System.Drawing.Point(47, 444);
+            this.notesBox.Location = new System.Drawing.Point(47, 332);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
@@ -80,7 +77,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(40, 590);
+            this.label4.Location = new System.Drawing.Point(40, 478);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 36);
@@ -99,22 +96,6 @@
             this.label3.TabIndex = 40;
             this.label3.Text = "EVENT DETAILS";
             // 
-            // addEquipButt
-            // 
-            this.addEquipButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addEquipButt.FlatAppearance.BorderSize = 0;
-            this.addEquipButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addEquipButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEquipButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addEquipButt.Location = new System.Drawing.Point(392, 334);
-            this.addEquipButt.Margin = new System.Windows.Forms.Padding(0);
-            this.addEquipButt.Name = "addEquipButt";
-            this.addEquipButt.Size = new System.Drawing.Size(311, 38);
-            this.addEquipButt.TabIndex = 38;
-            this.addEquipButt.Text = "Add List of Equipment";
-            this.addEquipButt.UseVisualStyleBackColor = false;
-            this.addEquipButt.Click += new System.EventHandler(this.addEquipButt_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -126,43 +107,13 @@
             this.label2.TabIndex = 37;
             this.label2.Text = "-";
             // 
-            // addStaffButt
-            // 
-            this.addStaffButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addStaffButt.FlatAppearance.BorderSize = 0;
-            this.addStaffButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addStaffButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStaffButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addStaffButt.Location = new System.Drawing.Point(47, 334);
-            this.addStaffButt.Margin = new System.Windows.Forms.Padding(0);
-            this.addStaffButt.Name = "addStaffButt";
-            this.addStaffButt.Size = new System.Drawing.Size(311, 38);
-            this.addStaffButt.TabIndex = 33;
-            this.addStaffButt.Text = "Add Staff Lineup";
-            this.addStaffButt.UseVisualStyleBackColor = false;
-            this.addStaffButt.Click += new System.EventHandler(this.addStaffButt_Click);
-            // 
-            // amountBox
-            // 
-            this.amountBox.BackColor = System.Drawing.Color.LightGray;
-            this.amountBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.amountBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountBox.ForeColor = System.Drawing.Color.Gray;
-            this.amountBox.Location = new System.Drawing.Point(47, 396);
-            this.amountBox.Margin = new System.Windows.Forms.Padding(4);
-            this.amountBox.Name = "amountBox";
-            this.amountBox.Size = new System.Drawing.Size(657, 27);
-            this.amountBox.TabIndex = 32;
-            this.amountBox.Text = "Amount";
-            this.amountBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // numClientBox
             // 
             this.numClientBox.BackColor = System.Drawing.Color.LightGray;
             this.numClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.numClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.numClientBox.Location = new System.Drawing.Point(47, 682);
+            this.numClientBox.Location = new System.Drawing.Point(47, 570);
             this.numClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.numClientBox.Name = "numClientBox";
             this.numClientBox.Size = new System.Drawing.Size(657, 27);
@@ -207,7 +158,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(468, 798);
+            this.cancelButt.Location = new System.Drawing.Point(468, 686);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
@@ -226,7 +177,7 @@
             this.saveButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.saveButt.Location = new System.Drawing.Point(468, 747);
+            this.saveButt.Location = new System.Drawing.Point(468, 635);
             this.saveButt.Margin = new System.Windows.Forms.Padding(4);
             this.saveButt.Name = "saveButt";
             this.saveButt.Size = new System.Drawing.Size(236, 31);
@@ -264,7 +215,7 @@
             this.nameClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameClientBox.Location = new System.Drawing.Point(47, 634);
+            this.nameClientBox.Location = new System.Drawing.Point(47, 522);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(657, 27);
@@ -279,7 +230,7 @@
             this.panel1.Location = new System.Drawing.Point(754, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 823);
+            this.panel1.Size = new System.Drawing.Size(1, 711);
             this.panel1.TabIndex = 45;
             // 
             // panel2
@@ -289,14 +240,14 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 823);
+            this.panel2.Size = new System.Drawing.Size(1, 711);
             this.panel2.TabIndex = 45;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(1, 868);
+            this.panel3.Location = new System.Drawing.Point(1, 756);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(753, 1);
@@ -520,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 869);
+            this.ClientSize = new System.Drawing.Size(755, 757);
             this.Controls.Add(this.endMeri);
             this.Controls.Add(this.endMin);
             this.Controls.Add(this.label6);
@@ -538,10 +489,7 @@
             this.Controls.Add(this.notesBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.addEquipButt);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.addStaffButt);
-            this.Controls.Add(this.amountBox);
             this.Controls.Add(this.numClientBox);
             this.Controls.Add(this.locBox);
             this.Controls.Add(this.eventBox);
@@ -569,10 +517,7 @@
         private System.Windows.Forms.TextBox notesBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button addEquipButt;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button addStaffButt;
-        private System.Windows.Forms.TextBox amountBox;
         private System.Windows.Forms.TextBox numClientBox;
         private System.Windows.Forms.TextBox locBox;
         private System.Windows.Forms.TextBox eventBox;

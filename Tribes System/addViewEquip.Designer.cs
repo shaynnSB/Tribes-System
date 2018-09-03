@@ -48,6 +48,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.eventLabel = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -116,7 +117,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(21, 124);
+            this.tabControl1.Location = new System.Drawing.Point(21, 162);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(767, 665);
@@ -285,7 +286,7 @@
             this.panel2.Location = new System.Drawing.Point(810, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 815);
+            this.panel2.Size = new System.Drawing.Size(1, 847);
             this.panel2.TabIndex = 62;
             // 
             // panel1
@@ -296,7 +297,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 815);
+            this.panel1.Size = new System.Drawing.Size(1, 847);
             this.panel1.TabIndex = 60;
             // 
             // panel3
@@ -304,17 +305,30 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Location = new System.Drawing.Point(0, 815);
+            this.panel3.Location = new System.Drawing.Point(0, 847);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(811, 1);
             this.panel3.TabIndex = 61;
             // 
+            // eventLabel
+            // 
+            this.eventLabel.AutoSize = true;
+            this.eventLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.eventLabel.Location = new System.Drawing.Point(15, 114);
+            this.eventLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventLabel.Name = "eventLabel";
+            this.eventLabel.Size = new System.Drawing.Size(176, 36);
+            this.eventLabel.TabIndex = 63;
+            this.eventLabel.Text = "Event Name";
+            // 
             // addViewEquip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 816);
+            this.ClientSize = new System.Drawing.Size(811, 848);
+            this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.title);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
@@ -360,5 +374,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label eventLabel;
     }
 }
