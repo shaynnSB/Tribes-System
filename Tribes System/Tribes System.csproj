@@ -58,6 +58,12 @@
     <Compile Include="addEvent.Designer.cs">
       <DependentUpon>addEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="addFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addFee.Designer.cs">
+      <DependentUpon>addFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="addViewEquip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addEvent.resx">
       <DependentUpon>addEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addFee.resx">
+      <DependentUpon>addFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addViewEquip.resx">
       <DependentUpon>addViewEquip.cs</DependentUpon>

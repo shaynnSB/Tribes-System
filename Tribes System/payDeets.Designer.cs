@@ -266,6 +266,7 @@
             // recievedBox
             // 
             this.recievedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recievedBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.recievedBox.Location = new System.Drawing.Point(677, 74);
             this.recievedBox.Name = "recievedBox";
             this.recievedBox.Size = new System.Drawing.Size(262, 30);
@@ -437,6 +438,7 @@
             this.addFee.TabIndex = 71;
             this.addFee.Text = "Add Additional Fee";
             this.addFee.UseVisualStyleBackColor = false;
+            this.addFee.Click += new System.EventHandler(this.addFee_Click);
             // 
             // addDiscount
             // 
@@ -568,6 +570,7 @@
             // amExpBox
             // 
             this.amExpBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amExpBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.amExpBox.Location = new System.Drawing.Point(766, 196);
             this.amExpBox.Name = "amExpBox";
             this.amExpBox.Size = new System.Drawing.Size(184, 30);
@@ -578,7 +581,7 @@
             this.totExpLabel.AutoSize = true;
             this.totExpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totExpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totExpLabel.Location = new System.Drawing.Point(554, 420);
+            this.totExpLabel.Location = new System.Drawing.Point(509, 420);
             this.totExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totExpLabel.Name = "totExpLabel";
             this.totExpLabel.Size = new System.Drawing.Size(31, 29);
@@ -671,6 +674,7 @@
             this.expensesGrid.RowTemplate.Height = 24;
             this.expensesGrid.Size = new System.Drawing.Size(642, 344);
             this.expensesGrid.TabIndex = 80;
+            this.expensesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expensesGrid_CellClick);
             // 
             // payDeets
             // 

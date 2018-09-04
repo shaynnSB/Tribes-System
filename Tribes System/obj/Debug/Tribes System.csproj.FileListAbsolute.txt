@@ -119,3 +119,4 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.sal
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.customPack.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.addViewEquip.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.payDeets.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.addFee.resources
