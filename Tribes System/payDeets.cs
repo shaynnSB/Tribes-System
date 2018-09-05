@@ -145,7 +145,7 @@ namespace Tribes_System
         {
             if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", " 
+                string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", "
                     + recievedBox.Text + ", '" + dateBox.Text + "')";
 
                 executeMyQuery(insertQuery);
@@ -178,7 +178,7 @@ namespace Tribes_System
             while (reader.Read())
             {
                 amRevLabel.Text = reader["SUM(amount)"].ToString();
-                
+
             }
             closeConnection();
         }
@@ -191,12 +191,12 @@ namespace Tribes_System
 
         private void recievedBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dateBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void payDeets_Load(object sender, EventArgs e)
@@ -214,9 +214,9 @@ namespace Tribes_System
 
         private void editAmButt_Click(object sender, EventArgs e)
         {
-           if (recievedBox.Text != "" && dateBox.Text != "")
+            if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE id = " + id_amount + 
+                string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE id = " + id_amount +
                     "  AND event_id = " + id_Passed;
 
                 executeMyQuery(editQuery);
@@ -253,9 +253,19 @@ namespace Tribes_System
 
         }
 
+
+        private void addFee_Click(object sender, EventArgs e)
+        {
+            addFee form = new addFee();
+            form.ShowDialog();
+        }
+
+
+//-----------------------------------Expenses Tab--------------------------------------------------------------
+
         private void addExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            if (amExpBox.Text != "" && expBox.Text != "")
             {
                 string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
 
@@ -268,9 +278,11 @@ namespace Tribes_System
 
                     if (dt.Rows[0][0].ToString() == "1")
                     {
+                        getPastExp();
+
                         double sum = Convert.ToDouble(past_exp) + Convert.ToDouble(amExpBox.Text);
 
-                        string updateQuery = "UPDATE expenses SET exp_price = " + sum + " WHERE exp_name = '" + expBox.Text + "' AND event_id = " 
+                        string updateQuery = "UPDATE expenses SET exp_price = " + sum + " WHERE exp_name = '" + expBox.Text + "' AND event_id = "
                             + id_Passed;
 
                         executeMyQuery(updateQuery);
@@ -291,7 +303,7 @@ namespace Tribes_System
                         ClearExpData();
                     }
                 }
-                
+
             }
             else
             {
@@ -301,10 +313,9 @@ namespace Tribes_System
 
         private void editExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            if (amExpBox.Text != "" && expBox.Text != "")
             {
-
-                string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp 
+                string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
                     + " AND event_id = " + id_Passed;
 
                 executeMyQuery(editQuery);
@@ -321,7 +332,7 @@ namespace Tribes_System
 
         private void remExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
+            if (amExpBox.Text != "" && expBox.Text != "")
             {
                 string remQuery = "DELETE FROM expenses WHERE event_id = " + id_Passed + " AND no_exp = " + id_exp;
 
@@ -365,20 +376,29 @@ namespace Tribes_System
             expBox.Text = "Category";
         }
 
-        string past_exp;
+        string past_exp; 
 
         private void expensesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             expBox.Text = expensesGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
             amExpBox.Text = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            past_exp = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            //past_exp = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
             id_exp = expensesGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
-        private void addFee_Click(object sender, EventArgs e)
+        private void getPastExp()
         {
-            addFee form = new addFee();
-            form.ShowDialog();
+            string selectQuery = "select * from expenses where event_id = " + id_Passed + " AND exp_name = '" + expBox.Text + "'";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                past_exp = reader["exp_price"].ToString();
+            }
+            closeConnection();
         }
     }
+
 }

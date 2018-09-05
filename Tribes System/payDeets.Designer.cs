@@ -61,6 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.expBox = new System.Windows.Forms.ComboBox();
             this.amExpBox = new System.Windows.Forms.TextBox();
@@ -105,30 +106,32 @@
             // 
             // minButt
             // 
+            this.minButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.minButt.FlatAppearance.BorderSize = 0;
             this.minButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(923, 2);
+            this.minButt.Location = new System.Drawing.Point(933, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
-            this.minButt.Size = new System.Drawing.Size(41, 42);
+            this.minButt.Size = new System.Drawing.Size(41, 46);
             this.minButt.TabIndex = 1;
             this.minButt.UseVisualStyleBackColor = true;
             this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
             // closeButt
             // 
+            this.closeButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeButt.FlatAppearance.BorderSize = 0;
             this.closeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(970, 2);
+            this.closeButt.Location = new System.Drawing.Point(974, 0);
             this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
-            this.closeButt.Size = new System.Drawing.Size(41, 42);
+            this.closeButt.Size = new System.Drawing.Size(41, 46);
             this.closeButt.TabIndex = 0;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
@@ -520,6 +523,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.expBox);
             this.tabPage2.Controls.Add(this.amExpBox);
@@ -539,12 +543,24 @@
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(640, 148);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(98, 25);
+            this.label8.TabIndex = 98;
+            this.label8.Text = "Category:";
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(673, 197);
+            this.label9.Location = new System.Drawing.Point(640, 197);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 25);
@@ -561,19 +577,18 @@
             "Transportation",
             "Fuel",
             "Miscellaneous "});
-            this.expBox.Location = new System.Drawing.Point(678, 145);
+            this.expBox.Location = new System.Drawing.Point(745, 145);
             this.expBox.Name = "expBox";
-            this.expBox.Size = new System.Drawing.Size(272, 33);
+            this.expBox.Size = new System.Drawing.Size(205, 33);
             this.expBox.TabIndex = 96;
-            this.expBox.Text = "Category";
             // 
             // amExpBox
             // 
             this.amExpBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amExpBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.amExpBox.Location = new System.Drawing.Point(766, 196);
+            this.amExpBox.Location = new System.Drawing.Point(745, 196);
             this.amExpBox.Name = "amExpBox";
-            this.amExpBox.Size = new System.Drawing.Size(184, 30);
+            this.amExpBox.Size = new System.Drawing.Size(205, 30);
             this.amExpBox.TabIndex = 95;
             // 
             // totExpLabel
@@ -581,7 +596,7 @@
             this.totExpLabel.AutoSize = true;
             this.totExpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totExpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totExpLabel.Location = new System.Drawing.Point(509, 420);
+            this.totExpLabel.Location = new System.Drawing.Point(406, 419);
             this.totExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totExpLabel.Name = "totExpLabel";
             this.totExpLabel.Size = new System.Drawing.Size(31, 29);
@@ -597,7 +612,7 @@
             this.editExpButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editExpButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editExpButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.editExpButt.Location = new System.Drawing.Point(823, 261);
+            this.editExpButt.Location = new System.Drawing.Point(804, 261);
             this.editExpButt.Margin = new System.Windows.Forms.Padding(4);
             this.editExpButt.Name = "editExpButt";
             this.editExpButt.Size = new System.Drawing.Size(127, 37);
@@ -615,7 +630,7 @@
             this.addExpButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addExpButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addExpButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addExpButt.Location = new System.Drawing.Point(678, 261);
+            this.addExpButt.Location = new System.Drawing.Point(669, 261);
             this.addExpButt.Margin = new System.Windows.Forms.Padding(4);
             this.addExpButt.Name = "addExpButt";
             this.addExpButt.Size = new System.Drawing.Size(127, 37);
@@ -633,7 +648,7 @@
             this.remExpButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remExpButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remExpButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.remExpButt.Location = new System.Drawing.Point(754, 319);
+            this.remExpButt.Location = new System.Drawing.Point(737, 321);
             this.remExpButt.Margin = new System.Windows.Forms.Padding(4);
             this.remExpButt.Name = "remExpButt";
             this.remExpButt.Size = new System.Drawing.Size(127, 37);
@@ -647,7 +662,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(375, 420);
+            this.label13.Location = new System.Drawing.Point(272, 419);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 29);
@@ -672,7 +687,7 @@
             this.expensesGrid.Location = new System.Drawing.Point(18, 62);
             this.expensesGrid.Name = "expensesGrid";
             this.expensesGrid.RowTemplate.Height = 24;
-            this.expensesGrid.Size = new System.Drawing.Size(642, 344);
+            this.expensesGrid.Size = new System.Drawing.Size(615, 344);
             this.expensesGrid.TabIndex = 80;
             this.expensesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expensesGrid_CellClick);
             // 
@@ -747,5 +762,6 @@
         private System.Windows.Forms.Button editAmButt;
         private System.Windows.Forms.MaskedTextBox dateBox;
         private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label label8;
     }
 }
