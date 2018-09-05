@@ -144,18 +144,6 @@
     <Compile Include="salaryReport.Designer.cs">
       <DependentUpon>salaryReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewEquipList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewEquipList.Designer.cs">
-      <DependentUpon>viewEquipList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="viewStaffList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewStaffList.Designer.cs">
-      <DependentUpon>viewStaffList.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,12 +200,6 @@
     </Compile>
     <EmbeddedResource Include="salaryReport.resx">
       <DependentUpon>salaryReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewEquipList.resx">
-      <DependentUpon>viewEquipList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewStaffList.resx">
-      <DependentUpon>viewStaffList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

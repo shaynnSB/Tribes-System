@@ -274,7 +274,7 @@
             this.recievedBox.Name = "recievedBox";
             this.recievedBox.Size = new System.Drawing.Size(262, 30);
             this.recievedBox.TabIndex = 98;
-            this.recievedBox.TextChanged += new System.EventHandler(this.recievedBox_TextChanged);
+            this.recievedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.recievedBox_KeyPress);
             // 
             // remAmButt
             // 
@@ -590,6 +590,7 @@
             this.amExpBox.Name = "amExpBox";
             this.amExpBox.Size = new System.Drawing.Size(205, 30);
             this.amExpBox.TabIndex = 95;
+            this.amExpBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.amExpBox_KeyPress);
             // 
             // totExpLabel
             // 

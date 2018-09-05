@@ -68,14 +68,14 @@
             // 
             this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesBox.ForeColor = System.Drawing.Color.Gray;
+            this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.notesBox.Location = new System.Drawing.Point(166, 326);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(538, 124);
             this.notesBox.TabIndex = 42;
-            this.notesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.notesBox.TextChanged += new System.EventHandler(this.notesBox_TextChanged);
             // 
             // label4
             // 
@@ -116,37 +116,36 @@
             // 
             this.numClientBox.BackColor = System.Drawing.Color.White;
             this.numClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numClientBox.ForeColor = System.Drawing.Color.Gray;
+            this.numClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.numClientBox.Location = new System.Drawing.Point(166, 559);
             this.numClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.numClientBox.Name = "numClientBox";
             this.numClientBox.Size = new System.Drawing.Size(538, 34);
             this.numClientBox.TabIndex = 31;
-            this.numClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // locBox
             // 
             this.locBox.BackColor = System.Drawing.Color.White;
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locBox.ForeColor = System.Drawing.Color.Gray;
+            this.locBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.locBox.Location = new System.Drawing.Point(166, 178);
             this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
             this.locBox.Size = new System.Drawing.Size(538, 34);
             this.locBox.TabIndex = 29;
-            this.locBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.locBox.TextChanged += new System.EventHandler(this.locBox_TextChanged);
             // 
             // eventBox
             // 
             this.eventBox.BackColor = System.Drawing.Color.White;
             this.eventBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventBox.ForeColor = System.Drawing.Color.Gray;
+            this.eventBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.eventBox.Location = new System.Drawing.Point(166, 130);
             this.eventBox.Margin = new System.Windows.Forms.Padding(4);
             this.eventBox.Name = "eventBox";
             this.eventBox.Size = new System.Drawing.Size(538, 34);
             this.eventBox.TabIndex = 28;
-            this.eventBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.eventBox.TextChanged += new System.EventHandler(this.eventBox_TextChanged);
             // 
             // cancelButt
             // 
@@ -212,13 +211,13 @@
             // 
             this.nameClientBox.BackColor = System.Drawing.Color.White;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
+            this.nameClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nameClientBox.Location = new System.Drawing.Point(166, 511);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(538, 34);
             this.nameClientBox.TabIndex = 30;
-            this.nameClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nameClientBox.TextChanged += new System.EventHandler(this.nameClientBox_TextChanged);
             // 
             // panel1
             // 
@@ -293,36 +292,17 @@
             this.startMin.FormattingEnabled = true;
             this.startMin.Items.AddRange(new object[] {
             "00",
-            "01",
-            "02",
-            "03",
-            "04",
             "05",
-            "06",
-            "07",
-            "08",
-            "09",
             "10",
-            "11",
-            "12",
-            "13",
-            "14",
             "15",
-            "16",
-            "17",
-            "18",
-            "19",
             "20",
-            "21",
-            "22",
-            "23",
-            "24",
             "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.startMin.Location = new System.Drawing.Point(546, 233);
             this.startMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMin.Name = "startMin";
@@ -345,15 +325,15 @@
             // 
             this.startHour.FormattingEnabled = true;
             this.startHour.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
             "10",
             "11",
             "12"});
@@ -382,36 +362,17 @@
             this.endMin.FormattingEnabled = true;
             this.endMin.Items.AddRange(new object[] {
             "00",
-            "01",
-            "02",
-            "03",
-            "04",
             "05",
-            "06",
-            "07",
-            "08",
-            "09",
             "10",
-            "11",
-            "12",
-            "13",
-            "14",
             "15",
-            "16",
-            "17",
-            "18",
-            "19",
             "20",
-            "21",
-            "22",
-            "23",
-            "24",
             "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.endMin.Location = new System.Drawing.Point(546, 279);
             this.endMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endMin.Name = "endMin";
@@ -434,15 +395,15 @@
             // 
             this.endHour.FormattingEnabled = true;
             this.endHour.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
             "10",
             "11",
             "12"});

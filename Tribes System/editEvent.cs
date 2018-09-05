@@ -181,5 +181,25 @@ namespace Tribes_System
         {
 
         }
+
+        private void eventBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void locBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void notesBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameClientBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
