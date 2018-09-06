@@ -55,6 +55,7 @@
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
             this.payrollUI1 = new Tribes_System.salaryUI();
+            this.equipment1 = new Tribes_System.Equipment();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -430,6 +431,15 @@
             this.payrollUI1.TabIndex = 12;
             this.payrollUI1.Visible = false;
             // 
+            // equipment1
+            // 
+            this.equipment1.Location = new System.Drawing.Point(150, 76);
+            this.equipment1.Margin = new System.Windows.Forms.Padding(4);
+            this.equipment1.Name = "equipment1";
+            this.equipment1.Size = new System.Drawing.Size(1324, 809);
+            this.equipment1.TabIndex = 13;
+            this.equipment1.Visible = false;
+            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -440,6 +450,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
@@ -484,5 +495,6 @@
         private EmployeeTab employeeTab;
         private financesUI financesUI1;
         private salaryUI payrollUI1;
+        private Equipment equipment1;
     }
 }

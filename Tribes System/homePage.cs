@@ -81,11 +81,19 @@ namespace Tribes_System
         {
             eventSched1.Visible = false;
             employeeTab.Visible = true;
+            payrollUI1.Visible = false;
+            eventSched1.Visible = false;
+            equipment1.Visible = false;
             timer.Start();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            employeeTab.Visible = false;
+            financesUI1.Visible = false;
+            payrollUI1.Visible = false;
+            eventSched1.Visible = false;
+            equipment1.Visible = true;
             timer.Start();
         }
 
@@ -95,6 +103,7 @@ namespace Tribes_System
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
+            equipment1.Visible = false;
             timer.Start();
         }
 
@@ -117,6 +126,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             employeeTab.Visible = false;
             eventSched1.Visible = false;
+            equipment1.Visible = false;
             timer.Start();
         }
 
@@ -125,6 +135,7 @@ namespace Tribes_System
             payrollUI1.Visible = true;
             financesUI1.Visible = false;
             employeeTab.Visible = false;
+            equipment1.Visible = false;
             eventSched1.Visible = false;
             timer.Start();
         }
@@ -168,6 +179,7 @@ namespace Tribes_System
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
+            equipment1.Visible = false;
         }
 
         private void payIcon_Click(object sender, EventArgs e)
@@ -175,6 +187,7 @@ namespace Tribes_System
             payrollUI1.Visible = true;
             financesUI1.Visible = false;
             employeeTab.Visible = false;
+            equipment1.Visible = false;
             eventSched1.Visible = false;
         }
 
