@@ -125,3 +125,37 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.Edi
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.Equipment.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.EquipmentUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.EquipViewUI.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\MySql.Data.xml
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.csprojAssemblyReference.cache
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddContent.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEmployee.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddEquip.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.addFee.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewEquip.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewStaff.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.customPack.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditContent.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditEquip.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.EmployeeTab.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.Equipment.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipmentUI.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipViewUI.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.eventSched.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.financesUI.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.equipButt.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.payDeets.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryUI.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.cache
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.CopyComplete
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes System.pdb
