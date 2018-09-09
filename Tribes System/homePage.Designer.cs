@@ -36,7 +36,7 @@
             this.finButt = new System.Windows.Forms.Button();
             this.payButt = new System.Windows.Forms.Button();
             this.eventButt = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.invButt = new System.Windows.Forms.Button();
             this.empButt = new System.Windows.Forms.Button();
             this.empIcon = new System.Windows.Forms.Button();
             this.iconPanel = new System.Windows.Forms.Panel();
@@ -51,6 +51,7 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
@@ -68,7 +69,7 @@
             this.panelMenu.Controls.Add(this.finButt);
             this.panelMenu.Controls.Add(this.payButt);
             this.panelMenu.Controls.Add(this.eventButt);
-            this.panelMenu.Controls.Add(this.button3);
+            this.panelMenu.Controls.Add(this.invButt);
             this.panelMenu.Controls.Add(this.empButt);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(60, 46);
@@ -173,24 +174,24 @@
             this.eventButt.UseVisualStyleBackColor = false;
             this.eventButt.Click += new System.EventHandler(this.eventButt_Click);
             // 
-            // button3
+            // invButt
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.Location = new System.Drawing.Point(0, 209);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(325, 46);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "   INVENTORY";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.invButt.BackColor = System.Drawing.Color.Transparent;
+            this.invButt.FlatAppearance.BorderSize = 0;
+            this.invButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gainsboro;
+            this.invButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.invButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.invButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invButt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.invButt.Location = new System.Drawing.Point(0, 209);
+            this.invButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.invButt.Name = "invButt";
+            this.invButt.Size = new System.Drawing.Size(325, 46);
+            this.invButt.TabIndex = 1;
+            this.invButt.Text = "   INVENTORY";
+            this.invButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.invButt.UseVisualStyleBackColor = false;
+            this.invButt.Click += new System.EventHandler(this.button3_Click);
             // 
             // empButt
             // 
@@ -258,6 +259,7 @@
             this.finIcon.Size = new System.Drawing.Size(60, 46);
             this.finIcon.TabIndex = 10;
             this.finIcon.UseVisualStyleBackColor = true;
+            this.finIcon.Click += new System.EventHandler(this.finIcon_Click);
             // 
             // calendarIcon
             // 
@@ -396,6 +398,15 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
+            // equipment1
+            // 
+            this.equipment1.Location = new System.Drawing.Point(140, 86);
+            this.equipment1.Margin = new System.Windows.Forms.Padding(4);
+            this.equipment1.Name = "equipment1";
+            this.equipment1.Size = new System.Drawing.Size(1315, 800);
+            this.equipment1.TabIndex = 13;
+            this.equipment1.Visible = false;
+            // 
             // eventSched1
             // 
             this.eventSched1.Location = new System.Drawing.Point(126, 68);
@@ -440,6 +451,7 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
@@ -463,7 +475,7 @@
         private System.Windows.Forms.Button finButt;
         private System.Windows.Forms.Button payButt;
         private System.Windows.Forms.Button eventButt;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button invButt;
         private System.Windows.Forms.Button empButt;
         private System.Windows.Forms.Button minButt;
         private System.Windows.Forms.Button closeButt;
@@ -484,5 +496,6 @@
         private EmployeeTab employeeTab;
         private financesUI financesUI1;
         private salaryUI payrollUI1;
+        private Equipment equipment1;
     }
 }

@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -198,12 +198,6 @@
     <Compile Include="viewEquipList.Designer.cs">
       <DependentUpon>viewEquipList.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewEvent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewEvent.Designer.cs">
-      <DependentUpon>viewEvent.cs</DependentUpon>
-    </Compile>
     <Compile Include="viewStaffList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,9 +287,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewEquipList.resx">
       <DependentUpon>viewEquipList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewEvent.resx">
-      <DependentUpon>viewEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewStaffList.resx">
       <DependentUpon>viewStaffList.cs</DependentUpon>
