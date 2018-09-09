@@ -46,6 +46,12 @@ namespace Tribes_System
 
             string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
                 + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
+
+ //           SELECT * from Product_sales where
+//(From_date BETWEEN '2013-01-03'AND '2013-01-09') OR 
+//(To_date BETWEEN '2013-01-03' AND '2013-01-09') OR 
+//(From_date <= '2013-01-03' AND To_date >= '2013-01-09')
+
             DataTable table = new DataTable();
             openConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
