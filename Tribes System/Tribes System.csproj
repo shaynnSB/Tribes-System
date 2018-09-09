@@ -46,17 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContent.designer.cs">
+      <DependentUpon>AddContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="addEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addEmployee.designer.cs">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddEquip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddEquip.designer.cs">
+      <DependentUpon>AddEquip.cs</DependentUpon>
+    </Compile>
     <Compile Include="addEvent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="addEvent.Designer.cs">
       <DependentUpon>addEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addFee.Designer.cs">
+      <DependentUpon>addFee.cs</DependentUpon>
     </Compile>
     <Compile Include="addViewEquip.cs">
       <SubType>Form</SubType>
@@ -76,11 +94,23 @@
     <Compile Include="customPack.Designer.cs">
       <DependentUpon>customPack.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditContent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContent.designer.cs">
+      <DependentUpon>EditContent.cs</DependentUpon>
+    </Compile>
     <Compile Include="editEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="editEmployee.designer.cs">
       <DependentUpon>editEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditEquip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditEquip.designer.cs">
+      <DependentUpon>EditEquip.cs</DependentUpon>
     </Compile>
     <Compile Include="editEvent.cs">
       <SubType>Form</SubType>
@@ -93,6 +123,24 @@
     </Compile>
     <Compile Include="EmployeeTab.designer.cs">
       <DependentUpon>EmployeeTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Equipment.designer.cs">
+      <DependentUpon>Equipment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EquipmentUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquipmentUI.designer.cs">
+      <DependentUpon>EquipmentUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EquipViewUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquipViewUI.designer.cs">
+      <DependentUpon>EquipViewUI.cs</DependentUpon>
     </Compile>
     <Compile Include="eventSched.cs">
       <SubType>UserControl</SubType>
@@ -150,17 +198,32 @@
     <Compile Include="viewEquipList.Designer.cs">
       <DependentUpon>viewEquipList.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewEvent.Designer.cs">
+      <DependentUpon>viewEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewStaffList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="viewStaffList.Designer.cs">
       <DependentUpon>viewStaffList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddContent.resx">
+      <DependentUpon>AddContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addEmployee.resx">
       <DependentUpon>addEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEquip.resx">
+      <DependentUpon>AddEquip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="addEvent.resx">
       <DependentUpon>addEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addFee.resx">
+      <DependentUpon>addFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="addViewEquip.resx">
       <DependentUpon>addViewEquip.cs</DependentUpon>
@@ -171,14 +234,29 @@
     <EmbeddedResource Include="customPack.resx">
       <DependentUpon>customPack.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditContent.resx">
+      <DependentUpon>EditContent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="editEmployee.resx">
       <DependentUpon>editEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditEquip.resx">
+      <DependentUpon>EditEquip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="editEvent.resx">
       <DependentUpon>editEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeTab.resx">
       <DependentUpon>EmployeeTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipment.resx">
+      <DependentUpon>Equipment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipmentUI.resx">
+      <DependentUpon>EquipmentUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipViewUI.resx">
+      <DependentUpon>EquipViewUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eventSched.resx">
       <DependentUpon>eventSched.cs</DependentUpon>
@@ -215,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewEquipList.resx">
       <DependentUpon>viewEquipList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewEvent.resx">
+      <DependentUpon>viewEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewStaffList.resx">
       <DependentUpon>viewStaffList.cs</DependentUpon>
