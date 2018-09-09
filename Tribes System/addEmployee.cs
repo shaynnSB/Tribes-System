@@ -19,19 +19,18 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        private string stat = "call";
-        private string gender = "male";
+        string stat = "";
 
         public addEmployee()
         {
             InitializeComponent();
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #region useless functions
+
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
 
@@ -65,8 +64,7 @@ namespace Tribes_System
         private void endDate_ValueChanged(object sender, EventArgs e)
         {
 
-        } 
-        #endregion
+        }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
@@ -85,16 +83,14 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            if (nameBox.Text != "" && addressBox.Text != "" && numBox.Text != "" && stat != "" && emergencyContact.Text != "" && emergencyName.Text != "")
+            if (nameBox.Text != "" && addressBox.Text != "" && numBox.Text != "" && stat != "")
             {
-                if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee" && emergencyContact.Text != "Emergency Contact" && emergencyName.Text != "Emergency Contact Name")
+                if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee")
                 {
                     DialogResult dg = MessageBox.Show("Are you sure?","Alert!",MessageBoxButtons.YesNo);
                     if(dg == DialogResult.Yes)
                     {
-                        string insertQuery = "INSERT INTO " +
-                            "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name) " +
-                            "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','"+ emergencyContact.Text + "','"+ emergencyName.Text  + "','"+ dateTimePicker1.Value.ToString("yyyy-mm-dd") +"','"+ this.gender +"', '"+ nameBox.Text +"', '"+ lastnameBox.Text +"')";
+                        string insertQuery = "INSERT INTO employee(emp_name, emp_address, emp_contact, emp_status) VALUES ('" + nameBox.Text + "','" + addressBox.Text + "','" + numBox.Text + "','" + stat + "')";
                         executeMyQuery(insertQuery);
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
                         this.Dispose();
@@ -200,35 +196,6 @@ namespace Tribes_System
             if (radioButton2.Checked)
             {
                 this.stat = "full";
-            }
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton6.Checked)
-            {
-                this.gender = "male";
-            }
-        }
-
-        private void radioButton5_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton5.Checked)
-            {
-                this.gender = "female";
-            }
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioButton5.Checked)
-            {
-                this.gender = "other";
             }
         }
     }
