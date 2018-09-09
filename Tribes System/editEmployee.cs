@@ -44,17 +44,17 @@ namespace Tribes_System
 
             switch (table.Rows[0].ItemArray[4].ToString())
             {
-                case "call":
+                case "On-Call":
                     radioButton1.Checked = true;
-                    this.stat = "call";
+                    this.stat = "On-Call";
                     break;
-                case "full":
+                case "Full-Time":
                     radioButton2.Checked = true;
-                    this.stat = "full";
+                    this.stat = "Full-Time";
                     break;
-                case "fired":
+                case "Inactive":
                     radioButton3.Checked = true;
-                    this.stat = "fired";
+                    this.stat = "Inactive";
                     break;
                 default:
                     break;
@@ -247,7 +247,7 @@ namespace Tribes_System
         {
             if (radioButton1.Checked)
             {
-                this.stat = "call";
+                this.stat = "On-call";
             }
         }
 
@@ -255,7 +255,7 @@ namespace Tribes_System
         {
             if (radioButton2.Checked)
             {
-                this.stat = "full";
+                this.stat = "Full-Time";
             }
         }
 
@@ -263,7 +263,7 @@ namespace Tribes_System
         {
             if (radioButton3.Checked)
             {
-                this.stat = "fired";
+                this.stat = "Inactive";
             }
         }
 

@@ -47,8 +47,8 @@ namespace Tribes_System
             EmpGrid.Columns[10].DisplayIndex = 1;
             EmpGrid.Columns[9].HeaderCell.Value = "First Name";
             EmpGrid.Columns[10].HeaderCell.Value = "Last Name";
-            EmpGrid.Columns[9].Width = 250;
-            EmpGrid.Columns[10].Width = 250;
+            EmpGrid.Columns[9].Width = 200;
+            EmpGrid.Columns[10].Width = 200;
             EmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             this.selectedEmp = "";
@@ -105,13 +105,13 @@ namespace Tribes_System
             switch (comboBox1.SelectedItem.ToString())
             {
                 case "Full-Time":
-                    resetTable("select * from employee where emp_status = 'full'");
+                    resetTable("select * from employee where emp_status = 'Full-Time'");
                     break;
                 case "On-Call":
-                    resetTable("select * from employee where emp_status = 'call'");
+                    resetTable("select * from employee where emp_status = 'Inactive'");
                     break;
                 case "Inactive":
-                    resetTable("select * from employee where emp_status = 'fired'");
+                    resetTable("select * from employee where emp_status = 'Inactive'");
                     break;
                 default:
                     resetTable();
@@ -148,6 +148,11 @@ namespace Tribes_System
         private void button4_Click(object sender, EventArgs e)
         {
             resetTable();
+        }
+
+        private void EmployeeTab_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

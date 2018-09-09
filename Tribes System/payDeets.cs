@@ -170,11 +170,6 @@ namespace Tribes_System
             dateBox.Text = "";
         }
 
-        private void recievedBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void dateBox_TextChanged(object sender, EventArgs e)
         {
             
@@ -208,7 +203,7 @@ namespace Tribes_System
            if (recievedBox.Text != "" && dateBox.Text != "")
             {
                 string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE event_id = " 
-                    + idPassed + "AND id = " + id_amount;
+                    + idPassed + " AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
                 MessageBox.Show("Edited Successfully");
@@ -226,7 +221,7 @@ namespace Tribes_System
         {
             if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+                string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + " AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
                 MessageBox.Show("Removed Successfully");
@@ -249,13 +244,13 @@ namespace Tribes_System
         {
             if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                //string addQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+                string addQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + " AND id = " + id_amount;
 
-                //executeMyQuery(addQuery);
+                executeMyQuery(addQuery);
                 MessageBox.Show("Added Successfully");
 
-                //DisplayExpData();
-                //ClearExpData();
+                DisplayExpData();
+                ClearExpData();
             }
             else
             {
@@ -267,13 +262,13 @@ namespace Tribes_System
         {
             if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                //string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+                string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + " AND id = " + id_amount;
 
-                //executeMyQuery(editQuery);
+                executeMyQuery(editQuery);
                 MessageBox.Show("Edited Successfully");
 
-                //DisplayExpData();
-                //ClearExpData();
+                DisplayExpData();
+                ClearExpData();
             }
             else
             {
@@ -285,13 +280,13 @@ namespace Tribes_System
         {
             if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                //string remQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+                string remQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + " AND id = " + id_amount;
 
-                //executeMyQuery(remQuery);
+                executeMyQuery(remQuery);
                 MessageBox.Show("Removed Successfully");
 
-                //DisplayExpData();
-                //ClearExpData();
+                DisplayExpData();
+                ClearExpData();
             }
             else
             {
@@ -314,6 +309,36 @@ namespace Tribes_System
         {
             amExpBox.Text = "";
             expBox.Text = "Category";
+        }
+
+        private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void amExpBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

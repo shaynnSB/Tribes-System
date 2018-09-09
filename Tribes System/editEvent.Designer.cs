@@ -54,30 +54,35 @@
             this.endMin = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.endHour = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.SuspendLayout();
             // 
             // notesBox
             // 
-            this.notesBox.BackColor = System.Drawing.Color.LightGray;
-            this.notesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesBox.ForeColor = System.Drawing.Color.Gray;
-            this.notesBox.Location = new System.Drawing.Point(47, 332);
+            this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.notesBox.Location = new System.Drawing.Point(165, 333);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
-            this.notesBox.Size = new System.Drawing.Size(657, 124);
+            this.notesBox.Size = new System.Drawing.Size(538, 124);
             this.notesBox.TabIndex = 42;
-            this.notesBox.Text = "Notes...";
-            this.notesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(40, 478);
+            this.label4.Location = new System.Drawing.Point(40, 474);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 36);
@@ -89,7 +94,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(40, 101);
+            this.label3.Location = new System.Drawing.Point(40, 83);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 36);
@@ -100,7 +105,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(368, 288);
+            this.label2.Location = new System.Drawing.Point(415, 293);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 17);
@@ -109,45 +114,37 @@
             // 
             // numClientBox
             // 
-            this.numClientBox.BackColor = System.Drawing.Color.LightGray;
-            this.numClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numClientBox.BackColor = System.Drawing.Color.White;
             this.numClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.numClientBox.Location = new System.Drawing.Point(47, 570);
+            this.numClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.numClientBox.Location = new System.Drawing.Point(277, 566);
             this.numClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.numClientBox.Name = "numClientBox";
-            this.numClientBox.Size = new System.Drawing.Size(657, 27);
+            this.numClientBox.Size = new System.Drawing.Size(427, 34);
             this.numClientBox.TabIndex = 31;
-            this.numClientBox.Text = "Contact Number of Client";
-            this.numClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numClientBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numClientBox_KeyPress);
             // 
             // locBox
             // 
-            this.locBox.BackColor = System.Drawing.Color.LightGray;
-            this.locBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.locBox.BackColor = System.Drawing.Color.White;
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locBox.ForeColor = System.Drawing.Color.Gray;
-            this.locBox.Location = new System.Drawing.Point(47, 192);
+            this.locBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.locBox.Location = new System.Drawing.Point(165, 184);
             this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
-            this.locBox.Size = new System.Drawing.Size(657, 27);
+            this.locBox.Size = new System.Drawing.Size(538, 34);
             this.locBox.TabIndex = 29;
-            this.locBox.Text = "Location";
-            this.locBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // eventBox
             // 
-            this.eventBox.BackColor = System.Drawing.Color.LightGray;
-            this.eventBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.eventBox.BackColor = System.Drawing.Color.White;
             this.eventBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventBox.ForeColor = System.Drawing.Color.Gray;
-            this.eventBox.Location = new System.Drawing.Point(47, 144);
+            this.eventBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.eventBox.Location = new System.Drawing.Point(166, 136);
             this.eventBox.Margin = new System.Windows.Forms.Padding(4);
             this.eventBox.Name = "eventBox";
-            this.eventBox.Size = new System.Drawing.Size(657, 27);
+            this.eventBox.Size = new System.Drawing.Size(538, 34);
             this.eventBox.TabIndex = 28;
-            this.eventBox.Text = "Name of Event";
-            this.eventBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // cancelButt
             // 
@@ -211,17 +208,14 @@
             // 
             // nameClientBox
             // 
-            this.nameClientBox.BackColor = System.Drawing.Color.LightGray;
-            this.nameClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameClientBox.BackColor = System.Drawing.Color.White;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameClientBox.Location = new System.Drawing.Point(47, 522);
+            this.nameClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nameClientBox.Location = new System.Drawing.Point(166, 518);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
-            this.nameClientBox.Size = new System.Drawing.Size(657, 27);
+            this.nameClientBox.Size = new System.Drawing.Size(538, 34);
             this.nameClientBox.TabIndex = 30;
-            this.nameClientBox.Text = "Name of Client";
-            this.nameClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel1
             // 
@@ -257,7 +251,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(368, 241);
+            this.label5.Location = new System.Drawing.Point(415, 241);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(13, 17);
@@ -268,7 +262,7 @@
             // 
             this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Location = new System.Drawing.Point(392, 241);
+            this.endDate.Location = new System.Drawing.Point(94, 286);
             this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
@@ -280,7 +274,7 @@
             // 
             this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Location = new System.Drawing.Point(47, 241);
+            this.startDate.Location = new System.Drawing.Point(94, 237);
             this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
@@ -294,7 +288,7 @@
             this.startMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.startMeri.Location = new System.Drawing.Point(271, 284);
+            this.startMeri.Location = new System.Drawing.Point(617, 237);
             this.startMeri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMeri.Name = "startMeri";
             this.startMeri.Size = new System.Drawing.Size(86, 24);
@@ -337,10 +331,10 @@
             "28",
             "29",
             "30"});
-            this.startMin.Location = new System.Drawing.Point(181, 284);
+            this.startMin.Location = new System.Drawing.Point(538, 237);
             this.startMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startMin.Name = "startMin";
-            this.startMin.Size = new System.Drawing.Size(84, 24);
+            this.startMin.Size = new System.Drawing.Size(73, 24);
             this.startMin.TabIndex = 52;
             this.startMin.Text = "Min";
             // 
@@ -348,7 +342,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(163, 287);
+            this.label9.Location = new System.Drawing.Point(520, 240);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 17);
@@ -371,10 +365,10 @@
             "10",
             "11",
             "12"});
-            this.startHour.Location = new System.Drawing.Point(47, 284);
+            this.startHour.Location = new System.Drawing.Point(435, 237);
             this.startHour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startHour.Name = "startHour";
-            this.startHour.Size = new System.Drawing.Size(108, 24);
+            this.startHour.Size = new System.Drawing.Size(81, 24);
             this.startHour.TabIndex = 50;
             this.startHour.Text = "Hour";
             // 
@@ -384,7 +378,7 @@
             this.endMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.endMeri.Location = new System.Drawing.Point(619, 285);
+            this.endMeri.Location = new System.Drawing.Point(617, 286);
             this.endMeri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endMeri.Name = "endMeri";
             this.endMeri.Size = new System.Drawing.Size(85, 24);
@@ -426,10 +420,10 @@
             "28",
             "29",
             "30"});
-            this.endMin.Location = new System.Drawing.Point(527, 285);
+            this.endMin.Location = new System.Drawing.Point(538, 286);
             this.endMin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endMin.Name = "endMin";
-            this.endMin.Size = new System.Drawing.Size(84, 24);
+            this.endMin.Size = new System.Drawing.Size(73, 24);
             this.endMin.TabIndex = 56;
             this.endMin.Text = "Min";
             // 
@@ -437,7 +431,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(508, 287);
+            this.label6.Location = new System.Drawing.Point(520, 293);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(12, 17);
@@ -460,18 +454,122 @@
             "10",
             "11",
             "12"});
-            this.endHour.Location = new System.Drawing.Point(392, 284);
+            this.endHour.Location = new System.Drawing.Point(435, 286);
             this.endHour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.endHour.Name = "endHour";
-            this.endHour.Size = new System.Drawing.Size(108, 24);
+            this.endHour.Size = new System.Drawing.Size(81, 24);
             this.endHour.TabIndex = 54;
             this.endHour.Text = "Hour";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label15.Location = new System.Drawing.Point(41, 571);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(102, 25);
+            this.label15.TabIndex = 64;
+            this.label15.Text = "Contact #:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(44, 523);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 25);
+            this.label14.TabIndex = 63;
+            this.label14.Text = "Name:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(44, 338);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 25);
+            this.label13.TabIndex = 62;
+            this.label13.Text = "Notes:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(43, 189);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(92, 25);
+            this.label11.TabIndex = 61;
+            this.label11.Text = "Location:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(41, 141);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 25);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "Event Name:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(43, 293);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 17);
+            this.label7.TabIndex = 59;
+            this.label7.Text = "End:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(44, 241);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 17);
+            this.label8.TabIndex = 58;
+            this.label8.Text = "Start:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Location = new System.Drawing.Point(165, 566);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(104, 34);
+            this.textBox1.TabIndex = 65;
+            this.textBox1.Text = "+(63)";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // editEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 757);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.endMeri);
             this.Controls.Add(this.endMin);
             this.Controls.Add(this.label6);
@@ -540,5 +638,13 @@
         private System.Windows.Forms.ComboBox endMin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox endHour;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -117,7 +117,8 @@ namespace Tribes_System
             grid.Columns.Add("Event Name", typeof(string));
 
             eventGrid.DataSource = grid;
-            eventGrid.Columns["Id"].Visible = false; 
+            eventGrid.Columns["Id"].Visible = false;
+            eventGrid.Columns["Event Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void nameLabel_Click(object sender, EventArgs e)

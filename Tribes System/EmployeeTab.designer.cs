@@ -36,6 +36,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.genderLab = new System.Windows.Forms.Label();
             this.addressLab = new System.Windows.Forms.Label();
             this.numLab = new System.Windows.Forms.Label();
             this.ENameLab = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.NameLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.genderLab = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.panel1.SuspendLayout();
@@ -173,6 +173,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(547, 638);
             this.panel1.TabIndex = 73;
+            // 
+            // genderLab
+            // 
+            this.genderLab.AutoSize = true;
+            this.genderLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLab.Location = new System.Drawing.Point(8, 169);
+            this.genderLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.genderLab.Name = "genderLab";
+            this.genderLab.Size = new System.Drawing.Size(69, 20);
+            this.genderLab.TabIndex = 30;
+            this.genderLab.Text = "Gender:";
             // 
             // addressLab
             // 
@@ -303,17 +314,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // genderLab
-            // 
-            this.genderLab.AutoSize = true;
-            this.genderLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLab.Location = new System.Drawing.Point(8, 169);
-            this.genderLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.genderLab.Name = "genderLab";
-            this.genderLab.Size = new System.Drawing.Size(69, 20);
-            this.genderLab.TabIndex = 30;
-            this.genderLab.Text = "Gender:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -342,6 +342,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeTab";
             this.Size = new System.Drawing.Size(1300, 800);
+            this.Load += new System.EventHandler(this.EmployeeTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

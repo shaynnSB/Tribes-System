@@ -156,5 +156,10 @@ namespace Tribes_System
         {
 
         }
+
+        private void numClientBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

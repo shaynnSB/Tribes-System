@@ -19,7 +19,7 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        private string stat = "call";
+        private string stat = "On-Call";
         private string gender = "male";
 
         public addEmployee()
@@ -200,7 +200,7 @@ namespace Tribes_System
         {
             if (radioButton2.Checked)
             {
-                this.stat = "full";
+                this.stat = "Full-Time";
             }
         }
 

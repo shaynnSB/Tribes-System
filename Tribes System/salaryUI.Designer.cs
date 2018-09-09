@@ -31,21 +31,23 @@
             this.label9 = new System.Windows.Forms.Label();
             this.statusBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.employeeGrid = new System.Windows.Forms.DataGridView();
+            this.EmpGrid = new System.Windows.Forms.DataGridView();
             this.payRepButt = new System.Windows.Forms.Button();
             this.allButt = new System.Windows.Forms.Button();
-            this.onCallPanel = new System.Windows.Forms.Panel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.earnedGrid = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.bonusLabel = new System.Windows.Forms.Label();
+            this.deetPanel = new System.Windows.Forms.Panel();
             this.vioLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).BeginInit();
-            this.onCallPanel.SuspendLayout();
+            this.bonusLabel = new System.Windows.Forms.Label();
+            this.totalLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.earnedGrid = new System.Windows.Forms.DataGridView();
+            this.StatusLab = new System.Windows.Forms.Label();
+            this.NameLab = new System.Windows.Forms.Label();
+            this.bonusButt = new System.Windows.Forms.Button();
+            this.vioButt = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
+            this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@
             this.statusBox.Size = new System.Drawing.Size(196, 30);
             this.statusBox.TabIndex = 84;
             this.statusBox.Text = "Status";
+            this.statusBox.SelectedIndexChanged += new System.EventHandler(this.statusBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -87,14 +90,15 @@
             this.label1.TabIndex = 83;
             this.label1.Text = "Employees";
             // 
-            // employeeGrid
+            // EmpGrid
             // 
-            this.employeeGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.employeeGrid.Location = new System.Drawing.Point(45, 204);
-            this.employeeGrid.Name = "employeeGrid";
-            this.employeeGrid.RowTemplate.Height = 24;
-            this.employeeGrid.Size = new System.Drawing.Size(715, 505);
-            this.employeeGrid.TabIndex = 82;
+            this.EmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmpGrid.Location = new System.Drawing.Point(45, 204);
+            this.EmpGrid.Name = "EmpGrid";
+            this.EmpGrid.RowTemplate.Height = 24;
+            this.EmpGrid.Size = new System.Drawing.Size(715, 505);
+            this.EmpGrid.TabIndex = 82;
+            this.EmpGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpGrid_CellClick);
             // 
             // payRepButt
             // 
@@ -132,109 +136,25 @@
             this.allButt.UseVisualStyleBackColor = false;
             this.allButt.Click += new System.EventHandler(this.allButt_Click);
             // 
-            // onCallPanel
+            // deetPanel
             // 
-            this.onCallPanel.BackColor = System.Drawing.Color.Silver;
-            this.onCallPanel.Controls.Add(this.vioLabel);
-            this.onCallPanel.Controls.Add(this.bonusLabel);
-            this.onCallPanel.Controls.Add(this.label5);
-            this.onCallPanel.Controls.Add(this.label4);
-            this.onCallPanel.Controls.Add(this.label3);
-            this.onCallPanel.Controls.Add(this.label2);
-            this.onCallPanel.Controls.Add(this.earnedGrid);
-            this.onCallPanel.Controls.Add(this.statusLabel);
-            this.onCallPanel.Controls.Add(this.nameLabel);
-            this.onCallPanel.Location = new System.Drawing.Point(786, 204);
-            this.onCallPanel.Name = "onCallPanel";
-            this.onCallPanel.Size = new System.Drawing.Size(516, 505);
-            this.onCallPanel.TabIndex = 88;
-            this.onCallPanel.Visible = false;
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nameLabel.Location = new System.Drawing.Point(16, 26);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(205, 29);
-            this.nameLabel.TabIndex = 89;
-            this.nameLabel.Text = "Employees Name";
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.AutoSize = true;
-            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statusLabel.Location = new System.Drawing.Point(16, 55);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(94, 25);
-            this.statusLabel.TabIndex = 90;
-            this.statusLabel.Text = "STATUS";
-            // 
-            // earnedGrid
-            // 
-            this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.earnedGrid.Location = new System.Drawing.Point(21, 86);
-            this.earnedGrid.Name = "earnedGrid";
-            this.earnedGrid.RowTemplate.Height = 24;
-            this.earnedGrid.Size = new System.Drawing.Size(471, 280);
-            this.earnedGrid.TabIndex = 91;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(247, 384);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 25);
-            this.label2.TabIndex = 92;
-            this.label2.Text = "Violations:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(247, 418);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 25);
-            this.label3.TabIndex = 93;
-            this.label3.Text = "Bonus:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(247, 453);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 25);
-            this.label4.TabIndex = 94;
-            this.label4.Text = "TOTAL:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(387, 453);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 25);
-            this.label5.TabIndex = 95;
-            this.label5.Text = "--";
-            // 
-            // bonusLabel
-            // 
-            this.bonusLabel.AutoSize = true;
-            this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusLabel.Location = new System.Drawing.Point(387, 418);
-            this.bonusLabel.Name = "bonusLabel";
-            this.bonusLabel.Size = new System.Drawing.Size(26, 25);
-            this.bonusLabel.TabIndex = 96;
-            this.bonusLabel.Text = "--";
+            this.deetPanel.BackColor = System.Drawing.Color.Silver;
+            this.deetPanel.Controls.Add(this.vioButt);
+            this.deetPanel.Controls.Add(this.bonusButt);
+            this.deetPanel.Controls.Add(this.vioLabel);
+            this.deetPanel.Controls.Add(this.bonusLabel);
+            this.deetPanel.Controls.Add(this.totalLabel);
+            this.deetPanel.Controls.Add(this.label4);
+            this.deetPanel.Controls.Add(this.label3);
+            this.deetPanel.Controls.Add(this.label2);
+            this.deetPanel.Controls.Add(this.earnedGrid);
+            this.deetPanel.Controls.Add(this.StatusLab);
+            this.deetPanel.Controls.Add(this.NameLab);
+            this.deetPanel.Location = new System.Drawing.Point(786, 204);
+            this.deetPanel.Name = "deetPanel";
+            this.deetPanel.Size = new System.Drawing.Size(516, 505);
+            this.deetPanel.TabIndex = 88;
+            this.deetPanel.Visible = false;
             // 
             // vioLabel
             // 
@@ -247,23 +167,143 @@
             this.vioLabel.TabIndex = 97;
             this.vioLabel.Text = "--";
             // 
+            // bonusLabel
+            // 
+            this.bonusLabel.AutoSize = true;
+            this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bonusLabel.Location = new System.Drawing.Point(387, 418);
+            this.bonusLabel.Name = "bonusLabel";
+            this.bonusLabel.Size = new System.Drawing.Size(26, 25);
+            this.bonusLabel.TabIndex = 96;
+            this.bonusLabel.Text = "--";
+            // 
+            // totalLabel
+            // 
+            this.totalLabel.AutoSize = true;
+            this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.totalLabel.Location = new System.Drawing.Point(387, 453);
+            this.totalLabel.Name = "totalLabel";
+            this.totalLabel.Size = new System.Drawing.Size(28, 25);
+            this.totalLabel.TabIndex = 95;
+            this.totalLabel.Text = "--";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Location = new System.Drawing.Point(247, 453);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.TabIndex = 94;
+            this.label4.Text = "TOTAL:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(247, 418);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 25);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "Bonus:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Location = new System.Drawing.Point(247, 384);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 25);
+            this.label2.TabIndex = 92;
+            this.label2.Text = "Violations:";
+            // 
+            // earnedGrid
+            // 
+            this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.earnedGrid.Location = new System.Drawing.Point(21, 86);
+            this.earnedGrid.Name = "earnedGrid";
+            this.earnedGrid.RowTemplate.Height = 24;
+            this.earnedGrid.Size = new System.Drawing.Size(471, 280);
+            this.earnedGrid.TabIndex = 91;
+            // 
+            // StatusLab
+            // 
+            this.StatusLab.AutoSize = true;
+            this.StatusLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StatusLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.StatusLab.Location = new System.Drawing.Point(16, 55);
+            this.StatusLab.Name = "StatusLab";
+            this.StatusLab.Size = new System.Drawing.Size(94, 25);
+            this.StatusLab.TabIndex = 90;
+            this.StatusLab.Text = "STATUS";
+            // 
+            // NameLab
+            // 
+            this.NameLab.AutoSize = true;
+            this.NameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.NameLab.Location = new System.Drawing.Point(16, 26);
+            this.NameLab.Name = "NameLab";
+            this.NameLab.Size = new System.Drawing.Size(205, 29);
+            this.NameLab.TabIndex = 89;
+            this.NameLab.Text = "Employees Name";
+            // 
+            // bonusButt
+            // 
+            this.bonusButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bonusButt.FlatAppearance.BorderSize = 0;
+            this.bonusButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.bonusButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.bonusButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bonusButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.bonusButt.Location = new System.Drawing.Point(21, 434);
+            this.bonusButt.Margin = new System.Windows.Forms.Padding(4);
+            this.bonusButt.Name = "bonusButt";
+            this.bonusButt.Size = new System.Drawing.Size(144, 37);
+            this.bonusButt.TabIndex = 89;
+            this.bonusButt.Text = "Bonus";
+            this.bonusButt.UseVisualStyleBackColor = false;
+            // 
+            // vioButt
+            // 
+            this.vioButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vioButt.FlatAppearance.BorderSize = 0;
+            this.vioButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.vioButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.vioButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vioButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vioButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.vioButt.Location = new System.Drawing.Point(21, 389);
+            this.vioButt.Margin = new System.Windows.Forms.Padding(4);
+            this.vioButt.Name = "vioButt";
+            this.vioButt.Size = new System.Drawing.Size(144, 37);
+            this.vioButt.TabIndex = 98;
+            this.vioButt.Text = "Violations";
+            this.vioButt.UseVisualStyleBackColor = false;
+            // 
             // salaryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.onCallPanel);
+            this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.allButt);
             this.Controls.Add(this.payRepButt);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.employeeGrid);
+            this.Controls.Add(this.EmpGrid);
             this.Name = "salaryUI";
             this.Size = new System.Drawing.Size(1315, 800);
             this.Load += new System.EventHandler(this.payrollUI_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.employeeGrid)).EndInit();
-            this.onCallPanel.ResumeLayout(false);
-            this.onCallPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).EndInit();
+            this.deetPanel.ResumeLayout(false);
+            this.deetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -275,18 +315,20 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox statusBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView employeeGrid;
+        private System.Windows.Forms.DataGridView EmpGrid;
         private System.Windows.Forms.Button payRepButt;
         private System.Windows.Forms.Button allButt;
-        private System.Windows.Forms.Panel onCallPanel;
+        private System.Windows.Forms.Panel deetPanel;
         private System.Windows.Forms.Label vioLabel;
         private System.Windows.Forms.Label bonusLabel;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label totalLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView earnedGrid;
-        private System.Windows.Forms.Label statusLabel;
-        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label StatusLab;
+        private System.Windows.Forms.Label NameLab;
+        private System.Windows.Forms.Button vioButt;
+        private System.Windows.Forms.Button bonusButt;
     }
 }

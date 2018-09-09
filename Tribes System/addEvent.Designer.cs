@@ -155,59 +155,56 @@
             // 
             // nameBox
             // 
-            this.nameBox.BackColor = System.Drawing.Color.LightGray;
-            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.BackColor = System.Drawing.Color.White;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.ForeColor = System.Drawing.Color.Gray;
+            this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nameBox.Location = new System.Drawing.Point(194, 127);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(510, 27);
+            this.nameBox.Size = new System.Drawing.Size(510, 34);
             this.nameBox.TabIndex = 9;
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // locBox
             // 
-            this.locBox.BackColor = System.Drawing.Color.LightGray;
-            this.locBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.locBox.BackColor = System.Drawing.Color.White;
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.locBox.ForeColor = System.Drawing.Color.Gray;
+            this.locBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.locBox.Location = new System.Drawing.Point(194, 175);
             this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
-            this.locBox.Size = new System.Drawing.Size(510, 27);
+            this.locBox.Size = new System.Drawing.Size(510, 34);
             this.locBox.TabIndex = 10;
             this.locBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.locBox.Click += new System.EventHandler(this.locBox_Click);
             // 
             // nameClientBox
             // 
-            this.nameClientBox.BackColor = System.Drawing.Color.LightGray;
-            this.nameClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameClientBox.BackColor = System.Drawing.Color.White;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameClientBox.ForeColor = System.Drawing.Color.Gray;
+            this.nameClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nameClientBox.Location = new System.Drawing.Point(194, 576);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
-            this.nameClientBox.Size = new System.Drawing.Size(510, 27);
+            this.nameClientBox.Size = new System.Drawing.Size(510, 34);
             this.nameClientBox.TabIndex = 11;
             this.nameClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameClientBox.Click += new System.EventHandler(this.nameClientBox_Click);
             // 
             // conClientBox
             // 
-            this.conClientBox.BackColor = System.Drawing.Color.LightGray;
-            this.conClientBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.conClientBox.BackColor = System.Drawing.Color.White;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conClientBox.ForeColor = System.Drawing.Color.Gray;
+            this.conClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.conClientBox.Location = new System.Drawing.Point(306, 624);
             this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.conClientBox.Name = "conClientBox";
-            this.conClientBox.Size = new System.Drawing.Size(398, 27);
+            this.conClientBox.Size = new System.Drawing.Size(398, 34);
             this.conClientBox.TabIndex = 12;
             this.conClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.conClientBox.Click += new System.EventHandler(this.conClientBox_Click);
+            this.conClientBox.TextChanged += new System.EventHandler(this.conClientBox_TextChanged);
+            this.conClientBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.conClientBox_KeyPress);
             // 
             // label2
             // 
@@ -235,10 +232,9 @@
             // 
             // notesBox
             // 
-            this.notesBox.BackColor = System.Drawing.Color.LightGray;
-            this.notesBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.notesBox.ForeColor = System.Drawing.Color.Gray;
+            this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.notesBox.Location = new System.Drawing.Point(194, 404);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
@@ -562,31 +558,30 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Gray;
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.textBox1.Location = new System.Drawing.Point(194, 624);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(104, 27);
+            this.textBox1.Size = new System.Drawing.Size(104, 34);
             this.textBox1.TabIndex = 40;
             this.textBox1.Text = "+(63)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // downBox
             // 
-            this.downBox.BackColor = System.Drawing.Color.LightGray;
-            this.downBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.downBox.BackColor = System.Drawing.Color.White;
             this.downBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.downBox.ForeColor = System.Drawing.Color.Gray;
+            this.downBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.downBox.Location = new System.Drawing.Point(194, 320);
             this.downBox.Margin = new System.Windows.Forms.Padding(4);
             this.downBox.Name = "downBox";
-            this.downBox.Size = new System.Drawing.Size(511, 27);
+            this.downBox.Size = new System.Drawing.Size(511, 34);
             this.downBox.TabIndex = 41;
             this.downBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.downBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.downBox_KeyPress);
             // 
             // label10
             // 
@@ -662,14 +657,13 @@
             // 
             // dateDownBox
             // 
-            this.dateDownBox.BackColor = System.Drawing.Color.LightGray;
-            this.dateDownBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dateDownBox.BackColor = System.Drawing.Color.White;
             this.dateDownBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDownBox.ForeColor = System.Drawing.Color.Gray;
+            this.dateDownBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dateDownBox.Location = new System.Drawing.Point(261, 362);
             this.dateDownBox.Margin = new System.Windows.Forms.Padding(4);
             this.dateDownBox.Name = "dateDownBox";
-            this.dateDownBox.Size = new System.Drawing.Size(444, 27);
+            this.dateDownBox.Size = new System.Drawing.Size(444, 34);
             this.dateDownBox.TabIndex = 48;
             this.dateDownBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
