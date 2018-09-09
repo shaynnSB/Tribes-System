@@ -40,8 +40,6 @@ namespace Tribes_System
             startDate.CustomFormat = "yyyy-MM-dd";
             endDate.Format = DateTimePickerFormat.Custom;
             endDate.CustomFormat = "yyyy-MM-dd";
-            downDate.Format = DateTimePickerFormat.Custom;
-            downDate.CustomFormat = "yyyy-MM-dd";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -96,30 +94,14 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            if (downBox.Text != "")
-            {
-                string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, downpayment, down_date, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
-                + startDate.Text + "','" + endDate.Text + "','" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHour.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', "
-                + downBox.Text + ", '" + downDate + "', 'Partially Paid')";
+            string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
+                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','" 
+                + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
+                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid')";
 
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
-                this.Close();
-            }
-            else
-            {
-                string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
-                + startDate.Text + "','" + endDate.Text + "','" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHour.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid')";
-
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
-                this.Close();
-            }
-            
+            executeMyQuery(insertQuery);
+            MessageBox.Show("Added Successfully");
+            this.Close();
         }
 
         public void openConnection()
@@ -187,25 +169,6 @@ namespace Tribes_System
         {
             this.startPoint = e.Location;
             this.drag = true;
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void conClientBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-            // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
         }
     }
 }
