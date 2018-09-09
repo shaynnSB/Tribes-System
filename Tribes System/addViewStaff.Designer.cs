@@ -51,6 +51,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.eventLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.assignedGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
@@ -155,7 +157,7 @@
             this.assignedGrid.Location = new System.Drawing.Point(16, 21);
             this.assignedGrid.Name = "assignedGrid";
             this.assignedGrid.RowTemplate.Height = 24;
-            this.assignedGrid.Size = new System.Drawing.Size(726, 486);
+            this.assignedGrid.Size = new System.Drawing.Size(596, 482);
             this.assignedGrid.TabIndex = 0;
             // 
             // tabPage2
@@ -217,6 +219,7 @@
             this.addButt.TabIndex = 93;
             this.addButt.Text = "Add";
             this.addButt.UseVisualStyleBackColor = false;
+            this.addButt.Click += new System.EventHandler(this.addButt_Click);
             // 
             // addGrid
             // 
@@ -226,6 +229,7 @@
             this.addGrid.RowTemplate.Height = 24;
             this.addGrid.Size = new System.Drawing.Size(348, 328);
             this.addGrid.TabIndex = 92;
+            this.addGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.addGrid_cellClick);
             // 
             // removeButt
             // 
@@ -243,6 +247,7 @@
             this.removeButt.TabIndex = 91;
             this.removeButt.Text = "Remove";
             this.removeButt.UseVisualStyleBackColor = false;
+            this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
             // 
             // confirmButt
             // 
@@ -301,6 +306,7 @@
             this.listEmpGrid.RowTemplate.Height = 24;
             this.listEmpGrid.Size = new System.Drawing.Size(348, 328);
             this.listEmpGrid.TabIndex = 1;
+            this.listEmpGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listEmpGrid_CellClick);
             // 
             // panel1
             // 
@@ -346,6 +352,23 @@
             this.eventLabel.Size = new System.Drawing.Size(176, 36);
             this.eventLabel.TabIndex = 64;
             this.eventLabel.Text = "Event Name";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(617, 473);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 30);
+            this.button1.TabIndex = 90;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // addViewStaff
             // 
@@ -401,5 +424,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label eventLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

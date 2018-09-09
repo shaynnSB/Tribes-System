@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class eventSched : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root; Convert Zero Datetime = True;");
 
         DataTable grid = new DataTable();
         int selectedRow;
@@ -77,7 +77,6 @@ namespace Tribes_System
             form.clientNameBox = clientLabel.Text;
             form.numBox = numLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
-            //form.statusOfEvent = status; 
             form.ShowDialog();
         }
 
@@ -108,7 +107,6 @@ namespace Tribes_System
                 notesBox.Text = reader["event_notes"].ToString();
                 clientLabel.Text = reader["client_name"].ToString();
                 numLabel.Text = reader["client_contact"].ToString();
-                string status = reader["event_status"].ToString();
             }
             closeConnection();
         }

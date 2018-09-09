@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Tribes_System
 {
-    public partial class addEmployee : Form
+    public partial class editEmployee : Form
     {
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
@@ -19,19 +19,72 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        private string stat = "call";
-        private string gender = "male";
+        string empid;
+        string stat = "";
+        string gender = "";
 
-        public addEmployee()
+        public editEmployee(string id)
         {
+            this.empid = id;
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Now;
+            string query = "select * from employee where id_emp = " + empid;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            //nameBox.Text = table.Rows[0].ItemArray[1].ToString();
+            addressBox.Text = table.Rows[0].ItemArray[2].ToString();
+            numBox.Text = table.Rows[0].ItemArray[3].ToString();
+            emergencyContact.Text = table.Rows[0].ItemArray[5].ToString();
+            emergencyName.Text = table.Rows[0].ItemArray[6].ToString();
+            nameBox.Text = table.Rows[0].ItemArray[9].ToString();
+            lastnameBox.Text = table.Rows[0].ItemArray[10].ToString();
+            //DateTime dt = ;
+            dateTimePicker1.Value = (DateTime)table.Rows[0].ItemArray[7];
+
+            switch (table.Rows[0].ItemArray[4].ToString())
+            {
+                case "call":
+                    radioButton1.Checked = true;
+                    this.stat = "call";
+                    break;
+                case "full":
+                    radioButton2.Checked = true;
+                    this.stat = "full";
+                    break;
+                case "fired":
+                    radioButton3.Checked = true;
+                    this.stat = "fired";
+                    break;
+                default:
+                    break;
+            }
+
+            switch (table.Rows[0].ItemArray[8].ToString())
+            {
+                case "male":
+                    radioButton6.Checked = true;
+                    this.gender = "male";
+                    break;
+                case "female":
+                    radioButton5.Checked = true;
+                    this.gender = "female";
+                    break;
+                case "other":
+                    radioButton4.Checked = true;
+                    this.gender = "other";
+                    break;
+                default:
+                    break;
+            }
+
         }
-        
+
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         #region useless functions
         private void startDate_ValueChanged(object sender, EventArgs e)
         {
@@ -93,9 +146,11 @@ namespace Tribes_System
                     DialogResult dg = MessageBox.Show("Are you sure?","Alert!",MessageBoxButtons.YesNo);
                     if(dg == DialogResult.Yes)
                     {
-                        string insertQuery = "INSERT INTO " +
-                            "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name) " +
-                            "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','"+ emergencyContact.Text + "','"+ emergencyName.Text  + "','"+ dateTimePicker1.Value.ToString("yyyy-MM-dd") +"','"+ this.gender +"', '"+ nameBox.Text +"', '"+ lastnameBox.Text +"')";
+                        string insertQuery = "UPDATE employee SET " +
+                            "emp_address = '" + addressBox.Text + "', emp_contact = '" + numBox.Text + "', emp_status = '" + stat + "'," +
+                            "emergency_contact = '" + emergencyContact.Text + "', emergency_name = '" + emergencyName.Text + "', birthdate = '" + 
+                            dateTimePicker1.Value.ToString("yyyy-mm-dd") + "', gender = '"+ this.gender +"', first_name = '" + nameBox.Text + "', last_name = " + lastnameBox.Text +
+                            " WHERE id_emp = "+ this.empid;
                         executeMyQuery(insertQuery);
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
                         this.Dispose();
@@ -141,7 +196,7 @@ namespace Tribes_System
                 if (cmd.ExecuteNonQuery() == 1)
                 {
                     //MessageBox.Show("Executed");
-                    MessageBox.Show("Employee Added Successfully");
+                    MessageBox.Show("Employee Edited Successfully");
                 }
 
                 else
@@ -204,9 +259,12 @@ namespace Tribes_System
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButton3.Checked)
+            {
+                this.stat = "fired";
+            }
         }
 
         private void radioButton6_CheckedChanged(object sender, EventArgs e)
