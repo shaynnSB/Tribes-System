@@ -249,7 +249,7 @@
             this.viewPay.Name = "viewPay";
             this.viewPay.Size = new System.Drawing.Size(255, 38);
             this.viewPay.TabIndex = 76;
-            this.viewPay.Text = "Monetary Details";
+            this.viewPay.Text = "View Monetary Details";
             this.viewPay.UseVisualStyleBackColor = false;
             this.viewPay.Click += new System.EventHandler(this.viewPay_Click);
             // 
@@ -301,7 +301,7 @@
             this.viewEquip.Name = "viewEquip";
             this.viewEquip.Size = new System.Drawing.Size(255, 38);
             this.viewEquip.TabIndex = 70;
-            this.viewEquip.Text = "List of Equipment";
+            this.viewEquip.Text = "View List of Equipment";
             this.viewEquip.UseVisualStyleBackColor = false;
             this.viewEquip.Click += new System.EventHandler(this.viewEquip_Click);
             // 
@@ -317,7 +317,7 @@
             this.viewStaff.Name = "viewStaff";
             this.viewStaff.Size = new System.Drawing.Size(256, 38);
             this.viewStaff.TabIndex = 69;
-            this.viewStaff.Text = " Staff Lineup";
+            this.viewStaff.Text = "View Staff Lineup";
             this.viewStaff.UseVisualStyleBackColor = false;
             this.viewStaff.Click += new System.EventHandler(this.viewStaff_Click);
             // 

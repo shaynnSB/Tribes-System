@@ -18,10 +18,7 @@ namespace Tribes_System
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
         string id_amount;
-        string id_exp;
-        string id_Passed;
-        string statusEvent;
-
+        
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
@@ -101,16 +98,12 @@ namespace Tribes_System
             set { eventLabel.Text = value; }
         }
 
+        string idPassed;
+
         public string idValue
         {
-            get { return this.id_Passed; }
-            set { this.id_Passed = value; }
-        }
-
-        public string statusOfEvent
-        {
-            get { return this.statusEvent; }
-            set { this.statusEvent = value; }
+            get { return this.idPassed; }
+            set { this.idPassed = value; }
         }
 
         public void executeMyQuery(string query)
@@ -145,7 +138,7 @@ namespace Tribes_System
         {
             if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", "
+                string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + idPassed + ", " 
                     + recievedBox.Text + ", '" + dateBox.Text + "')";
 
                 executeMyQuery(insertQuery);
@@ -162,25 +155,13 @@ namespace Tribes_System
 
         private void DisplayData()
         {
-            string query = "select id, amount, date_paid from amount_paid where event_id = " + id_Passed;
+            string query = "select id, amount, date_paid from amount_paid where event_id = " + idPassed;
             DataTable table = new DataTable();
             openConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             closeConnection();
             adapter.Fill(table);
-            paymentGrid.DataSource = table;
-
-            string selectQuery = "select SUM(amount) from amount_paid where event_id = " + id_Passed;
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                amRevLabel.Text = reader["SUM(amount)"].ToString();
-
-            }
-            closeConnection();
+            paymentGrid.DataSource = table; 
         }
 
         private void ClearData()
@@ -189,15 +170,30 @@ namespace Tribes_System
             dateBox.Text = "";
         }
 
+        private void recievedBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void dateBox_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void payDeets_Load(object sender, EventArgs e)
         {
             DisplayData();
-            DisplayExpData();
+
+            string selectQuery = "select SUM(amount) from amount_paid where event_id = " + idPassed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                amRevLabel.Text = reader["SUM(amount)"].ToString();
+            }
+            closeConnection();
         }
 
         private void paymentGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -209,10 +205,10 @@ namespace Tribes_System
 
         private void editAmButt_Click(object sender, EventArgs e)
         {
-            if (recievedBox.Text != "" && dateBox.Text != "")
+           if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE id = " + id_amount +
-                    "  AND event_id = " + id_Passed;
+                string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE event_id = " 
+                    + idPassed + "AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
                 MessageBox.Show("Edited Successfully");
@@ -230,7 +226,8 @@ namespace Tribes_System
         {
             if (recievedBox.Text != "" && dateBox.Text != "")
             {
-                string editQuery = "DELETE FROM amount_paid WHERE id = " + id_amount + "  AND event_id = " + id_Passed;
+                string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
+
                 executeMyQuery(editQuery);
                 MessageBox.Show("Removed Successfully");
 
@@ -248,57 +245,17 @@ namespace Tribes_System
 
         }
 
-
-        private void addFee_Click(object sender, EventArgs e)
-        {
-            addFee form = new addFee();
-            form.ShowDialog();
-        }
-
-
-//-----------------------------------Expenses Tab--------------------------------------------------------------
-
         private void addExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && expBox.Text != "")
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
+                //string addQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
 
-                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
-                {
+                //executeMyQuery(addQuery);
+                MessageBox.Show("Added Successfully");
 
-                    DataTable dt = new DataTable();
-
-                    adpt.Fill(dt);
-
-                    if (dt.Rows[0][0].ToString() == "1")
-                    {
-                        getPastExp();
-
-                        double sum = Convert.ToDouble(past_exp) + Convert.ToDouble(amExpBox.Text);
-
-                        string updateQuery = "UPDATE expenses SET exp_price = " + sum + " WHERE exp_name = '" + expBox.Text + "' AND event_id = "
-                            + id_Passed;
-
-                        executeMyQuery(updateQuery);
-                        MessageBox.Show("Added Successfully");
-
-                        DisplayExpData();
-                        ClearExpData();
-                    }
-                    else
-                    {
-                        string addQuery = "INSERT INTO expenses(event_id, exp_name, exp_price) VALUES(" + id_Passed + ",'" + expBox.Text + "',"
-                            + amExpBox.Text + ")";
-
-                        executeMyQuery(addQuery);
-                        MessageBox.Show("Added Successfully");
-
-                        DisplayExpData();
-                        ClearExpData();
-                    }
-                }
-
+                //DisplayExpData();
+                //ClearExpData();
             }
             else
             {
@@ -308,16 +265,15 @@ namespace Tribes_System
 
         private void editExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && expBox.Text != "")
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
-                    + " AND event_id = " + id_Passed;
+                //string editQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
 
-                executeMyQuery(editQuery);
+                //executeMyQuery(editQuery);
                 MessageBox.Show("Edited Successfully");
 
-                DisplayExpData();
-                ClearExpData();
+                //DisplayExpData();
+                //ClearExpData();
             }
             else
             {
@@ -327,15 +283,15 @@ namespace Tribes_System
 
         private void remExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && expBox.Text != "")
+            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
             {
-                string remQuery = "DELETE FROM expenses WHERE event_id = " + id_Passed + " AND no_exp = " + id_exp;
+                //string remQuery = "DELETE FROM amount_paid WHERE event_id = " + idPassed + "AND id = " + id_amount;
 
-                executeMyQuery(remQuery);
+                //executeMyQuery(remQuery);
                 MessageBox.Show("Removed Successfully");
 
-                DisplayExpData();
-                ClearExpData();
+                //DisplayExpData();
+                //ClearExpData();
             }
             else
             {
@@ -345,24 +301,13 @@ namespace Tribes_System
 
         private void DisplayExpData()
         {
-            string query = "select no_exp, exp_name, exp_price from expenses where event_id = " + id_Passed;
+            string query = "select id, amount, date_paid from amount_paid where event_id = " + idPassed;
             DataTable table = new DataTable();
             openConnection();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             closeConnection();
             adapter.Fill(table);
-            expensesGrid.DataSource = table;
-
-            string selectQuery = "select SUM(exp_price) from expenses where event_id = " + id_Passed;
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                totExpLabel.Text = "PHP " + reader["SUM(exp_price)"].ToString();
-            }
-            closeConnection();
+            paymentGrid.DataSource = table;
         }
 
         private void ClearExpData()
@@ -370,58 +315,5 @@ namespace Tribes_System
             amExpBox.Text = "";
             expBox.Text = "Category";
         }
-
-        string past_exp; 
-
-        private void expensesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            expBox.Text = expensesGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            amExpBox.Text = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            //past_exp = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_exp = expensesGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-        }
-
-        private void getPastExp()
-        {
-            string selectQuery = "select * from expenses where event_id = " + id_Passed + " AND exp_name = '" + expBox.Text + "'";
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                past_exp = reader["exp_price"].ToString();
-            }
-            closeConnection();
-        }
-
-        private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-            // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void amExpBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-            // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
-        }
     }
-
 }
