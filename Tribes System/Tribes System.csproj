@@ -204,6 +204,12 @@
     <Compile Include="viewStaffList.Designer.cs">
       <DependentUpon>viewStaffList.cs</DependentUpon>
     </Compile>
+    <Compile Include="violations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="violations.Designer.cs">
+      <DependentUpon>violations.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddContent.resx">
       <DependentUpon>AddContent.cs</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewStaffList.resx">
       <DependentUpon>viewStaffList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="violations.resx">
+      <DependentUpon>violations.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

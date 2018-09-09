@@ -400,7 +400,7 @@
             // 
             // equipment1
             // 
-            this.equipment1.Location = new System.Drawing.Point(140, 86);
+            this.equipment1.Location = new System.Drawing.Point(140, 73);
             this.equipment1.Margin = new System.Windows.Forms.Padding(4);
             this.equipment1.Name = "equipment1";
             this.equipment1.Size = new System.Drawing.Size(1315, 800);
@@ -435,7 +435,7 @@
             // 
             // payrollUI1
             // 
-            this.payrollUI1.Location = new System.Drawing.Point(125, 90);
+            this.payrollUI1.Location = new System.Drawing.Point(125, 76);
             this.payrollUI1.Name = "payrollUI1";
             this.payrollUI1.Size = new System.Drawing.Size(1315, 800);
             this.payrollUI1.TabIndex = 12;
@@ -451,11 +451,11 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.payrollUI1);
             this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
-            this.Controls.Add(this.payrollUI1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "equipButt";

@@ -240,6 +240,23 @@ namespace Tribes_System
 
         }
 
+        private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        //----------------EXPENSES-------------------
+
         private void addExpButt_Click(object sender, EventArgs e)
         {
             if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
@@ -309,21 +326,6 @@ namespace Tribes_System
         {
             amExpBox.Text = "";
             expBox.Text = "Category";
-        }
-
-        private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
         }
 
         private void amExpBox_KeyPress(object sender, KeyPressEventArgs e)

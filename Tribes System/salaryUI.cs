@@ -34,7 +34,7 @@ namespace Tribes_System
 
         }
 
-        private void resetTable(string query = "select * from employee where emp_status <> 'fired'")
+        private void resetTable(string query = "select * from employee")
         {
 
             DataTable table = new DataTable();
@@ -60,6 +60,8 @@ namespace Tribes_System
             EmpGrid.Columns[10].Width = 200;
             EmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
+            EmpGrid.RowHeadersVisible = false;
+
             this.selectedEmp = "";
             NameLab.Text = "--";
             StatusLab.Text = "--";
@@ -78,6 +80,9 @@ namespace Tribes_System
             earnedGrid.Columns[0].HeaderCell.Value = "Event Name";
             earnedGrid.Columns[1].HeaderCell.Value = "Salary";
             earnedGrid.Columns[0].Width = 200;
+            
+            earnedGrid.RowHeadersVisible = false;
+
             earnedGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
@@ -244,9 +249,19 @@ namespace Tribes_System
 
             double total = (bon + sal) - vio;
 
-            computed_amount = Convert.ToString(total);
+            computed_amount = Convert.ToString(total) + ".00";
             
             totalLabel.Text = computed_amount;
+        }
+
+        private void vioButt_Click(object sender, EventArgs e)
+        {
+            violations form = new violations(this);
+            form.idValue = selectedEmp;
+            form.nameBox = NameLab.Text;
+            form.ShowDialog();
+
+            deetPanel.Visible = false;
         }
     }
 }

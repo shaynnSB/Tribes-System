@@ -286,6 +286,7 @@
             this.vioButt.TabIndex = 98;
             this.vioButt.Text = "Violations";
             this.vioButt.UseVisualStyleBackColor = false;
+            this.vioButt.Click += new System.EventHandler(this.vioButt_Click);
             // 
             // salaryUI
             // 
