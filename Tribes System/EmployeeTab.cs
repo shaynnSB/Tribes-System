@@ -17,7 +17,7 @@ namespace Tribes_System
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
 
         DataTable grid = new DataTable();
-        int selectedRow;
+        string selectedEmp ="";
 
         public EmployeeTab()
         {
@@ -25,7 +25,7 @@ namespace Tribes_System
             resetTable();
         }
 
-        private void resetTable(string query = "select * from employee")
+        private void resetTable(string query = "select * from employee where emp_status <> 'fired'")
         {
             
             DataTable table = new DataTable();
@@ -34,12 +34,33 @@ namespace Tribes_System
 
             EmpGrid.Columns.Clear();
             EmpGrid.DataSource = table;
-            EmpGrid.Columns[0].HeaderCell.Value = "ID Number";
-            EmpGrid.Columns[1].HeaderCell.Value = "Employee Name";
-            EmpGrid.Columns[2].HeaderCell.Value = "Address";
-            EmpGrid.Columns[3].HeaderCell.Value = "Contact Number";
-            EmpGrid.Columns[4].HeaderCell.Value = "On-call or Full-time";
-            
+            EmpGrid.Columns[0].Visible = false;
+            EmpGrid.Columns[1].Visible = false;
+            EmpGrid.Columns[2].Visible = false;
+            EmpGrid.Columns[3].Visible = false;
+            EmpGrid.Columns[4].HeaderCell.Value = "Status";
+            EmpGrid.Columns[5].Visible = false;
+            EmpGrid.Columns[6].Visible = false;
+            EmpGrid.Columns[7].Visible = false;
+            EmpGrid.Columns[8].Visible = false;
+            EmpGrid.Columns[9].DisplayIndex = 0;
+            EmpGrid.Columns[10].DisplayIndex = 1;
+            EmpGrid.Columns[9].HeaderCell.Value = "First Name";
+            EmpGrid.Columns[10].HeaderCell.Value = "Last Name";
+            EmpGrid.Columns[9].Width = 250;
+            EmpGrid.Columns[10].Width = 250;
+            EmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            this.selectedEmp = "";
+            NameLab.Text = "Name: ";
+            StatusLab.Text = "Status: ";
+            EmergencyContactLab.Text = "Emergency Contact: ";
+            ENameLab.Text = "Emergency Name: ";
+            BdayLab.Text = "Birthdate: ";
+            numLab.Text = "Contact: ";
+            addressLab.Text = "Address: ";
+            genderLab.Text = "Gender: ";
+
 
         }
 
@@ -60,9 +81,36 @@ namespace Tribes_System
 
         }
 
+        private void cellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+            NameLab.Text = "Name: " + EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+            StatusLab.Text = "Status: " + EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+            EmergencyContactLab.Text = "Emergency Contact: " + EmpGrid.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+            ENameLab.Text = "Emergency Name: " + EmpGrid.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+            BdayLab.Text = "Birthdate: " + EmpGrid.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
+            numLab.Text = "Contact: " + EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+            addressLab.Text = "Address: " + EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+            genderLab.Text = "Gender: " + EmpGrid.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "Full-Time":
+                    resetTable("select * from employee where emp_status = 'full'");
+                    break;
+                case "On-Call":
+                    resetTable("select * from employee where emp_status = 'call'");
+                    break;
+                case "Inactive":
+                    resetTable("select * from employee where emp_status = 'fired'");
+                    break;
+                default:
+                    resetTable();
+                    break;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -73,6 +121,27 @@ namespace Tribes_System
         private void button2_Click(object sender, EventArgs e)
         {
             resetTable("select * from employee where id_emp = " + textBox1.Text);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (!this.selectedEmp.Equals("")) { 
+                editEmployee win = new editEmployee(selectedEmp);
+                win.ShowDialog();
+                if (win.DialogResult == DialogResult.OK)
+                {
+                    resetTable();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an employee!");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            resetTable();
         }
     }
 }
