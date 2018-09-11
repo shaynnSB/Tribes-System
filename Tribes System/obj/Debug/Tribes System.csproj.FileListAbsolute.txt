@@ -163,3 +163,7 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.edi
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.viewEquipList.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.violations.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEmployee.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewEquipList.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.violations.resources

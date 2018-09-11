@@ -42,6 +42,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.availEmpGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEquipGrid)).BeginInit();
             this.SuspendLayout();
@@ -55,10 +59,9 @@
             this.allButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.allButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.allButt.Location = new System.Drawing.Point(27, 75);
-            this.allButt.Margin = new System.Windows.Forms.Padding(4);
+            this.allButt.Location = new System.Drawing.Point(20, 61);
             this.allButt.Name = "allButt";
-            this.allButt.Size = new System.Drawing.Size(97, 30);
+            this.allButt.Size = new System.Drawing.Size(73, 24);
             this.allButt.TabIndex = 91;
             this.allButt.Text = "ALL";
             this.allButt.UseVisualStyleBackColor = false;
@@ -68,9 +71,10 @@
             this.categoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.categoryBox.FormattingEnabled = true;
-            this.categoryBox.Location = new System.Drawing.Point(131, 75);
+            this.categoryBox.Location = new System.Drawing.Point(98, 61);
+            this.categoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.categoryBox.Name = "categoryBox";
-            this.categoryBox.Size = new System.Drawing.Size(158, 30);
+            this.categoryBox.Size = new System.Drawing.Size(120, 25);
             this.categoryBox.TabIndex = 90;
             this.categoryBox.Text = "Category";
             this.categoryBox.SelectedIndexChanged += new System.EventHandler(this.categoryBox_SelectedIndexChanged);
@@ -80,10 +84,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(21, 32);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(16, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(341, 32);
+            this.label3.Size = new System.Drawing.Size(268, 26);
             this.label3.TabIndex = 95;
             this.label3.Text = "EQUIPMENT AVAILABLE";
             // 
@@ -96,13 +99,13 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(459, 75);
-            this.addButt.Margin = new System.Windows.Forms.Padding(4);
+            this.addButt.Location = new System.Drawing.Point(344, 61);
             this.addButt.Name = "addButt";
-            this.addButt.Size = new System.Drawing.Size(97, 30);
+            this.addButt.Size = new System.Drawing.Size(73, 24);
             this.addButt.TabIndex = 98;
             this.addButt.Text = "Add";
             this.addButt.UseVisualStyleBackColor = false;
+            this.addButt.Click += new System.EventHandler(this.addButt_Click);
             // 
             // removeButt
             // 
@@ -113,13 +116,13 @@
             this.removeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.removeButt.Location = new System.Drawing.Point(963, 75);
-            this.removeButt.Margin = new System.Windows.Forms.Padding(4);
+            this.removeButt.Location = new System.Drawing.Point(722, 61);
             this.removeButt.Name = "removeButt";
-            this.removeButt.Size = new System.Drawing.Size(166, 30);
+            this.removeButt.Size = new System.Drawing.Size(124, 24);
             this.removeButt.TabIndex = 97;
             this.removeButt.Text = "Remove";
             this.removeButt.UseVisualStyleBackColor = false;
+            this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
             // 
             // okButt
             // 
@@ -130,21 +133,28 @@
             this.okButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.okButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.okButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.okButt.Location = new System.Drawing.Point(775, 789);
-            this.okButt.Margin = new System.Windows.Forms.Padding(4);
+            this.okButt.Location = new System.Drawing.Point(581, 641);
             this.okButt.Name = "okButt";
-            this.okButt.Size = new System.Drawing.Size(166, 30);
+            this.okButt.Size = new System.Drawing.Size(124, 24);
             this.okButt.TabIndex = 96;
             this.okButt.Text = "Okay";
             this.okButt.UseVisualStyleBackColor = false;
+            this.okButt.Click += new System.EventHandler(this.okButt_Click);
             // 
             // availEmpGrid
             // 
+            this.availEmpGrid.AllowUserToAddRows = false;
+            this.availEmpGrid.AllowUserToDeleteRows = false;
+            this.availEmpGrid.AllowUserToResizeColumns = false;
+            this.availEmpGrid.AllowUserToResizeRows = false;
             this.availEmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.availEmpGrid.Location = new System.Drawing.Point(26, 123);
+            this.availEmpGrid.Location = new System.Drawing.Point(20, 100);
+            this.availEmpGrid.Margin = new System.Windows.Forms.Padding(2);
             this.availEmpGrid.Name = "availEmpGrid";
+            this.availEmpGrid.ReadOnly = true;
+            this.availEmpGrid.RowHeadersVisible = false;
             this.availEmpGrid.RowTemplate.Height = 24;
-            this.availEmpGrid.Size = new System.Drawing.Size(530, 650);
+            this.availEmpGrid.Size = new System.Drawing.Size(398, 528);
             this.availEmpGrid.TabIndex = 94;
             // 
             // cancelButt
@@ -156,10 +166,9 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(963, 789);
-            this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
+            this.cancelButt.Location = new System.Drawing.Point(722, 641);
             this.cancelButt.Name = "cancelButt";
-            this.cancelButt.Size = new System.Drawing.Size(166, 30);
+            this.cancelButt.Size = new System.Drawing.Size(124, 24);
             this.cancelButt.TabIndex = 99;
             this.cancelButt.Text = "Cancel";
             this.cancelButt.UseVisualStyleBackColor = false;
@@ -167,11 +176,25 @@
             // 
             // addEquipGrid
             // 
+            this.addEquipGrid.AllowUserToAddRows = false;
+            this.addEquipGrid.AllowUserToDeleteRows = false;
+            this.addEquipGrid.AllowUserToResizeColumns = false;
+            this.addEquipGrid.AllowUserToResizeRows = false;
             this.addEquipGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.addEquipGrid.Location = new System.Drawing.Point(599, 123);
+            this.addEquipGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column4,
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.addEquipGrid.Location = new System.Drawing.Point(449, 100);
+            this.addEquipGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.addEquipGrid.MultiSelect = false;
             this.addEquipGrid.Name = "addEquipGrid";
+            this.addEquipGrid.ReadOnly = true;
+            this.addEquipGrid.RowHeadersVisible = false;
             this.addEquipGrid.RowTemplate.Height = 24;
-            this.addEquipGrid.Size = new System.Drawing.Size(530, 650);
+            this.addEquipGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.addEquipGrid.Size = new System.Drawing.Size(398, 528);
             this.addEquipGrid.TabIndex = 100;
             // 
             // statusBox
@@ -179,9 +202,10 @@
             this.statusBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.statusBox.FormattingEnabled = true;
-            this.statusBox.Location = new System.Drawing.Point(295, 75);
+            this.statusBox.Location = new System.Drawing.Point(221, 61);
+            this.statusBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusBox.Name = "statusBox";
-            this.statusBox.Size = new System.Drawing.Size(158, 30);
+            this.statusBox.Size = new System.Drawing.Size(120, 25);
             this.statusBox.TabIndex = 101;
             this.statusBox.Text = "Status";
             this.statusBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -191,26 +215,29 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1168, 1);
+            this.panel1.Size = new System.Drawing.Size(876, 1);
             this.panel1.TabIndex = 102;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1167, 1);
+            this.panel2.Location = new System.Drawing.Point(875, 1);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 841);
+            this.panel2.Size = new System.Drawing.Size(1, 683);
             this.panel2.TabIndex = 103;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 841);
+            this.panel3.Location = new System.Drawing.Point(0, 683);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1167, 1);
+            this.panel3.Size = new System.Drawing.Size(875, 1);
             this.panel3.TabIndex = 103;
             // 
             // panel4
@@ -218,15 +245,43 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 1);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 840);
+            this.panel4.Size = new System.Drawing.Size(1, 682);
             this.panel4.TabIndex = 103;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Model Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Equipment Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Category";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // customPack
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 842);
+            this.ClientSize = new System.Drawing.Size(876, 684);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -242,6 +297,7 @@
             this.Controls.Add(this.allButt);
             this.Controls.Add(this.categoryBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "customPack";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "customPack";
@@ -268,5 +324,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
