@@ -33,10 +33,6 @@
             this.minButt = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.closeButt = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.recievedBox = new System.Windows.Forms.TextBox();
-            this.cancelButt = new System.Windows.Forms.Button();
-            this.saveButt = new System.Windows.Forms.Button();
             this.totLabel = new System.Windows.Forms.Label();
             this.editButt = new System.Windows.Forms.Button();
             this.addButt = new System.Windows.Forms.Button();
@@ -110,61 +106,6 @@
             this.closeButt.TabIndex = 110;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(32, 210);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 25);
-            this.label10.TabIndex = 106;
-            this.label10.Text = "Amount:";
-            // 
-            // recievedBox
-            // 
-            this.recievedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recievedBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.recievedBox.Location = new System.Drawing.Point(142, 209);
-            this.recievedBox.Name = "recievedBox";
-            this.recievedBox.Size = new System.Drawing.Size(262, 30);
-            this.recievedBox.TabIndex = 105;
-            // 
-            // cancelButt
-            // 
-            this.cancelButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancelButt.FlatAppearance.BorderSize = 0;
-            this.cancelButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cancelButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
-            this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(214, 308);
-            this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
-            this.cancelButt.Name = "cancelButt";
-            this.cancelButt.Size = new System.Drawing.Size(190, 31);
-            this.cancelButt.TabIndex = 109;
-            this.cancelButt.Text = "CANCEL";
-            this.cancelButt.UseVisualStyleBackColor = false;
-            // 
-            // saveButt
-            // 
-            this.saveButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.saveButt.FlatAppearance.BorderSize = 0;
-            this.saveButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.saveButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.saveButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.saveButt.Location = new System.Drawing.Point(214, 269);
-            this.saveButt.Margin = new System.Windows.Forms.Padding(4);
-            this.saveButt.Name = "saveButt";
-            this.saveButt.Size = new System.Drawing.Size(190, 31);
-            this.saveButt.TabIndex = 108;
-            this.saveButt.Text = "ADD";
-            this.saveButt.UseVisualStyleBackColor = false;
             // 
             // totLabel
             // 
@@ -247,7 +188,7 @@
             // violationsGrid
             // 
             this.violationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.violationsGrid.Location = new System.Drawing.Point(18, 107);
+            this.violationsGrid.Location = new System.Drawing.Point(18, 104);
             this.violationsGrid.Name = "violationsGrid";
             this.violationsGrid.RowTemplate.Height = 24;
             this.violationsGrid.Size = new System.Drawing.Size(630, 344);
@@ -273,9 +214,9 @@
             this.label11.Location = new System.Drawing.Point(675, 158);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 25);
+            this.label11.Size = new System.Drawing.Size(59, 25);
             this.label11.TabIndex = 123;
-            this.label11.Text = "Date Paid:";
+            this.label11.Text = "Date:";
             // 
             // dateBox
             // 
@@ -302,6 +243,7 @@
             // amBox
             // 
             this.amBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.amBox.Location = new System.Drawing.Point(794, 104);
             this.amBox.Name = "amBox";
             this.amBox.Size = new System.Drawing.Size(202, 30);
@@ -333,7 +275,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 522);
+            this.ClientSize = new System.Drawing.Size(1037, 531);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.descBox);
             this.Controls.Add(this.label11);
@@ -348,10 +290,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.violationsGrid);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.recievedBox);
-            this.Controls.Add(this.cancelButt);
-            this.Controls.Add(this.saveButt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "violations";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -369,10 +307,6 @@
 
         private System.Windows.Forms.Panel title;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox recievedBox;
-        private System.Windows.Forms.Button cancelButt;
-        private System.Windows.Forms.Button saveButt;
         private System.Windows.Forms.Button minButt;
         private System.Windows.Forms.Button closeButt;
         private System.Windows.Forms.Label totLabel;

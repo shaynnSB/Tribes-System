@@ -35,6 +35,8 @@
             this.payRepButt = new System.Windows.Forms.Button();
             this.allButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
+            this.vioButt = new System.Windows.Forms.Button();
+            this.bonusButt = new System.Windows.Forms.Button();
             this.vioLabel = new System.Windows.Forms.Label();
             this.bonusLabel = new System.Windows.Forms.Label();
             this.totalLabel = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.earnedGrid = new System.Windows.Forms.DataGridView();
             this.StatusLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
-            this.bonusButt = new System.Windows.Forms.Button();
-            this.vioButt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
@@ -156,6 +156,42 @@
             this.deetPanel.TabIndex = 88;
             this.deetPanel.Visible = false;
             // 
+            // vioButt
+            // 
+            this.vioButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vioButt.FlatAppearance.BorderSize = 0;
+            this.vioButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.vioButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.vioButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.vioButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vioButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.vioButt.Location = new System.Drawing.Point(21, 389);
+            this.vioButt.Margin = new System.Windows.Forms.Padding(4);
+            this.vioButt.Name = "vioButt";
+            this.vioButt.Size = new System.Drawing.Size(144, 37);
+            this.vioButt.TabIndex = 98;
+            this.vioButt.Text = "Violations";
+            this.vioButt.UseVisualStyleBackColor = false;
+            this.vioButt.Click += new System.EventHandler(this.vioButt_Click);
+            // 
+            // bonusButt
+            // 
+            this.bonusButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bonusButt.FlatAppearance.BorderSize = 0;
+            this.bonusButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.bonusButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.bonusButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bonusButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bonusButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.bonusButt.Location = new System.Drawing.Point(21, 434);
+            this.bonusButt.Margin = new System.Windows.Forms.Padding(4);
+            this.bonusButt.Name = "bonusButt";
+            this.bonusButt.Size = new System.Drawing.Size(144, 37);
+            this.bonusButt.TabIndex = 89;
+            this.bonusButt.Text = "Bonus";
+            this.bonusButt.UseVisualStyleBackColor = false;
+            this.bonusButt.Click += new System.EventHandler(this.bonusButt_Click);
+            // 
             // vioLabel
             // 
             this.vioLabel.AutoSize = true;
@@ -252,41 +288,6 @@
             this.NameLab.Size = new System.Drawing.Size(205, 29);
             this.NameLab.TabIndex = 89;
             this.NameLab.Text = "Employees Name";
-            // 
-            // bonusButt
-            // 
-            this.bonusButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusButt.FlatAppearance.BorderSize = 0;
-            this.bonusButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.bonusButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.bonusButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bonusButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.bonusButt.Location = new System.Drawing.Point(21, 434);
-            this.bonusButt.Margin = new System.Windows.Forms.Padding(4);
-            this.bonusButt.Name = "bonusButt";
-            this.bonusButt.Size = new System.Drawing.Size(144, 37);
-            this.bonusButt.TabIndex = 89;
-            this.bonusButt.Text = "Bonus";
-            this.bonusButt.UseVisualStyleBackColor = false;
-            // 
-            // vioButt
-            // 
-            this.vioButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioButt.FlatAppearance.BorderSize = 0;
-            this.vioButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.vioButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.vioButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.vioButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vioButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.vioButt.Location = new System.Drawing.Point(21, 389);
-            this.vioButt.Margin = new System.Windows.Forms.Padding(4);
-            this.vioButt.Name = "vioButt";
-            this.vioButt.Size = new System.Drawing.Size(144, 37);
-            this.vioButt.TabIndex = 98;
-            this.vioButt.Text = "Violations";
-            this.vioButt.UseVisualStyleBackColor = false;
-            this.vioButt.Click += new System.EventHandler(this.vioButt_Click);
             // 
             // salaryUI
             // 

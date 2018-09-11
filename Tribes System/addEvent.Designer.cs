@@ -52,8 +52,6 @@
             this.button9 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.startHr = new System.Windows.Forms.ComboBox();
             this.endHr = new System.Windows.Forms.ComboBox();
@@ -73,6 +71,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.dateDownBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -111,7 +111,7 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(753, 46);
+            this.title.Size = new System.Drawing.Size(825, 46);
             this.title.TabIndex = 6;
             this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
             this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.title_MouseMove);
@@ -126,7 +126,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(527, 672);
+            this.addButt.Location = new System.Drawing.Point(593, 679);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(177, 31);
@@ -144,7 +144,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(527, 711);
+            this.cancelButt.Location = new System.Drawing.Point(593, 718);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(177, 31);
@@ -158,10 +158,10 @@
             this.nameBox.BackColor = System.Drawing.Color.White;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nameBox.Location = new System.Drawing.Point(194, 127);
+            this.nameBox.Location = new System.Drawing.Point(259, 127);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(510, 34);
+            this.nameBox.Size = new System.Drawing.Size(511, 34);
             this.nameBox.TabIndex = 9;
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameBox.Click += new System.EventHandler(this.textBox1_Click);
@@ -171,10 +171,10 @@
             this.locBox.BackColor = System.Drawing.Color.White;
             this.locBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.locBox.Location = new System.Drawing.Point(194, 175);
+            this.locBox.Location = new System.Drawing.Point(259, 175);
             this.locBox.Margin = new System.Windows.Forms.Padding(4);
             this.locBox.Name = "locBox";
-            this.locBox.Size = new System.Drawing.Size(510, 34);
+            this.locBox.Size = new System.Drawing.Size(511, 34);
             this.locBox.TabIndex = 10;
             this.locBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.locBox.Click += new System.EventHandler(this.locBox_Click);
@@ -184,10 +184,10 @@
             this.nameClientBox.BackColor = System.Drawing.Color.White;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nameClientBox.Location = new System.Drawing.Point(194, 576);
+            this.nameClientBox.Location = new System.Drawing.Point(259, 576);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
-            this.nameClientBox.Size = new System.Drawing.Size(510, 34);
+            this.nameClientBox.Size = new System.Drawing.Size(511, 34);
             this.nameClientBox.TabIndex = 11;
             this.nameClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameClientBox.Click += new System.EventHandler(this.nameClientBox_Click);
@@ -197,10 +197,10 @@
             this.conClientBox.BackColor = System.Drawing.Color.White;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.conClientBox.Location = new System.Drawing.Point(306, 624);
+            this.conClientBox.Location = new System.Drawing.Point(371, 624);
             this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.conClientBox.Name = "conClientBox";
-            this.conClientBox.Size = new System.Drawing.Size(398, 34);
+            this.conClientBox.Size = new System.Drawing.Size(399, 34);
             this.conClientBox.TabIndex = 12;
             this.conClientBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.conClientBox.TextChanged += new System.EventHandler(this.conClientBox_TextChanged);
@@ -210,7 +210,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(429, 231);
+            this.label2.Location = new System.Drawing.Point(494, 234);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 17);
@@ -223,7 +223,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(40, 84);
+            this.label3.Location = new System.Drawing.Point(40, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(249, 36);
@@ -235,11 +235,11 @@
             this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.notesBox.Location = new System.Drawing.Point(194, 404);
+            this.notesBox.Location = new System.Drawing.Point(259, 407);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
-            this.notesBox.Size = new System.Drawing.Size(510, 124);
+            this.notesBox.Size = new System.Drawing.Size(511, 124);
             this.notesBox.TabIndex = 24;
             this.notesBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.notesBox.Click += new System.EventHandler(this.notesBox_Click);
@@ -247,11 +247,11 @@
             // startDate
             // 
             this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.startDate.Location = new System.Drawing.Point(123, 229);
+            this.startDate.Location = new System.Drawing.Point(259, 232);
             this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(298, 22);
+            this.startDate.Size = new System.Drawing.Size(228, 22);
             this.startDate.TabIndex = 25;
             this.startDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 25, 0);
             this.startDate.ValueChanged += new System.EventHandler(this.startDate_ValueChanged);
@@ -259,11 +259,11 @@
             // endDate
             // 
             this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.endDate.Location = new System.Drawing.Point(123, 276);
+            this.endDate.Location = new System.Drawing.Point(259, 279);
             this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(298, 22);
+            this.endDate.Size = new System.Drawing.Size(228, 22);
             this.endDate.TabIndex = 26;
             this.endDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 32, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
@@ -274,7 +274,7 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(752, 46);
+            this.panel1.Location = new System.Drawing.Point(824, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 728);
@@ -371,7 +371,7 @@
             this.panel4.Location = new System.Drawing.Point(1, 773);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(751, 1);
+            this.panel4.Size = new System.Drawing.Size(823, 1);
             this.panel4.TabIndex = 11;
             // 
             // button10
@@ -388,33 +388,11 @@
             this.button10.TabIndex = 0;
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(44, 229);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 17);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Start:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(43, 281);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 17);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "End:";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(429, 279);
+            this.label7.Location = new System.Drawing.Point(494, 282);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 17);
@@ -438,9 +416,9 @@
             "10",
             "11",
             "12"});
-            this.startHr.Location = new System.Drawing.Point(449, 229);
+            this.startHr.Location = new System.Drawing.Point(514, 232);
             this.startHr.Name = "startHr";
-            this.startHr.Size = new System.Drawing.Size(60, 24);
+            this.startHr.Size = new System.Drawing.Size(61, 24);
             this.startHr.TabIndex = 32;
             this.startHr.Text = "Hour";
             // 
@@ -460,9 +438,9 @@
             "10",
             "11",
             "12"});
-            this.endHr.Location = new System.Drawing.Point(449, 274);
+            this.endHr.Location = new System.Drawing.Point(514, 277);
             this.endHr.Name = "endHr";
-            this.endHr.Size = new System.Drawing.Size(60, 24);
+            this.endHr.Size = new System.Drawing.Size(61, 24);
             this.endHr.TabIndex = 33;
             this.endHr.Text = "Hour";
             // 
@@ -470,7 +448,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(513, 278);
+            this.label8.Location = new System.Drawing.Point(578, 281);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 17);
@@ -481,7 +459,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(513, 233);
+            this.label9.Location = new System.Drawing.Point(578, 236);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 17);
@@ -504,9 +482,9 @@
             "45",
             "50",
             "55"});
-            this.endMin.Location = new System.Drawing.Point(527, 274);
+            this.endMin.Location = new System.Drawing.Point(592, 277);
             this.endMin.Name = "endMin";
-            this.endMin.Size = new System.Drawing.Size(84, 24);
+            this.endMin.Size = new System.Drawing.Size(85, 24);
             this.endMin.TabIndex = 37;
             this.endMin.Text = "Minutes";
             // 
@@ -526,9 +504,9 @@
             "45",
             "50",
             "55"});
-            this.startMin.Location = new System.Drawing.Point(527, 229);
+            this.startMin.Location = new System.Drawing.Point(592, 232);
             this.startMin.Name = "startMin";
-            this.startMin.Size = new System.Drawing.Size(84, 24);
+            this.startMin.Size = new System.Drawing.Size(85, 24);
             this.startMin.TabIndex = 36;
             this.startMin.Text = "Minutes";
             // 
@@ -538,9 +516,9 @@
             this.endMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.endMeri.Location = new System.Drawing.Point(617, 274);
+            this.endMeri.Location = new System.Drawing.Point(682, 277);
             this.endMeri.Name = "endMeri";
-            this.endMeri.Size = new System.Drawing.Size(87, 24);
+            this.endMeri.Size = new System.Drawing.Size(88, 24);
             this.endMeri.TabIndex = 39;
             this.endMeri.Text = "AM/PM";
             // 
@@ -550,9 +528,9 @@
             this.startMeri.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.startMeri.Location = new System.Drawing.Point(617, 229);
+            this.startMeri.Location = new System.Drawing.Point(682, 232);
             this.startMeri.Name = "startMeri";
-            this.startMeri.Size = new System.Drawing.Size(87, 24);
+            this.startMeri.Size = new System.Drawing.Size(88, 24);
             this.startMeri.TabIndex = 38;
             this.startMeri.Text = "AM/PM";
             // 
@@ -561,11 +539,11 @@
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(194, 624);
+            this.textBox1.Location = new System.Drawing.Point(259, 624);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(104, 34);
+            this.textBox1.Size = new System.Drawing.Size(105, 34);
             this.textBox1.TabIndex = 40;
             this.textBox1.Text = "+(63)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -575,7 +553,7 @@
             this.downBox.BackColor = System.Drawing.Color.White;
             this.downBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.downBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.downBox.Location = new System.Drawing.Point(194, 320);
+            this.downBox.Location = new System.Drawing.Point(259, 320);
             this.downBox.Margin = new System.Windows.Forms.Padding(4);
             this.downBox.Name = "downBox";
             this.downBox.Size = new System.Drawing.Size(511, 34);
@@ -588,7 +566,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(41, 129);
+            this.label10.Location = new System.Drawing.Point(126, 132);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(125, 25);
@@ -600,7 +578,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(43, 177);
+            this.label11.Location = new System.Drawing.Point(159, 180);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(92, 25);
@@ -612,7 +590,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(43, 322);
+            this.label12.Location = new System.Drawing.Point(108, 325);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(143, 25);
@@ -624,7 +602,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(44, 404);
+            this.label13.Location = new System.Drawing.Point(182, 407);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 25);
@@ -636,7 +614,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(43, 578);
+            this.label14.Location = new System.Drawing.Point(181, 581);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 25);
@@ -648,7 +626,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(43, 626);
+            this.label15.Location = new System.Drawing.Point(149, 629);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 25);
@@ -660,10 +638,10 @@
             this.dateDownBox.BackColor = System.Drawing.Color.White;
             this.dateDownBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateDownBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dateDownBox.Location = new System.Drawing.Point(261, 362);
+            this.dateDownBox.Location = new System.Drawing.Point(259, 365);
             this.dateDownBox.Margin = new System.Windows.Forms.Padding(4);
             this.dateDownBox.Name = "dateDownBox";
-            this.dateDownBox.Size = new System.Drawing.Size(444, 34);
+            this.dateDownBox.Size = new System.Drawing.Size(511, 34);
             this.dateDownBox.TabIndex = 48;
             this.dateDownBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -672,18 +650,44 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(43, 364);
+            this.label16.Location = new System.Drawing.Point(41, 367);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(210, 25);
             this.label16.TabIndex = 49;
             this.label16.Text = "Date of Downpayment:";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label17.Location = new System.Drawing.Point(198, 277);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 25);
+            this.label17.TabIndex = 50;
+            this.label17.Text = "End:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label18.Location = new System.Drawing.Point(198, 230);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 25);
+            this.label18.TabIndex = 51;
+            this.label18.Text = "Start:";
+            // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 774);
+            this.ClientSize = new System.Drawing.Size(825, 774);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.dateDownBox);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
@@ -703,8 +707,6 @@
             this.Controls.Add(this.endHr);
             this.Controls.Add(this.startHr);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -762,8 +764,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox startHr;
         private System.Windows.Forms.ComboBox endHr;
@@ -783,5 +783,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox dateDownBox;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

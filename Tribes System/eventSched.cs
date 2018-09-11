@@ -65,6 +65,7 @@ namespace Tribes_System
 
                 grid.Rows.Add(id, name);
                 eventGrid.DataSource = grid;
+
             }
         }
 
@@ -119,6 +120,8 @@ namespace Tribes_System
             eventGrid.DataSource = grid;
             eventGrid.Columns["Id"].Visible = false;
             eventGrid.Columns["Event Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            eventGrid.RowHeadersVisible = false;
         }
 
         private void nameLabel_Click(object sender, EventArgs e)

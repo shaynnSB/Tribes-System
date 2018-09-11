@@ -125,6 +125,7 @@ namespace Tribes_System
         private void allButt_Click(object sender, EventArgs e)
         {
             resetTable();
+            statusBox.Text = "";
         }
 
         private void payRepButt_Click(object sender, EventArgs e)
@@ -257,6 +258,16 @@ namespace Tribes_System
         private void vioButt_Click(object sender, EventArgs e)
         {
             violations form = new violations(this);
+            form.idValue = selectedEmp;
+            form.nameBox = NameLab.Text;
+            form.ShowDialog();
+
+            deetPanel.Visible = false;
+        }
+
+        private void bonusButt_Click(object sender, EventArgs e)
+        {
+            bonus form = new bonus(this);
             form.idValue = selectedEmp;
             form.nameBox = NameLab.Text;
             form.ShowDialog();
