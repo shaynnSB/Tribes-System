@@ -85,7 +85,7 @@ namespace Tribes_System
             addEvent form = new addEvent();
             form.ShowDialog();
         }
-
+        public static string id;
         private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             deetPanel.Visible = true;
@@ -97,7 +97,8 @@ namespace Tribes_System
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
-
+            id = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            // eventGrid.Rows[eventGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
             while (reader.Read())
             {
                 nameLabel.Text = reader["event_name"].ToString();

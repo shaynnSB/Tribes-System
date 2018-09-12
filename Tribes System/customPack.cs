@@ -19,7 +19,7 @@ namespace Tribes_System
         public customPack()
         {
             InitializeComponent();
-            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID;");
+            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
 
         }
 
@@ -27,7 +27,7 @@ namespace Tribes_System
         {
 
         }
-        public void refresh(string query = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID;")
+        public void refresh(string query)
         {
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
@@ -127,6 +127,15 @@ namespace Tribes_System
 
         private void okButt_Click(object sender, EventArgs e)
         {
+
+            //Bind datagridview to linq 
+             int rowCount = addEquipGrid.Rows.Count;
+            //loop dg1 and save it to datagridview2
+           for(var i=0; i<rowCount; i++)
+            {
+                (System.Windows.Forms.Application.OpenForms["addViewEquip"] as addViewEquip).listEmpGrid.Rows.Add(addEquipGrid.Rows[i].Cells[0].Value.ToString(), addEquipGrid.Rows[i].Cells[1].Value.ToString(), addEquipGrid.Rows[i].Cells[2].Value.ToString(), addEquipGrid.Rows[i].Cells[3].Value.ToString());
+            }
+            this.Dispose();
 
         }
         public string id;

@@ -49,7 +49,7 @@ namespace Tribes_System
                     DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
                     if (dg == DialogResult.Yes)
                     {
-                        string insertQuery = "INSERT INTO itemcontent(itemID, tagID, modelNumber, StockID) VALUES (" + Equipment.sendtext + ",1,'" + textBox1.Text + "',0)";
+                        string insertQuery = "INSERT INTO itemcontent(itemID, tagID, modelNumber, StockID,eventID) VALUES (" + Equipment.sendtext + ",1,'" + textBox1.Text + "',0,0)";
                         executeMyQuery(insertQuery);
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
                         this.Close();

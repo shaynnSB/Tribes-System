@@ -28,11 +28,13 @@ namespace Tribes_System
             repairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,repairlogs.daterepaired from items left join itemcontent on items.id = itemcontent.itemID inner JOIN repairlogs on  itemcontent.id = repairlogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 1");
             setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = "+Equipment.sendtext+" and itemcontent.tagID = 1");
             setStatus("SELECT * FROM status where itemID = " + Equipment.sendtext);
+            deploy("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID > 0 and items.id ="+ Equipment.sendtext);
+
         }
 
-       
 
-        
+
+
         public void refresh(string query)
         {
 
@@ -95,6 +97,32 @@ namespace Tribes_System
             dataGridView3.Columns[3].HeaderCell.Value = "Date Damaged";
             dataGridView3.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+
+        public void deploy(string query)
+        {
+
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+            dataGridView6.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView6.Columns.Clear();
+            dataGridView6.DataSource = table;
+            dataGridView6.Columns[0].Visible = false;
+           
+            dataGridView6.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[1].HeaderCell.Value = "Name";
+            dataGridView6.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView6.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[2].HeaderCell.Value = "Equipment Name";
+            dataGridView6.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridView6.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[3].HeaderCell.Value = "Category";
+            dataGridView6.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridView6.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
         }
 
