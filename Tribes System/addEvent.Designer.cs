@@ -210,7 +210,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(494, 234);
+            this.label2.Location = new System.Drawing.Point(515, 234);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 17);
@@ -251,7 +251,7 @@
             this.startDate.Margin = new System.Windows.Forms.Padding(4);
             this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(228, 22);
+            this.startDate.Size = new System.Drawing.Size(248, 22);
             this.startDate.TabIndex = 25;
             this.startDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 25, 0);
             this.startDate.ValueChanged += new System.EventHandler(this.startDate_ValueChanged);
@@ -263,7 +263,7 @@
             this.endDate.Margin = new System.Windows.Forms.Padding(4);
             this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(228, 22);
+            this.endDate.Size = new System.Drawing.Size(248, 22);
             this.endDate.TabIndex = 26;
             this.endDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 32, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
@@ -392,7 +392,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(494, 282);
+            this.label7.Location = new System.Drawing.Point(515, 282);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(13, 17);
@@ -404,51 +404,51 @@
             // 
             this.startHr.FormattingEnabled = true;
             this.startHr.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
             "10",
             "11",
             "12"});
-            this.startHr.Location = new System.Drawing.Point(514, 232);
+            this.startHr.Location = new System.Drawing.Point(534, 232);
             this.startHr.Name = "startHr";
             this.startHr.Size = new System.Drawing.Size(61, 24);
             this.startHr.TabIndex = 32;
-            this.startHr.Text = "Hour";
+            this.startHr.Text = "12";
             // 
             // endHr
             // 
             this.endHr.FormattingEnabled = true;
             this.endHr.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
             "10",
             "11",
             "12"});
-            this.endHr.Location = new System.Drawing.Point(514, 277);
+            this.endHr.Location = new System.Drawing.Point(534, 277);
             this.endHr.Name = "endHr";
             this.endHr.Size = new System.Drawing.Size(61, 24);
             this.endHr.TabIndex = 33;
-            this.endHr.Text = "Hour";
+            this.endHr.Text = "12";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(578, 281);
+            this.label8.Location = new System.Drawing.Point(598, 281);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(12, 17);
@@ -459,7 +459,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(578, 236);
+            this.label9.Location = new System.Drawing.Point(598, 236);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(12, 17);
@@ -482,11 +482,11 @@
             "45",
             "50",
             "55"});
-            this.endMin.Location = new System.Drawing.Point(592, 277);
+            this.endMin.Location = new System.Drawing.Point(611, 277);
             this.endMin.Name = "endMin";
-            this.endMin.Size = new System.Drawing.Size(85, 24);
+            this.endMin.Size = new System.Drawing.Size(66, 24);
             this.endMin.TabIndex = 37;
-            this.endMin.Text = "Minutes";
+            this.endMin.Text = "00";
             // 
             // startMin
             // 
@@ -504,11 +504,11 @@
             "45",
             "50",
             "55"});
-            this.startMin.Location = new System.Drawing.Point(592, 232);
+            this.startMin.Location = new System.Drawing.Point(611, 232);
             this.startMin.Name = "startMin";
-            this.startMin.Size = new System.Drawing.Size(85, 24);
+            this.startMin.Size = new System.Drawing.Size(66, 24);
             this.startMin.TabIndex = 36;
-            this.startMin.Text = "Minutes";
+            this.startMin.Text = "00";
             // 
             // endMeri
             // 
@@ -520,7 +520,7 @@
             this.endMeri.Name = "endMeri";
             this.endMeri.Size = new System.Drawing.Size(88, 24);
             this.endMeri.TabIndex = 39;
-            this.endMeri.Text = "AM/PM";
+            this.endMeri.Text = "AM";
             // 
             // startMeri
             // 
@@ -532,7 +532,7 @@
             this.startMeri.Name = "startMeri";
             this.startMeri.Size = new System.Drawing.Size(88, 24);
             this.startMeri.TabIndex = 38;
-            this.startMeri.Text = "AM/PM";
+            this.startMeri.Text = "AM";
             // 
             // textBox1
             // 

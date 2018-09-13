@@ -17,21 +17,6 @@ namespace Tribes_System
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void closeButt_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,7 +39,19 @@ namespace Tribes_System
 
         private void salaryReport_Load(object sender, EventArgs e)
         {
-
+            addYear();
         }
+
+        private void addYear()
+        {
+            for(int i = 0; i < 80; i++)
+            {
+                int num = 2018 + i;
+                myearBox.Items.Add(num);
+                qyearBox.Items.Add(num);
+                ayearBox.Items.Add(num);
+            }
+        }
+        
     }
 }

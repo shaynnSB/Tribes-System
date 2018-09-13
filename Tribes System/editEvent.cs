@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class editEvent : Form
     {
         eventSched form = new eventSched();
-        MySqlConnection con = new MySqlConnection("server=localhost;database=store;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
 
         private bool drag = false;
@@ -59,13 +59,13 @@ namespace Tribes_System
             get { return eventBox.Text; }
             set { eventBox.Text = value; }
         }
-        
+
         public string locateBox
         {
             get { return locBox.Text; }
             set { locBox.Text = value; }
         }
-        
+
         public string passNoteBox
         {
             get { return notesBox.Text; }
@@ -84,12 +84,63 @@ namespace Tribes_System
             set { numClientBox.Text = value; }
         }
 
-        string idPassed; 
+        string idPassed;
 
         public string idValue
         {
-            get { return this.idPassed;  }
+            get { return this.idPassed; }
             set { this.idPassed = value; }
+        }
+
+        private void start_time()
+        {
+            string selectQuery = "select substring(start_time, 1,2), substring(start_time, 3,4), substring(start_time, 7) from event where id_event = " + idPassed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string min = reader["substring(start_time, 3,4)"].ToString();
+                min = min.Substring(1);
+                startHour.Text = reader["substring(start_time, 1,2)"].ToString();
+                startMeri.Text = reader["substring(start_time, 7)"].ToString();
+                startMin.Text = min;
+            }
+            closeConnection();
+        }
+
+        private void end_time()
+        {
+            string selectQuery = "select substring(end_time, 1,2), substring(end_time, 3,4), substring(end_time, 7) from event where id_event = " + idPassed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string min = reader["substring(end_time, 3,4)"].ToString();
+                min = min.Substring(1);
+                endHour.Text = reader["substring(end_time, 1,2)"].ToString();
+                endMeri.Text = reader["substring(end_time, 7)"].ToString();
+                endMin.Text = min;
+            }
+            closeConnection();
+        }
+
+        private void client_num()
+        {
+            string selectQuery = "select substring(client_contact, 7) from event where id_event = " + idPassed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string num = reader["substring(client_contact, 7)"].ToString();
+                numClientBox.Text = num;
+            }
+            closeConnection();
         }
 
         private void saveButt_Click(object sender, EventArgs e)
@@ -97,9 +148,10 @@ namespace Tribes_System
             DialogResult dialogResult = MessageBox.Show("Confirm changes?", "Edit Event Details", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                //string editQuery = "UPDATE event SET event_name = ,event_location = , event_notes = , start_date = , end_date = , start_time = , 
-                //end_time = , client_name = , client_contact = WHERE id_event = " + idValue;
-                //executeMyQuery(editQuery);
+                /*string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
+                    "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text + 
+                    "', start_date = , end_date = , client_name = '" + nameClientBox.Text + "', client_contact = '+(63) " + numClientBox.Text + "' WHERE id_event = " + idPassed;
+                executeMyQuery(editQuery);*/
                 this.Close();
             }
             else if (dialogResult == DialogResult.No)
@@ -152,14 +204,16 @@ namespace Tribes_System
             }
         }
 
-        private void startMeri_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void numClientBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void editEvent_Load(object sender, EventArgs e)
+        {
+            client_num();
+            start_time();
+            end_time();
         }
     }
 }
