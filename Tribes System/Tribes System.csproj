@@ -124,6 +124,12 @@
     <Compile Include="editEvent.Designer.cs">
       <DependentUpon>editEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="editFee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="editFee.Designer.cs">
+      <DependentUpon>editFee.cs</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="editEvent.resx">
       <DependentUpon>editEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editFee.resx">
+      <DependentUpon>editFee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeTab.resx">
       <DependentUpon>EmployeeTab.cs</DependentUpon>

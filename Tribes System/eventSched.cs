@@ -19,6 +19,10 @@ namespace Tribes_System
         DataTable grid = new DataTable();
         int selectedRow;
 
+        //DateTime today = DateTime.Today;
+        string currentDate = DateTime.Today.ToString("yyyy-MM-dd");
+
+
         public eventSched()
         {
             InitializeComponent();
@@ -42,31 +46,15 @@ namespace Tribes_System
 
         private void calendar_DateChanged(object sender, DateRangeEventArgs e)
         {
-            eventGrid.Visible = true;
+            //eventGrid.Visible = true;
 
             string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
                 + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
 
- //           SELECT * from Product_sales where
-//(From_date BETWEEN '2013-01-03'AND '2013-01-09') OR 
-//(To_date BETWEEN '2013-01-03' AND '2013-01-09') OR 
-//(From_date <= '2013-01-03' AND To_date >= '2013-01-09')
+            //SELECT * from Product_sales where (From_date BETWEEN '2013-01-03'AND '2013-01-09') OR (To_date BETWEEN '2013-01-03' AND '2013-01-09') OR 
+            //(From_date <= '2013-01-03' AND To_date >= '2013-01-09')
 
-            DataTable table = new DataTable();
-            openConnection();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            closeConnection();
-            adapter.Fill(table);
-
-            foreach (DataRow row in table.Rows)
-            {
-                string id = row["id_event"].ToString();
-                string name = row["event_name"].ToString();
-
-                grid.Rows.Add(id, name);
-                eventGrid.DataSource = grid;
-
-            }
+            eventTable(query);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,7 +64,6 @@ namespace Tribes_System
             form.locateBox = locLabel.Text;
             form.passNoteBox = notesBox.Text;
             form.clientNameBox = clientLabel.Text;
-            form.numBox = numLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
         }
@@ -87,12 +74,16 @@ namespace Tribes_System
             form.ShowDialog();
         }
 
+        string id_select;
+
         private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             deetPanel.Visible = true;
 
             selectedRow = e.RowIndex;
             DataGridViewRow row = eventGrid.Rows[selectedRow];
+
+            id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
 
             string selectQuery = "select * from event where id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
             openConnection();
@@ -102,7 +93,7 @@ namespace Tribes_System
             while (reader.Read())
             {
                 nameLabel.Text = reader["event_name"].ToString();
-                dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
+                //dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
                 timeLabel.Text = reader["start_time"].ToString() + " - " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
                 notesBox.Text = reader["event_notes"].ToString();
@@ -110,23 +101,55 @@ namespace Tribes_System
                 numLabel.Text = reader["client_contact"].ToString();
             }
             closeConnection();
+
+            date();
+        }
+
+        private void date()
+        {
+            string selectQuery = "select substring(start_date, 1, 10), substring(end_date, 1, 10) from event where id_event = " + id_select;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                dateLabel.Text = reader["substring(start_date, 1, 10)"].ToString() + " to " + reader["substring(end_date, 1, 10)"].ToString();
+            }
+            closeConnection();
         }
 
         private void eventSched_Load(object sender, EventArgs e)
         {
-            grid.Columns.Add("Id", typeof(string));
-            grid.Columns.Add("Event Name", typeof(string));
-
-            eventGrid.DataSource = grid;
-            eventGrid.Columns["Id"].Visible = false;
-            eventGrid.Columns["Event Name"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            eventGrid.RowHeadersVisible = false;
+            string current_query = "select * from event where start_date = '" + currentDate + "' OR end_date = '" + currentDate + "'";
+            eventTable(current_query);
         }
 
-        private void nameLabel_Click(object sender, EventArgs e)
+        private void eventTable(string query)
         {
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
 
+            eventGrid.Columns.Clear();
+            eventGrid.DataSource = table;
+            eventGrid.Columns[0].Visible = false;
+            eventGrid.Columns[1].HeaderCell.Value = "Event Name";
+            eventGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            eventGrid.Columns[2].Visible = false;
+            eventGrid.Columns[3].Visible = false;
+            eventGrid.Columns[4].Visible = false;
+            eventGrid.Columns[5].Visible = false;
+            eventGrid.Columns[6].Visible = false;
+            eventGrid.Columns[7].Visible = false;
+            eventGrid.Columns[8].Visible = false;
+            eventGrid.Columns[9].Visible = false;
+            eventGrid.Columns[10].Visible = false;
+            eventGrid.Columns[11].Visible = false;
+            eventGrid.Columns[12].Visible = false;
+            eventGrid.Columns[13].Visible = false;
+
+            eventGrid.RowHeadersVisible = false;
         }
 
         private void viewEquip_Click(object sender, EventArgs e)
@@ -170,7 +193,7 @@ namespace Tribes_System
         {
             payDeets form = new payDeets(this);
             form.nameBox = nameLabel.Text;
-            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            form.idValue = id_select;
             form.ShowDialog();
         }
 

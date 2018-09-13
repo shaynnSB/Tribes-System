@@ -78,12 +78,6 @@ namespace Tribes_System
             set { nameClientBox.Text = value; }
         }
 
-        public string numBox
-        {
-            get { return numClientBox.Text; }
-            set { numClientBox.Text = value; }
-        }
-
         string idPassed;
 
         public string idValue

@@ -164,3 +164,4 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.vie
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.violations.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.bonus.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.editFee.resources

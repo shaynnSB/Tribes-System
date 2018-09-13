@@ -72,6 +72,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.expensesGrid = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -166,6 +169,8 @@
             // 
             // paymentGrid
             // 
+            this.paymentGrid.AllowUserToAddRows = false;
+            this.paymentGrid.AllowUserToDeleteRows = false;
             this.paymentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.paymentGrid.Location = new System.Drawing.Point(26, 75);
             this.paymentGrid.Name = "paymentGrid";
@@ -407,6 +412,7 @@
             this.editFee.TabIndex = 73;
             this.editFee.Text = "Edit Additional Fee";
             this.editFee.UseVisualStyleBackColor = false;
+            this.editFee.Click += new System.EventHandler(this.editFee_Click);
             // 
             // editDiscount
             // 
@@ -596,7 +602,7 @@
             this.totExpLabel.AutoSize = true;
             this.totExpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totExpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totExpLabel.Location = new System.Drawing.Point(486, 420);
+            this.totExpLabel.Location = new System.Drawing.Point(400, 420);
             this.totExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totExpLabel.Name = "totExpLabel";
             this.totExpLabel.Size = new System.Drawing.Size(31, 29);
@@ -662,7 +668,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(307, 420);
+            this.label13.Location = new System.Drawing.Point(221, 420);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 29);
@@ -683,6 +689,8 @@
             // 
             // expensesGrid
             // 
+            this.expensesGrid.AllowUserToAddRows = false;
+            this.expensesGrid.AllowUserToDeleteRows = false;
             this.expensesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.expensesGrid.Location = new System.Drawing.Point(18, 62);
             this.expensesGrid.Name = "expensesGrid";
@@ -691,11 +699,44 @@
             this.expensesGrid.TabIndex = 80;
             this.expensesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expensesGrid_CellClick);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(1014, 46);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 605);
+            this.panel1.TabIndex = 44;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 605);
+            this.panel2.TabIndex = 45;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(1, 650);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1013, 1);
+            this.panel3.TabIndex = 45;
+            // 
             // payDeets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 651);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.title);
@@ -763,5 +804,8 @@
         private System.Windows.Forms.MaskedTextBox dateBox;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

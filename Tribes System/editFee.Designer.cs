@@ -1,6 +1,6 @@
 ﻿namespace Tribes_System
 {
-    partial class addFee
+    partial class editFee
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label10 = new System.Windows.Forms.Label();
-            this.recievedBox = new System.Windows.Forms.TextBox();
             this.title = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.recievedBox = new System.Windows.Forms.TextBox();
             this.cancelButt = new System.Windows.Forms.Button();
             this.saveButt = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(32, 98);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 25);
-            this.label10.TabIndex = 101;
-            this.label10.Text = "Amount:";
-            // 
-            // recievedBox
-            // 
-            this.recievedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recievedBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.recievedBox.Location = new System.Drawing.Point(142, 97);
-            this.recievedBox.Name = "recievedBox";
-            this.recievedBox.Size = new System.Drawing.Size(262, 30);
-            this.recievedBox.TabIndex = 100;
-            this.recievedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.recievedBox_KeyPress);
             // 
             // title
             // 
@@ -67,8 +46,8 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(456, 46);
-            this.title.TabIndex = 102;
+            this.title.Size = new System.Drawing.Size(459, 46);
+            this.title.TabIndex = 107;
             // 
             // label2
             // 
@@ -78,9 +57,31 @@
             this.label2.Location = new System.Drawing.Point(13, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(149, 27);
+            this.label2.Size = new System.Drawing.Size(95, 27);
             this.label2.TabIndex = 105;
-            this.label2.Text = "Additional Fee";
+            this.label2.Text = "Edit Fee";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(32, 82);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 25);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Amount:";
+            // 
+            // recievedBox
+            // 
+            this.recievedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recievedBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.recievedBox.Location = new System.Drawing.Point(142, 81);
+            this.recievedBox.Name = "recievedBox";
+            this.recievedBox.Size = new System.Drawing.Size(262, 30);
+            this.recievedBox.TabIndex = 105;
+            this.recievedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.recievedBox_KeyPress);
             // 
             // cancelButt
             // 
@@ -91,11 +92,11 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(214, 196);
+            this.cancelButt.Location = new System.Drawing.Point(234, 185);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
-            this.cancelButt.Size = new System.Drawing.Size(190, 31);
-            this.cancelButt.TabIndex = 104;
+            this.cancelButt.Size = new System.Drawing.Size(170, 31);
+            this.cancelButt.TabIndex = 109;
             this.cancelButt.Text = "CANCEL";
             this.cancelButt.UseVisualStyleBackColor = false;
             this.cancelButt.Click += new System.EventHandler(this.cancelButt_Click);
@@ -109,29 +110,47 @@
             this.saveButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.saveButt.Location = new System.Drawing.Point(214, 157);
+            this.saveButt.Location = new System.Drawing.Point(37, 146);
             this.saveButt.Margin = new System.Windows.Forms.Padding(4);
             this.saveButt.Name = "saveButt";
-            this.saveButt.Size = new System.Drawing.Size(190, 31);
-            this.saveButt.TabIndex = 103;
+            this.saveButt.Size = new System.Drawing.Size(170, 31);
+            this.saveButt.TabIndex = 108;
             this.saveButt.Text = "ADD";
             this.saveButt.UseVisualStyleBackColor = false;
             this.saveButt.Click += new System.EventHandler(this.saveButt_Click);
             // 
-            // addFee
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(234, 146);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 31);
+            this.button1.TabIndex = 110;
+            this.button1.Text = "REMOVE";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // editFee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 270);
-            this.Controls.Add(this.cancelButt);
-            this.Controls.Add(this.saveButt);
+            this.ClientSize = new System.Drawing.Size(459, 263);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.title);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.recievedBox);
+            this.Controls.Add(this.cancelButt);
+            this.Controls.Add(this.saveButt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "addFee";
+            this.Name = "editFee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "addFee";
+            this.Text = "editFee";
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
             this.ResumeLayout(false);
@@ -141,11 +160,12 @@
 
         #endregion
 
+        private System.Windows.Forms.Panel title;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox recievedBox;
-        private System.Windows.Forms.Panel title;
         private System.Windows.Forms.Button cancelButt;
         private System.Windows.Forms.Button saveButt;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

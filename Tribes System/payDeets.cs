@@ -438,5 +438,11 @@ namespace Tribes_System
             addFee form = new addFee();
             form.ShowDialog();
         }
+
+        private void editFee_Click(object sender, EventArgs e)
+        {
+            editFee form = new editFee();
+            form.ShowDialog();
+        }
     }
 }
