@@ -429,7 +429,7 @@
             // 
             // financesUI1
             // 
-            this.financesUI1.Location = new System.Drawing.Point(119, 73);
+            this.financesUI1.Location = new System.Drawing.Point(119, 63);
             this.financesUI1.Name = "financesUI1";
             this.financesUI1.Size = new System.Drawing.Size(1315, 800);
             this.financesUI1.TabIndex = 11;

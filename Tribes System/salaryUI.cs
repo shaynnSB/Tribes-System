@@ -128,12 +128,6 @@ namespace Tribes_System
             statusBox.Text = "";
         }
 
-        private void payRepButt_Click(object sender, EventArgs e)
-        {
-            salaryReport form = new salaryReport();
-            form.ShowDialog();
-        }
-
         private void EmpGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             deetPanel.Visible = true;

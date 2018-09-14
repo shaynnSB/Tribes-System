@@ -16,5 +16,17 @@ namespace Tribes_System
         {
             InitializeComponent();
         }
+
+        private void salaryButt_Click(object sender, EventArgs e)
+        {
+            salaryReport form = new salaryReport();
+            form.ShowDialog();
+        }
+
+        private void expButt_Click(object sender, EventArgs e)
+        {
+            expenseReport form = new expenseReport();
+            form.ShowDialog();
+        }
     }
 }

@@ -32,7 +32,6 @@
             this.statusBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EmpGrid = new System.Windows.Forms.DataGridView();
-            this.payRepButt = new System.Windows.Forms.Button();
             this.allButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
             this.vioButt = new System.Windows.Forms.Button();
@@ -96,27 +95,9 @@
             this.EmpGrid.Location = new System.Drawing.Point(45, 204);
             this.EmpGrid.Name = "EmpGrid";
             this.EmpGrid.RowTemplate.Height = 24;
-            this.EmpGrid.Size = new System.Drawing.Size(715, 505);
+            this.EmpGrid.Size = new System.Drawing.Size(715, 575);
             this.EmpGrid.TabIndex = 82;
             this.EmpGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmpGrid_CellClick);
-            // 
-            // payRepButt
-            // 
-            this.payRepButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.payRepButt.FlatAppearance.BorderSize = 0;
-            this.payRepButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.payRepButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.payRepButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.payRepButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.payRepButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.payRepButt.Location = new System.Drawing.Point(45, 731);
-            this.payRepButt.Margin = new System.Windows.Forms.Padding(4);
-            this.payRepButt.Name = "payRepButt";
-            this.payRepButt.Size = new System.Drawing.Size(303, 37);
-            this.payRepButt.TabIndex = 86;
-            this.payRepButt.Text = "SALARY REPORT";
-            this.payRepButt.UseVisualStyleBackColor = false;
-            this.payRepButt.Click += new System.EventHandler(this.payRepButt_Click);
             // 
             // allButt
             // 
@@ -152,7 +133,7 @@
             this.deetPanel.Controls.Add(this.NameLab);
             this.deetPanel.Location = new System.Drawing.Point(786, 204);
             this.deetPanel.Name = "deetPanel";
-            this.deetPanel.Size = new System.Drawing.Size(516, 505);
+            this.deetPanel.Size = new System.Drawing.Size(516, 575);
             this.deetPanel.TabIndex = 88;
             this.deetPanel.Visible = false;
             // 
@@ -165,7 +146,7 @@
             this.vioButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vioButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vioButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.vioButt.Location = new System.Drawing.Point(21, 389);
+            this.vioButt.Location = new System.Drawing.Point(21, 461);
             this.vioButt.Margin = new System.Windows.Forms.Padding(4);
             this.vioButt.Name = "vioButt";
             this.vioButt.Size = new System.Drawing.Size(144, 37);
@@ -183,7 +164,7 @@
             this.bonusButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bonusButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.bonusButt.Location = new System.Drawing.Point(21, 434);
+            this.bonusButt.Location = new System.Drawing.Point(21, 506);
             this.bonusButt.Margin = new System.Windows.Forms.Padding(4);
             this.bonusButt.Name = "bonusButt";
             this.bonusButt.Size = new System.Drawing.Size(144, 37);
@@ -197,7 +178,7 @@
             this.vioLabel.AutoSize = true;
             this.vioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioLabel.Location = new System.Drawing.Point(387, 384);
+            this.vioLabel.Location = new System.Drawing.Point(353, 456);
             this.vioLabel.Name = "vioLabel";
             this.vioLabel.Size = new System.Drawing.Size(26, 25);
             this.vioLabel.TabIndex = 97;
@@ -208,7 +189,7 @@
             this.bonusLabel.AutoSize = true;
             this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusLabel.Location = new System.Drawing.Point(387, 418);
+            this.bonusLabel.Location = new System.Drawing.Point(353, 490);
             this.bonusLabel.Name = "bonusLabel";
             this.bonusLabel.Size = new System.Drawing.Size(26, 25);
             this.bonusLabel.TabIndex = 96;
@@ -219,7 +200,7 @@
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totalLabel.Location = new System.Drawing.Point(387, 453);
+            this.totalLabel.Location = new System.Drawing.Point(353, 525);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(28, 25);
             this.totalLabel.TabIndex = 95;
@@ -230,7 +211,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(247, 453);
+            this.label4.Location = new System.Drawing.Point(213, 525);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 25);
             this.label4.TabIndex = 94;
@@ -241,7 +222,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(247, 418);
+            this.label3.Location = new System.Drawing.Point(213, 490);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 25);
             this.label3.TabIndex = 93;
@@ -252,7 +233,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(247, 384);
+            this.label2.Location = new System.Drawing.Point(213, 456);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 92;
@@ -261,10 +242,10 @@
             // earnedGrid
             // 
             this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.earnedGrid.Location = new System.Drawing.Point(21, 86);
+            this.earnedGrid.Location = new System.Drawing.Point(21, 89);
             this.earnedGrid.Name = "earnedGrid";
             this.earnedGrid.RowTemplate.Height = 24;
-            this.earnedGrid.Size = new System.Drawing.Size(471, 280);
+            this.earnedGrid.Size = new System.Drawing.Size(471, 351);
             this.earnedGrid.TabIndex = 91;
             // 
             // StatusLab
@@ -295,7 +276,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.allButt);
-            this.Controls.Add(this.payRepButt);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
@@ -318,7 +298,6 @@
         private System.Windows.Forms.ComboBox statusBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView EmpGrid;
-        private System.Windows.Forms.Button payRepButt;
         private System.Windows.Forms.Button allButt;
         private System.Windows.Forms.Panel deetPanel;
         private System.Windows.Forms.Label vioLabel;

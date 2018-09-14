@@ -59,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(36, 80);
+            this.label1.Location = new System.Drawing.Point(36, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(264, 46);
             this.label1.TabIndex = 84;
@@ -67,30 +67,32 @@
             // 
             // minButt
             // 
+            this.minButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.minButt.FlatAppearance.BorderSize = 0;
             this.minButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(912, 2);
+            this.minButt.Location = new System.Drawing.Point(918, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
-            this.minButt.Size = new System.Drawing.Size(41, 42);
+            this.minButt.Size = new System.Drawing.Size(41, 46);
             this.minButt.TabIndex = 1;
             this.minButt.UseVisualStyleBackColor = true;
             this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
             // closeButt
             // 
+            this.closeButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeButt.FlatAppearance.BorderSize = 0;
             this.closeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(959, 2);
+            this.closeButt.Location = new System.Drawing.Point(959, 0);
             this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
-            this.closeButt.Size = new System.Drawing.Size(41, 42);
+            this.closeButt.Size = new System.Drawing.Size(41, 46);
             this.closeButt.TabIndex = 0;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
@@ -125,10 +127,10 @@
             this.reportTab.Controls.Add(this.tabPage1);
             this.reportTab.Controls.Add(this.tabPage2);
             this.reportTab.Controls.Add(this.tabPage3);
-            this.reportTab.Location = new System.Drawing.Point(44, 140);
+            this.reportTab.Location = new System.Drawing.Point(44, 113);
             this.reportTab.Name = "reportTab";
             this.reportTab.SelectedIndex = 0;
-            this.reportTab.Size = new System.Drawing.Size(909, 716);
+            this.reportTab.Size = new System.Drawing.Size(909, 738);
             this.reportTab.TabIndex = 86;
             // 
             // tabPage1
@@ -138,7 +140,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(901, 687);
+            this.tabPage1.Size = new System.Drawing.Size(901, 709);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monthly Report";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -267,7 +269,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 834);
+            this.panel1.Size = new System.Drawing.Size(1, 830);
             this.panel1.TabIndex = 88;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -278,14 +280,14 @@
             this.panel2.Location = new System.Drawing.Point(999, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 834);
+            this.panel2.Size = new System.Drawing.Size(1, 830);
             this.panel2.TabIndex = 89;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 880);
+            this.panel3.Location = new System.Drawing.Point(0, 876);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1000, 1);
@@ -295,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 881);
+            this.ClientSize = new System.Drawing.Size(1000, 877);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
