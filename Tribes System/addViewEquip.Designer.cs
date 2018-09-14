@@ -36,10 +36,10 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.assignedGrid = new System.Windows.Forms.DataGridView();
+            this.removeButt = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.customButt = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.removeButt = new System.Windows.Forms.Button();
             this.confirmButt = new System.Windows.Forms.Button();
             this.listEmpGrid = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +156,23 @@
             this.assignedGrid.Size = new System.Drawing.Size(544, 451);
             this.assignedGrid.TabIndex = 0;
             // 
+            // removeButt
+            // 
+            this.removeButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.removeButt.FlatAppearance.BorderSize = 0;
+            this.removeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.removeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.removeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.removeButt.Location = new System.Drawing.Point(473, 20);
+            this.removeButt.Name = "removeButt";
+            this.removeButt.Size = new System.Drawing.Size(77, 24);
+            this.removeButt.TabIndex = 91;
+            this.removeButt.Text = "Remove";
+            this.removeButt.UseVisualStyleBackColor = false;
+            this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.customButt);
@@ -198,23 +215,6 @@
             this.label3.Size = new System.Drawing.Size(314, 24);
             this.label3.TabIndex = 49;
             this.label3.Text = "EQUIPMENTS TO BE CONFIRMED";
-            // 
-            // removeButt
-            // 
-            this.removeButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.removeButt.FlatAppearance.BorderSize = 0;
-            this.removeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.removeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.removeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.removeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.removeButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.removeButt.Location = new System.Drawing.Point(473, 20);
-            this.removeButt.Name = "removeButt";
-            this.removeButt.Size = new System.Drawing.Size(77, 24);
-            this.removeButt.TabIndex = 91;
-            this.removeButt.Text = "Remove";
-            this.removeButt.UseVisualStyleBackColor = false;
-            this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
             // 
             // confirmButt
             // 
@@ -357,6 +357,7 @@
             this.Name = "addViewEquip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addViewEquip";
+            this.Load += new System.EventHandler(this.addViewEquip_Load);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
             this.tabControl1.ResumeLayout(false);

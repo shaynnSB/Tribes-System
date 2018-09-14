@@ -114,5 +114,10 @@ namespace Tribes_System
                 closeConnection();
             }
         }
+
+        private void EditEquip_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

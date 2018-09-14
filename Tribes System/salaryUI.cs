@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class salaryUI : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
 
         DataTable grid = new DataTable();
         string selectedEmp = "";

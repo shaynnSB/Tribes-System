@@ -166,5 +166,10 @@ namespace Tribes_System
         {
             addSelectedRow = e.RowIndex;
         }
+
+        private void addViewStaff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

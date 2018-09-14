@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class eventSched : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=; Convert Zero Datetime = True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root; Convert Zero Datetime = True;");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();
@@ -185,7 +185,7 @@ namespace Tribes_System
             
             executeMyQuery(insertQuery1);
             executeMyQuery(insertQuery);
-            MessageBox.Show("Marked as done");
+            MessageBox.Show("Marked as Finished");
         }
 
         private void eventGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

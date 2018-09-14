@@ -81,7 +81,7 @@
             this.title.Dock = System.Windows.Forms.DockStyle.Top;
             this.title.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.title.Location = new System.Drawing.Point(0, 0);
-            this.title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.title.Margin = new System.Windows.Forms.Padding(2);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(606, 37);
             this.title.TabIndex = 47;
@@ -94,7 +94,7 @@
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
             this.minButt.Location = new System.Drawing.Point(537, 2);
-            this.minButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.minButt.Margin = new System.Windows.Forms.Padding(2);
             this.minButt.Name = "minButt";
             this.minButt.Size = new System.Drawing.Size(31, 34);
             this.minButt.TabIndex = 45;
@@ -109,7 +109,7 @@
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
             this.closeButt.Location = new System.Drawing.Point(575, 2);
-            this.closeButt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.closeButt.Margin = new System.Windows.Forms.Padding(2);
             this.closeButt.Name = "closeButt";
             this.closeButt.Size = new System.Drawing.Size(31, 34);
             this.closeButt.TabIndex = 44;
@@ -132,7 +132,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(16, 132);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(575, 449);
@@ -143,9 +143,9 @@
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.assignedGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(567, 423);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Assigned Staff";
@@ -171,7 +171,7 @@
             // 
             this.assignedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assignedGrid.Location = new System.Drawing.Point(12, 17);
-            this.assignedGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assignedGrid.Margin = new System.Windows.Forms.Padding(2);
             this.assignedGrid.Name = "assignedGrid";
             this.assignedGrid.RowTemplate.Height = 24;
             this.assignedGrid.Size = new System.Drawing.Size(447, 392);
@@ -189,9 +189,9 @@
             this.tabPage2.Controls.Add(this.statusBox);
             this.tabPage2.Controls.Add(this.listEmpGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(567, 423);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add Staff and Edit Lineup";
@@ -240,7 +240,7 @@
             // 
             this.addGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addGrid.Location = new System.Drawing.Point(296, 76);
-            this.addGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addGrid.Margin = new System.Windows.Forms.Padding(2);
             this.addGrid.Name = "addGrid";
             this.addGrid.RowTemplate.Height = 24;
             this.addGrid.Size = new System.Drawing.Size(261, 266);
@@ -306,7 +306,7 @@
             "On-Call",
             "Full-Time"});
             this.statusBox.Location = new System.Drawing.Point(126, 15);
-            this.statusBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.statusBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(148, 25);
             this.statusBox.TabIndex = 88;
@@ -316,7 +316,7 @@
             // 
             this.listEmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listEmpGrid.Location = new System.Drawing.Point(12, 76);
-            this.listEmpGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listEmpGrid.Margin = new System.Windows.Forms.Padding(2);
             this.listEmpGrid.Name = "listEmpGrid";
             this.listEmpGrid.RowTemplate.Height = 24;
             this.listEmpGrid.Size = new System.Drawing.Size(261, 266);
@@ -329,7 +329,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Location = new System.Drawing.Point(0, 37);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1, 572);
             this.panel1.TabIndex = 49;
@@ -340,7 +340,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Location = new System.Drawing.Point(605, 37);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 572);
             this.panel2.TabIndex = 50;
@@ -351,7 +351,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Location = new System.Drawing.Point(1, 608);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(604, 1);
             this.panel3.TabIndex = 50;
@@ -380,10 +380,11 @@
             this.Controls.Add(this.title);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "addViewStaff";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "addViewStaff";
+            this.Load += new System.EventHandler(this.addViewStaff_Load);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
             this.tabControl1.ResumeLayout(false);

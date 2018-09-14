@@ -12,7 +12,7 @@ namespace Tribes_System
 {
     public partial class AddContent : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
         MySqlCommand adapter;
         public AddContent()
@@ -120,7 +120,9 @@ namespace Tribes_System
             }
         }
 
+        private void AddContent_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

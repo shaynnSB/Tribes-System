@@ -14,7 +14,7 @@ namespace Tribes_System
 {
     public partial class Equipment : UserControl
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();
@@ -236,6 +236,11 @@ namespace Tribes_System
     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
+        }
+
+        private void Equipment_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
