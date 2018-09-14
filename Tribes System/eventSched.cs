@@ -14,8 +14,9 @@ namespace Tribes_System
     public partial class eventSched : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root; Convert Zero Datetime = True;");
-
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=; Convert Zero Datetime = True;");
+        MySqlCommand cmd;
+        MySqlCommand adapter;
         DataTable grid = new DataTable();
         int selectedRow;
 
@@ -175,6 +176,54 @@ namespace Tribes_System
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+            string insertQuery = "DELETE FROM event WHERE id_event =" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+            
+            executeMyQuery(insertQuery1);
+            executeMyQuery(insertQuery);
+            MessageBox.Show("Marked as done");
+        }
+
+        private void eventGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                    //MessageBox.Show("Item added Successfully");
+
+                }
+
+                else
+                {
+                   // MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
         }
     }
 }

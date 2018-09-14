@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class EmployeeTab : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
 
         DataTable grid = new DataTable();
         string selectedEmp ="";

@@ -42,15 +42,15 @@
             this.removeButt = new System.Windows.Forms.Button();
             this.confirmButt = new System.Windows.Forms.Button();
             this.listEmpGrid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.eventLabel = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -128,6 +128,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.assignedGrid);
+            this.tabPage1.Controls.Add(this.removeButt);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
@@ -144,7 +145,7 @@
             this.assignedGrid.AllowUserToResizeColumns = false;
             this.assignedGrid.AllowUserToResizeRows = false;
             this.assignedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assignedGrid.Location = new System.Drawing.Point(12, 17);
+            this.assignedGrid.Location = new System.Drawing.Point(12, 49);
             this.assignedGrid.Margin = new System.Windows.Forms.Padding(2);
             this.assignedGrid.MultiSelect = false;
             this.assignedGrid.Name = "assignedGrid";
@@ -152,14 +153,13 @@
             this.assignedGrid.RowHeadersVisible = false;
             this.assignedGrid.RowTemplate.Height = 24;
             this.assignedGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.assignedGrid.Size = new System.Drawing.Size(544, 483);
+            this.assignedGrid.Size = new System.Drawing.Size(544, 451);
             this.assignedGrid.TabIndex = 0;
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.customButt);
             this.tabPage2.Controls.Add(this.label3);
-            this.tabPage2.Controls.Add(this.removeButt);
             this.tabPage2.Controls.Add(this.confirmButt);
             this.tabPage2.Controls.Add(this.listEmpGrid);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -208,12 +208,13 @@
             this.removeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.removeButt.Location = new System.Drawing.Point(348, 47);
+            this.removeButt.Location = new System.Drawing.Point(473, 20);
             this.removeButt.Name = "removeButt";
             this.removeButt.Size = new System.Drawing.Size(77, 24);
             this.removeButt.TabIndex = 91;
             this.removeButt.Text = "Remove";
             this.removeButt.UseVisualStyleBackColor = false;
+            this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
             // 
             // confirmButt
             // 
@@ -254,6 +255,34 @@
             this.listEmpGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.listEmpGrid.Size = new System.Drawing.Size(545, 396);
             this.listEmpGrid.TabIndex = 1;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "Column1";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // col2
+            // 
+            this.col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col2.HeaderText = "Model Number / Name";
+            this.col2.Name = "col2";
+            this.col2.ReadOnly = true;
+            // 
+            // col3
+            // 
+            this.col3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col3.HeaderText = "Equipment Name";
+            this.col3.Name = "col3";
+            this.col3.ReadOnly = true;
+            // 
+            // col4
+            // 
+            this.col4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col4.HeaderText = "Category";
+            this.col4.Name = "col4";
+            this.col4.ReadOnly = true;
             // 
             // label1
             // 
@@ -309,34 +338,6 @@
             this.eventLabel.Size = new System.Drawing.Size(144, 29);
             this.eventLabel.TabIndex = 63;
             this.eventLabel.Text = "Event Name";
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Column1";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // col2
-            // 
-            this.col2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col2.HeaderText = "Model Number / Name";
-            this.col2.Name = "col2";
-            this.col2.ReadOnly = true;
-            // 
-            // col3
-            // 
-            this.col3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col3.HeaderText = "Equipment Name";
-            this.col3.Name = "col3";
-            this.col3.ReadOnly = true;
-            // 
-            // col4
-            // 
-            this.col4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col4.HeaderText = "Category";
-            this.col4.Name = "col4";
-            this.col4.ReadOnly = true;
             // 
             // addViewEquip
             // 

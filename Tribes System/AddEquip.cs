@@ -12,7 +12,7 @@ namespace Tribes_System
 {
     public partial class AddEquip : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
         MySqlCommand adapter;
         MySqlCommand cmd;
         Equipment uc1 = new Equipment();

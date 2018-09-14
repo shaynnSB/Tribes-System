@@ -14,7 +14,7 @@ namespace Tribes_System
 {
     public partial class Equipment : UserControl
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();

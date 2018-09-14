@@ -37,15 +37,16 @@
             this.availEmpGrid = new System.Windows.Forms.DataGridView();
             this.cancelButt = new System.Windows.Forms.Button();
             this.addEquipGrid = new System.Windows.Forms.DataGridView();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.availEmpGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEquipGrid)).BeginInit();
             this.SuspendLayout();
@@ -65,18 +66,27 @@
             this.allButt.TabIndex = 91;
             this.allButt.Text = "ALL";
             this.allButt.UseVisualStyleBackColor = false;
+            this.allButt.Click += new System.EventHandler(this.allButt_Click);
             // 
             // categoryBox
             // 
+            this.categoryBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.categoryBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.categoryBox.FormattingEnabled = true;
+            this.categoryBox.Items.AddRange(new object[] {
+            "Staging",
+            "Lights",
+            "Speakers",
+            "Misc.",
+            "Video",
+            "LED Wall",
+            "LCD"});
             this.categoryBox.Location = new System.Drawing.Point(98, 61);
             this.categoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.categoryBox.Name = "categoryBox";
             this.categoryBox.Size = new System.Drawing.Size(120, 25);
             this.categoryBox.TabIndex = 90;
-            this.categoryBox.Text = "Category";
             this.categoryBox.SelectedIndexChanged += new System.EventHandler(this.categoryBox_SelectedIndexChanged);
             // 
             // label3
@@ -150,6 +160,7 @@
             this.availEmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.availEmpGrid.Location = new System.Drawing.Point(20, 100);
             this.availEmpGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.availEmpGrid.MultiSelect = false;
             this.availEmpGrid.Name = "availEmpGrid";
             this.availEmpGrid.ReadOnly = true;
             this.availEmpGrid.RowHeadersVisible = false;
@@ -185,7 +196,8 @@
             this.Column4,
             this.Column1,
             this.Column2,
-            this.Column3});
+            this.Column3,
+            this.Column5});
             this.addEquipGrid.Location = new System.Drawing.Point(449, 100);
             this.addEquipGrid.Margin = new System.Windows.Forms.Padding(2);
             this.addEquipGrid.MultiSelect = false;
@@ -197,44 +209,20 @@
             this.addEquipGrid.Size = new System.Drawing.Size(398, 528);
             this.addEquipGrid.TabIndex = 100;
             // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Model Number";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Equipment Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Category";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
             // statusBox
             // 
+            this.statusBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.statusBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.statusBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.statusBox.FormattingEnabled = true;
+            this.statusBox.Items.AddRange(new object[] {
+            "Permanent",
+            "Temporary"});
             this.statusBox.Location = new System.Drawing.Point(221, 61);
             this.statusBox.Margin = new System.Windows.Forms.Padding(2);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(120, 25);
             this.statusBox.TabIndex = 101;
-            this.statusBox.Text = "Status";
             this.statusBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel1
@@ -276,6 +264,39 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 682);
             this.panel4.TabIndex = 103;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Model Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Equipment Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Category";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // customPack
             // 
@@ -323,10 +344,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.DataGridView addEquipGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        public System.Windows.Forms.DataGridView addEquipGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

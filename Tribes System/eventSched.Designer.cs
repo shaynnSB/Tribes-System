@@ -54,6 +54,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // calendar
             // 
             this.calendar.Location = new System.Drawing.Point(53, 81);
-            this.calendar.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.calendar.Margin = new System.Windows.Forms.Padding(7);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
             this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
@@ -72,7 +73,7 @@
             this.eventGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.eventGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.eventGrid.Location = new System.Drawing.Point(38, 258);
-            this.eventGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.eventGrid.Margin = new System.Windows.Forms.Padding(2);
             this.eventGrid.Name = "eventGrid";
             this.eventGrid.ReadOnly = true;
             this.eventGrid.RowHeadersVisible = false;
@@ -81,6 +82,7 @@
             this.eventGrid.TabIndex = 1;
             this.eventGrid.Visible = false;
             this.eventGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventGrid_CellClick);
+            this.eventGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventGrid_CellContentClick);
             // 
             // button2
             // 
@@ -119,6 +121,7 @@
             // deetPanel
             // 
             this.deetPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.deetPanel.Controls.Add(this.button1);
             this.deetPanel.Controls.Add(this.amLabel);
             this.deetPanel.Controls.Add(this.label6);
             this.deetPanel.Controls.Add(this.cancellationButt);
@@ -141,7 +144,7 @@
             this.deetPanel.Controls.Add(this.label45);
             this.deetPanel.Controls.Add(this.nameLabel);
             this.deetPanel.Location = new System.Drawing.Point(285, 81);
-            this.deetPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deetPanel.Margin = new System.Windows.Forms.Padding(2);
             this.deetPanel.Name = "deetPanel";
             this.deetPanel.Size = new System.Drawing.Size(686, 552);
             this.deetPanel.TabIndex = 70;
@@ -341,7 +344,7 @@
             this.notesBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.notesBox.Location = new System.Drawing.Point(42, 184);
-            this.notesBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.notesBox.Margin = new System.Windows.Forms.Padding(2);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(619, 79);
@@ -406,6 +409,23 @@
             this.label9.Text = "EVENT  SCHEDULE";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(469, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 30);
+            this.button1.TabIndex = 84;
+            this.button1.Text = "Mark As Done";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // eventSched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -415,7 +435,7 @@
             this.Controls.Add(this.calendar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.eventGrid);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "eventSched";
             this.Size = new System.Drawing.Size(986, 650);
             this.Load += new System.EventHandler(this.eventSched_Load);
@@ -455,5 +475,6 @@
         private System.Windows.Forms.Button cancellationButt;
         private System.Windows.Forms.Label amLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }

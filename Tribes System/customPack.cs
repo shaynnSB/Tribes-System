@@ -12,20 +12,31 @@ namespace Tribes_System
 {
     public partial class customPack : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();
         public customPack()
         {
             InitializeComponent();
-            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
+            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
 
         }
 
         private void categoryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            var x =categoryBox.SelectedIndex + 1;
+            if (statusBox.SelectedIndex == -1)
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x);
+            }
 
+            else
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+            }
+           
         }
         public void refresh(string query)
         {
@@ -36,6 +47,7 @@ namespace Tribes_System
             availEmpGrid.Columns.Clear();
             availEmpGrid.DataSource = table;
             availEmpGrid.Columns[0].Visible = false;
+            availEmpGrid.Columns[4].Visible = false;
             availEmpGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[1].HeaderCell.Value = "Model Number";
             availEmpGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -51,6 +63,7 @@ namespace Tribes_System
 
 
             addEquipGrid.Columns[0].Visible = false;
+            addEquipGrid.Columns[4].Visible = false;
             addEquipGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[1].HeaderCell.Value = "Model Number";
             addEquipGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -66,7 +79,16 @@ namespace Tribes_System
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var x = categoryBox.SelectedIndex + 1;
+            if (categoryBox.SelectedIndex == -1)
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and items.status ='" + statusBox.Text + "'");
+            }
 
+            else
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+            }
         }
 
         private void cancelButt_Click(object sender, EventArgs e)
@@ -145,13 +167,21 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            id = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
-            modelnumber = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[1].Value.ToString();
-            name = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[2].Value.ToString();
-            category = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[3].Value.ToString();
-            availEmpGrid.Rows.RemoveAt(availEmpGrid.SelectedRows[0].Index);
+            int rowCount1 = availEmpGrid.Rows.Count;
+            if (rowCount1 > 0)
+            {
+                id = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
+                modelnumber = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[1].Value.ToString();
+                name = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[2].Value.ToString();
+                category = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[3].Value.ToString();
+                availEmpGrid.Rows.RemoveAt(availEmpGrid.SelectedRows[0].Index);
 
-            addEquipGrid.Rows.Add(id,modelnumber,name,category);
+                addEquipGrid.Rows.Add(id, modelnumber, name, category);
+            }
+            else
+            {
+                MessageBox.Show("Nothing is selected");
+            }
         }
         public string idremove;
         public string modelnumberremove;
@@ -168,18 +198,32 @@ namespace Tribes_System
             int rowCount1 = availEmpGrid.Rows.Count;
             if (rowCount > 0)
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id =" + idremove);
+                if (rowCount > 0)
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id =" + idremove);
+                }
+                else
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID");
+                }
+                if (rowCount1 > 0 && rowCount != 0)
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id !=" + addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[0].Value.ToString());
+                }
             }
             else
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID");
-            }
-            if (rowCount1 > 0 && rowCount !=0)
-            {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id !=" + addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[0].Value.ToString());
+                MessageBox.Show("Nothing is selected");
             }
 
 
+        }
+
+        private void allButt_Click(object sender, EventArgs e)
+        {
+            categoryBox.SelectedIndex = -1;
+            statusBox.SelectedIndex = -1;
+            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
 
         }
     }

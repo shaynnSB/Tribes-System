@@ -53,7 +53,7 @@ namespace Tribes_System
 
         private void logButt_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+            MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
 
             string query = "select count(*) from accounts where acc_username ='" + userBox.Text + "' and acc_pass ='" + passBox.Text + "'";
 

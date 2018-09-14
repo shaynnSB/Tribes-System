@@ -13,7 +13,7 @@ namespace Tribes_System
     public partial class addViewEquip : Form
     {
         private bool drag = false;
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
         MySqlCommand adapter;
         MySqlCommand cmd;
         private Point startPoint = new Point(0, 0);
@@ -157,6 +157,23 @@ namespace Tribes_System
         {
             customPack form = new customPack();
             form.ShowDialog();
+        }
+
+        private void removeButt_Click(object sender, EventArgs e)
+        {
+            int rowCount1 = assignedGrid.Rows.Count;
+            if (rowCount1 > 0)
+            {
+                string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventSched.id+" and itemcontent.id = "+assignedGrid.Rows[assignedGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
+                executeMyQuery(insertQuery1);
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
+        
+            }
+            else
+            {
+                MessageBox.Show("Nothing is selected");
+            }
+           
         }
     }
 }

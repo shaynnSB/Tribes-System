@@ -13,7 +13,7 @@ namespace Tribes_System
 {
     public partial class EquipViewUI : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
         MySqlCommand adapter;
         MySqlCommand cmd;
         DataTable grid = new DataTable();

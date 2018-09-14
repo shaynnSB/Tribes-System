@@ -167,3 +167,39 @@ C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_Sy
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewEquipList.resources
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.violations.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\bin\Debug\MySql.Data.xml
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes System.csprojResolveAssemblyReference.cache
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddContent.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEmployee.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddEquip.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.addFee.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewEquip.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewStaff.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.customPack.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditContent.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEmployee.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditEquip.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.EmployeeTab.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.Equipment.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipmentUI.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipViewUI.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.eventSched.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.financesUI.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.equipButt.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.payDeets.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryUI.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewEquipList.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.violations.resources
+C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
