@@ -48,24 +48,9 @@ namespace Tribes_System
             this.form = form;
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void addDiscount_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void closeButt_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void minButt_Click(object sender, EventArgs e)
@@ -190,11 +175,6 @@ namespace Tribes_System
             dateBox.Text = "";
         }
 
-        private void dateBox_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void payDeets_Load(object sender, EventArgs e)
         {
             DisplayData();
@@ -244,11 +224,6 @@ namespace Tribes_System
             {
                 MessageBox.Show("Please Select Record to Delete!");
             }
-        }
-
-        private void amRevLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -443,6 +418,23 @@ namespace Tribes_System
         {
             editFee form = new editFee();
             form.ShowDialog();
+        }
+
+        private void addDiscount_Click(object sender, EventArgs e)
+        {
+            addDiscount form = new addDiscount();
+            form.ShowDialog();
+        }
+
+        private void editDiscount_Click(object sender, EventArgs e)
+        {
+            editDiscount form = new editDiscount();
+            form.ShowDialog();
+        }
+
+        private void remFee_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

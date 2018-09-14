@@ -38,8 +38,14 @@
             this.paymentGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.remFee = new System.Windows.Forms.Button();
+            this.remDiscount = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.editDiscount = new System.Windows.Forms.Button();
+            this.editFee = new System.Windows.Forms.Button();
             this.dateBox = new System.Windows.Forms.MaskedTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.recievedBox = new System.Windows.Forms.TextBox();
@@ -51,8 +57,6 @@
             this.addLabel = new System.Windows.Forms.Label();
             this.accRecLabel = new System.Windows.Forms.Label();
             this.amRevLabel = new System.Windows.Forms.Label();
-            this.editFee = new System.Windows.Forms.Button();
-            this.editDiscount = new System.Windows.Forms.Button();
             this.addFee = new System.Windows.Forms.Button();
             this.addDiscount = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -191,8 +195,14 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.remFee);
+            this.tabPage1.Controls.Add(this.remDiscount);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.statusLabel);
             this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.editDiscount);
+            this.tabPage1.Controls.Add(this.editFee);
             this.tabPage1.Controls.Add(this.dateBox);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.recievedBox);
@@ -204,8 +214,6 @@
             this.tabPage1.Controls.Add(this.addLabel);
             this.tabPage1.Controls.Add(this.accRecLabel);
             this.tabPage1.Controls.Add(this.amRevLabel);
-            this.tabPage1.Controls.Add(this.editFee);
-            this.tabPage1.Controls.Add(this.editDiscount);
             this.tabPage1.Controls.Add(this.addFee);
             this.tabPage1.Controls.Add(this.addDiscount);
             this.tabPage1.Controls.Add(this.label7);
@@ -222,7 +230,65 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Payment Details";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // remFee
+            // 
+            this.remFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.remFee.FlatAppearance.BorderSize = 0;
+            this.remFee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.remFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.remFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remFee.ForeColor = System.Drawing.SystemColors.Control;
+            this.remFee.Location = new System.Drawing.Point(430, 350);
+            this.remFee.Margin = new System.Windows.Forms.Padding(4);
+            this.remFee.Name = "remFee";
+            this.remFee.Size = new System.Drawing.Size(106, 37);
+            this.remFee.TabIndex = 107;
+            this.remFee.Text = "Remove";
+            this.remFee.UseVisualStyleBackColor = false;
+            this.remFee.Click += new System.EventHandler(this.remFee_Click);
+            // 
+            // remDiscount
+            // 
+            this.remDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.remDiscount.FlatAppearance.BorderSize = 0;
+            this.remDiscount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.remDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.remDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remDiscount.ForeColor = System.Drawing.SystemColors.Control;
+            this.remDiscount.Location = new System.Drawing.Point(429, 395);
+            this.remDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.remDiscount.Name = "remDiscount";
+            this.remDiscount.Size = new System.Drawing.Size(107, 37);
+            this.remDiscount.TabIndex = 106;
+            this.remDiscount.Text = "Remove";
+            this.remDiscount.UseVisualStyleBackColor = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(84, 403);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 29);
+            this.label14.TabIndex = 105;
+            this.label14.Text = "Discount";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label12.Location = new System.Drawing.Point(21, 353);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(169, 29);
+            this.label12.TabIndex = 104;
+            this.label12.Text = "Additional Fee";
             // 
             // statusLabel
             // 
@@ -248,16 +314,51 @@
             this.label11.TabIndex = 101;
             this.label11.Text = "Date Paid:";
             // 
+            // editDiscount
+            // 
+            this.editDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.editDiscount.FlatAppearance.BorderSize = 0;
+            this.editDiscount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.editDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.editDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editDiscount.ForeColor = System.Drawing.SystemColors.Control;
+            this.editDiscount.Location = new System.Drawing.Point(315, 395);
+            this.editDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.editDiscount.Name = "editDiscount";
+            this.editDiscount.Size = new System.Drawing.Size(107, 37);
+            this.editDiscount.TabIndex = 72;
+            this.editDiscount.Text = "Edit";
+            this.editDiscount.UseVisualStyleBackColor = false;
+            this.editDiscount.Click += new System.EventHandler(this.editDiscount_Click);
+            // 
+            // editFee
+            // 
+            this.editFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.editFee.FlatAppearance.BorderSize = 0;
+            this.editFee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.editFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.editFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editFee.ForeColor = System.Drawing.SystemColors.Control;
+            this.editFee.Location = new System.Drawing.Point(316, 350);
+            this.editFee.Margin = new System.Windows.Forms.Padding(4);
+            this.editFee.Name = "editFee";
+            this.editFee.Size = new System.Drawing.Size(106, 37);
+            this.editFee.TabIndex = 73;
+            this.editFee.Text = "Edit";
+            this.editFee.UseVisualStyleBackColor = false;
+            this.editFee.Click += new System.EventHandler(this.editFee_Click);
+            // 
             // dateBox
             // 
             this.dateBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dateBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dateBox.Location = new System.Drawing.Point(677, 123);
+            this.dateBox.Location = new System.Drawing.Point(697, 123);
             this.dateBox.Mask = "0000-00-00";
             this.dateBox.Name = "dateBox";
-            this.dateBox.Size = new System.Drawing.Size(262, 30);
+            this.dateBox.Size = new System.Drawing.Size(242, 30);
             this.dateBox.TabIndex = 102;
-            this.dateBox.TextChanged += new System.EventHandler(this.dateBox_TextChanged);
             // 
             // label10
             // 
@@ -275,9 +376,9 @@
             // 
             this.recievedBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recievedBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.recievedBox.Location = new System.Drawing.Point(677, 74);
+            this.recievedBox.Location = new System.Drawing.Point(697, 74);
             this.recievedBox.Name = "recievedBox";
-            this.recievedBox.Size = new System.Drawing.Size(262, 30);
+            this.recievedBox.Size = new System.Drawing.Size(242, 30);
             this.recievedBox.TabIndex = 98;
             this.recievedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.recievedBox_KeyPress);
             // 
@@ -394,42 +495,6 @@
             this.amRevLabel.Size = new System.Drawing.Size(29, 29);
             this.amRevLabel.TabIndex = 74;
             this.amRevLabel.Text = "--";
-            this.amRevLabel.Click += new System.EventHandler(this.amRevLabel_Click);
-            // 
-            // editFee
-            // 
-            this.editFee.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.editFee.FlatAppearance.BorderSize = 0;
-            this.editFee.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.editFee.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.editFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editFee.ForeColor = System.Drawing.SystemColors.Control;
-            this.editFee.Location = new System.Drawing.Point(290, 350);
-            this.editFee.Margin = new System.Windows.Forms.Padding(4);
-            this.editFee.Name = "editFee";
-            this.editFee.Size = new System.Drawing.Size(246, 37);
-            this.editFee.TabIndex = 73;
-            this.editFee.Text = "Edit Additional Fee";
-            this.editFee.UseVisualStyleBackColor = false;
-            this.editFee.Click += new System.EventHandler(this.editFee_Click);
-            // 
-            // editDiscount
-            // 
-            this.editDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.editDiscount.FlatAppearance.BorderSize = 0;
-            this.editDiscount.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.editDiscount.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.editDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.editDiscount.Location = new System.Drawing.Point(290, 395);
-            this.editDiscount.Margin = new System.Windows.Forms.Padding(4);
-            this.editDiscount.Name = "editDiscount";
-            this.editDiscount.Size = new System.Drawing.Size(246, 37);
-            this.editDiscount.TabIndex = 72;
-            this.editDiscount.Text = "Edit Discount";
-            this.editDiscount.UseVisualStyleBackColor = false;
             // 
             // addFee
             // 
@@ -440,12 +505,12 @@
             this.addFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addFee.ForeColor = System.Drawing.SystemColors.Control;
-            this.addFee.Location = new System.Drawing.Point(26, 350);
+            this.addFee.Location = new System.Drawing.Point(200, 350);
             this.addFee.Margin = new System.Windows.Forms.Padding(4);
             this.addFee.Name = "addFee";
-            this.addFee.Size = new System.Drawing.Size(246, 37);
+            this.addFee.Size = new System.Drawing.Size(107, 37);
             this.addFee.TabIndex = 71;
-            this.addFee.Text = "Add Additional Fee";
+            this.addFee.Text = "Add";
             this.addFee.UseVisualStyleBackColor = false;
             this.addFee.Click += new System.EventHandler(this.addFee_Click);
             // 
@@ -458,12 +523,12 @@
             this.addDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.addDiscount.Location = new System.Drawing.Point(26, 395);
+            this.addDiscount.Location = new System.Drawing.Point(200, 395);
             this.addDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.addDiscount.Name = "addDiscount";
-            this.addDiscount.Size = new System.Drawing.Size(246, 37);
+            this.addDiscount.Size = new System.Drawing.Size(107, 37);
             this.addDiscount.TabIndex = 70;
-            this.addDiscount.Text = "Add Discount";
+            this.addDiscount.Text = "Add";
             this.addDiscount.UseVisualStyleBackColor = false;
             this.addDiscount.Click += new System.EventHandler(this.addDiscount_Click);
             // 
@@ -547,7 +612,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Expenses";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label8
             // 
@@ -807,5 +871,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button remFee;
+        private System.Windows.Forms.Button remDiscount;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label12;
     }
 }

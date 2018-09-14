@@ -13,7 +13,6 @@ namespace Tribes_System
 {
     public partial class addFee : Form
     {
-        eventSched form = new eventSched();
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
         string id_Passed;
