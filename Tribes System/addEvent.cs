@@ -13,7 +13,7 @@ namespace Tribes_System
 {
     public partial class addEvent : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
 
         private bool drag = false;
@@ -192,6 +192,11 @@ namespace Tribes_System
         }
 
         private void conClientBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void title_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -13,7 +13,7 @@ namespace Tribes_System
     public partial class addViewEquip : Form
     {
         private bool drag = false;
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand adapter;
         MySqlCommand cmd;
         private Point startPoint = new Point(0, 0);
@@ -174,6 +174,11 @@ namespace Tribes_System
                 MessageBox.Show("Nothing is selected");
             }
            
+        }
+
+        private void addViewEquip_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -161,5 +161,10 @@ namespace Tribes_System
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
+        private void editEvent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,5 +55,10 @@ namespace Tribes_System
             this.startPoint = e.Location;
             this.drag = true;
         }
+
+        private void viewStaffList_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

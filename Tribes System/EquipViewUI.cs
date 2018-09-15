@@ -13,7 +13,7 @@ namespace Tribes_System
 {
     public partial class EquipViewUI : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand adapter;
         MySqlCommand cmd;
         DataTable grid = new DataTable();
@@ -430,6 +430,11 @@ namespace Tribes_System
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void EquipViewUI_Load(object sender, EventArgs e)
         {
 
         }

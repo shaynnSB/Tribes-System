@@ -37,16 +37,16 @@
             this.availEmpGrid = new System.Windows.Forms.DataGridView();
             this.cancelButt = new System.Windows.Forms.Button();
             this.addEquipGrid = new System.Windows.Forms.DataGridView();
-            this.statusBox = new System.Windows.Forms.ComboBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusBox = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.availEmpGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEquipGrid)).BeginInit();
             this.SuspendLayout();
@@ -209,6 +209,39 @@
             this.addEquipGrid.Size = new System.Drawing.Size(398, 528);
             this.addEquipGrid.TabIndex = 100;
             // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Model Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Equipment Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "Category";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
             // statusBox
             // 
             this.statusBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -265,39 +298,6 @@
             this.panel4.Size = new System.Drawing.Size(1, 682);
             this.panel4.TabIndex = 103;
             // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Model Number";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Equipment Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "Category";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
             // customPack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +322,7 @@
             this.Name = "customPack";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "customPack";
+            this.Load += new System.EventHandler(this.customPack_Load);
             ((System.ComponentModel.ISupportInitialize)(this.availEmpGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addEquipGrid)).EndInit();
             this.ResumeLayout(false);

@@ -168,6 +168,9 @@ namespace Tribes_System
             }
         }
 
-      
+        private void EditContent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

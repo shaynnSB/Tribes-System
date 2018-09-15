@@ -16,5 +16,10 @@ namespace Tribes_System
         {
             InitializeComponent();
         }
+
+        private void paymentDetails_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class eventSched : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=; Convert Zero Datetime = True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root; Convert Zero Datetime = True;");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();

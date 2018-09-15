@@ -57,6 +57,7 @@
             this.tabPage12 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.mtor = new System.Windows.Forms.Button();
             this.rep = new System.Windows.Forms.Button();
             this.dbr = new System.Windows.Forms.Button();
@@ -68,7 +69,6 @@
             this.ddl = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.ol = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -409,6 +409,22 @@
             this.tabPage10.Text = "Deployed";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AllowUserToAddRows = false;
+            this.dataGridView6.AllowUserToDeleteRows = false;
+            this.dataGridView6.AllowUserToResizeColumns = false;
+            this.dataGridView6.AllowUserToResizeRows = false;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView6.MultiSelect = false;
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.ReadOnly = true;
+            this.dataGridView6.RowHeadersVisible = false;
+            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView6.Size = new System.Drawing.Size(736, 302);
+            this.dataGridView6.TabIndex = 0;
+            // 
             // mtor
             // 
             this.mtor.Location = new System.Drawing.Point(647, 81);
@@ -520,22 +536,6 @@
             this.ol.Text = "Owner: ";
             this.ol.Visible = false;
             // 
-            // dataGridView6
-            // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.AllowUserToResizeColumns = false;
-            this.dataGridView6.AllowUserToResizeRows = false;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView6.MultiSelect = false;
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.RowHeadersVisible = false;
-            this.dataGridView6.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView6.Size = new System.Drawing.Size(736, 302);
-            this.dataGridView6.TabIndex = 0;
-            // 
             // EquipViewUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +566,7 @@
             this.Name = "EquipViewUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.EquipViewUI_Load);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();
             this.tabPage2.ResumeLayout(false);

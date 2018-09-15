@@ -12,7 +12,7 @@ namespace Tribes_System
 {
     public partial class customPack : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
         MySqlCommand adapter;
         DataTable grid = new DataTable();
@@ -224,6 +224,11 @@ namespace Tribes_System
             categoryBox.SelectedIndex = -1;
             statusBox.SelectedIndex = -1;
             refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
+
+        }
+
+        private void customPack_Load(object sender, EventArgs e)
+        {
 
         }
     }

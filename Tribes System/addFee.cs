@@ -32,5 +32,10 @@ namespace Tribes_System
             MessageBox.Show("Added Successfully");
             this.Close();
         }
+
+        private void addFee_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
