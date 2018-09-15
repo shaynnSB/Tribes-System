@@ -25,16 +25,25 @@ namespace Tribes_System
 
         private void categoryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-            var x =categoryBox.SelectedIndex + 1;
-            if (statusBox.SelectedIndex == -1)
+            int rowCount = availEmpGrid.Rows.Count;
+            //loop dg1 and save it to datagridview2
+            if (rowCount > 0)
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x);
-            }
 
+                var x = categoryBox.SelectedIndex + 1;
+                if (statusBox.SelectedIndex == -1)
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x);
+                }
+
+                else
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+                }
+            }
             else
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+                //MessageBox.Show("Nothing is selected");
             }
            
         }
@@ -79,16 +88,26 @@ namespace Tribes_System
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var x = categoryBox.SelectedIndex + 1;
-            if (categoryBox.SelectedIndex == -1)
+            int rowCount = availEmpGrid.Rows.Count;
+            //loop dg1 and save it to datagridview2
+            if (rowCount > 0)
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and items.status ='" + statusBox.Text + "'");
-            }
+                var x = categoryBox.SelectedIndex + 1;
+                if (categoryBox.SelectedIndex == -1)
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and items.status ='" + statusBox.Text + "'");
+                }
 
+                else
+                {
+                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+                }
+            }
             else
             {
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
+                //MessageBox.Show("Nothing is selected");
             }
+           
         }
 
         private void cancelButt_Click(object sender, EventArgs e)
@@ -221,10 +240,18 @@ namespace Tribes_System
 
         private void allButt_Click(object sender, EventArgs e)
         {
-            categoryBox.SelectedIndex = -1;
-            statusBox.SelectedIndex = -1;
-            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
-
+            int rowCount = availEmpGrid.Rows.Count;
+            //loop dg1 and save it to datagridview2
+            if (rowCount > 0)
+            {
+                categoryBox.SelectedIndex = -1;
+                statusBox.SelectedIndex = -1;
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
+            }
+            else
+            {
+                MessageBox.Show("Nothing is selected");
+            }
         }
 
         private void customPack_Load(object sender, EventArgs e)

@@ -23,6 +23,7 @@ namespace Tribes_System
         public eventSched()
         {
             InitializeComponent();
+            
         }
 
         public void openConnection()
@@ -178,13 +179,29 @@ namespace Tribes_System
 
         }
 
+     
+
+
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventGrid.CurrentRow.Cells[0].Value.ToString();
-            string insertQuery = "DELETE FROM event WHERE id_event =" + eventGrid.CurrentRow.Cells[0].Value.ToString();
-            
-            executeMyQuery(insertQuery1);
-            executeMyQuery(insertQuery);
+            if (addViewEquip.count== 0)
+            {
+               /* string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+                string insertQuery = "DELETE FROM event WHERE id_event =" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+
+                executeMyQuery(insertQuery1);
+                executeMyQuery(insertQuery);*/
+                MessageBox.Show("Marked as done WALA NAY UNOD");
+            }
+            else
+            {
+                MessageBox.Show("Marked as done NAA NAY UNOD");
+            }
+
+
+
+
+          
             MessageBox.Show("Marked as done");
         }
 

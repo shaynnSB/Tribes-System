@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.editButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.amLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cancellationButt = new System.Windows.Forms.Button();
@@ -54,7 +55,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
@@ -149,6 +149,23 @@
             this.deetPanel.Size = new System.Drawing.Size(686, 552);
             this.deetPanel.TabIndex = 70;
             this.deetPanel.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(469, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(192, 30);
+            this.button1.TabIndex = 84;
+            this.button1.Text = "Mark As Done";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // amLabel
             // 
@@ -409,23 +426,6 @@
             this.label9.Text = "EVENT  SCHEDULE";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(469, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(192, 30);
-            this.button1.TabIndex = 84;
-            this.button1.Text = "Mark As Done";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // eventSched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +475,6 @@
         private System.Windows.Forms.Button cancellationButt;
         private System.Windows.Forms.Label amLabel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button1;
     }
 }

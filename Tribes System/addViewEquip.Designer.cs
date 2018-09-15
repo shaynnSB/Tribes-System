@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.assignedGrid = new System.Windows.Forms.DataGridView();
             this.removeButt = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -127,6 +128,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.assignedGrid);
             this.tabPage1.Controls.Add(this.removeButt);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -137,6 +139,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Equipment Selected";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(443, 20);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 24);
+            this.button1.TabIndex = 92;
+            this.button1.Text = "Return All";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // assignedGrid
             // 
@@ -165,11 +184,11 @@
             this.removeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.removeButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.removeButt.Location = new System.Drawing.Point(473, 20);
+            this.removeButt.Location = new System.Drawing.Point(351, 20);
             this.removeButt.Name = "removeButt";
             this.removeButt.Size = new System.Drawing.Size(77, 24);
             this.removeButt.TabIndex = 91;
-            this.removeButt.Text = "Remove";
+            this.removeButt.Text = "Return";
             this.removeButt.UseVisualStyleBackColor = false;
             this.removeButt.Click += new System.EventHandler(this.removeButt_Click);
             // 
@@ -379,7 +398,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView assignedGrid;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button customButt;
         private System.Windows.Forms.Label label3;
@@ -395,5 +413,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col2;
         private System.Windows.Forms.DataGridViewTextBoxColumn col3;
         private System.Windows.Forms.DataGridViewTextBoxColumn col4;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.DataGridView assignedGrid;
     }
 }
