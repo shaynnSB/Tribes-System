@@ -189,32 +189,32 @@ namespace Tribes_System
         public string categoryremove;
         private void removeButt_Click(object sender, EventArgs e)
         {
+
+            int rowCount = addEquipGrid.Rows.Count;
+            int rowCount1 = availEmpGrid.Rows.Count;
+            if (rowCount > 0)
+            {
             idremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
             modelnumberremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[1].Value.ToString();
             nameremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[2].Value.ToString();
             categoryremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[3].Value.ToString();
             addEquipGrid.Rows.RemoveAt(addEquipGrid.SelectedRows[0].Index);
-            int rowCount = addEquipGrid.Rows.Count;
-            int rowCount1 = availEmpGrid.Rows.Count;
-            if (rowCount > 0)
-            {
-                if (rowCount > 0)
-                {
-                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id =" + idremove);
+                DataTable dataTable = (DataTable)availEmpGrid.DataSource;
+                DataRow drToAdd = dataTable.NewRow();   
+                    drToAdd[0] = idremove;
+                    drToAdd[1] = modelnumberremove;
+                    drToAdd[2] = nameremove;
+                    drToAdd[3] = categoryremove;
+                    dataTable.Rows.Add(drToAdd);
+                    dataTable.AcceptChanges();
+
                 }
-                else
-                {
-                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID");
-                }
-                if (rowCount1 > 0 && rowCount != 0)
-                {
-                    refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where itemcontent.id !=" + addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[0].Value.ToString());
-                }
-            }
             else
-            {
-                MessageBox.Show("Nothing is selected");
-            }
+                {
+                    MessageBox.Show("Nothing is selected");
+            
+                }
+               
 
 
         }

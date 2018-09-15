@@ -20,7 +20,7 @@ namespace Tribes_System
         public EquipViewUI()
         {
             InitializeComponent();
-            refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
+            refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
             setTextform("SELECT items.id,items.name,category.description,items.description,items.status FROM items left join category on items.categoryID = category.id left join itemcontent on itemcontent.itemID=items.id  where items.id ="+Equipment.sendtext);
             damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2 group by itemcontent.modelNumber");
             onrepairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 3 group by itemcontent.modelNumber");
@@ -281,7 +281,7 @@ namespace Tribes_System
             a.ShowDialog();
             if (a.DialogResult == DialogResult.OK)
             {
-                refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
+                refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
 
             }
         }
@@ -295,7 +295,7 @@ namespace Tribes_System
                 {
                     string insertQuery = "DELETE FROM itemcontent WHERE id =" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[2].Value.ToString();
                     executeMyQuery(insertQuery);
-                    refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
+                    refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
                     setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
 
 
@@ -401,7 +401,7 @@ namespace Tribes_System
                 string insertQuery1 = " INSERT INTO repairlogs (itemID, daterepaired) VALUES ('" + dataGridView3.Rows[dataGridView3.SelectedRows[0].Index].Cells[2].Value.ToString() + "',  '" + DateTime.Now + "')";
                 executeMyQuery(insertQuery);
                 executeMyQuery(insertQuery1);
-                refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
+                refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
                 setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
 
                 damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2");
