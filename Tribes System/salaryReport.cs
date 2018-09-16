@@ -40,6 +40,7 @@ namespace Tribes_System
         private void salaryReport_Load(object sender, EventArgs e)
         {
             addYear();
+            this.reportViewer1.RefreshReport();
         }
 
         private void addYear()
@@ -52,6 +53,5 @@ namespace Tribes_System
                 ayearBox.Items.Add(num);
             }
         }
-        
     }
 }

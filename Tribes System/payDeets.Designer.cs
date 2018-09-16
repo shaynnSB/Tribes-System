@@ -265,6 +265,7 @@
             this.remDiscount.TabIndex = 106;
             this.remDiscount.Text = "Remove";
             this.remDiscount.UseVisualStyleBackColor = false;
+            this.remDiscount.Click += new System.EventHandler(this.remDiscount_Click);
             // 
             // label14
             // 
@@ -655,6 +656,7 @@
             // amExpBox
             // 
             this.amExpBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amExpBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.amExpBox.Location = new System.Drawing.Point(742, 196);
             this.amExpBox.Name = "amExpBox";
             this.amExpBox.Size = new System.Drawing.Size(215, 30);

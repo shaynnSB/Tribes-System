@@ -29,8 +29,64 @@ namespace Tribes_System
 
         private void saveButt_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Added Successfully");
-            this.Close();
+            if(recievedBox.Text != "")
+            {
+                string insertQuery = "INSERT INTO additional_fees(event_id, fee_amount) VALUES (" + id_Passed + ", "
+                    + recievedBox.Text + ")";
+
+                executeMyQuery(insertQuery);
+                MessageBox.Show("Added Successfully");
+                
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Please Provide Required Details!");
+            }
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
         }
 
         private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -50,7 +106,6 @@ namespace Tribes_System
 
         public string idValue
         {
-            get { return this.id_Passed; }
             set { this.id_Passed = value; }
         }
     }

@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.myearBox = new System.Windows.Forms.ComboBox();
             this.mmonthBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -43,7 +44,6 @@
             this.qmonthBox = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.ayearBox = new System.Windows.Forms.ComboBox();
-            this.amonthBox = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -135,6 +135,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.reportViewer1);
             this.tabPage1.Controls.Add(this.myearBox);
             this.tabPage1.Controls.Add(this.mmonthBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -144,6 +145,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monthly Report";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(19, 69);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(860, 627);
+            this.reportViewer1.TabIndex = 2;
             // 
             // myearBox
             // 
@@ -183,7 +192,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(901, 687);
+            this.tabPage2.Size = new System.Drawing.Size(901, 709);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quarterly Report";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -202,18 +211,10 @@
             this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qmonthBox.FormattingEnabled = true;
             this.qmonthBox.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Fourth Quarter"});
             this.qmonthBox.Location = new System.Drawing.Point(579, 24);
             this.qmonthBox.Name = "qmonthBox";
             this.qmonthBox.Size = new System.Drawing.Size(164, 28);
@@ -222,11 +223,10 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.ayearBox);
-            this.tabPage3.Controls.Add(this.amonthBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(901, 687);
+            this.tabPage3.Size = new System.Drawing.Size(901, 709);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Annual Report";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -239,28 +239,6 @@
             this.ayearBox.Name = "ayearBox";
             this.ayearBox.Size = new System.Drawing.Size(130, 28);
             this.ayearBox.TabIndex = 5;
-            // 
-            // amonthBox
-            // 
-            this.amonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amonthBox.FormattingEnabled = true;
-            this.amonthBox.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.amonthBox.Location = new System.Drawing.Point(579, 24);
-            this.amonthBox.Name = "amonthBox";
-            this.amonthBox.Size = new System.Drawing.Size(164, 28);
-            this.amonthBox.TabIndex = 4;
             // 
             // panel1
             // 
@@ -339,6 +317,6 @@
         private System.Windows.Forms.ComboBox qyearBox;
         private System.Windows.Forms.ComboBox qmonthBox;
         private System.Windows.Forms.ComboBox ayearBox;
-        private System.Windows.Forms.ComboBox amonthBox;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

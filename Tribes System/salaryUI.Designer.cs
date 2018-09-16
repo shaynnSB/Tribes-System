@@ -91,6 +91,8 @@
             // 
             // EmpGrid
             // 
+            this.EmpGrid.AllowUserToAddRows = false;
+            this.EmpGrid.AllowUserToDeleteRows = false;
             this.EmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmpGrid.Location = new System.Drawing.Point(45, 204);
             this.EmpGrid.Name = "EmpGrid";
@@ -241,6 +243,8 @@
             // 
             // earnedGrid
             // 
+            this.earnedGrid.AllowUserToAddRows = false;
+            this.earnedGrid.AllowUserToDeleteRows = false;
             this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.earnedGrid.Location = new System.Drawing.Point(21, 89);
             this.earnedGrid.Name = "earnedGrid";

@@ -68,35 +68,37 @@
             this.title.Location = new System.Drawing.Point(1, 0);
             this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(809, 46);
+            this.title.Size = new System.Drawing.Size(814, 46);
             this.title.TabIndex = 58;
             // 
             // minButt
             // 
+            this.minButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.minButt.FlatAppearance.BorderSize = 0;
             this.minButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(718, 2);
+            this.minButt.Location = new System.Drawing.Point(732, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
-            this.minButt.Size = new System.Drawing.Size(41, 42);
+            this.minButt.Size = new System.Drawing.Size(41, 46);
             this.minButt.TabIndex = 45;
             this.minButt.UseVisualStyleBackColor = true;
             this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
             // closeButt
             // 
+            this.closeButt.Dock = System.Windows.Forms.DockStyle.Right;
             this.closeButt.FlatAppearance.BorderSize = 0;
             this.closeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(765, 2);
+            this.closeButt.Location = new System.Drawing.Point(773, 0);
             this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
-            this.closeButt.Size = new System.Drawing.Size(41, 42);
+            this.closeButt.Size = new System.Drawing.Size(41, 46);
             this.closeButt.TabIndex = 44;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
@@ -120,7 +122,7 @@
             this.tabControl1.Location = new System.Drawing.Point(21, 162);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(767, 665);
+            this.tabControl1.Size = new System.Drawing.Size(775, 665);
             this.tabControl1.TabIndex = 59;
             // 
             // tabPage1
@@ -155,7 +157,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(759, 636);
+            this.tabPage2.Size = new System.Drawing.Size(767, 636);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add and Edit List of Equipment";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -283,7 +285,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Location = new System.Drawing.Point(810, 0);
+            this.panel2.Location = new System.Drawing.Point(815, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 847);
@@ -308,7 +310,7 @@
             this.panel3.Location = new System.Drawing.Point(0, 847);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(811, 1);
+            this.panel3.Size = new System.Drawing.Size(816, 1);
             this.panel3.TabIndex = 61;
             // 
             // eventLabel
@@ -327,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 848);
+            this.ClientSize = new System.Drawing.Size(816, 848);
             this.Controls.Add(this.eventLabel);
             this.Controls.Add(this.title);
             this.Controls.Add(this.tabControl1);

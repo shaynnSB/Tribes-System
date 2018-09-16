@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tribes_systemDataSet" targetNamespace="http://tempuri.org/tribes_systemDataSet.xsd" xmlns:mstns="http://tempuri.org/tribes_systemDataSet.xsd" xmlns="http://tempuri.org/tribes_systemDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="tribes_systemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="tribes_systemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Tribes_System.Properties.Settings.GlobalReference.Default.tribes_systemConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="amount_paidTableAdapter" GeneratorDataComponentClassName="amount_paidTableAdapter" Name="amount_paid" UserDataComponentName="amount_paidTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tribes_systemConnectionString (Settings)" DbObjectName="tribes_system.amount_paid" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, event_id, amount, date_paid FROM amount_paid</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="discountTableAdapter" GeneratorDataComponentClassName="discountTableAdapter" Name="discount" UserDataComponentName="discountTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tribes_systemConnectionString (Settings)" DbObjectName="tribes_system.discount" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id, event_id, disc_amount FROM discount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tribes_systemConnectionString (Settings)" DbObjectName="tribes_system.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_emp, emp_name, emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name FROM employee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="eventTableAdapter" GeneratorDataComponentClassName="eventTableAdapter" Name="event" UserDataComponentName="eventTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tribes_systemConnectionString (Settings)" DbObjectName="tribes_system.event" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_event, event_name, event_location, event_notes, start_date, end_date, start_time, end_time, client_name, client_contact, event_price, downpayment, down_date, discount, add_fee, event_status FROM event</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="staff_lineupTableAdapter" GeneratorDataComponentClassName="staff_lineupTableAdapter" Name="staff_lineup" UserDataComponentName="staff_lineupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="tribes_systemConnectionString (Settings)" DbObjectName="tribes_system.staff_lineup" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_line, no_event, staff_id, salary FROM staff_lineup</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="tribes_systemDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="tribes_systemDataSet" msprop:Generator_UserDSName="tribes_systemDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="amount_paid" msprop:Generator_TableClassName="amount_paidDataTable" msprop:Generator_TableVarName="tableamount_paid" msprop:Generator_TablePropName="amount_paid" msprop:Generator_RowDeletingName="amount_paidRowDeleting" msprop:Generator_RowChangingName="amount_paidRowChanging" msprop:Generator_RowEvHandlerName="amount_paidRowChangeEventHandler" msprop:Generator_RowDeletedName="amount_paidRowDeleted" msprop:Generator_UserTableName="amount_paid" msprop:Generator_RowChangedName="amount_paidRowChanged" msprop:Generator_RowEvArgName="amount_paidRowChangeEvent" msprop:Generator_RowClassName="amount_paidRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="bonus">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="discount" msprop:Generator_TableClassName="discountDataTable" msprop:Generator_TableVarName="tablediscount" msprop:Generator_TablePropName="discount" msprop:Generator_RowDeletingName="discountRowDeleting" msprop:Generator_RowChangingName="discountRowChanging" msprop:Generator_RowEvHandlerName="discountRowChangeEventHandler" msprop:Generator_RowDeletedName="discountRowDeleted" msprop:Generator_UserTableName="discount" msprop:Generator_RowChangedName="discountRowChanged" msprop:Generator_RowEvArgName="discountRowChangeEvent" msprop:Generator_RowClassName="discountRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="event" msprop:Generator_TableClassName="eventDataTable" msprop:Generator_TableVarName="tableevent" msprop:Generator_TablePropName="_event" msprop:Generator_RowDeletingName="eventRowDeleting" msprop:Generator_RowChangingName="eventRowChanging" msprop:Generator_RowEvHandlerName="eventRowChangeEventHandler" msprop:Generator_RowDeletedName="eventRowDeleted" msprop:Generator_UserTableName="event" msprop:Generator_RowChangedName="eventRowChanged" msprop:Generator_RowEvArgName="eventRowChangeEvent" msprop:Generator_RowClassName="eventRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="staff_lineup" msprop:Generator_TableClassName="staff_lineupDataTable" msprop:Generator_TableVarName="tablestaff_lineup" msprop:Generator_TablePropName="staff_lineup" msprop:Generator_RowDeletingName="staff_lineupRowDeleting" msprop:Generator_RowChangingName="staff_lineupRowChanging" msprop:Generator_RowEvHandlerName="staff_lineupRowChangeEventHandler" msprop:Generator_RowDeletedName="staff_lineupRowDeleted" msprop:Generator_UserTableName="staff_lineup" msprop:Generator_RowChangedName="staff_lineupRowChanged" msprop:Generator_RowEvArgName="staff_lineupRowChangeEvent" msprop:Generator_RowClassName="staff_lineupRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="violations">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

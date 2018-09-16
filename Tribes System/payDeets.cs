@@ -26,22 +26,6 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        public void openConnection()
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-        }
-
-        public void closeConnection()
-        {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
-        }
-
         public payDeets(eventSched form)
         {
             InitializeComponent();
@@ -97,6 +81,22 @@ namespace Tribes_System
         {
             get { return this.statusEvent; }
             set { this.statusEvent = value; }
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
         }
 
         public void executeMyQuery(string query)
@@ -411,7 +411,18 @@ namespace Tribes_System
         private void addFee_Click(object sender, EventArgs e)
         {
             addFee form = new addFee();
+            form.idValue = id;
             form.ShowDialog();
+        }
+
+        public string id
+        {
+            get { return id_Passed; }
+        }
+
+        public string fee_Amount
+        {
+            get { return addLabel.Text; }
         }
 
         private void editFee_Click(object sender, EventArgs e)
@@ -434,7 +445,37 @@ namespace Tribes_System
 
         private void remFee_Click(object sender, EventArgs e)
         {
+            string remQuery = "DELETE FROM additional_fees WHERE event_id = " + id_Passed;
 
+            executeMyQuery(remQuery);
+            MessageBox.Show("Removed Successfully");
+
+            addLabel.Text = "--";
+        }
+
+        private void remDiscount_Click(object sender, EventArgs e)
+        {
+            string remQuery = "DELETE FROM discount WHERE event_id = " + id_Passed;
+
+            executeMyQuery(remQuery);
+            MessageBox.Show("Removed Successfully");
+
+            discLabel.Text = "--";
+        }
+
+        private void updateFee()
+        {
+            string selectQuery = "select SUM(amount) from amount_paid where event_id = " + id_Passed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                amRevLabel.Text = reader["SUM(amount)"].ToString();
+
+            }
+            closeConnection();
         }
     }
 }

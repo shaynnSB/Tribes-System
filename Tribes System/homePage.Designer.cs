@@ -75,7 +75,7 @@
             this.panelMenu.Location = new System.Drawing.Point(60, 46);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(312, 904);
+            this.panelMenu.Size = new System.Drawing.Size(325, 904);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -131,7 +131,7 @@
             this.finButt.Name = "finButt";
             this.finButt.Size = new System.Drawing.Size(325, 46);
             this.finButt.TabIndex = 4;
-            this.finButt.Text = "   FINANCES";
+            this.finButt.Text = "   FINANCIAL REPORT";
             this.finButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.finButt.UseVisualStyleBackColor = false;
             this.finButt.Click += new System.EventHandler(this.finButt_Click);
@@ -384,10 +384,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(372, 949);
+            this.panel1.Location = new System.Drawing.Point(385, 949);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1128, 1);
+            this.panel1.Size = new System.Drawing.Size(1115, 1);
             this.panel1.TabIndex = 7;
             // 
             // panel2
