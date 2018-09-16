@@ -46,8 +46,8 @@ namespace Tribes_System
         {
             eventGrid.Visible = true;
 
-            string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
-                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
+            string query = "SELECT * FROM event WHERE isArchived<1 and (start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
+                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "') ";
 
  //           SELECT * from Product_sales where
 //(From_date BETWEEN '2013-01-03'AND '2013-01-09') OR 
@@ -179,30 +179,47 @@ namespace Tribes_System
 
         }
 
-     
+        public static string test;
+        public void setCount(string query)
+        {
+
+            openConnection();
+            adapter = new MySqlCommand(query, con);
+            MySqlDataReader myreader = adapter.ExecuteReader();
+            if (myreader.Read())
+            {
+
+                test = myreader.GetValue(0).ToString();
+
+            }
+            myreader.Close();
+            closeConnection();
+
+        }
 
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (addViewEquip.count== 0)
+            setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.eventID =" + eventGrid.CurrentRow.Cells[0].Value.ToString());
+            if (test == "0")
             {
-               /* string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventGrid.CurrentRow.Cells[0].Value.ToString();
-                string insertQuery = "DELETE FROM event WHERE id_event =" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+                string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventGrid.CurrentRow.Cells[0].Value.ToString();
+                 string insertQuery = "UPDATE event SET isArchived=1  WHERE id_event =" + eventGrid.CurrentRow.Cells[0].Value.ToString();
 
-                executeMyQuery(insertQuery1);
-                executeMyQuery(insertQuery);*/
-                MessageBox.Show("Marked as done WALA NAY UNOD");
+                 executeMyQuery(insertQuery1);
+                 executeMyQuery(insertQuery);
+                MessageBox.Show("Marked as done ");
             }
             else
             {
-                MessageBox.Show("Marked as done NAA NAY UNOD");
+                MessageBox.Show("Can't mark it as done, there are still "+test+" unreturned items.");
             }
 
 
 
 
           
-            MessageBox.Show("Marked as done");
+     
         }
 
         private void eventGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -241,6 +258,12 @@ namespace Tribes_System
             {
                 closeConnection();
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var a = new Form1();
+            a.ShowDialog();
         }
     }
 }

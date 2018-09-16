@@ -55,6 +55,7 @@
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +70,8 @@
             // 
             // eventGrid
             // 
+            this.eventGrid.AllowUserToResizeColumns = false;
+            this.eventGrid.AllowUserToResizeRows = false;
             this.eventGrid.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.eventGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.eventGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -93,7 +96,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(53, 581);
+            this.button2.Location = new System.Drawing.Point(53, 577);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 30);
             this.button2.TabIndex = 69;
@@ -426,10 +429,28 @@
             this.label9.Text = "EVENT  SCHEDULE";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Location = new System.Drawing.Point(53, 613);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(197, 30);
+            this.button3.TabIndex = 72;
+            this.button3.Text = "View Archived Event";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // eventSched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.calendar);
@@ -476,5 +497,6 @@
         private System.Windows.Forms.Label amLabel;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }

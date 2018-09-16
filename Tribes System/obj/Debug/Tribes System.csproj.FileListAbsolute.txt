@@ -203,3 +203,4 @@ C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj
 C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.viewStaffList.resources
 C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes_System.violations.resources
 C:\Users\w33ha\Desktop\BETTER THAN PORN\Sideline\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.Cache
+C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\obj\Debug\Tribes_System.Form1.resources

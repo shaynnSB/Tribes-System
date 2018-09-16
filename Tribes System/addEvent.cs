@@ -95,9 +95,9 @@ namespace Tribes_System
         private void addButt_Click(object sender, EventArgs e)
         {
             string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','" 
+                "client_name, client_contact, event_status,'isArchived') VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','" 
                 + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid')";
+                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid',0)";
 
             executeMyQuery(insertQuery);
             MessageBox.Show("Added Successfully");
