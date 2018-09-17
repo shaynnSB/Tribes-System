@@ -31,13 +31,20 @@ namespace Tribes_System
         {
             if(recievedBox.Text != "")
             {
-                string insertQuery = "INSERT INTO additional_fees(event_id, fee_amount) VALUES (" + id_Passed + ", "
+                DialogResult dialog = MessageBox.Show("Add additional fee?", " ", MessageBoxButtons.YesNo);
+                if(dialog == DialogResult.Yes)
+                {
+                    string insertQuery = "INSERT INTO additional_fees(event_id, fee_amount) VALUES (" + id_Passed + ", "
                     + recievedBox.Text + ")";
 
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
-                
-                this.Close();
+                    executeMyQuery(insertQuery);
+                    MessageBox.Show("Added Successfully");
+
+                    this.Close();
+                }else if (dialog == DialogResult.No)
+                {
+
+                }
             }
             else
             {

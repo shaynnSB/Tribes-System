@@ -29,11 +29,6 @@ namespace Tribes_System
             resetTable();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void resetTable(string query = "select * from employee")
         {
 
@@ -65,6 +60,8 @@ namespace Tribes_System
             this.selectedEmp = "";
             NameLab.Text = "--";
             StatusLab.Text = "--";
+
+            deetPanel.Visible = false;
         }
 
         private void salaryTable()
@@ -88,12 +85,7 @@ namespace Tribes_System
 
         private void payrollUI_Load(object sender, EventArgs e)
         {
-           
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
+            addYear();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -267,6 +259,15 @@ namespace Tribes_System
             form.ShowDialog();
 
             deetPanel.Visible = false;
+        }
+
+        private void addYear()
+        {
+            for (int i = 0; i < 80; i++)
+            {
+                int num = 2018 + i;
+                yearBox.Items.Add(num);
+            }
         }
     }
 }

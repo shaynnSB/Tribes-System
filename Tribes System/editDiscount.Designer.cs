@@ -115,6 +115,8 @@
             this.saveButt.TabIndex = 113;
             this.saveButt.Text = "EDIT";
             this.saveButt.UseVisualStyleBackColor = false;
+            this.saveButt.Click += new System.EventHandler(this.saveButt_Click);
+            this.saveButt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.saveButt_KeyPress);
             // 
             // editDiscount
             // 

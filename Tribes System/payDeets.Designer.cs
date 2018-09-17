@@ -79,6 +79,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -119,7 +121,7 @@
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(933, 0);
+            this.minButt.Location = new System.Drawing.Point(928, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
             this.minButt.Size = new System.Drawing.Size(41, 46);
@@ -135,7 +137,7 @@
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(974, 0);
+            this.closeButt.Location = new System.Drawing.Point(969, 0);
             this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
             this.closeButt.Size = new System.Drawing.Size(41, 46);
@@ -153,7 +155,7 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1015, 46);
+            this.title.Size = new System.Drawing.Size(1010, 46);
             this.title.TabIndex = 43;
             this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
             this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.title_MouseMove);
@@ -179,7 +181,7 @@
             this.paymentGrid.Location = new System.Drawing.Point(26, 75);
             this.paymentGrid.Name = "paymentGrid";
             this.paymentGrid.RowTemplate.Height = 24;
-            this.paymentGrid.Size = new System.Drawing.Size(510, 251);
+            this.paymentGrid.Size = new System.Drawing.Size(510, 321);
             this.paymentGrid.TabIndex = 46;
             this.paymentGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.paymentGrid_CellClick);
             // 
@@ -190,11 +192,13 @@
             this.tabControl1.Location = new System.Drawing.Point(14, 131);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(978, 490);
+            this.tabControl1.Size = new System.Drawing.Size(978, 550);
             this.tabControl1.TabIndex = 47;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.priceLabel);
+            this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.remFee);
             this.tabPage1.Controls.Add(this.remDiscount);
             this.tabPage1.Controls.Add(this.label14);
@@ -226,7 +230,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(970, 461);
+            this.tabPage1.Size = new System.Drawing.Size(970, 521);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Payment Details";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -240,7 +244,7 @@
             this.remFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remFee.ForeColor = System.Drawing.SystemColors.Control;
-            this.remFee.Location = new System.Drawing.Point(430, 350);
+            this.remFee.Location = new System.Drawing.Point(430, 421);
             this.remFee.Margin = new System.Windows.Forms.Padding(4);
             this.remFee.Name = "remFee";
             this.remFee.Size = new System.Drawing.Size(106, 37);
@@ -258,7 +262,7 @@
             this.remDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.remDiscount.Location = new System.Drawing.Point(429, 395);
+            this.remDiscount.Location = new System.Drawing.Point(429, 466);
             this.remDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.remDiscount.Name = "remDiscount";
             this.remDiscount.Size = new System.Drawing.Size(107, 37);
@@ -272,7 +276,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(84, 403);
+            this.label14.Location = new System.Drawing.Point(84, 474);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(106, 29);
@@ -284,7 +288,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(21, 353);
+            this.label12.Location = new System.Drawing.Point(21, 424);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(169, 29);
@@ -324,7 +328,7 @@
             this.editDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.editDiscount.Location = new System.Drawing.Point(315, 395);
+            this.editDiscount.Location = new System.Drawing.Point(315, 466);
             this.editDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.editDiscount.Name = "editDiscount";
             this.editDiscount.Size = new System.Drawing.Size(107, 37);
@@ -342,7 +346,7 @@
             this.editFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editFee.ForeColor = System.Drawing.SystemColors.Control;
-            this.editFee.Location = new System.Drawing.Point(316, 350);
+            this.editFee.Location = new System.Drawing.Point(316, 421);
             this.editFee.Margin = new System.Windows.Forms.Padding(4);
             this.editFee.Name = "editFee";
             this.editFee.Size = new System.Drawing.Size(106, 37);
@@ -442,7 +446,7 @@
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totalLabel.Location = new System.Drawing.Point(823, 403);
+            this.totalLabel.Location = new System.Drawing.Point(823, 364);
             this.totalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(31, 29);
@@ -454,7 +458,7 @@
             this.discLabel.AutoSize = true;
             this.discLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.discLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.discLabel.Location = new System.Drawing.Point(823, 361);
+            this.discLabel.Location = new System.Drawing.Point(823, 321);
             this.discLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.discLabel.Name = "discLabel";
             this.discLabel.Size = new System.Drawing.Size(29, 29);
@@ -466,7 +470,7 @@
             this.addLabel.AutoSize = true;
             this.addLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.addLabel.Location = new System.Drawing.Point(823, 320);
+            this.addLabel.Location = new System.Drawing.Point(823, 280);
             this.addLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.addLabel.Name = "addLabel";
             this.addLabel.Size = new System.Drawing.Size(29, 29);
@@ -478,7 +482,7 @@
             this.accRecLabel.AutoSize = true;
             this.accRecLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accRecLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.accRecLabel.Location = new System.Drawing.Point(823, 279);
+            this.accRecLabel.Location = new System.Drawing.Point(823, 474);
             this.accRecLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.accRecLabel.Name = "accRecLabel";
             this.accRecLabel.Size = new System.Drawing.Size(29, 29);
@@ -490,7 +494,7 @@
             this.amRevLabel.AutoSize = true;
             this.amRevLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amRevLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.amRevLabel.Location = new System.Drawing.Point(823, 238);
+            this.amRevLabel.Location = new System.Drawing.Point(823, 433);
             this.amRevLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.amRevLabel.Name = "amRevLabel";
             this.amRevLabel.Size = new System.Drawing.Size(29, 29);
@@ -506,7 +510,7 @@
             this.addFee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addFee.ForeColor = System.Drawing.SystemColors.Control;
-            this.addFee.Location = new System.Drawing.Point(200, 350);
+            this.addFee.Location = new System.Drawing.Point(200, 421);
             this.addFee.Margin = new System.Windows.Forms.Padding(4);
             this.addFee.Name = "addFee";
             this.addFee.Size = new System.Drawing.Size(107, 37);
@@ -524,7 +528,7 @@
             this.addDiscount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addDiscount.ForeColor = System.Drawing.SystemColors.Control;
-            this.addDiscount.Location = new System.Drawing.Point(200, 395);
+            this.addDiscount.Location = new System.Drawing.Point(200, 466);
             this.addDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.addDiscount.Name = "addDiscount";
             this.addDiscount.Size = new System.Drawing.Size(107, 37);
@@ -538,7 +542,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(567, 403);
+            this.label7.Location = new System.Drawing.Point(567, 364);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 29);
@@ -550,7 +554,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(567, 361);
+            this.label6.Location = new System.Drawing.Point(567, 321);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 29);
@@ -562,7 +566,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(567, 320);
+            this.label5.Location = new System.Drawing.Point(567, 280);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(169, 29);
@@ -574,7 +578,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(567, 279);
+            this.label4.Location = new System.Drawing.Point(567, 474);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(237, 29);
@@ -586,7 +590,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(567, 238);
+            this.label3.Location = new System.Drawing.Point(567, 433);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(202, 29);
@@ -609,7 +613,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(970, 461);
+            this.tabPage2.Size = new System.Drawing.Size(970, 521);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Expenses";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -668,7 +672,7 @@
             this.totExpLabel.AutoSize = true;
             this.totExpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totExpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totExpLabel.Location = new System.Drawing.Point(400, 420);
+            this.totExpLabel.Location = new System.Drawing.Point(397, 472);
             this.totExpLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.totExpLabel.Name = "totExpLabel";
             this.totExpLabel.Size = new System.Drawing.Size(31, 29);
@@ -734,7 +738,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(221, 420);
+            this.label13.Location = new System.Drawing.Point(218, 472);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(97, 29);
@@ -761,7 +765,7 @@
             this.expensesGrid.Location = new System.Drawing.Point(18, 62);
             this.expensesGrid.Name = "expensesGrid";
             this.expensesGrid.RowTemplate.Height = 24;
-            this.expensesGrid.Size = new System.Drawing.Size(603, 344);
+            this.expensesGrid.Size = new System.Drawing.Size(603, 387);
             this.expensesGrid.TabIndex = 80;
             this.expensesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.expensesGrid_CellClick);
             // 
@@ -769,10 +773,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(1014, 46);
+            this.panel1.Location = new System.Drawing.Point(1009, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 605);
+            this.panel1.Size = new System.Drawing.Size(1, 649);
             this.panel1.TabIndex = 44;
             // 
             // panel2
@@ -782,24 +786,49 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 605);
+            this.panel2.Size = new System.Drawing.Size(1, 649);
             this.panel2.TabIndex = 45;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(1, 650);
+            this.panel3.Location = new System.Drawing.Point(1, 694);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1013, 1);
+            this.panel3.Size = new System.Drawing.Size(1008, 1);
             this.panel3.TabIndex = 45;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AccessibleDescription = "";
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.priceLabel.Location = new System.Drawing.Point(823, 242);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(29, 29);
+            this.priceLabel.TabIndex = 109;
+            this.priceLabel.Text = "--";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(567, 242);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 29);
+            this.label16.TabIndex = 108;
+            this.label16.Text = "Price";
             // 
             // payDeets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1015, 651);
+            this.ClientSize = new System.Drawing.Size(1010, 695);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -877,5 +906,7 @@
         private System.Windows.Forms.Button remDiscount;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label priceLabel;
+        private System.Windows.Forms.Label label16;
     }
 }

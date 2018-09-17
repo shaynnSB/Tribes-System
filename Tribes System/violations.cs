@@ -103,20 +103,78 @@ namespace Tribes_System
         {
             if (amBox.Text != "" && dateBox.Text != "" && descBox.Text != "")
             {
-                string insertQuery = "INSERT INTO violations(id_emp, violation_amount, date, reason) VALUES (" + idPassed + ", "
+                checking();
+
+                if(checkneg > 0)
+                {
+                    string insertQuery = "INSERT INTO violations(id_emp, violation_amount, date, reason) VALUES (" + idPassed + ", "
                     + amBox.Text + ", '" + dateBox.Text + "', '" + descBox.Text + "')";
 
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
+                    executeMyQuery(insertQuery);
+                    MessageBox.Show("Added Successfully");
 
-                DisplayData();
-                total();
-                ClearData();
+                    DisplayData();
+                    total();
+                    ClearData();
+
+                }else if (checkneg < 0)
+                {
+                    MessageBox.Show("ERROR: Violations are greater than the employee's salary!");
+                }
             }
             else
             {
                 MessageBox.Show("Please Provide Required Details!");
             }
+        }
+
+        string salary_amount;
+
+        private void salary()
+        {
+            string query = "select SUM(salary) from staff_lineup where staff_id = " + idPassed;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                salary_amount = reader["SUM(salary)"].ToString();
+            }
+
+            closeConnection();
+        }
+
+        string bonus_amount;
+
+        private void bonus()
+        {
+            string query = "select SUM(bonus_amount) from bonus where id_emp = " + idPassed;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //bonus_amount = reader["SUM(bonus_amount)"].ToString();
+                if (reader["SUM(bonus_amount)"] != DBNull.Value)
+                {
+                    bonus_amount = reader["SUM(bonus_amount)"].ToString();
+                }
+                else
+                {
+                    bonus_amount = "0";
+                }
+            }
+            closeConnection();
         }
 
         private void DisplayData()
@@ -158,6 +216,22 @@ namespace Tribes_System
             }
 
             closeConnection();
+        }
+
+        double checkneg;
+
+        private void checking()
+        {
+            total();
+            bonus();
+            salary();
+
+            double vio = Convert.ToDouble(totLabel.Text);
+            double vio2 = Convert.ToDouble(amBox.Text);
+            double bon = Convert.ToDouble(bonus_amount);
+            double sal = Convert.ToDouble(salary_amount);
+
+            checkneg = (bon + sal) - (vio + vio2);
         }
 
         private void editButt_Click(object sender, EventArgs e)

@@ -32,6 +32,16 @@ namespace Tribes_System
             this.form = form;
         }
 
+        private void payDeets_Load(object sender, EventArgs e)
+        {
+            getEventPrice();
+            DisplayData();
+            getPastFee();
+            getPastDisc();
+            computeAccRec();
+            DisplayExpData();
+        }
+
         private void closeButt_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -173,13 +183,6 @@ namespace Tribes_System
         {
             recievedBox.Text = "";
             dateBox.Text = "";
-        }
-
-        private void payDeets_Load(object sender, EventArgs e)
-        {
-            DisplayData();
-
-            DisplayExpData();
         }
 
         private void paymentGrid_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -413,6 +416,8 @@ namespace Tribes_System
             addFee form = new addFee();
             form.idValue = id;
             form.ShowDialog();
+
+            getPastFee();
         }
 
         public string id
@@ -425,21 +430,33 @@ namespace Tribes_System
             get { return addLabel.Text; }
         }
 
+        public string disc_Amount
+        {
+            get { return discLabel.Text; }
+        }
+
         private void editFee_Click(object sender, EventArgs e)
         {
             editFee form = new editFee();
+            form.idValue = id;
+            form.amountValue = fee_Amount;
             form.ShowDialog();
+
+            getPastFee();
         }
 
         private void addDiscount_Click(object sender, EventArgs e)
         {
             addDiscount form = new addDiscount();
+            form.idValue = id;
             form.ShowDialog();
         }
 
         private void editDiscount_Click(object sender, EventArgs e)
         {
             editDiscount form = new editDiscount();
+            form.idValue = id;
+            form.amountValue = disc_Amount;
             form.ShowDialog();
         }
 
@@ -447,8 +464,16 @@ namespace Tribes_System
         {
             string remQuery = "DELETE FROM additional_fees WHERE event_id = " + id_Passed;
 
-            executeMyQuery(remQuery);
-            MessageBox.Show("Removed Successfully");
+            DialogResult dialog = MessageBox.Show("Remove Additional Fee?", " ", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                executeMyQuery(remQuery);
+                MessageBox.Show("Removed Successfully");
+            }
+            else if (dialog == DialogResult.No)
+            {
+
+            }
 
             addLabel.Text = "--";
         }
@@ -457,8 +482,16 @@ namespace Tribes_System
         {
             string remQuery = "DELETE FROM discount WHERE event_id = " + id_Passed;
 
-            executeMyQuery(remQuery);
-            MessageBox.Show("Removed Successfully");
+            DialogResult dialog = MessageBox.Show("Remove Discount?", " ", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                executeMyQuery(remQuery);
+                MessageBox.Show("Removed Successfully");
+            }
+            else if (dialog == DialogResult.No)
+            {
+
+            }
 
             discLabel.Text = "--";
         }
@@ -477,5 +510,75 @@ namespace Tribes_System
             }
             closeConnection();
         }
+
+        string past_fee;
+
+        private void getPastFee()
+        {
+            string selectQuery = "select * from additional_fees where event_id = " + id_Passed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                past_fee = reader["fee_amount"].ToString();
+            }
+            closeConnection();
+
+            addLabel.Text = past_fee;
+        }
+
+        string past_disc;
+
+        private void getPastDisc()
+        {
+            string selectQuery = "select * from discount where event_id = " + id_Passed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                past_disc = reader["disc_amount"].ToString();
+            }
+            closeConnection();
+
+            discLabel.Text = past_disc;
+        }
+
+        string eventPrice;
+
+        private void getEventPrice()
+        {
+            string selectQuery = "select event_price from event where id_event = " + id_Passed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                eventPrice = reader["event_price"].ToString();
+            }
+            closeConnection();
+
+            priceLabel.Text = eventPrice;
+        }
+
+        string accRec;
+
+        private void computeAccRec()
+        {
+            double price = Convert.ToDouble(eventPrice);
+            double amRev = Convert.ToDouble(amRevLabel.Text);
+
+            double total = price - amRev;
+
+            accRec = Convert.ToString(total) + ".00";
+
+            accRecLabel.Text = accRec;
+        }
+
+        /*NOTE: DAPAT ICHANGE ANG PRICE INTO (PRICE + FEE) - DISCOUNT*/
     }
 }

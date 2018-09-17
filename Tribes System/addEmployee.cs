@@ -192,7 +192,7 @@ namespace Tribes_System
         {
             if (radioButton1.Checked)
             {
-                this.stat = "call";
+                this.stat = "On-call";
             }
         }
 

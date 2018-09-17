@@ -34,6 +34,8 @@
             this.EmpGrid = new System.Windows.Forms.DataGridView();
             this.allButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
+            this.yearBox = new System.Windows.Forms.ComboBox();
+            this.monthBox = new System.Windows.Forms.ComboBox();
             this.vioButt = new System.Windows.Forms.Button();
             this.bonusButt = new System.Windows.Forms.Button();
             this.vioLabel = new System.Windows.Forms.Label();
@@ -122,6 +124,8 @@
             // deetPanel
             // 
             this.deetPanel.BackColor = System.Drawing.Color.Silver;
+            this.deetPanel.Controls.Add(this.yearBox);
+            this.deetPanel.Controls.Add(this.monthBox);
             this.deetPanel.Controls.Add(this.vioButt);
             this.deetPanel.Controls.Add(this.bonusButt);
             this.deetPanel.Controls.Add(this.vioLabel);
@@ -139,6 +143,37 @@
             this.deetPanel.TabIndex = 88;
             this.deetPanel.Visible = false;
             // 
+            // yearBox
+            // 
+            this.yearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearBox.FormattingEnabled = true;
+            this.yearBox.Location = new System.Drawing.Point(191, 88);
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(130, 28);
+            this.yearBox.TabIndex = 100;
+            // 
+            // monthBox
+            // 
+            this.monthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthBox.FormattingEnabled = true;
+            this.monthBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.monthBox.Location = new System.Drawing.Point(21, 88);
+            this.monthBox.Name = "monthBox";
+            this.monthBox.Size = new System.Drawing.Size(164, 28);
+            this.monthBox.TabIndex = 99;
+            // 
             // vioButt
             // 
             this.vioButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -148,7 +183,7 @@
             this.vioButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.vioButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vioButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.vioButt.Location = new System.Drawing.Point(21, 461);
+            this.vioButt.Location = new System.Drawing.Point(21, 474);
             this.vioButt.Margin = new System.Windows.Forms.Padding(4);
             this.vioButt.Name = "vioButt";
             this.vioButt.Size = new System.Drawing.Size(144, 37);
@@ -166,7 +201,7 @@
             this.bonusButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bonusButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.bonusButt.Location = new System.Drawing.Point(21, 506);
+            this.bonusButt.Location = new System.Drawing.Point(21, 519);
             this.bonusButt.Margin = new System.Windows.Forms.Padding(4);
             this.bonusButt.Name = "bonusButt";
             this.bonusButt.Size = new System.Drawing.Size(144, 37);
@@ -180,7 +215,7 @@
             this.vioLabel.AutoSize = true;
             this.vioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioLabel.Location = new System.Drawing.Point(353, 456);
+            this.vioLabel.Location = new System.Drawing.Point(353, 469);
             this.vioLabel.Name = "vioLabel";
             this.vioLabel.Size = new System.Drawing.Size(26, 25);
             this.vioLabel.TabIndex = 97;
@@ -191,7 +226,7 @@
             this.bonusLabel.AutoSize = true;
             this.bonusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusLabel.Location = new System.Drawing.Point(353, 490);
+            this.bonusLabel.Location = new System.Drawing.Point(353, 503);
             this.bonusLabel.Name = "bonusLabel";
             this.bonusLabel.Size = new System.Drawing.Size(26, 25);
             this.bonusLabel.TabIndex = 96;
@@ -202,7 +237,7 @@
             this.totalLabel.AutoSize = true;
             this.totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totalLabel.Location = new System.Drawing.Point(353, 525);
+            this.totalLabel.Location = new System.Drawing.Point(353, 538);
             this.totalLabel.Name = "totalLabel";
             this.totalLabel.Size = new System.Drawing.Size(28, 25);
             this.totalLabel.TabIndex = 95;
@@ -213,7 +248,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(213, 525);
+            this.label4.Location = new System.Drawing.Point(213, 538);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 25);
             this.label4.TabIndex = 94;
@@ -224,7 +259,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(213, 490);
+            this.label3.Location = new System.Drawing.Point(213, 503);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 25);
             this.label3.TabIndex = 93;
@@ -235,7 +270,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(213, 456);
+            this.label2.Location = new System.Drawing.Point(213, 469);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 25);
             this.label2.TabIndex = 92;
@@ -246,10 +281,10 @@
             this.earnedGrid.AllowUserToAddRows = false;
             this.earnedGrid.AllowUserToDeleteRows = false;
             this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.earnedGrid.Location = new System.Drawing.Point(21, 89);
+            this.earnedGrid.Location = new System.Drawing.Point(21, 130);
             this.earnedGrid.Name = "earnedGrid";
             this.earnedGrid.RowTemplate.Height = 24;
-            this.earnedGrid.Size = new System.Drawing.Size(471, 351);
+            this.earnedGrid.Size = new System.Drawing.Size(471, 323);
             this.earnedGrid.TabIndex = 91;
             // 
             // StatusLab
@@ -315,5 +350,7 @@
         private System.Windows.Forms.Label NameLab;
         private System.Windows.Forms.Button vioButt;
         private System.Windows.Forms.Button bonusButt;
+        private System.Windows.Forms.ComboBox yearBox;
+        private System.Windows.Forms.ComboBox monthBox;
     }
 }

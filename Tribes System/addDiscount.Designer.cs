@@ -80,6 +80,7 @@
             this.recievedBox.Name = "recievedBox";
             this.recievedBox.Size = new System.Drawing.Size(262, 30);
             this.recievedBox.TabIndex = 105;
+            this.recievedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.recievedBox_KeyPress);
             // 
             // cancelButt
             // 
@@ -115,6 +116,7 @@
             this.saveButt.TabIndex = 108;
             this.saveButt.Text = "ADD";
             this.saveButt.UseVisualStyleBackColor = false;
+            this.saveButt.Click += new System.EventHandler(this.saveButt_Click);
             // 
             // addDiscount
             // 
