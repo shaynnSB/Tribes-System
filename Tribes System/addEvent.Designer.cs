@@ -73,6 +73,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.emailClient = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -126,7 +128,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(606, 694);
+            this.addButt.Location = new System.Drawing.Point(606, 749);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(177, 31);
@@ -144,7 +146,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(606, 733);
+            this.cancelButt.Location = new System.Drawing.Point(606, 788);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(177, 31);
@@ -231,7 +233,7 @@
             this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.notesBox.Location = new System.Drawing.Point(272, 407);
+            this.notesBox.Location = new System.Drawing.Point(272, 413);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
@@ -272,7 +274,7 @@
             this.panel1.Location = new System.Drawing.Point(824, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 753);
+            this.panel1.Size = new System.Drawing.Size(1, 800);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -326,7 +328,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 753);
+            this.panel2.Size = new System.Drawing.Size(1, 800);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -363,7 +365,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 798);
+            this.panel4.Location = new System.Drawing.Point(1, 845);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(823, 1);
@@ -596,7 +598,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(182, 407);
+            this.label13.Location = new System.Drawing.Point(182, 413);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 25);
@@ -674,11 +676,36 @@
             this.label18.TabIndex = 51;
             this.label18.Text = "Start:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(100, 694);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 25);
+            this.label5.TabIndex = 53;
+            this.label5.Text = "E-mail Address:";
+            // 
+            // emailClient
+            // 
+            this.emailClient.BackColor = System.Drawing.Color.White;
+            this.emailClient.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.emailClient.Location = new System.Drawing.Point(272, 689);
+            this.emailClient.Margin = new System.Windows.Forms.Padding(4);
+            this.emailClient.Name = "emailClient";
+            this.emailClient.Size = new System.Drawing.Size(511, 34);
+            this.emailClient.TabIndex = 52;
+            // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 799);
+            this.ClientSize = new System.Drawing.Size(825, 846);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.emailClient);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.dateDownBox);
@@ -778,5 +805,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox emailClient;
     }
 }

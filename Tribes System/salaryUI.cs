@@ -29,6 +29,87 @@ namespace Tribes_System
             resetTable();
         }
 
+        string sMonth = DateTime.Now.ToString("MM");
+        string sYear = DateTime.Now.ToString("yyyy");
+
+        private void assignMonth()
+        {
+            if (sMonth == "01")
+            {
+                monthBox.Text = "January";
+            } else if (sMonth == "02")
+            {
+                monthBox.Text = "February";
+            }
+            else if (sMonth == "03")
+            {
+                monthBox.Text = "March";
+            }
+            else if (sMonth == "04")
+            {
+                monthBox.Text = "April";
+            }
+            else if (sMonth == "05")
+            {
+                monthBox.Text = "May";
+            }
+            else if (sMonth == "06")
+            {
+                monthBox.Text = "June";
+            }
+            else if (sMonth == "07")
+            {
+                monthBox.Text = "July";
+            }
+            else if (sMonth == "08")
+            {
+                monthBox.Text = "August";
+            }
+            else if (sMonth == "09")
+            {
+                monthBox.Text = "September";
+            }
+            else if (sMonth == "10")
+            {
+                monthBox.Text = "October";
+            }
+            else if (sMonth == "11")
+            {
+                monthBox.Text = "November";
+            }
+            else if (sMonth == "12")
+            {
+                monthBox.Text = "December";
+            }
+        }
+
+        /*private void loadMonth()
+        {
+            string sMonth = DateTime.Now.ToString("MM");
+            string query = "select * from event where substring(start_date, 6, 2) = " + monthBox.Text;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //vio_amount = reader["SUM(violation_amount)"].ToString();
+                if (reader["SUM(violation_amount)"] != DBNull.Value)
+                {
+                    vio_amount = reader["SUM(violation_amount)"].ToString();
+                }
+                else
+                {
+                    vio_amount = "0";
+                }
+            }
+            closeConnection();
+        }*/
+
         private void resetTable(string query = "select * from employee")
         {
 
@@ -86,11 +167,8 @@ namespace Tribes_System
         private void payrollUI_Load(object sender, EventArgs e)
         {
             addYear();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            assignMonth();
+            yearBox.Text = sYear;
         }
 
         public void openConnection()

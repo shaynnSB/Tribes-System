@@ -95,6 +95,7 @@
             // 
             this.EmpGrid.AllowUserToAddRows = false;
             this.EmpGrid.AllowUserToDeleteRows = false;
+            this.EmpGrid.AllowUserToResizeRows = false;
             this.EmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmpGrid.Location = new System.Drawing.Point(45, 204);
             this.EmpGrid.Name = "EmpGrid";
@@ -146,6 +147,7 @@
             // yearBox
             // 
             this.yearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.yearBox.FormattingEnabled = true;
             this.yearBox.Location = new System.Drawing.Point(191, 88);
             this.yearBox.Name = "yearBox";
@@ -155,6 +157,7 @@
             // monthBox
             // 
             this.monthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.monthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.monthBox.FormattingEnabled = true;
             this.monthBox.Items.AddRange(new object[] {
             "January",
@@ -280,6 +283,7 @@
             // 
             this.earnedGrid.AllowUserToAddRows = false;
             this.earnedGrid.AllowUserToDeleteRows = false;
+            this.earnedGrid.AllowUserToResizeRows = false;
             this.earnedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.earnedGrid.Location = new System.Drawing.Point(21, 130);
             this.earnedGrid.Name = "earnedGrid";
