@@ -73,7 +73,7 @@
             "On-Call",
             "Full-Time",
             "Inactive"});
-            this.statusBox.Location = new System.Drawing.Point(197, 155);
+            this.statusBox.Location = new System.Drawing.Point(197, 153);
             this.statusBox.Name = "statusBox";
             this.statusBox.Size = new System.Drawing.Size(196, 30);
             this.statusBox.TabIndex = 84;
@@ -85,7 +85,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(37, 96);
+            this.label1.Location = new System.Drawing.Point(37, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(218, 46);
             this.label1.TabIndex = 83;
@@ -97,7 +97,7 @@
             this.EmpGrid.AllowUserToDeleteRows = false;
             this.EmpGrid.AllowUserToResizeRows = false;
             this.EmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EmpGrid.Location = new System.Drawing.Point(45, 204);
+            this.EmpGrid.Location = new System.Drawing.Point(45, 202);
             this.EmpGrid.Name = "EmpGrid";
             this.EmpGrid.RowTemplate.Height = 24;
             this.EmpGrid.Size = new System.Drawing.Size(715, 575);
@@ -113,7 +113,7 @@
             this.allButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.allButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.allButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.allButt.Location = new System.Drawing.Point(45, 155);
+            this.allButt.Location = new System.Drawing.Point(45, 153);
             this.allButt.Margin = new System.Windows.Forms.Padding(4);
             this.allButt.Name = "allButt";
             this.allButt.Size = new System.Drawing.Size(135, 30);
@@ -138,7 +138,7 @@
             this.deetPanel.Controls.Add(this.earnedGrid);
             this.deetPanel.Controls.Add(this.StatusLab);
             this.deetPanel.Controls.Add(this.NameLab);
-            this.deetPanel.Location = new System.Drawing.Point(786, 204);
+            this.deetPanel.Location = new System.Drawing.Point(786, 202);
             this.deetPanel.Name = "deetPanel";
             this.deetPanel.Size = new System.Drawing.Size(516, 575);
             this.deetPanel.TabIndex = 88;

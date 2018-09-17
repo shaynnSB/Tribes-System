@@ -38,6 +38,8 @@
             this.paymentGrid = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.priceLabel = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.remFee = new System.Windows.Forms.Button();
             this.remDiscount = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -79,8 +81,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.priceLabel = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentGrid)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -177,6 +177,7 @@
             // 
             this.paymentGrid.AllowUserToAddRows = false;
             this.paymentGrid.AllowUserToDeleteRows = false;
+            this.paymentGrid.AllowUserToResizeRows = false;
             this.paymentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.paymentGrid.Location = new System.Drawing.Point(26, 75);
             this.paymentGrid.Name = "paymentGrid";
@@ -234,6 +235,31 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Payment Details";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.AccessibleDescription = "";
+            this.priceLabel.AutoSize = true;
+            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.priceLabel.Location = new System.Drawing.Point(823, 242);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(29, 29);
+            this.priceLabel.TabIndex = 109;
+            this.priceLabel.Text = "--";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Location = new System.Drawing.Point(567, 242);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 29);
+            this.label16.TabIndex = 108;
+            this.label16.Text = "Price";
             // 
             // remFee
             // 
@@ -761,6 +787,7 @@
             // 
             this.expensesGrid.AllowUserToAddRows = false;
             this.expensesGrid.AllowUserToDeleteRows = false;
+            this.expensesGrid.AllowUserToResizeRows = false;
             this.expensesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.expensesGrid.Location = new System.Drawing.Point(18, 62);
             this.expensesGrid.Name = "expensesGrid";
@@ -798,31 +825,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1008, 1);
             this.panel3.TabIndex = 45;
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.AccessibleDescription = "";
-            this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.priceLabel.Location = new System.Drawing.Point(823, 242);
-            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(29, 29);
-            this.priceLabel.TabIndex = 109;
-            this.priceLabel.Text = "--";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(567, 242);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 29);
-            this.label16.TabIndex = 108;
-            this.label16.Text = "Price";
             // 
             // payDeets
             // 

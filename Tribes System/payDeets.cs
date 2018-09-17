@@ -34,10 +34,11 @@ namespace Tribes_System
 
         private void payDeets_Load(object sender, EventArgs e)
         {
-            getEventPrice();
             DisplayData();
             getPastFee();
             getPastDisc();
+            getEventPrice();
+            computeGross();
             computeAccRec();
             DisplayExpData();
         }
@@ -248,8 +249,6 @@ namespace Tribes_System
 
         private void addExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && (expBox.Text != "" || expBox.Text == "Category"))
-            {
                 if (amExpBox.Text != "" && expBox.Text != "")
                 {
                     string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
@@ -294,21 +293,55 @@ namespace Tribes_System
                 {
                     MessageBox.Show("Please Provide Required Details!");
                 }
-            }
+            
         }
 
         private void editExpButt_Click(object sender, EventArgs e)
         {
             if (amExpBox.Text != "" && expBox.Text != "")
             {
-                string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
+                string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
+
+                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
+                {
+
+                    DataTable dt = new DataTable();
+
+                    adpt.Fill(dt);
+
+                    if (dt.Rows[0][0].ToString() == "1")
+                    {
+                        getPastExp();
+
+                        double sum = Convert.ToDouble(past_exp) + Convert.ToDouble(amExpBox.Text);
+
+                        string updateQuery = "UPDATE expenses SET exp_price = " + sum + " WHERE exp_name = '" + expBox.Text + "' AND event_id = "
+                            + id_Passed;
+
+                        executeMyQuery(updateQuery);
+
+                        string remQuery = "DELETE FROM expenses WHERE event_id = " + id_Passed + " AND no_exp = " + id_exp;
+
+                        executeMyQuery(remQuery);
+
+                        MessageBox.Show("Edited Successfully");
+
+                        DisplayExpData();
+                        ClearExpData();
+                    }
+                    else
+                    {
+                        string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
                     + " AND event_id = " + id_Passed;
 
-                executeMyQuery(editQuery);
-                MessageBox.Show("Edited Successfully");
+                        executeMyQuery(editQuery);
+                        MessageBox.Show("Edited Successfully");
 
-                DisplayExpData();
-                ClearExpData();
+                        DisplayExpData();
+                        ClearExpData();
+                    }
+                }
+                
             }
             else
             {
@@ -565,11 +598,26 @@ namespace Tribes_System
             priceLabel.Text = eventPrice;
         }
 
+        string gross;
+
+        private void computeGross()
+        {
+            double price = Convert.ToDouble(eventPrice);
+            double fee = Convert.ToDouble(addLabel.Text);
+            double disc = Convert.ToDouble(discLabel.Text);
+
+            double total = (price + fee) - disc;
+
+            gross = Convert.ToString(total) + ".00";
+
+            totalLabel.Text = gross;
+        }
+
         string accRec;
 
         private void computeAccRec()
         {
-            double price = Convert.ToDouble(eventPrice);
+            double price = Convert.ToDouble(gross);
             double amRev = Convert.ToDouble(amRevLabel.Text);
 
             double total = price - amRev;
