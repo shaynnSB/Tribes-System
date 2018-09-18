@@ -44,8 +44,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.startMeri = new System.Windows.Forms.ComboBox();
             this.startMin = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,6 +62,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.emailClient = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.title.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -208,6 +213,9 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(780, 46);
             this.title.TabIndex = 25;
+            this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
+            this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.title_MouseMove);
+            this.title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.title_MouseUp);
             // 
             // nameClientBox
             // 
@@ -260,30 +268,6 @@
             this.label5.Size = new System.Drawing.Size(13, 17);
             this.label5.TabIndex = 47;
             this.label5.Text = "-";
-            // 
-            // endDate
-            // 
-            this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDate.Location = new System.Drawing.Point(205, 286);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4);
-            this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(294, 24);
-            this.endDate.TabIndex = 49;
-            this.endDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 32, 0);
-            // 
-            // startDate
-            // 
-            this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startDate.Location = new System.Drawing.Point(205, 237);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4);
-            this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(294, 24);
-            this.startDate.TabIndex = 48;
-            this.startDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 25, 0);
             // 
             // startMeri
             // 
@@ -542,11 +526,96 @@
             this.emailClient.TabIndex = 68;
             this.emailClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailClient_KeyPress);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(97, 523);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(20, 25);
+            this.label20.TabIndex = 76;
+            this.label20.Text = "*";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(119, 282);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(20, 25);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "*";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(111, 237);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 25);
+            this.label16.TabIndex = 74;
+            this.label16.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(83, 193);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 25);
+            this.label12.TabIndex = 73;
+            this.label12.Text = "*";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Red;
+            this.label8.Location = new System.Drawing.Point(48, 141);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 25);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "*";
+            // 
+            // endDate
+            // 
+            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Location = new System.Drawing.Point(206, 286);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(294, 24);
+            this.endDate.TabIndex = 71;
+            this.endDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.endDate_KeyPress_1);
+            // 
+            // startDate
+            // 
+            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Location = new System.Drawing.Point(206, 237);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(294, 24);
+            this.startDate.TabIndex = 70;
+            this.startDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.startDate_KeyPress_1);
+            // 
             // editEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(780, 781);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.endDate);
+            this.Controls.Add(this.startDate);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.emailClient);
             this.Controls.Add(this.label18);
@@ -565,8 +634,6 @@
             this.Controls.Add(this.startMin);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.startHour);
-            this.Controls.Add(this.endDate);
-            this.Controls.Add(this.startDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -616,8 +683,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker endDate;
-        private System.Windows.Forms.DateTimePicker startDate;
         private System.Windows.Forms.ComboBox startMeri;
         private System.Windows.Forms.ComboBox startMin;
         private System.Windows.Forms.Label label9;
@@ -636,5 +701,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox emailClient;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker endDate;
+        private System.Windows.Forms.DateTimePicker startDate;
     }
 }

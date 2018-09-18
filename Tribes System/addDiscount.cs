@@ -34,13 +34,37 @@ namespace Tribes_System
                 DialogResult dialog = MessageBox.Show("Add Discount?", " ", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
-                    string insertQuery = "INSERT INTO discount(event_id, disc_amount) VALUES (" + id_Passed + ", "
-                    + recievedBox.Text + ")";
+                    string query = "select count(*) from additional_fees where AND event_id = " + id_Passed;
 
-                    executeMyQuery(insertQuery);
-                    MessageBox.Show("Added Successfully");
+                    using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
+                    {
 
-                    this.Close();
+                        DataTable dt = new DataTable();
+
+                        adpt.Fill(dt);
+
+                        if (dt.Rows[0][0].ToString() == "1")
+                        {
+                            string insertQuery = "UPDATE discount SET disc_amount = " + recievedBox.Text + " WHERE event_id = " + id_Passed;
+
+                            executeMyQuery(insertQuery);
+                            MessageBox.Show("Added Successfully");
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            string insertQuery = "INSERT INTO discount(event_id, disc_amount) VALUES (" + id_Passed + ", "
+                            + recievedBox.Text + ")";
+
+                            executeMyQuery(insertQuery);
+                            MessageBox.Show("Added Successfully");
+
+                            this.Close();
+                        }
+
+                    }
+
                 }
                 else if (dialog == DialogResult.No)
                 {

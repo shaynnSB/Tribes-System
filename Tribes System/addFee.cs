@@ -34,13 +34,36 @@ namespace Tribes_System
                 DialogResult dialog = MessageBox.Show("Add additional fee?", " ", MessageBoxButtons.YesNo);
                 if(dialog == DialogResult.Yes)
                 {
-                    string insertQuery = "INSERT INTO additional_fees(event_id, fee_amount) VALUES (" + id_Passed + ", "
-                    + recievedBox.Text + ")";
 
-                    executeMyQuery(insertQuery);
-                    MessageBox.Show("Added Successfully");
+                    string query = "select count(*) from additional_fees where AND event_id = " + id_Passed;
 
-                    this.Close();
+                    using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
+                    {
+
+                        DataTable dt = new DataTable();
+
+                        adpt.Fill(dt);
+
+                        if (dt.Rows[0][0].ToString() == "1")
+                        {
+                            string insertQuery = "UPDATE additional_fees SET fee_amount = " + recievedBox.Text + " WHERE event_id = " + id_Passed;
+
+                            executeMyQuery(insertQuery);
+                            MessageBox.Show("Added Successfully");
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            string insertQuery = "INSERT INTO additional_fees(event_id, fee_amount) VALUES (" + id_Passed + ", " + recievedBox.Text + ")";
+
+                            executeMyQuery(insertQuery);
+                            MessageBox.Show("Added Successfully");
+
+                            this.Close();
+                        }
+
+                    }           
                 }else if (dialog == DialogResult.No)
                 {
 

@@ -41,8 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.notesBox = new System.Windows.Forms.TextBox();
-            this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -76,6 +74,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.startDate = new System.Windows.Forms.DateTimePicker();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -236,29 +236,6 @@
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(511, 124);
             this.notesBox.TabIndex = 24;
-            // 
-            // startDate
-            // 
-            this.startDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.startDate.Location = new System.Drawing.Point(272, 232);
-            this.startDate.Margin = new System.Windows.Forms.Padding(4);
-            this.startDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(248, 22);
-            this.startDate.TabIndex = 25;
-            this.startDate.Value = new System.DateTime(2018, 9, 18, 0, 0, 0, 0);
-            // 
-            // endDate
-            // 
-            this.endDate.CalendarMonthBackground = System.Drawing.SystemColors.Control;
-            this.endDate.Location = new System.Drawing.Point(272, 279);
-            this.endDate.Margin = new System.Windows.Forms.Padding(4);
-            this.endDate.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(248, 22);
-            this.endDate.TabIndex = 26;
-            this.endDate.Value = new System.DateTime(2018, 9, 18, 12, 3, 40, 0);
-            this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
             // panel1
             // 
@@ -709,11 +686,31 @@
             this.label20.TabIndex = 58;
             this.label20.Text = "*";
             // 
+            // endDate
+            // 
+            this.endDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDate.Location = new System.Drawing.Point(272, 277);
+            this.endDate.Name = "endDate";
+            this.endDate.Size = new System.Drawing.Size(249, 24);
+            this.endDate.TabIndex = 73;
+            // 
+            // startDate
+            // 
+            this.startDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDate.Location = new System.Drawing.Point(272, 233);
+            this.startDate.Name = "startDate";
+            this.startDate.Size = new System.Drawing.Size(249, 24);
+            this.startDate.TabIndex = 72;
+            // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 770);
+            this.Controls.Add(this.endDate);
+            this.Controls.Add(this.startDate);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label16);
@@ -741,8 +738,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.endDate);
-            this.Controls.Add(this.startDate);
             this.Controls.Add(this.notesBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -784,8 +779,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox notesBox;
-        private System.Windows.Forms.DateTimePicker startDate;
-        private System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -819,5 +812,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DateTimePicker endDate;
+        private System.Windows.Forms.DateTimePicker startDate;
     }
 }

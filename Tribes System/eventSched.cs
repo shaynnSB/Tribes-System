@@ -65,6 +65,9 @@ namespace Tribes_System
             form.passNoteBox = notesBox.Text;
             form.clientNameBox = clientLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            form.startD = start;
+            form.endD = end;
+            form.mail = mailLabel.Text;
             form.ShowDialog();
         }
 
@@ -103,11 +106,15 @@ namespace Tribes_System
                 notesBox.Text = reader["event_notes"].ToString();
                 clientLabel.Text = reader["client_name"].ToString();
                 numLabel.Text = reader["client_contact"].ToString();
+                mailLabel.Text = reader["client_email"].ToString();
             }
             closeConnection();
 
             date();
         }
+
+        string start;
+        string end;
 
         private void date()
         {
@@ -118,6 +125,8 @@ namespace Tribes_System
 
             while (reader.Read())
             {
+                start = reader["substring(start_date, 1, 10)"].ToString();
+                end = reader["substring(end_date, 1, 10)"].ToString();
                 dateLabel.Text = reader["substring(start_date, 1, 10)"].ToString() + " to " + reader["substring(end_date, 1, 10)"].ToString();
             }
             closeConnection();

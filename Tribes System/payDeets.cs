@@ -474,6 +474,11 @@ namespace Tribes_System
             form.ShowDialog();
 
             getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
+
         }
 
         public string id
@@ -499,6 +504,10 @@ namespace Tribes_System
             form.ShowDialog();
 
             getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
         }
 
         private void addDiscount_Click(object sender, EventArgs e)
@@ -506,6 +515,12 @@ namespace Tribes_System
             addDiscount form = new addDiscount();
             form.idValue = id;
             form.ShowDialog();
+
+            getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
         }
 
         private void editDiscount_Click(object sender, EventArgs e)
@@ -514,6 +529,12 @@ namespace Tribes_System
             form.idValue = id;
             form.amountValue = disc_Amount;
             form.ShowDialog();
+
+            getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
         }
 
         private void remFee_Click(object sender, EventArgs e)
@@ -532,6 +553,12 @@ namespace Tribes_System
             }
 
             addLabel.Text = "--";
+
+            getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
         }
 
         private void remDiscount_Click(object sender, EventArgs e)
@@ -550,6 +577,12 @@ namespace Tribes_System
             }
 
             discLabel.Text = "--";
+
+            getPastFee();
+            getPastDisc();
+            getEventPrice();
+            computeGross();
+            computeAccRec();
         }
 
         private void updateFee()
@@ -683,6 +716,9 @@ namespace Tribes_System
             if (accRec == "0.00")
             {
                 changeStat();
+            } else
+            {
+                changeStat2();
             }
 
             accRecLabel.Text = accRec;
@@ -696,6 +732,19 @@ namespace Tribes_System
             
             statusLabel.Text = "- Fully Paid";
         }
-        
+
+        private void changeStat2()
+        {
+            string addQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
+
+            executeMyQuery(addQuery);
+
+            statusLabel.Text = "- Partially Paid";
+        }
+
+        private void dateBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

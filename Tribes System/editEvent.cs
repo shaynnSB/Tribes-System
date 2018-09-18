@@ -78,12 +78,30 @@ namespace Tribes_System
             set { nameClientBox.Text = value; }
         }
 
+        public string mail
+        {
+            get { return emailClient.Text; }
+            set { emailClient.Text = value; }
+        }
+
         string idPassed;
 
         public string idValue
         {
             get { return this.idPassed; }
             set { this.idPassed = value; }
+        }
+
+        public string startD
+        {
+            get { return startDate.Text; }
+            set { startDate.Text = value; }
+        }
+
+        public string endD
+        {
+            get { return endDate.Text; }
+            set { endDate.Text = value; }
         }
 
         private void start_time()
@@ -142,11 +160,22 @@ namespace Tribes_System
             DialogResult dialogResult = MessageBox.Show("Confirm changes?", "Edit Event Details", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                /*string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
-                    "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text + 
-                    "', start_date = , end_date = , client_name = '" + nameClientBox.Text + "', client_contact = '+(63) " + numClientBox.Text + "' WHERE id_event = " + idPassed;
-                executeMyQuery(editQuery);*/
-                this.Close();
+                if (eventBox.Text != "" && locBox.Text != "" && startHour.Text != "" && startMin.Text != "" && startMeri.Text != "" && endHour.Text != "" && endMin.Text != "" 
+                    && endMeri.Text != "" && nameClientBox.Text != "")
+                {
+                    string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
+                    "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text +
+                    "', start_date = '" + startDate.Text + "', end_date = '" + endDate.Text + "', client_name = '" + nameClientBox.Text + "', client_contact = '+(63) "
+                    + numClientBox.Text + "' , client_email = '" + emailClient.Text + "' WHERE id_event = " + idPassed;
+                    executeMyQuery(editQuery);
+                    MessageBox.Show("Edited Successfully!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Complete Necessary Details!");
+                }
+                
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -208,6 +237,10 @@ namespace Tribes_System
             client_num();
             start_time();
             end_time();
+            startDate.Format = DateTimePickerFormat.Custom;
+            startDate.CustomFormat = "yyyy-MM-dd";
+            endDate.Format = DateTimePickerFormat.Custom;
+            endDate.CustomFormat = "yyyy-MM-dd";
         }
 
         private void emailClient_KeyPress(object sender, KeyPressEventArgs e)
@@ -217,6 +250,39 @@ namespace Tribes_System
             {
                 e.Handled = true;
             }
+        }
+
+        private void title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.drag)
+            {
+                Point p1 = new Point(e.X, e.Y);
+                Point p2 = this.PointToScreen(p1);
+                Point p3 = new Point(p2.X - this.startPoint.X,
+                                     p2.Y - this.startPoint.Y);
+                this.Location = p3;
+            }
+        }
+
+        private void title_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.drag = false;
+        }
+
+        private void title_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.startPoint = e.Location;
+            this.drag = true;
+        }
+
+        private void startDate_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void endDate_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

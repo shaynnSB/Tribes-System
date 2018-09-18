@@ -390,6 +390,7 @@
             this.dateBox.Name = "dateBox";
             this.dateBox.Size = new System.Drawing.Size(242, 30);
             this.dateBox.TabIndex = 102;
+            this.dateBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateBox_KeyPress);
             // 
             // label10
             // 
