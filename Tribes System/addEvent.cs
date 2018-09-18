@@ -29,27 +29,12 @@ namespace Tribes_System
             this.Close();
         }
 
-        private void startDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void addEvent_Load(object sender, EventArgs e)
         {
             startDate.Format = DateTimePickerFormat.Custom;
             startDate.CustomFormat = "yyyy-MM-dd";
             endDate.Format = DateTimePickerFormat.Custom;
             endDate.CustomFormat = "yyyy-MM-dd";
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
 
         private void startTime_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -66,41 +51,17 @@ namespace Tribes_System
         {
 
         }
-
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            //nameBox.Clear();
-        }
-
-        private void locBox_Click(object sender, EventArgs e)
-        {
-            //locBox.Clear();
-        }
-
-        private void notesBox_Click(object sender, EventArgs e)
-        {
-            //notesBox.Clear();
-        }
-
-        private void nameClientBox_Click(object sender, EventArgs e)
-        {
-            //nameClientBox.Clear();
-        }
-
-        private void conClientBox_Click(object sender, EventArgs e)
-        {
-            //conClientBox.Clear();
-        }
-
+        
         private void addButt_Click(object sender, EventArgs e)
         {
-            if (downBox.Text != "" && dateDownBox.Text != "")
+            if(nameBox.Text != "" && locBox.Text != "" && startHr.Text != "" && startMin.Text != "" &&  startMeri.Text != "" && endHr.Text != "" &&  endMin.Text != "" && 
+                endMeri.Text != "" && nameClientBox.Text != "")
             {
                 string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status, downpayment, down_date) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
+                "client_name, client_contact, event_status, client_email) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
                 + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Partially Paid', " +
-                downBox.Text + ", '" + dateDownBox.Text + "')";
+                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid', '" +
+                emailClient.Text + "')";
 
                 executeMyQuery(insertQuery);
                 MessageBox.Show("Added Successfully");
@@ -108,16 +69,8 @@ namespace Tribes_System
             }
             else
             {
-                string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
-                + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid')";
-
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
-                this.Close();
-            }
-           
+                MessageBox.Show("Complete Necessary Details!");
+            }                   
         }
 
         public void openConnection()
@@ -207,7 +160,7 @@ namespace Tribes_System
             }
         }
 
-        private void conClientBox_TextChanged(object sender, EventArgs e)
+        private void emailClient_KeyPress(object sender, KeyPressEventArgs e)
         {
 
         }

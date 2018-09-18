@@ -155,6 +155,9 @@ namespace Tribes_System
             {
                 MessageBox.Show("Please Provide Required Details!");
             }
+
+            computeGross();
+            computeAccRec();
         }
 
         private void DisplayData()
@@ -165,7 +168,16 @@ namespace Tribes_System
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             closeConnection();
             adapter.Fill(table);
+            
+            paymentGrid.Columns.Clear();
             paymentGrid.DataSource = table;
+            paymentGrid.Columns[0].Visible = false;
+            paymentGrid.Columns[1].HeaderCell.Value = "Amount";
+            paymentGrid.Columns[2].HeaderCell.Value = "Date Paid";
+            paymentGrid.Columns[1].Width = 200;
+            paymentGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            paymentGrid.RowHeadersVisible = false;
 
             string selectQuery = "select SUM(amount) from amount_paid where event_id = " + id_Passed;
             openConnection();
@@ -178,6 +190,7 @@ namespace Tribes_System
 
             }
             closeConnection();
+
         }
 
         private void ClearData()
@@ -210,6 +223,9 @@ namespace Tribes_System
             {
                 MessageBox.Show("Please Select Record to Update!");
             }
+
+            computeGross();
+            computeAccRec();
         }
 
         private void remAmButt_Click(object sender, EventArgs e)
@@ -228,6 +244,9 @@ namespace Tribes_System
             {
                 MessageBox.Show("Please Select Record to Delete!");
             }
+
+            computeGross();
+            computeAccRec();
         }
 
         private void recievedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -595,6 +614,11 @@ namespace Tribes_System
             }
             closeConnection();
 
+            if(eventPrice == "")
+            {
+                eventPrice = "0";
+            }
+
             priceLabel.Text = eventPrice;
         }
 
@@ -602,9 +626,28 @@ namespace Tribes_System
 
         private void computeGross()
         {
+            double fee;
+            double disc; 
+
             double price = Convert.ToDouble(eventPrice);
-            double fee = Convert.ToDouble(addLabel.Text);
-            double disc = Convert.ToDouble(discLabel.Text);
+
+            if (addLabel.Text == "")
+            {
+                fee = 0;
+            }
+            else
+            {
+                fee = Convert.ToDouble(addLabel.Text);
+            }
+            
+            if (discLabel.Text == "")
+            {
+                disc = 0;
+            }
+            else
+            {
+                disc = Convert.ToDouble(discLabel.Text);
+            }
 
             double total = (price + fee) - disc;
 
@@ -617,16 +660,38 @@ namespace Tribes_System
 
         private void computeAccRec()
         {
+            double amRev;
+
             double price = Convert.ToDouble(gross);
-            double amRev = Convert.ToDouble(amRevLabel.Text);
+            if (amRevLabel.Text == "")
+            {
+                amRev = 0;
+            }
+            else
+            {
+               amRev = Convert.ToDouble(amRevLabel.Text);
+            }
 
             double total = price - amRev;
 
             accRec = Convert.ToString(total) + ".00";
 
+            if (accRec == "0.00")
+            {
+                changeStat();
+            }
+
             accRecLabel.Text = accRec;
         }
 
-        /*NOTE: DAPAT ICHANGE ANG PRICE INTO (PRICE + FEE) - DISCOUNT*/
+        private void changeStat()
+        {
+            string addQuery = "UPDATE event SET event_status = 'Fully Paid' WHERE id_event = " + id_Passed;
+
+            executeMyQuery(addQuery);
+            
+            statusLabel.Text = "- Fully Paid";
+        }
+        
     }
 }

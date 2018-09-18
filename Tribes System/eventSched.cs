@@ -147,9 +147,6 @@ namespace Tribes_System
             eventGrid.Columns[10].Visible = false;
             eventGrid.Columns[11].Visible = false;
             eventGrid.Columns[12].Visible = false;
-            eventGrid.Columns[13].Visible = false;
-            eventGrid.Columns[14].Visible = false;
-            eventGrid.Columns[15].Visible = false;
 
             eventGrid.RowHeadersVisible = false;
         }

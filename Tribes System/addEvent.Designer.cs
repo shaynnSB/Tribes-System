@@ -62,19 +62,20 @@
             this.endMeri = new System.Windows.Forms.ComboBox();
             this.startMeri = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.downBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dateDownBox = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.emailClient = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -86,7 +87,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(40, 547);
+            this.label4.Location = new System.Drawing.Point(40, 458);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(254, 36);
@@ -128,7 +129,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(606, 749);
+            this.addButt.Location = new System.Drawing.Point(606, 668);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(177, 31);
@@ -146,7 +147,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(606, 788);
+            this.cancelButt.Location = new System.Drawing.Point(606, 707);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(177, 31);
@@ -165,7 +166,6 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(511, 34);
             this.nameBox.TabIndex = 9;
-            this.nameBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // locBox
             // 
@@ -177,31 +177,29 @@
             this.locBox.Name = "locBox";
             this.locBox.Size = new System.Drawing.Size(511, 34);
             this.locBox.TabIndex = 10;
-            this.locBox.Click += new System.EventHandler(this.locBox_Click);
             // 
             // nameClientBox
             // 
             this.nameClientBox.BackColor = System.Drawing.Color.White;
             this.nameClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.nameClientBox.Location = new System.Drawing.Point(272, 591);
+            this.nameClientBox.Location = new System.Drawing.Point(272, 502);
             this.nameClientBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameClientBox.Name = "nameClientBox";
             this.nameClientBox.Size = new System.Drawing.Size(511, 34);
             this.nameClientBox.TabIndex = 11;
-            this.nameClientBox.Click += new System.EventHandler(this.nameClientBox_Click);
             // 
             // conClientBox
             // 
             this.conClientBox.BackColor = System.Drawing.Color.White;
             this.conClientBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.conClientBox.Location = new System.Drawing.Point(384, 639);
+            this.conClientBox.Location = new System.Drawing.Point(384, 550);
             this.conClientBox.Margin = new System.Windows.Forms.Padding(4);
+            this.conClientBox.MaxLength = 10;
             this.conClientBox.Name = "conClientBox";
             this.conClientBox.Size = new System.Drawing.Size(399, 34);
             this.conClientBox.TabIndex = 12;
-            this.conClientBox.TextChanged += new System.EventHandler(this.conClientBox_TextChanged);
             this.conClientBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.conClientBox_KeyPress);
             // 
             // label2
@@ -214,7 +212,6 @@
             this.label2.Size = new System.Drawing.Size(13, 17);
             this.label2.TabIndex = 19;
             this.label2.Text = "-";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -233,13 +230,12 @@
             this.notesBox.BackColor = System.Drawing.Color.White;
             this.notesBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notesBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.notesBox.Location = new System.Drawing.Point(272, 413);
+            this.notesBox.Location = new System.Drawing.Point(272, 324);
             this.notesBox.Margin = new System.Windows.Forms.Padding(4);
             this.notesBox.Multiline = true;
             this.notesBox.Name = "notesBox";
             this.notesBox.Size = new System.Drawing.Size(511, 124);
             this.notesBox.TabIndex = 24;
-            this.notesBox.Click += new System.EventHandler(this.notesBox_Click);
             // 
             // startDate
             // 
@@ -250,8 +246,7 @@
             this.startDate.Name = "startDate";
             this.startDate.Size = new System.Drawing.Size(248, 22);
             this.startDate.TabIndex = 25;
-            this.startDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 25, 0);
-            this.startDate.ValueChanged += new System.EventHandler(this.startDate_ValueChanged);
+            this.startDate.Value = new System.DateTime(2018, 9, 18, 0, 0, 0, 0);
             // 
             // endDate
             // 
@@ -262,7 +257,7 @@
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(248, 22);
             this.endDate.TabIndex = 26;
-            this.endDate.Value = new System.DateTime(2018, 8, 16, 14, 26, 32, 0);
+            this.endDate.Value = new System.DateTime(2018, 9, 18, 12, 3, 40, 0);
             this.endDate.ValueChanged += new System.EventHandler(this.endDate_ValueChanged);
             // 
             // panel1
@@ -274,7 +269,7 @@
             this.panel1.Location = new System.Drawing.Point(824, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 800);
+            this.panel1.Size = new System.Drawing.Size(1, 724);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -328,7 +323,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 800);
+            this.panel2.Size = new System.Drawing.Size(1, 724);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -365,7 +360,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 845);
+            this.panel4.Location = new System.Drawing.Point(1, 769);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(823, 1);
@@ -534,9 +529,10 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(272, 639);
+            this.textBox1.Location = new System.Drawing.Point(272, 550);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -544,18 +540,6 @@
             this.textBox1.TabIndex = 40;
             this.textBox1.Text = "+(63)";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // downBox
-            // 
-            this.downBox.BackColor = System.Drawing.Color.White;
-            this.downBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.downBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.downBox.Location = new System.Drawing.Point(272, 320);
-            this.downBox.Margin = new System.Windows.Forms.Padding(4);
-            this.downBox.Name = "downBox";
-            this.downBox.Size = new System.Drawing.Size(511, 34);
-            this.downBox.TabIndex = 41;
-            this.downBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.downBox_KeyPress);
             // 
             // label10
             // 
@@ -581,24 +565,12 @@
             this.label11.TabIndex = 43;
             this.label11.Text = "Location:";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(108, 325);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(143, 25);
-            this.label12.TabIndex = 44;
-            this.label12.Text = "Downpayment:";
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(182, 413);
+            this.label13.Location = new System.Drawing.Point(182, 324);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 25);
@@ -610,7 +582,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(181, 596);
+            this.label14.Location = new System.Drawing.Point(181, 507);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 25);
@@ -622,35 +594,12 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label15.Location = new System.Drawing.Point(149, 644);
+            this.label15.Location = new System.Drawing.Point(149, 555);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(102, 25);
             this.label15.TabIndex = 47;
             this.label15.Text = "Contact #:";
-            // 
-            // dateDownBox
-            // 
-            this.dateDownBox.BackColor = System.Drawing.Color.White;
-            this.dateDownBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDownBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dateDownBox.Location = new System.Drawing.Point(272, 365);
-            this.dateDownBox.Margin = new System.Windows.Forms.Padding(4);
-            this.dateDownBox.Name = "dateDownBox";
-            this.dateDownBox.Size = new System.Drawing.Size(511, 34);
-            this.dateDownBox.TabIndex = 48;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label16.Location = new System.Drawing.Point(41, 370);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(210, 25);
-            this.label16.TabIndex = 49;
-            this.label16.Text = "Date of Downpayment:";
             // 
             // label17
             // 
@@ -681,7 +630,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(100, 694);
+            this.label5.Location = new System.Drawing.Point(100, 605);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 25);
@@ -693,28 +642,90 @@
             this.emailClient.BackColor = System.Drawing.Color.White;
             this.emailClient.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailClient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.emailClient.Location = new System.Drawing.Point(272, 689);
+            this.emailClient.Location = new System.Drawing.Point(272, 600);
             this.emailClient.Margin = new System.Windows.Forms.Padding(4);
             this.emailClient.Name = "emailClient";
             this.emailClient.Size = new System.Drawing.Size(511, 34);
             this.emailClient.TabIndex = 52;
+            this.emailClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailClient_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(110, 132);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(20, 25);
+            this.label6.TabIndex = 54;
+            this.label6.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(142, 180);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(20, 25);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "*";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(182, 232);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(20, 25);
+            this.label16.TabIndex = 56;
+            this.label16.Text = "*";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Red;
+            this.label19.Location = new System.Drawing.Point(182, 274);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(20, 25);
+            this.label19.TabIndex = 57;
+            this.label19.Text = "*";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Red;
+            this.label20.Location = new System.Drawing.Point(165, 507);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(20, 25);
+            this.label20.TabIndex = 58;
+            this.label20.Text = "*";
             // 
             // addEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 846);
+            this.ClientSize = new System.Drawing.Size(825, 770);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.emailClient);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.dateDownBox);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.downBox);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.textBox1);
@@ -794,18 +805,19 @@
         private System.Windows.Forms.ComboBox endMeri;
         private System.Windows.Forms.ComboBox startMeri;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox downBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox dateDownBox;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox emailClient;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }

@@ -26,6 +26,7 @@ namespace Tribes_System
         public salaryUI()
         {
             InitializeComponent();
+
             resetTable();
         }
 
@@ -147,8 +148,8 @@ namespace Tribes_System
 
         private void salaryTable()
         {
-            string query = "select event_name, salary from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event";
-            DataTable table = new DataTable();
+            string query = "select event_name, salary from staff_lineup, event where staff_id = " + selectedEmp + ", id_event = no_event"; 
+            DataTable table = new DataTable(); 
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
 
@@ -345,6 +346,30 @@ namespace Tribes_System
             {
                 int num = 2018 + i;
                 yearBox.Items.Add(num);
+            }
+        }
+
+        private void monthBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(selectedEmp != "")
+            {
+                salaryTable();
+            }
+            else
+            {
+
+            }           
+        }
+
+        private void yearBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (selectedEmp != "")
+            {
+                salaryTable();
+            }
+            else
+            {
+
             }
         }
     }

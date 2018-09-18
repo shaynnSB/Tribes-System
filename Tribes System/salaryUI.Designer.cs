@@ -153,6 +153,7 @@
             this.yearBox.Name = "yearBox";
             this.yearBox.Size = new System.Drawing.Size(130, 28);
             this.yearBox.TabIndex = 100;
+            this.yearBox.SelectedIndexChanged += new System.EventHandler(this.yearBox_SelectedIndexChanged);
             // 
             // monthBox
             // 
@@ -176,6 +177,7 @@
             this.monthBox.Name = "monthBox";
             this.monthBox.Size = new System.Drawing.Size(164, 28);
             this.monthBox.TabIndex = 99;
+            this.monthBox.SelectedIndexChanged += new System.EventHandler(this.monthBox_SelectedIndexChanged);
             // 
             // vioButt
             // 
