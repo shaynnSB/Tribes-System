@@ -209,5 +209,14 @@ namespace Tribes_System
             start_time();
             end_time();
         }
+
+        private void emailClient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '@'
+                && (sender as TextBox).Text.IndexOf('@') > -1)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

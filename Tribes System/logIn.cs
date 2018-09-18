@@ -31,21 +31,6 @@ namespace Tribes_System
             WindowState = FormWindowState.Minimized;
         }
 
-        private void userBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void userBox_Click(object sender, EventArgs e)
-        {
-            userBox.Clear();
-        }
-
-        private void passBox_Click(object sender, EventArgs e)
-        {
-            passBox.Clear();
-        }
-
         private void passBox_Enter(object sender, EventArgs e)
         {
             passBox.UseSystemPasswordChar = true;

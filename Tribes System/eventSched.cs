@@ -75,6 +75,7 @@ namespace Tribes_System
         }
 
         string id_select;
+        string event_stat;
 
         private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,6 +85,7 @@ namespace Tribes_System
             DataGridViewRow row = eventGrid.Rows[selectedRow];
 
             id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            event_stat = eventGrid.CurrentRow.Cells[11].Value.ToString(); 
 
             string selectQuery = "select * from event where id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
             openConnection();
@@ -193,6 +195,7 @@ namespace Tribes_System
             payDeets form = new payDeets(this);
             form.nameBox = nameLabel.Text;
             form.idValue = id_select;
+            form.statusOfEvent = event_stat;
             form.ShowDialog();
         }
 

@@ -60,7 +60,7 @@
             // 
             // calendar
             // 
-            this.calendar.Location = new System.Drawing.Point(28, 101);
+            this.calendar.Location = new System.Drawing.Point(28, 119);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
             this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
@@ -72,12 +72,12 @@
             this.eventGrid.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.eventGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.eventGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventGrid.Location = new System.Drawing.Point(26, 318);
+            this.eventGrid.Location = new System.Drawing.Point(26, 334);
             this.eventGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventGrid.Name = "eventGrid";
             this.eventGrid.ReadOnly = true;
             this.eventGrid.RowTemplate.Height = 24;
-            this.eventGrid.Size = new System.Drawing.Size(306, 386);
+            this.eventGrid.Size = new System.Drawing.Size(306, 373);
             this.eventGrid.TabIndex = 1;
             this.eventGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventGrid_CellClick);
             // 

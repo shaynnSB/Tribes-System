@@ -121,6 +121,7 @@
             this.numClientBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.numClientBox.Location = new System.Drawing.Point(317, 566);
             this.numClientBox.Margin = new System.Windows.Forms.Padding(4);
+            this.numClientBox.MaxLength = 10;
             this.numClientBox.Name = "numClientBox";
             this.numClientBox.Size = new System.Drawing.Size(427, 34);
             this.numClientBox.TabIndex = 31;
@@ -481,9 +482,10 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
+            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(174, 566);
+            this.textBox1.Location = new System.Drawing.Point(205, 566);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -538,6 +540,7 @@
             this.emailClient.Name = "emailClient";
             this.emailClient.Size = new System.Drawing.Size(539, 34);
             this.emailClient.TabIndex = 68;
+            this.emailClient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.emailClient_KeyPress);
             // 
             // editEvent
             // 
@@ -628,10 +631,10 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox emailClient;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

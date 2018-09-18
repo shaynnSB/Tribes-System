@@ -41,6 +41,8 @@ namespace Tribes_System
             computeGross();
             computeAccRec();
             DisplayExpData();
+
+            statusLabel.Text = "- " + statusEvent;
         }
 
         private void closeButt_Click(object sender, EventArgs e)
@@ -144,6 +146,8 @@ namespace Tribes_System
             {
                 string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", " 
                     + recievedBox.Text + ", '" + dateBox.Text + "')";
+
+                string editQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
 
                 executeMyQuery(insertQuery);
                 MessageBox.Show("Added Successfully");
