@@ -14,7 +14,7 @@ namespace Tribes_System
     {
         private bool drag = false;
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
-        MySqlCommand adapter;
+        //MySqlCommand adapter;
         MySqlCommand cmd;
         private Point startPoint = new Point(0, 0);
         eventSched form = new eventSched();
@@ -76,7 +76,7 @@ namespace Tribes_System
 
         private void confirmButt_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Confirm changes in list of equipment?", "List of Equipmet", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Confirm changes in list of equipment?", "List of Equipment", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 //string editQuery = "UPDATE event SET event_name = ,event_location = , event_notes = , start_date = , end_date = , start_time = , 
@@ -396,6 +396,29 @@ namespace Tribes_System
             }
             int a = lvw1 + snl1 + vcs1 + msc1;
             total.Text = a.ToString();
+        }
+
+        private void title_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (this.drag)
+            {
+                Point p1 = new Point(e.X, e.Y);
+                Point p2 = this.PointToScreen(p1);
+                Point p3 = new Point(p2.X - this.startPoint.X,
+                                     p2.Y - this.startPoint.Y);
+                this.Location = p3;
+            }
+        }
+
+        private void title_MouseUp(object sender, MouseEventArgs e)
+        {
+            this.drag = false;
+        }
+
+        private void title_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.startPoint = e.Location;
+            this.drag = true;
         }
     }
 }
