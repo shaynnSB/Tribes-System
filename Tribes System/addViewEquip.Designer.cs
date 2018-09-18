@@ -91,7 +91,7 @@
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(823, 3);
+            this.minButt.Location = new System.Drawing.Point(946, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(2);
             this.minButt.Name = "minButt";
             this.minButt.Size = new System.Drawing.Size(31, 34);
@@ -106,7 +106,7 @@
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(858, 3);
+            this.closeButt.Location = new System.Drawing.Point(981, 1);
             this.closeButt.Margin = new System.Windows.Forms.Padding(2);
             this.closeButt.Name = "closeButt";
             this.closeButt.Size = new System.Drawing.Size(31, 34);
