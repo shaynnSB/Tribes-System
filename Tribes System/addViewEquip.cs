@@ -87,9 +87,11 @@ namespace Tribes_System
                 //loop dg1 and save it to datagridview2
                 for (var i = 0; i < rowCount; i++)
                 {
-                    //listEmpGrid.Rows.Add();
+                 
                     string insertQuery = "UPDATE itemcontent SET eventID='" + eventSched.id + "' where  id=" + listEmpGrid.Rows[i].Cells[0].Value.ToString();
+                    string insertQuery1 = "UPDATE event SET prices='" + total.Text + "' where  id_event=" + eventSched.id;
                     executeMyQuery(insertQuery);
+                    executeMyQuery(insertQuery1);
                 }
                 MessageBox.Show("Success");
                 while (listEmpGrid.Rows.Count > 0)
@@ -217,6 +219,183 @@ namespace Tribes_System
                 MessageBox.Show("Nothing is selected");
             }
         }
-       
+
+  
+
+        private void snl_TextChanged(object sender, EventArgs e)
+        {
+            int lvw1 = 0;
+            int snl1 = 0;
+            int vcs1 = 0;
+            int msc1 = 0;
+
+            if (lvw.Text == "")
+            {
+                lvw1 = 0;
+            }
+            else
+            {
+                lvw1 = int.Parse(lvw.Text);
+            }
+            if (snl.Text == "")
+            {
+                snl1 = 0;
+            }
+            else
+            {
+                snl1 = int.Parse(snl.Text);
+            }
+
+            if (vcs.Text == "")
+            {
+                vcs1 = 0;
+            }
+            else
+            {
+                vcs1 = int.Parse(vcs.Text);
+            }
+            if (msc.Text == "")
+            {
+                msc1 = 0;
+            }
+            else
+            {
+                msc1 = int.Parse(msc.Text);
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1;
+            total.Text = a.ToString();
+        }
+
+        private void lvw_TextChanged(object sender, EventArgs e)
+        {
+            int lvw1 = 0;
+            int snl1 = 0;
+            int vcs1 = 0;
+            int msc1 = 0;
+
+            if (lvw.Text == "")
+            {
+                lvw1 = 0;
+            }
+            else
+            {
+                lvw1 = int.Parse(lvw.Text);
+            }
+            if (snl.Text == "")
+            {
+                snl1 = 0;
+            }
+            else
+            {
+                snl1 = int.Parse(snl.Text);
+            }
+
+            if (vcs.Text == "")
+            {
+                vcs1 = 0;
+            }
+            else
+            {
+                vcs1 = int.Parse(vcs.Text);
+            }
+            if (msc.Text == "")
+            {
+                msc1 = 0;
+            }
+            else
+            {
+                msc1 = int.Parse(msc.Text);
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1;
+            total.Text = a.ToString();
+        }
+
+        private void vcs_TextChanged(object sender, EventArgs e)
+        {
+            int lvw1 = 0;
+            int snl1 = 0;
+            int vcs1 = 0;
+            int msc1 = 0;
+
+            if (lvw.Text == "")
+            {
+                lvw1 = 0;
+            }
+            else
+            {
+                lvw1 = int.Parse(lvw.Text);
+            }
+            if (snl.Text == "")
+            {
+                snl1 = 0;
+            }
+            else
+            {
+                snl1 = int.Parse(snl.Text);
+            }
+
+            if (vcs.Text == "")
+            {
+                vcs1 = 0;
+            }
+            else
+            {
+                vcs1 = int.Parse(vcs.Text);
+            }
+            if (msc.Text == "")
+            {
+                msc1 = 0;
+            }
+            else
+            {
+                msc1 = int.Parse(msc.Text);
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1;
+            total.Text = a.ToString();
+        }
+
+        private void msc_TextChanged(object sender, EventArgs e)
+        {
+            int lvw1 = 0;
+            int snl1 = 0;
+            int vcs1 = 0;
+            int msc1 = 0;
+
+            if (lvw.Text == "")
+            {
+                lvw1 = 0;
+            }
+            else
+            {
+                lvw1 = int.Parse(lvw.Text);
+            }
+            if (snl.Text == "")
+            {
+                snl1 = 0;
+            }
+            else
+            {
+                snl1 = int.Parse(snl.Text);
+            }
+
+            if (vcs.Text == "")
+            {
+                vcs1 = 0;
+            }
+            else
+            {
+                vcs1 = int.Parse(vcs.Text);
+            }
+            if (msc.Text == "")
+            {
+                msc1 = 0;
+            }
+            else
+            {
+                msc1 = int.Parse(msc.Text);
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1;
+            total.Text = a.ToString();
+        }
     }
 }

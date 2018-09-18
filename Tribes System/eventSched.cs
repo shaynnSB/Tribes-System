@@ -110,6 +110,15 @@ namespace Tribes_System
                 notesBox.Text = reader["event_notes"].ToString();
                 clientLabel.Text = reader["client_name"].ToString();
                 numLabel.Text = reader["client_contact"].ToString();
+                if (reader["prices"].ToString() != "")
+                {
+                    totalni.Text = reader["prices"].ToString();
+                }
+                else
+                {
+                    totalni.Text = "--";
+                }
+               
             }
             closeConnection();
         }

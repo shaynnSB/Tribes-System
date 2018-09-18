@@ -56,6 +56,8 @@
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.totalni = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +126,8 @@
             // deetPanel
             // 
             this.deetPanel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.deetPanel.Controls.Add(this.totalni);
+            this.deetPanel.Controls.Add(this.label1);
             this.deetPanel.Controls.Add(this.button1);
             this.deetPanel.Controls.Add(this.amLabel);
             this.deetPanel.Controls.Add(this.label6);
@@ -444,7 +448,30 @@
             this.button3.TabIndex = 72;
             this.button3.Text = "View Archived Event";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(419, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 21);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Total Equipment Price:";
+            // 
+            // totalni
+            // 
+            this.totalni.AutoSize = true;
+            this.totalni.Font = new System.Drawing.Font("Microsoft Tai Le", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalni.ForeColor = System.Drawing.SystemColors.Control;
+            this.totalni.Location = new System.Drawing.Point(589, 153);
+            this.totalni.Name = "totalni";
+            this.totalni.Size = new System.Drawing.Size(22, 21);
+            this.totalni.TabIndex = 86;
+            this.totalni.Text = "--";
             // 
             // eventSched
             // 
@@ -498,5 +525,7 @@
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label totalni;
+        private System.Windows.Forms.Label label1;
     }
 }
