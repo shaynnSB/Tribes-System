@@ -71,6 +71,7 @@
             this.Name = "AddContent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Item Content";
+            this.Load += new System.EventHandler(this.AddContent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
