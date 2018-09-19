@@ -36,19 +36,20 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.genderLab = new System.Windows.Forms.Label();
             this.addressLab = new System.Windows.Forms.Label();
             this.numLab = new System.Windows.Forms.Label();
             this.ENameLab = new System.Windows.Forms.Label();
             this.EmergencyContactLab = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.PositionLab = new System.Windows.Forms.Label();
             this.StatusLab = new System.Windows.Forms.Label();
             this.BdayLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.genderLab = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.salaryLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -158,13 +159,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.salaryLab);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.genderLab);
             this.panel1.Controls.Add(this.addressLab);
             this.panel1.Controls.Add(this.numLab);
             this.panel1.Controls.Add(this.ENameLab);
             this.panel1.Controls.Add(this.EmergencyContactLab);
             this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.PositionLab);
             this.panel1.Controls.Add(this.StatusLab);
             this.panel1.Controls.Add(this.BdayLab);
             this.panel1.Controls.Add(this.NameLab);
@@ -173,6 +175,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(547, 638);
             this.panel1.TabIndex = 73;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 217);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 25);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Employee Schedule:";
+            // 
+            // genderLab
+            // 
+            this.genderLab.AutoSize = true;
+            this.genderLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderLab.Location = new System.Drawing.Point(6, 169);
+            this.genderLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.genderLab.Name = "genderLab";
+            this.genderLab.Size = new System.Drawing.Size(69, 20);
+            this.genderLab.TabIndex = 30;
+            this.genderLab.Text = "Gender:";
+            this.genderLab.Click += new System.EventHandler(this.genderLab_Click);
             // 
             // addressLab
             // 
@@ -220,28 +245,19 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 224);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 246);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(530, 392);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(530, 380);
             this.dataGridView2.TabIndex = 25;
-            // 
-            // PositionLab
-            // 
-            this.PositionLab.AutoSize = true;
-            this.PositionLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PositionLab.Location = new System.Drawing.Point(8, 189);
-            this.PositionLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.PositionLab.Name = "PositionLab";
-            this.PositionLab.Size = new System.Drawing.Size(74, 20);
-            this.PositionLab.TabIndex = 23;
-            this.PositionLab.Text = "Position:";
-            this.PositionLab.Visible = false;
             // 
             // StatusLab
             // 
@@ -303,17 +319,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // genderLab
-            // 
-            this.genderLab.AutoSize = true;
-            this.genderLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLab.Location = new System.Drawing.Point(8, 169);
-            this.genderLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.genderLab.Name = "genderLab";
-            this.genderLab.Size = new System.Drawing.Size(69, 20);
-            this.genderLab.TabIndex = 30;
-            this.genderLab.Text = "Gender:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -324,6 +329,17 @@
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 31;
             this.label2.Text = "Filter:";
+            // 
+            // salaryLab
+            // 
+            this.salaryLab.AutoSize = true;
+            this.salaryLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryLab.Location = new System.Drawing.Point(6, 189);
+            this.salaryLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.salaryLab.Name = "salaryLab";
+            this.salaryLab.Size = new System.Drawing.Size(66, 20);
+            this.salaryLab.TabIndex = 32;
+            this.salaryLab.Text = "Salary: ";
             // 
             // EmployeeTab
             // 
@@ -362,7 +378,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label PositionLab;
         private System.Windows.Forms.Label StatusLab;
         private System.Windows.Forms.Label BdayLab;
         private System.Windows.Forms.Label NameLab;
@@ -374,5 +389,7 @@
         private System.Windows.Forms.Label numLab;
         private System.Windows.Forms.Label genderLab;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label salaryLab;
     }
 }

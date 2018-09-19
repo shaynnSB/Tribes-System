@@ -53,7 +53,7 @@ namespace Tribes_System
         {
             if(hidden)
             {
-                panelMenu.Width = panelMenu.Width + 30;
+                panelMenu.Width = panelMenu.Width + 5;
                 if (panelMenu.Width >= PW)
                 {
                     timer.Stop();
@@ -62,7 +62,7 @@ namespace Tribes_System
                 }
             }else
             {
-                panelMenu.Width = panelMenu.Width - 30;
+                panelMenu.Width = panelMenu.Width - 5;
                 if (panelMenu.Width <= 0)
                 {
                     timer.Stop();

@@ -36,6 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.assignedGrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +54,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.eventLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.title.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -141,6 +143,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.assignedGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -151,14 +155,60 @@
             this.tabPage1.Text = "Assigned Staff";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(614, 65);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 30);
+            this.button2.TabIndex = 92;
+            this.button2.Text = "Add Salary";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(618, 36);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(135, 22);
+            this.textBox1.TabIndex = 91;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(617, 473);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 30);
+            this.button1.TabIndex = 90;
+            this.button1.Text = "Remove";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // assignedGrid
             // 
+            this.assignedGrid.AllowUserToAddRows = false;
+            this.assignedGrid.AllowUserToDeleteRows = false;
             this.assignedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assignedGrid.Location = new System.Drawing.Point(16, 21);
             this.assignedGrid.Name = "assignedGrid";
+            this.assignedGrid.RowHeadersVisible = false;
             this.assignedGrid.RowTemplate.Height = 24;
             this.assignedGrid.Size = new System.Drawing.Size(596, 482);
             this.assignedGrid.TabIndex = 0;
+            this.assignedGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assignedGrid_CellClick);
             // 
             // tabPage2
             // 
@@ -223,9 +273,12 @@
             // 
             // addGrid
             // 
+            this.addGrid.AllowUserToAddRows = false;
+            this.addGrid.AllowUserToDeleteRows = false;
             this.addGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addGrid.Location = new System.Drawing.Point(394, 94);
             this.addGrid.Name = "addGrid";
+            this.addGrid.RowHeadersVisible = false;
             this.addGrid.RowTemplate.Height = 24;
             this.addGrid.Size = new System.Drawing.Size(348, 328);
             this.addGrid.TabIndex = 92;
@@ -300,9 +353,12 @@
             // 
             // listEmpGrid
             // 
+            this.listEmpGrid.AllowUserToAddRows = false;
+            this.listEmpGrid.AllowUserToDeleteRows = false;
             this.listEmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listEmpGrid.Location = new System.Drawing.Point(16, 94);
             this.listEmpGrid.Name = "listEmpGrid";
+            this.listEmpGrid.RowHeadersVisible = false;
             this.listEmpGrid.RowTemplate.Height = 24;
             this.listEmpGrid.Size = new System.Drawing.Size(348, 328);
             this.listEmpGrid.TabIndex = 1;
@@ -353,23 +409,6 @@
             this.eventLabel.TabIndex = 64;
             this.eventLabel.Text = "Event Name";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(617, 473);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 30);
-            this.button1.TabIndex = 90;
-            this.button1.Text = "Remove";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // addViewStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -390,6 +429,7 @@
             this.title.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.assignedGrid)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -425,5 +465,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label eventLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

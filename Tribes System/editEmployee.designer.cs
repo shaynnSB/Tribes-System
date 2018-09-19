@@ -70,6 +70,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lastnameBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.salarayBox = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -326,7 +328,7 @@
             this.panel3.Controls.Add(this.label2);
             this.panel3.Location = new System.Drawing.Point(46, 333);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(371, 20);
+            this.panel3.Size = new System.Drawing.Size(323, 20);
             this.panel3.TabIndex = 26;
             // 
             // radioButton3
@@ -608,11 +610,36 @@
             this.lastnameBox.Text = "Last Name";
             this.lastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label9.Location = new System.Drawing.Point(372, 335);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 20);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "Salary:";
+            this.label9.Visible = false;
+            // 
+            // salarayBox
+            // 
+            this.salarayBox.Location = new System.Drawing.Point(448, 333);
+            this.salarayBox.Name = "salarayBox";
+            this.salarayBox.Size = new System.Drawing.Size(256, 22);
+            this.salarayBox.TabIndex = 45;
+            this.salarayBox.Text = "0.0";
+            this.salarayBox.Visible = false;
+            this.salarayBox.TextChanged += new System.EventHandler(this.salarayBox_TextChanged);
+            // 
             // editEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 569);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.salarayBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lastnameBox);
             this.Controls.Add(this.label7);
@@ -701,5 +728,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox lastnameBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox salarayBox;
     }
 }

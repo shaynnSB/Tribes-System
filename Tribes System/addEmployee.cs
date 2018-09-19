@@ -19,7 +19,7 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        private string stat = "call";
+        private string stat = "On-call";
         private string gender = "male";
 
         public addEmployee()
@@ -90,16 +90,29 @@ namespace Tribes_System
             {
                 if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee" && emergencyContact.Text != "Emergency Contact" && emergencyName.Text != "Emergency Contact Name")
                 {
-                    DialogResult dg = MessageBox.Show("Are you sure?","Alert!",MessageBoxButtons.YesNo);
-                    if(dg == DialogResult.Yes)
+                    string q = "select first_name, last_name FROM employee WHERE first_name = '"+nameBox.Text+"' AND last_name = '"+lastnameBox.Text+"'";
+                    DataTable t = new DataTable();
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(q, con);
+                    adapter.Fill(t);
+
+                    if (t.Rows.Count == 0)
                     {
-                        string insertQuery = "INSERT INTO " +
-                            "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name) " +
-                            "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','"+ emergencyContact.Text + "','"+ emergencyName.Text  + "','"+ dateTimePicker1.Value.ToString("yyyy-MM-dd") +"','"+ this.gender +"', '"+ nameBox.Text +"', '"+ lastnameBox.Text +"')";
-                        executeMyQuery(insertQuery);
-                        this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                        this.Dispose();
+                        DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
+                        if (dg == DialogResult.Yes)
+                        {
+                            string insertQuery = "INSERT INTO " +
+                                "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name, emp_salary) " +
+                                "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','" + emergencyContact.Text + "','" + emergencyName.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + this.gender + "', '" + nameBox.Text + "', '" + lastnameBox.Text + "', "+salarayBox.Text+")";
+                            executeMyQuery(insertQuery);
+                            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                            this.Dispose();
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("An employee with that name already exists!");
+                    }
+                    
                     
                 }
                 else
@@ -192,7 +205,7 @@ namespace Tribes_System
         {
             if (radioButton1.Checked)
             {
-                this.stat = "call";
+                this.stat = "On-Call";
             }
         }
 
@@ -200,7 +213,15 @@ namespace Tribes_System
         {
             if (radioButton2.Checked)
             {
-                this.stat = "full";
+                this.stat = "Full-Time";
+                label7.Visible = true;
+                salarayBox.Visible = true;
+            }
+            else
+            {
+                label7.Visible = false;
+                salarayBox.Text = "0.0";
+                salarayBox.Visible = false;
             }
         }
 
@@ -230,6 +251,30 @@ namespace Tribes_System
             if (radioButton5.Checked)
             {
                 this.gender = "other";
+            }
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        string salaraylastvalidinput = "";
+        private void salarayBox_TextChanged(object sender, EventArgs e)
+        {
+            //Decimal.TryParse
+            try
+            {
+                if(salarayBox.Text != "")
+                {
+                    Decimal.Parse(salarayBox.Text);
+                    salaraylastvalidinput = salarayBox.Text;
+                }
+            }
+            catch
+            {
+                //MessageBox.Show("Invalid value!");
+                salarayBox.Text = salaraylastvalidinput;
             }
         }
     }
