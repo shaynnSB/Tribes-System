@@ -247,9 +247,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(8, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(314, 24);
+            this.label3.Size = new System.Drawing.Size(302, 24);
             this.label3.TabIndex = 49;
-            this.label3.Text = "EQUIPMENTS TO BE CONFIRMED";
+            this.label3.Text = "EQUIPMENT TO BE CONFIRMED";
             // 
             // confirmButt
             // 
