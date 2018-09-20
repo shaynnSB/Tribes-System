@@ -46,10 +46,10 @@ namespace Tribes_System
 
         private void calendar_DateChanged(object sender, DateRangeEventArgs e)
         {
+            
             string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
-                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
-
-            //SELECT * FROM event WHERE start_date <= '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' AND end_date >= '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
+                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' UNION SELECT * FROM event WHERE start_date <= '" + 
+                calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' AND end_date >= '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";
 
             eventTable(query);
         }
@@ -208,5 +208,7 @@ namespace Tribes_System
         {
 
         }
+
+        //http://geekswithblogs.net/dotNETvinz/archive/2009/05/03/changing-the-background-color-of-the-calendar-control-based-on.aspx
     }
 }

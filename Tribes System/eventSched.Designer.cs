@@ -33,6 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.editButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
+            this.mailLabel = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.amLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cancellationButt = new System.Windows.Forms.Button();
@@ -54,8 +56,6 @@
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.mailLabel = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +151,30 @@
             this.deetPanel.Size = new System.Drawing.Size(920, 680);
             this.deetPanel.TabIndex = 70;
             this.deetPanel.Visible = false;
+            // 
+            // mailLabel
+            // 
+            this.mailLabel.AutoSize = true;
+            this.mailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mailLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.mailLabel.Location = new System.Drawing.Point(239, 545);
+            this.mailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.mailLabel.Name = "mailLabel";
+            this.mailLabel.Size = new System.Drawing.Size(26, 25);
+            this.mailLabel.TabIndex = 85;
+            this.mailLabel.Text = "--";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(51, 545);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(151, 25);
+            this.label7.TabIndex = 84;
+            this.label7.Text = "E-mail Address:";
             // 
             // amLabel
             // 
@@ -424,30 +448,6 @@
             this.label9.Size = new System.Drawing.Size(420, 62);
             this.label9.TabIndex = 71;
             this.label9.Text = "EVENT  SCHEDULE";
-            // 
-            // mailLabel
-            // 
-            this.mailLabel.AutoSize = true;
-            this.mailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mailLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.mailLabel.Location = new System.Drawing.Point(239, 545);
-            this.mailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.mailLabel.Name = "mailLabel";
-            this.mailLabel.Size = new System.Drawing.Size(26, 25);
-            this.mailLabel.TabIndex = 85;
-            this.mailLabel.Text = "--";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(51, 545);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 25);
-            this.label7.TabIndex = 84;
-            this.label7.Text = "E-mail Address:";
             // 
             // eventSched
             // 

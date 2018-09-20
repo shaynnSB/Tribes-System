@@ -14,6 +14,7 @@ namespace Tribes_System
     public partial class expenseReport : Form
     {
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlCommand cmd;
 
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
@@ -30,7 +31,53 @@ namespace Tribes_System
             myearBox.Text = sYear;
             qyearBox.Text = sYear;
             ayearBox.Text = sYear;
+            changeQuarter();
             fillMonth();
+            fillQuarter();
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
         }
 
         private void assignMonth()
@@ -120,8 +167,8 @@ namespace Tribes_System
 
         private void fillMonth()
         {
-            string query = "select event_name, exp_name, exp_price from event, expenses where event_id = id_event AND substring(start_date, 6,2) = '" + sMonth 
-                + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            string query = "select start_date, event_name, exp_name, exp_price from event, expenses where event_id = id_event AND substring(start_date, 6,2) = '" + sMonth 
+                + "' AND substring(start_date, 1,4) = '" + sYear + "' ORDER BY start_date";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -129,25 +176,60 @@ namespace Tribes_System
             monthExpRep.Columns.Clear();
             monthExpRep.DataSource = table;
 
-            monthExpRep.Columns[0].HeaderCell.Value = "Event Name";
-            monthExpRep.Columns[1].HeaderCell.Value = "Expense Name";
-            monthExpRep.Columns[2].HeaderCell.Value = "Expense Price";
+            monthExpRep.Columns[0].HeaderCell.Value = "Date";
+            monthExpRep.Columns[1].HeaderCell.Value = "Event Name";
+            monthExpRep.Columns[2].HeaderCell.Value = "Expense Name";
+            monthExpRep.Columns[3].HeaderCell.Value = "Expense Price";
             monthExpRep.RowHeadersVisible = false;
 
-            monthExpRep.Columns[0].Width = 350;
-            monthExpRep.Columns[1].Width = 150;
-            monthExpRep.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            monthExpRep.Columns[0].Width = 80;
+            monthExpRep.Columns[1].Width = 300;
+            monthExpRep.Columns[2].Width = 130;
+            monthExpRep.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            totExpMonth();
+        }
+
+        private void fillQuarter()
+        {
+            string query = "select start_date, event_name, exp_name, exp_price from event, expenses where event_id = id_event AND " + quarter
+                + " ORDER BY start_date";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            quarterGrid.Columns.Clear();
+            quarterGrid.DataSource = table;
+
+            quarterGrid.Columns[0].HeaderCell.Value = "Date";
+            quarterGrid.Columns[1].HeaderCell.Value = "Event Name";
+            quarterGrid.Columns[2].HeaderCell.Value = "Expense Name";
+            quarterGrid.Columns[3].HeaderCell.Value = "Expense Price";
+            quarterGrid.RowHeadersVisible = false;
+
+            quarterGrid.Columns[0].Width = 80;
+            quarterGrid.Columns[1].Width = 300;
+            quarterGrid.Columns[2].Width = 130;
+            quarterGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            totExpMonth();
         }
 
         private void myearBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            yearChange();
+            fillMonth();
         }
 
         private void mmonthBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             monthChange();
             fillMonth();
+        }
+
+        private void yearChange()
+        {
+            sYear = myearBox.Text;
         }
 
         private void monthChange()
@@ -189,6 +271,54 @@ namespace Tribes_System
             {
                 sMonth = "12";
             }
+        }
+
+        string first = "substring(start_date, 6,2) = '01' OR substring(start_date, 6,2) = '02' OR substring(start_date, 6,2) = '03'";
+        string second = "substring(start_date, 6,2) = '04' OR substring(start_date, 6,2) = '05' OR substring(start_date, 6,2) = '06'";
+        string third = "substring(start_date, 6,2) = '07' OR substring(start_date, 6,2) = '08' OR substring(start_date, 6,2) = '09'";
+        string fourth = "substring(start_date, 6,2) = '10' OR substring(start_date, 6,2) = '11' OR substring(start_date, 6,2) = '12'";
+
+        string quarter;
+
+        private void changeQuarter()
+        {
+            if(qmonthBox.Text == "First Quarter")
+            {
+                quarter = first; 
+            }
+            else if (qmonthBox.Text == "Second Quarter")
+            {
+                quarter = second; 
+            }
+            else if (qmonthBox.Text == "Third Quarter")
+            {
+                quarter = third;
+            }
+            else if (qmonthBox.Text == "Fourth Quarter")
+            {
+                quarter = fourth;
+            }
+        }
+
+        private void totExpMonth()
+        {
+            string selectQuery = "select SUM(exp_price) from expenses, event where event_id = id_event AND substring(start_date, 6,2) = '" + sMonth
+                + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                mTotLabel.Text = "PHP " + reader["SUM(exp_price)"].ToString();
+            }
+            closeConnection();
+        }
+
+        private void qmonthBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changeQuarter();
+            fillQuarter();
         }
     }
 

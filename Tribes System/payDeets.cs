@@ -321,7 +321,7 @@ namespace Tribes_System
 
         private void editExpButt_Click(object sender, EventArgs e)
         {
-            if (amExpBox.Text != "" && expBox.Text != "")
+            /*if (amExpBox.Text != "" && expBox.Text != "")
             {
                 string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
 
@@ -369,7 +369,7 @@ namespace Tribes_System
             else
             {
                 MessageBox.Show("Please Select Record to Update!");
-            }
+            }*/
         }
 
         private void remExpButt_Click(object sender, EventArgs e)
@@ -707,9 +707,15 @@ namespace Tribes_System
 
             accRec = Convert.ToString(total) + ".00";
 
-            if (accRec == "0.00")
+            if (accRec == "0.00" && amRevLabel.Text != "")
             {
                 changeStat();
+            } else if(accRec == "0.00" && amRevLabel.Text == "")
+            {
+                //do nothing sis
+            } else if (accRec != "0.00" && amRevLabel.Text == "")
+            {
+                changeStat3();
             } else
             {
                 changeStat2();
@@ -734,6 +740,15 @@ namespace Tribes_System
             executeMyQuery(addQuery);
 
             statusLabel.Text = "- Partially Paid";
+        }
+
+        private void changeStat3()
+        {
+            string addQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
+
+            executeMyQuery(addQuery);
+
+            statusLabel.Text = "- Unpaid";
         }
 
         private void dateBox_KeyPress(object sender, KeyPressEventArgs e)
