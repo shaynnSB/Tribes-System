@@ -187,6 +187,9 @@
             // 
             // violationsGrid
             // 
+            this.violationsGrid.AllowUserToAddRows = false;
+            this.violationsGrid.AllowUserToDeleteRows = false;
+            this.violationsGrid.AllowUserToResizeRows = false;
             this.violationsGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.violationsGrid.Location = new System.Drawing.Point(18, 104);
             this.violationsGrid.Name = "violationsGrid";
@@ -265,6 +268,7 @@
             // descBox
             // 
             this.descBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.descBox.Location = new System.Drawing.Point(680, 256);
             this.descBox.Multiline = true;
             this.descBox.Name = "descBox";

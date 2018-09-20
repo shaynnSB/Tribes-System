@@ -28,5 +28,17 @@ namespace Tribes_System
             expenseReport form = new expenseReport();
             form.ShowDialog();
         }
+
+        private void revButt_Click(object sender, EventArgs e)
+        {
+            revenueReport form = new revenueReport();
+            form.ShowDialog();
+        }
+
+        private void incButt_Click(object sender, EventArgs e)
+        {
+            incomeStatement form = new incomeStatement();
+            form.ShowDialog();
+        }
     }
 }

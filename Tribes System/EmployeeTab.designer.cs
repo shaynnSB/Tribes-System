@@ -36,13 +36,14 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.salaryLab = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.genderLab = new System.Windows.Forms.Label();
             this.addressLab = new System.Windows.Forms.Label();
             this.numLab = new System.Windows.Forms.Label();
             this.ENameLab = new System.Windows.Forms.Label();
             this.EmergencyContactLab = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.PositionLab = new System.Windows.Forms.Label();
             this.StatusLab = new System.Windows.Forms.Label();
             this.BdayLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
@@ -59,12 +60,12 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(138, 87);
+            this.button1.Location = new System.Drawing.Point(124, 90);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(259, 47);
+            this.button1.Size = new System.Drawing.Size(217, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Add New Employee";
             this.button1.UseVisualStyleBackColor = false;
@@ -93,12 +94,12 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(750, 117);
+            this.button3.Location = new System.Drawing.Point(1183, 95);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(124, 38);
+            this.button3.Size = new System.Drawing.Size(113, 38);
             this.button3.TabIndex = 4;
             this.button3.Text = "Search";
             this.button3.UseVisualStyleBackColor = false;
@@ -106,22 +107,24 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(750, 88);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.textBox1.Location = new System.Drawing.Point(750, 99);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(530, 22);
+            this.textBox1.Size = new System.Drawing.Size(425, 30);
             this.textBox1.TabIndex = 7;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(13, 87);
+            this.button4.Location = new System.Drawing.Point(13, 90);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(117, 48);
+            this.button4.Size = new System.Drawing.Size(103, 45);
             this.button4.TabIndex = 8;
             this.button4.Text = "Refresh";
             this.button4.UseVisualStyleBackColor = false;
@@ -130,17 +133,18 @@
             // comboBox1
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "All",
             "On-Call",
             "Full-Time",
             "Inactive"});
-            this.comboBox1.Location = new System.Drawing.Point(576, 111);
+            this.comboBox1.Location = new System.Drawing.Point(570, 100);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.MaxDropDownItems = 3;
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 24);
+            this.comboBox1.Size = new System.Drawing.Size(172, 28);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -158,13 +162,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.salaryLab);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.genderLab);
             this.panel1.Controls.Add(this.addressLab);
             this.panel1.Controls.Add(this.numLab);
             this.panel1.Controls.Add(this.ENameLab);
             this.panel1.Controls.Add(this.EmergencyContactLab);
             this.panel1.Controls.Add(this.dataGridView2);
-            this.panel1.Controls.Add(this.PositionLab);
             this.panel1.Controls.Add(this.StatusLab);
             this.panel1.Controls.Add(this.BdayLab);
             this.panel1.Controls.Add(this.NameLab);
@@ -174,16 +179,39 @@
             this.panel1.Size = new System.Drawing.Size(547, 638);
             this.panel1.TabIndex = 73;
             // 
+            // salaryLab
+            // 
+            this.salaryLab.AutoSize = true;
+            this.salaryLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryLab.Location = new System.Drawing.Point(6, 189);
+            this.salaryLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.salaryLab.Name = "salaryLab";
+            this.salaryLab.Size = new System.Drawing.Size(66, 20);
+            this.salaryLab.TabIndex = 32;
+            this.salaryLab.Text = "Salary: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(0, 217);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(193, 25);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "Employee Schedule:";
+            // 
             // genderLab
             // 
             this.genderLab.AutoSize = true;
             this.genderLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderLab.Location = new System.Drawing.Point(8, 169);
+            this.genderLab.Location = new System.Drawing.Point(6, 169);
             this.genderLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.genderLab.Name = "genderLab";
             this.genderLab.Size = new System.Drawing.Size(69, 20);
             this.genderLab.TabIndex = 30;
             this.genderLab.Text = "Gender:";
+            this.genderLab.Click += new System.EventHandler(this.genderLab_Click);
             // 
             // addressLab
             // 
@@ -231,28 +259,19 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 224);
+            this.dataGridView2.Location = new System.Drawing.Point(0, 246);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(530, 392);
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(530, 380);
             this.dataGridView2.TabIndex = 25;
-            // 
-            // PositionLab
-            // 
-            this.PositionLab.AutoSize = true;
-            this.PositionLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PositionLab.Location = new System.Drawing.Point(8, 189);
-            this.PositionLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.PositionLab.Name = "PositionLab";
-            this.PositionLab.Size = new System.Drawing.Size(74, 20);
-            this.PositionLab.TabIndex = 23;
-            this.PositionLab.Text = "Position:";
-            this.PositionLab.Visible = false;
             // 
             // StatusLab
             // 
@@ -303,12 +322,12 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(405, 88);
+            this.button2.Location = new System.Drawing.Point(349, 90);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(163, 47);
+            this.button2.Size = new System.Drawing.Size(153, 44);
             this.button2.TabIndex = 74;
             this.button2.Text = "Edit Employee";
             this.button2.UseVisualStyleBackColor = false;
@@ -318,7 +337,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(576, 90);
+            this.label2.Location = new System.Drawing.Point(510, 103);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
@@ -342,7 +361,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeTab";
             this.Size = new System.Drawing.Size(1300, 800);
-            this.Load += new System.EventHandler(this.EmployeeTab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -363,7 +381,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label PositionLab;
         private System.Windows.Forms.Label StatusLab;
         private System.Windows.Forms.Label BdayLab;
         private System.Windows.Forms.Label NameLab;
@@ -375,5 +392,7 @@
         private System.Windows.Forms.Label numLab;
         private System.Windows.Forms.Label genderLab;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label salaryLab;
     }
 }

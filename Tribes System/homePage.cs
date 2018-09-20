@@ -61,7 +61,7 @@ namespace Tribes_System
         {
             if(hidden)
             {
-                panelMenu.Width = panelMenu.Width + 30;
+                panelMenu.Width = panelMenu.Width + 35;
                 if (panelMenu.Width >= PW)
                 {
                     timer.Stop();
@@ -70,7 +70,7 @@ namespace Tribes_System
                 }
             }else
             {
-                panelMenu.Width = panelMenu.Width - 30;
+                panelMenu.Width = panelMenu.Width - 35;
                 if (panelMenu.Width <= 0)
                 {
                     timer.Stop();
@@ -87,32 +87,35 @@ namespace Tribes_System
 
         private void empButt_Click(object sender, EventArgs e)
         {
+            timer.Start();
+
             employeeTab.Visible = true;
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
-            timer.Start();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            timer.Start();
+
             employeeTab.Visible = false;
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = true;
-            timer.Start();
         }
 
         private void eventButt_Click(object sender, EventArgs e)
         {
+            timer.Start();
+
             employeeTab.Visible = false;
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
             equipment1.Visible = false;
-            timer.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -130,22 +133,25 @@ namespace Tribes_System
 
         private void finButt_Click(object sender, EventArgs e)
         {
+            timer.Start();
+
             financesUI1.Visible = true;
             payrollUI1.Visible = false;
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
-            timer.Start();
         }
 
         private void payButt_Click(object sender, EventArgs e)
         {
+            timer.Start();
+
             payrollUI1.Visible = true;
             financesUI1.Visible = false;
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
-            timer.Start();
+            
         }
 
         private void profButt_Click(object sender, EventArgs e)

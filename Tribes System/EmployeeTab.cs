@@ -14,7 +14,7 @@ namespace Tribes_System
     public partial class EmployeeTab : UserControl
     {
 
-        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root;Convert Zero Datetime = True;");
 
         DataTable grid = new DataTable();
         string selectedEmp ="";
@@ -25,41 +25,53 @@ namespace Tribes_System
             resetTable();
         }
 
-        private void resetTable(string query = "select * from employee where emp_status <> 'fired'")
+        private void resetTable(string query = "select * from employee where emp_status <> 'Inactive'")
         {
+            try
+            {
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+                adapter.Fill(table);
+
+                EmpGrid.Columns.Clear();
+                EmpGrid.DataSource = table;
+                EmpGrid.Columns[0].Visible = false; //employee ID
+                EmpGrid.Columns[1].Visible = false; //obsolete name column. DO NOT USE
+                EmpGrid.Columns[2].Visible = false; //employee address
+                EmpGrid.Columns[3].Visible = false; //contact #
+                EmpGrid.Columns[4].HeaderCell.Value = "Status"; //emp status
+                EmpGrid.Columns[5].Visible = false; //emergency contact
+                EmpGrid.Columns[6].Visible = false; //emergency contact name
+                EmpGrid.Columns[7].Visible = false; //b-day
+                EmpGrid.Columns[8].Visible = false; //gender
+                EmpGrid.Columns[9].DisplayIndex = 0;
+                EmpGrid.Columns[10].DisplayIndex = 1;
+                EmpGrid.Columns[9].HeaderCell.Value = "First Name"; //First Name
+                EmpGrid.Columns[10].HeaderCell.Value = "Last Name"; //Last Name
+                EmpGrid.Columns[9].Width = 200;
+                EmpGrid.Columns[10].Width = 200;
+                EmpGrid.Columns[11].Visible = false; //salary
+                EmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                this.selectedEmp = "";
+                NameLab.Text = "Name: ";
+                StatusLab.Text = "Status: ";
+                EmergencyContactLab.Text = "Emergency Contact: ";
+                ENameLab.Text = "Emergency Name: ";
+                BdayLab.Text = "Birthdate: ";
+                numLab.Text = "Contact: ";
+                addressLab.Text = "Address: ";
+                genderLab.Text = "Gender: ";
+                salaryLab.Text = "Salary: ";
+
+                dataGridView2.DataSource = null;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
             
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            EmpGrid.Columns.Clear();
-            EmpGrid.DataSource = table;
-            EmpGrid.Columns[0].Visible = false;
-            EmpGrid.Columns[1].Visible = false;
-            EmpGrid.Columns[2].Visible = false;
-            EmpGrid.Columns[3].Visible = false;
-            EmpGrid.Columns[4].HeaderCell.Value = "Status";
-            EmpGrid.Columns[5].Visible = false;
-            EmpGrid.Columns[6].Visible = false;
-            EmpGrid.Columns[7].Visible = false;
-            EmpGrid.Columns[8].Visible = false;
-            EmpGrid.Columns[9].DisplayIndex = 0;
-            EmpGrid.Columns[10].DisplayIndex = 1;
-            EmpGrid.Columns[9].HeaderCell.Value = "First Name";
-            EmpGrid.Columns[10].HeaderCell.Value = "Last Name";
-            EmpGrid.Columns[9].Width = 200;
-            EmpGrid.Columns[10].Width = 200;
-            EmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-            this.selectedEmp = "";
-            NameLab.Text = "Name: ";
-            StatusLab.Text = "Status: ";
-            EmergencyContactLab.Text = "Emergency Contact: ";
-            ENameLab.Text = "Emergency Name: ";
-            BdayLab.Text = "Birthdate: ";
-            numLab.Text = "Contact: ";
-            addressLab.Text = "Address: ";
-            genderLab.Text = "Gender: ";
+            
 
 
         }
@@ -83,21 +95,30 @@ namespace Tribes_System
 
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-            NameLab.Text = "Name: " + EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
-            StatusLab.Text = "Status: " + EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
-            EmergencyContactLab.Text = "Emergency Contact: " + EmpGrid.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
-            ENameLab.Text = "Emergency Name: " + EmpGrid.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
-            BdayLab.Text = "Birthdate: " + EmpGrid.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
-            numLab.Text = "Contact: " + EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
-            addressLab.Text = "Address: " + EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-            genderLab.Text = "Gender: " + EmpGrid.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+            if (e.RowIndex >= 0)
+            {
+                this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                NameLab.Text = "Name: " + EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+                StatusLab.Text = "Status: " + EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+                EmergencyContactLab.Text = "Emergency Contact: " + EmpGrid.Rows[e.RowIndex].Cells[5].FormattedValue.ToString();
+                ENameLab.Text = "Emergency Name: " + EmpGrid.Rows[e.RowIndex].Cells[6].FormattedValue.ToString();
+                BdayLab.Text = "Birthdate: " + EmpGrid.Rows[e.RowIndex].Cells[7].FormattedValue.ToString();
+                numLab.Text = "Contact: " + EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
+                addressLab.Text = "Address: " + EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                genderLab.Text = "Gender: " + EmpGrid.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+                salaryLab.Text = "Salary: " + EmpGrid.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
 
-            /*DataTable sched = new DataTable();
-            string q = "SELECT event_name, event_location, start_date, end_date FROM event WHERE STAFF_ID = '" + EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString() + "'";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(q, con);
-            adapter.Fill(sched);
-            dataGridView2.DataSource = sched;*/
+                DataTable sched = new DataTable();
+                string q = "SELECT event_name, event_location, start_date, end_date FROM event " +
+                            "INNER JOIN staff_lineup " +
+                            "ON id_event = staff_lineup.no_event " +
+                            "WHERE staff_lineup.staff_id = " + EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString() + 
+                           " AND event.end_date > NOW()";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(q, con);
+                adapter.Fill(sched);
+                dataGridView2.DataSource = sched;
+            }
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -108,7 +129,7 @@ namespace Tribes_System
                     resetTable("select * from employee where emp_status = 'Full-Time'");
                     break;
                 case "On-Call":
-                    resetTable("select * from employee where emp_status = 'Inactive'");
+                    resetTable("select * from employee where emp_status = 'On-Call'");
                     break;
                 case "Inactive":
                     resetTable("select * from employee where emp_status = 'Inactive'");
@@ -150,7 +171,7 @@ namespace Tribes_System
             resetTable();
         }
 
-        private void EmployeeTab_Load(object sender, EventArgs e)
+        private void genderLab_Click(object sender, EventArgs e)
         {
 
         }

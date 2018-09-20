@@ -194,8 +194,8 @@ namespace Tribes_System
 
             violationsGrid.RowHeadersVisible = false;
 
-            violationsGrid.Columns[2].Width = 150;
-            violationsGrid.Columns[3].Width = 150;
+            violationsGrid.Columns[2].Width = 100;
+            violationsGrid.Columns[3].Width = 100;
             violationsGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
@@ -245,6 +245,7 @@ namespace Tribes_System
                 MessageBox.Show("Edited Successfully");
 
                 DisplayData();
+                total();
                 ClearData();
             }
             else
@@ -271,6 +272,7 @@ namespace Tribes_System
                 MessageBox.Show("Removed Successfully");
 
                 DisplayData();
+                total();
                 ClearData();
             }
             else

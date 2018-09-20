@@ -552,11 +552,8 @@ namespace Tribes_System
 
             }
 
-            addLabel.Text = "--";
-
-            getPastFee();
-            getPastDisc();
-            getEventPrice();
+            addLabel.Text = "";
+            
             computeGross();
             computeAccRec();
         }
@@ -576,11 +573,8 @@ namespace Tribes_System
 
             }
 
-            discLabel.Text = "--";
-
-            getPastFee();
-            getPastDisc();
-            getEventPrice();
+            discLabel.Text = "";
+            
             computeGross();
             computeAccRec();
         }
@@ -668,7 +662,7 @@ namespace Tribes_System
 
             double price = Convert.ToDouble(eventPrice);
 
-            if (addLabel.Text == "")
+            if (addLabel.Text == "" || discLabel.Text == "--")
             {
                 fee = 0;
             }
@@ -677,7 +671,7 @@ namespace Tribes_System
                 fee = Convert.ToDouble(addLabel.Text);
             }
             
-            if (discLabel.Text == "")
+            if (discLabel.Text == "" || discLabel.Text == "--")
             {
                 disc = 0;
             }
@@ -698,9 +692,9 @@ namespace Tribes_System
         private void computeAccRec()
         {
             double amRev;
-
             double price = Convert.ToDouble(gross);
-            if (amRevLabel.Text == "")
+
+            if (amRevLabel.Text == "" || amRevLabel.Text == "--")
             {
                 amRev = 0;
             }

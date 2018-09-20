@@ -125,6 +125,7 @@ namespace Tribes_System
                 MessageBox.Show("Edited Successfully");
 
                 DisplayData();
+                total();
                 ClearData();
             }
             else
@@ -143,6 +144,7 @@ namespace Tribes_System
                 MessageBox.Show("Removed Successfully");
 
                 DisplayData();
+                total();
                 ClearData();
             }
             else

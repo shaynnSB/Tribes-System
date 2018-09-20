@@ -1,6 +1,6 @@
 ﻿namespace Tribes_System
 {
-    partial class expenseReport
+    partial class revenueReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,38 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(expenseReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(revenueReport));
+            this.annRevRep = new System.Windows.Forms.DataGridView();
+            this.monthRevRep = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ayearBox = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.myearBox = new System.Windows.Forms.ComboBox();
+            this.mmonthBox = new System.Windows.Forms.ComboBox();
             this.qyearBox = new System.Windows.Forms.ComboBox();
             this.qmonthBox = new System.Windows.Forms.ComboBox();
-            this.myearBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mmonthBox = new System.Windows.Forms.ComboBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.monthExpRep = new System.Windows.Forms.DataGridView();
+            this.quarRevRep = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.label2 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Panel();
             this.minButt = new System.Windows.Forms.Button();
             this.closeButt = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mTotLabel = new System.Windows.Forms.Label();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.annRevRep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthRevRep)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthExpRep)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.quarRevRep)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.reportTab.SuspendLayout();
             this.title.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // annRevRep
+            // 
+            this.annRevRep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.annRevRep.Location = new System.Drawing.Point(21, 76);
+            this.annRevRep.Name = "annRevRep";
+            this.annRevRep.RowTemplate.Height = 24;
+            this.annRevRep.Size = new System.Drawing.Size(858, 610);
+            this.annRevRep.TabIndex = 6;
+            // 
+            // monthRevRep
+            // 
+            this.monthRevRep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.monthRevRep.Location = new System.Drawing.Point(21, 76);
+            this.monthRevRep.Name = "monthRevRep";
+            this.monthRevRep.RowTemplate.Height = 24;
+            this.monthRevRep.Size = new System.Drawing.Size(858, 610);
+            this.monthRevRep.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(999, 46);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 830);
+            this.panel2.TabIndex = 94;
             // 
             // panel1
             // 
@@ -78,102 +104,43 @@
             this.panel3.Location = new System.Drawing.Point(0, 876);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(999, 1);
-            this.panel3.TabIndex = 94;
+            this.panel3.Size = new System.Drawing.Size(1000, 1);
+            this.panel3.TabIndex = 95;
             // 
             // ayearBox
             // 
             this.ayearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ayearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ayearBox.FormattingEnabled = true;
             this.ayearBox.Location = new System.Drawing.Point(749, 24);
             this.ayearBox.Name = "ayearBox";
             this.ayearBox.Size = new System.Drawing.Size(130, 28);
             this.ayearBox.TabIndex = 5;
             // 
-            // tabPage3
+            // tabPage1
             // 
-            this.tabPage3.Controls.Add(this.dataGridView2);
-            this.tabPage3.Controls.Add(this.ayearBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(901, 709);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Annual Report";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(21, 75);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(858, 610);
-            this.dataGridView2.TabIndex = 98;
-            // 
-            // qyearBox
-            // 
-            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qyearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qyearBox.FormattingEnabled = true;
-            this.qyearBox.Location = new System.Drawing.Point(749, 24);
-            this.qyearBox.Name = "qyearBox";
-            this.qyearBox.Size = new System.Drawing.Size(130, 28);
-            this.qyearBox.TabIndex = 3;
-            // 
-            // qmonthBox
-            // 
-            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qmonthBox.FormattingEnabled = true;
-            this.qmonthBox.Items.AddRange(new object[] {
-            "First Quarter",
-            "Second Quarter",
-            "Third Quarter",
-            "Fourth Quarter"});
-            this.qmonthBox.Location = new System.Drawing.Point(579, 24);
-            this.qmonthBox.Name = "qmonthBox";
-            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
-            this.qmonthBox.TabIndex = 2;
+            this.tabPage1.Controls.Add(this.monthRevRep);
+            this.tabPage1.Controls.Add(this.myearBox);
+            this.tabPage1.Controls.Add(this.mmonthBox);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(901, 709);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Monthly Report";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // myearBox
             // 
             this.myearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.myearBox.FormattingEnabled = true;
             this.myearBox.Location = new System.Drawing.Point(749, 24);
             this.myearBox.Name = "myearBox";
             this.myearBox.Size = new System.Drawing.Size(130, 28);
             this.myearBox.TabIndex = 1;
-            this.myearBox.SelectedIndexChanged += new System.EventHandler(this.myearBox_SelectedIndexChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dataGridView1);
-            this.tabPage2.Controls.Add(this.qyearBox);
-            this.tabPage2.Controls.Add(this.qmonthBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(901, 709);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quarterly Report";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 81);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(858, 610);
-            this.dataGridView1.TabIndex = 97;
             // 
             // mmonthBox
             // 
             this.mmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.mmonthBox.FormattingEnabled = true;
             this.mmonthBox.Items.AddRange(new object[] {
             "January",
@@ -192,35 +159,63 @@
             this.mmonthBox.Name = "mmonthBox";
             this.mmonthBox.Size = new System.Drawing.Size(164, 28);
             this.mmonthBox.TabIndex = 0;
-            this.mmonthBox.SelectedIndexChanged += new System.EventHandler(this.mmonthBox_SelectedIndexChanged);
             // 
-            // tabPage1
+            // qyearBox
             // 
-            this.tabPage1.Controls.Add(this.mTotLabel);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.monthExpRep);
-            this.tabPage1.Controls.Add(this.myearBox);
-            this.tabPage1.Controls.Add(this.mmonthBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(901, 709);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Monthly Report";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qyearBox.FormattingEnabled = true;
+            this.qyearBox.Location = new System.Drawing.Point(749, 24);
+            this.qyearBox.Name = "qyearBox";
+            this.qyearBox.Size = new System.Drawing.Size(130, 28);
+            this.qyearBox.TabIndex = 3;
             // 
-            // monthExpRep
+            // qmonthBox
             // 
-            this.monthExpRep.AllowUserToAddRows = false;
-            this.monthExpRep.AllowUserToDeleteRows = false;
-            this.monthExpRep.AllowUserToResizeColumns = false;
-            this.monthExpRep.AllowUserToResizeRows = false;
-            this.monthExpRep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.monthExpRep.Location = new System.Drawing.Point(21, 80);
-            this.monthExpRep.Name = "monthExpRep";
-            this.monthExpRep.RowTemplate.Height = 24;
-            this.monthExpRep.Size = new System.Drawing.Size(858, 581);
-            this.monthExpRep.TabIndex = 96;
+            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qmonthBox.FormattingEnabled = true;
+            this.qmonthBox.Items.AddRange(new object[] {
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Fourth Quarter"});
+            this.qmonthBox.Location = new System.Drawing.Point(579, 24);
+            this.qmonthBox.Name = "qmonthBox";
+            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
+            this.qmonthBox.TabIndex = 2;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.quarRevRep);
+            this.tabPage2.Controls.Add(this.qyearBox);
+            this.tabPage2.Controls.Add(this.qmonthBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(901, 709);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Quarterly Report";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // quarRevRep
+            // 
+            this.quarRevRep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.quarRevRep.Location = new System.Drawing.Point(21, 74);
+            this.quarRevRep.Name = "quarRevRep";
+            this.quarRevRep.RowTemplate.Height = 24;
+            this.quarRevRep.Size = new System.Drawing.Size(858, 610);
+            this.quarRevRep.TabIndex = 4;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.annRevRep);
+            this.tabPage3.Controls.Add(this.ayearBox);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(901, 709);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Annual Report";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // reportTab
             // 
@@ -241,9 +236,9 @@
             this.label2.Location = new System.Drawing.Point(13, 7);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 27);
+            this.label2.Size = new System.Drawing.Size(165, 27);
             this.label2.TabIndex = 87;
-            this.label2.Text = "Expense Report";
+            this.label2.Text = "Revenue Report";
             // 
             // title
             // 
@@ -255,7 +250,7 @@
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(999, 46);
+            this.title.Size = new System.Drawing.Size(1000, 46);
             this.title.TabIndex = 91;
             // 
             // minButt
@@ -266,13 +261,12 @@
             this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(917, 0);
+            this.minButt.Location = new System.Drawing.Point(918, 0);
             this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.minButt.Name = "minButt";
             this.minButt.Size = new System.Drawing.Size(41, 46);
             this.minButt.TabIndex = 1;
             this.minButt.UseVisualStyleBackColor = true;
-            this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
             // closeButt
             // 
@@ -282,23 +276,13 @@
             this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(958, 0);
+            this.closeButt.Location = new System.Drawing.Point(959, 0);
             this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeButt.Name = "closeButt";
             this.closeButt.Size = new System.Drawing.Size(41, 46);
             this.closeButt.TabIndex = 0;
             this.closeButt.UseVisualStyleBackColor = true;
             this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(999, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 877);
-            this.panel2.TabIndex = 95;
             // 
             // label1
             // 
@@ -307,55 +291,31 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label1.Location = new System.Drawing.Point(36, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(307, 46);
+            this.label1.Size = new System.Drawing.Size(309, 46);
             this.label1.TabIndex = 90;
-            this.label1.Text = "Expense Report";
+            this.label1.Text = "Revenue Report";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(15, 668);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 32);
-            this.label3.TabIndex = 96;
-            this.label3.Text = "Total Expense: ";
-            // 
-            // mTotLabel
-            // 
-            this.mTotLabel.AutoSize = true;
-            this.mTotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mTotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.mTotLabel.Location = new System.Drawing.Point(233, 668);
-            this.mTotLabel.Name = "mTotLabel";
-            this.mTotLabel.Size = new System.Drawing.Size(33, 32);
-            this.mTotLabel.TabIndex = 97;
-            this.mTotLabel.Text = "--";
-            // 
-            // expenseReport
+            // revenueReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 877);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.reportTab);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "expenseReport";
+            this.Name = "revenueReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "expenseReport";
-            this.Load += new System.EventHandler(this.expenseReport_Load);
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "revenueReport";
+            ((System.ComponentModel.ISupportInitialize)(this.annRevRep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monthRevRep)).EndInit();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthExpRep)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.quarRevRep)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.reportTab.ResumeLayout(false);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
@@ -366,27 +326,25 @@
 
         #endregion
 
+        private System.Windows.Forms.DataGridView annRevRep;
+        private System.Windows.Forms.DataGridView monthRevRep;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox ayearBox;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.ComboBox myearBox;
+        private System.Windows.Forms.ComboBox mmonthBox;
         private System.Windows.Forms.ComboBox qyearBox;
         private System.Windows.Forms.ComboBox qmonthBox;
-        private System.Windows.Forms.ComboBox myearBox;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox mmonthBox;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView quarRevRep;
+        private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabControl reportTab;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel title;
         private System.Windows.Forms.Button minButt;
         private System.Windows.Forms.Button closeButt;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView monthExpRep;
-        private System.Windows.Forms.Label mTotLabel;
-        private System.Windows.Forms.Label label3;
     }
 }

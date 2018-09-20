@@ -35,7 +35,7 @@ namespace Tribes_System
                 if(dialog == DialogResult.Yes)
                 {
 
-                    string query = "select count(*) from additional_fees where AND event_id = " + id_Passed;
+                    string query = "select count(*) from additional_fees where event_id = " + id_Passed;
 
                     using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
                     {
@@ -137,6 +137,23 @@ namespace Tribes_System
         public string idValue
         {
             set { this.id_Passed = value; }
+        }
+
+        string past;
+
+        public void added()
+        {
+            string selectQuery = "select fee_amount from accounts_paid where event_id = " + id_Passed;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                past = reader["fee_amount"].ToString();
+
+            }
+            closeConnection();
         }
     }
 }

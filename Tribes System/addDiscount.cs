@@ -34,7 +34,7 @@ namespace Tribes_System
                 DialogResult dialog = MessageBox.Show("Add Discount?", " ", MessageBoxButtons.YesNo);
                 if (dialog == DialogResult.Yes)
                 {
-                    string query = "select count(*) from additional_fees where AND event_id = " + id_Passed;
+                    string query = "select count(*) from discount where event_id = " + id_Passed;
 
                     using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
                     {

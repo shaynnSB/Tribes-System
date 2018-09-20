@@ -227,6 +227,10 @@
             // 
             // bonusGrid
             // 
+            this.bonusGrid.AllowUserToAddRows = false;
+            this.bonusGrid.AllowUserToDeleteRows = false;
+            this.bonusGrid.AllowUserToResizeColumns = false;
+            this.bonusGrid.AllowUserToResizeRows = false;
             this.bonusGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bonusGrid.Location = new System.Drawing.Point(18, 102);
             this.bonusGrid.Name = "bonusGrid";

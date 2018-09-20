@@ -47,9 +47,25 @@
             this.earnedGrid = new System.Windows.Forms.DataGridView();
             this.StatusLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
+            this.fullPanel = new System.Windows.Forms.Panel();
+            this.fullYearBox = new System.Windows.Forms.ComboBox();
+            this.fullMonthBox = new System.Windows.Forms.ComboBox();
+            this.fullVio = new System.Windows.Forms.Button();
+            this.fullBonus = new System.Windows.Forms.Button();
+            this.fullVioLabel = new System.Windows.Forms.Label();
+            this.fullBoLabel = new System.Windows.Forms.Label();
+            this.fullTotLabel = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.fullGrid = new System.Windows.Forms.DataGridView();
+            this.fullStatLabel = new System.Windows.Forms.Label();
+            this.fullEmpLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
+            this.fullPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -315,16 +331,208 @@
             this.NameLab.TabIndex = 89;
             this.NameLab.Text = "Employees Name";
             // 
+            // fullPanel
+            // 
+            this.fullPanel.BackColor = System.Drawing.Color.Silver;
+            this.fullPanel.Controls.Add(this.fullYearBox);
+            this.fullPanel.Controls.Add(this.fullMonthBox);
+            this.fullPanel.Controls.Add(this.fullVio);
+            this.fullPanel.Controls.Add(this.fullBonus);
+            this.fullPanel.Controls.Add(this.fullVioLabel);
+            this.fullPanel.Controls.Add(this.fullBoLabel);
+            this.fullPanel.Controls.Add(this.fullTotLabel);
+            this.fullPanel.Controls.Add(this.label8);
+            this.fullPanel.Controls.Add(this.label10);
+            this.fullPanel.Controls.Add(this.label11);
+            this.fullPanel.Controls.Add(this.fullGrid);
+            this.fullPanel.Controls.Add(this.fullStatLabel);
+            this.fullPanel.Controls.Add(this.fullEmpLabel);
+            this.fullPanel.Location = new System.Drawing.Point(786, 202);
+            this.fullPanel.Name = "fullPanel";
+            this.fullPanel.Size = new System.Drawing.Size(516, 575);
+            this.fullPanel.TabIndex = 101;
+            this.fullPanel.Visible = false;
+            // 
+            // fullYearBox
+            // 
+            this.fullYearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullYearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullYearBox.FormattingEnabled = true;
+            this.fullYearBox.Location = new System.Drawing.Point(191, 88);
+            this.fullYearBox.Name = "fullYearBox";
+            this.fullYearBox.Size = new System.Drawing.Size(130, 28);
+            this.fullYearBox.TabIndex = 100;
+            // 
+            // fullMonthBox
+            // 
+            this.fullMonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullMonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullMonthBox.FormattingEnabled = true;
+            this.fullMonthBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.fullMonthBox.Location = new System.Drawing.Point(21, 88);
+            this.fullMonthBox.Name = "fullMonthBox";
+            this.fullMonthBox.Size = new System.Drawing.Size(164, 28);
+            this.fullMonthBox.TabIndex = 99;
+            // 
+            // fullVio
+            // 
+            this.fullVio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullVio.FlatAppearance.BorderSize = 0;
+            this.fullVio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.fullVio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.fullVio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fullVio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullVio.ForeColor = System.Drawing.SystemColors.Control;
+            this.fullVio.Location = new System.Drawing.Point(21, 474);
+            this.fullVio.Margin = new System.Windows.Forms.Padding(4);
+            this.fullVio.Name = "fullVio";
+            this.fullVio.Size = new System.Drawing.Size(144, 37);
+            this.fullVio.TabIndex = 98;
+            this.fullVio.Text = "Violations";
+            this.fullVio.UseVisualStyleBackColor = false;
+            this.fullVio.Click += new System.EventHandler(this.fullVio_Click);
+            // 
+            // fullBonus
+            // 
+            this.fullBonus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullBonus.FlatAppearance.BorderSize = 0;
+            this.fullBonus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.fullBonus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.fullBonus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.fullBonus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullBonus.ForeColor = System.Drawing.SystemColors.Control;
+            this.fullBonus.Location = new System.Drawing.Point(21, 519);
+            this.fullBonus.Margin = new System.Windows.Forms.Padding(4);
+            this.fullBonus.Name = "fullBonus";
+            this.fullBonus.Size = new System.Drawing.Size(144, 37);
+            this.fullBonus.TabIndex = 89;
+            this.fullBonus.Text = "Bonus";
+            this.fullBonus.UseVisualStyleBackColor = false;
+            this.fullBonus.Click += new System.EventHandler(this.fullBonus_Click);
+            // 
+            // fullVioLabel
+            // 
+            this.fullVioLabel.AutoSize = true;
+            this.fullVioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullVioLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullVioLabel.Location = new System.Drawing.Point(353, 469);
+            this.fullVioLabel.Name = "fullVioLabel";
+            this.fullVioLabel.Size = new System.Drawing.Size(26, 25);
+            this.fullVioLabel.TabIndex = 97;
+            this.fullVioLabel.Text = "--";
+            // 
+            // fullBoLabel
+            // 
+            this.fullBoLabel.AutoSize = true;
+            this.fullBoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullBoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullBoLabel.Location = new System.Drawing.Point(353, 503);
+            this.fullBoLabel.Name = "fullBoLabel";
+            this.fullBoLabel.Size = new System.Drawing.Size(26, 25);
+            this.fullBoLabel.TabIndex = 96;
+            this.fullBoLabel.Text = "--";
+            // 
+            // fullTotLabel
+            // 
+            this.fullTotLabel.AutoSize = true;
+            this.fullTotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullTotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullTotLabel.Location = new System.Drawing.Point(353, 538);
+            this.fullTotLabel.Name = "fullTotLabel";
+            this.fullTotLabel.Size = new System.Drawing.Size(28, 25);
+            this.fullTotLabel.TabIndex = 95;
+            this.fullTotLabel.Text = "--";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label8.Location = new System.Drawing.Point(213, 538);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 25);
+            this.label8.TabIndex = 94;
+            this.label8.Text = "TOTAL:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(213, 503);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 25);
+            this.label10.TabIndex = 93;
+            this.label10.Text = "Bonus:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label11.Location = new System.Drawing.Point(213, 469);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 25);
+            this.label11.TabIndex = 92;
+            this.label11.Text = "Violations:";
+            // 
+            // fullGrid
+            // 
+            this.fullGrid.AllowUserToAddRows = false;
+            this.fullGrid.AllowUserToDeleteRows = false;
+            this.fullGrid.AllowUserToResizeRows = false;
+            this.fullGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fullGrid.Location = new System.Drawing.Point(21, 130);
+            this.fullGrid.Name = "fullGrid";
+            this.fullGrid.RowTemplate.Height = 24;
+            this.fullGrid.Size = new System.Drawing.Size(471, 323);
+            this.fullGrid.TabIndex = 91;
+            // 
+            // fullStatLabel
+            // 
+            this.fullStatLabel.AutoSize = true;
+            this.fullStatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullStatLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullStatLabel.Location = new System.Drawing.Point(16, 55);
+            this.fullStatLabel.Name = "fullStatLabel";
+            this.fullStatLabel.Size = new System.Drawing.Size(94, 25);
+            this.fullStatLabel.TabIndex = 90;
+            this.fullStatLabel.Text = "STATUS";
+            // 
+            // fullEmpLabel
+            // 
+            this.fullEmpLabel.AutoSize = true;
+            this.fullEmpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullEmpLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullEmpLabel.Location = new System.Drawing.Point(16, 26);
+            this.fullEmpLabel.Name = "fullEmpLabel";
+            this.fullEmpLabel.Size = new System.Drawing.Size(205, 29);
+            this.fullEmpLabel.TabIndex = 89;
+            this.fullEmpLabel.Text = "Employees Name";
+            // 
             // salaryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.allButt);
             this.Controls.Add(this.statusBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmpGrid);
+            this.Controls.Add(this.fullPanel);
+            this.Controls.Add(this.deetPanel);
             this.Name = "salaryUI";
             this.Size = new System.Drawing.Size(1315, 800);
             this.Load += new System.EventHandler(this.payrollUI_Load);
@@ -332,6 +540,9 @@
             this.deetPanel.ResumeLayout(false);
             this.deetPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).EndInit();
+            this.fullPanel.ResumeLayout(false);
+            this.fullPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fullGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +569,19 @@
         private System.Windows.Forms.Button bonusButt;
         private System.Windows.Forms.ComboBox yearBox;
         private System.Windows.Forms.ComboBox monthBox;
+        private System.Windows.Forms.Panel fullPanel;
+        private System.Windows.Forms.ComboBox fullYearBox;
+        private System.Windows.Forms.ComboBox fullMonthBox;
+        private System.Windows.Forms.Button fullVio;
+        private System.Windows.Forms.Button fullBonus;
+        private System.Windows.Forms.Label fullVioLabel;
+        private System.Windows.Forms.Label fullBoLabel;
+        private System.Windows.Forms.Label fullTotLabel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView fullGrid;
+        private System.Windows.Forms.Label fullStatLabel;
+        private System.Windows.Forms.Label fullEmpLabel;
     }
 }

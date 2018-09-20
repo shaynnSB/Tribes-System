@@ -62,12 +62,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lastnameBox = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.salarayBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +109,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(47, 540);
+            this.addButt.Location = new System.Drawing.Point(33, 123);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(236, 31);
@@ -123,7 +127,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(291, 540);
+            this.cancelButt.Location = new System.Drawing.Point(277, 123);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
@@ -186,7 +190,7 @@
             this.panel1.Location = new System.Drawing.Point(752, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 540);
+            this.panel1.Size = new System.Drawing.Size(1, 528);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -240,7 +244,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 540);
+            this.panel2.Size = new System.Drawing.Size(1, 528);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -277,7 +281,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 585);
+            this.panel4.Location = new System.Drawing.Point(1, 573);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(751, 1);
@@ -312,13 +316,12 @@
             // 
             // panel3
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(47, 360);
+            this.panel3.Location = new System.Drawing.Point(46, 355);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(268, 20);
+            this.panel3.Size = new System.Drawing.Size(244, 20);
             this.panel3.TabIndex = 26;
             // 
             // radioButton2
@@ -363,7 +366,7 @@
             this.alertLabel.AutoSize = true;
             this.alertLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alertLabel.ForeColor = System.Drawing.Color.Red;
-            this.alertLabel.Location = new System.Drawing.Point(42, 487);
+            this.alertLabel.Location = new System.Drawing.Point(27, 70);
             this.alertLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alertLabel.Name = "alertLabel";
             this.alertLabel.Size = new System.Drawing.Size(298, 36);
@@ -388,7 +391,7 @@
             this.emergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emergencyContact.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emergencyContact.ForeColor = System.Drawing.Color.Gray;
-            this.emergencyContact.Location = new System.Drawing.Point(48, 422);
+            this.emergencyContact.Location = new System.Drawing.Point(29, 4);
             this.emergencyContact.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyContact.Name = "emergencyContact";
             this.emergencyContact.Size = new System.Drawing.Size(657, 27);
@@ -402,7 +405,7 @@
             this.emergencyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.emergencyName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emergencyName.ForeColor = System.Drawing.Color.Gray;
-            this.emergencyName.Location = new System.Drawing.Point(47, 457);
+            this.emergencyName.Location = new System.Drawing.Point(28, 39);
             this.emergencyName.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyName.Name = "emergencyName";
             this.emergencyName.Size = new System.Drawing.Size(657, 27);
@@ -412,14 +415,13 @@
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.Controls.Add(this.radioButton4);
             this.panel5.Controls.Add(this.radioButton5);
             this.panel5.Controls.Add(this.radioButton6);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(47, 336);
+            this.panel5.Location = new System.Drawing.Point(46, 331);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(371, 20);
+            this.panel5.Size = new System.Drawing.Size(320, 20);
             this.panel5.TabIndex = 35;
             // 
             // radioButton4
@@ -476,7 +478,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(43, 393);
+            this.label4.Location = new System.Drawing.Point(-291, 51);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(184, 25);
@@ -509,29 +511,64 @@
             this.lastnameBox.Text = "Last Name";
             this.lastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.Controls.Add(this.emergencyContact);
+            this.panel6.Controls.Add(this.addButt);
+            this.panel6.Controls.Add(this.cancelButt);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.alertLabel);
+            this.panel6.Controls.Add(this.emergencyName);
+            this.panel6.Location = new System.Drawing.Point(17, 386);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(703, 176);
+            this.panel6.TabIndex = 39;
+            // 
+            // salarayBox
+            // 
+            this.salarayBox.Location = new System.Drawing.Point(371, 354);
+            this.salarayBox.Name = "salarayBox";
+            this.salarayBox.Size = new System.Drawing.Size(293, 22);
+            this.salarayBox.TabIndex = 0;
+            this.salarayBox.Text = "0.0";
+            this.salarayBox.Visible = false;
+            this.salarayBox.TextChanged += new System.EventHandler(this.salarayBox_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Location = new System.Drawing.Point(295, 356);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Salary:";
+            this.label7.Visible = false;
+            // 
             // addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 586);
+            this.ClientSize = new System.Drawing.Size(753, 574);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.salarayBox);
             this.Controls.Add(this.lastnameBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.emergencyName);
-            this.Controls.Add(this.emergencyContact);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.alertLabel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numBox);
             this.Controls.Add(this.addressBox);
             this.Controls.Add(this.nameBox);
-            this.Controls.Add(this.cancelButt);
-            this.Controls.Add(this.addButt);
             this.Controls.Add(this.title);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -548,6 +585,8 @@
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,5 +626,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox lastnameBox;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox salarayBox;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -39,8 +39,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.chartButt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.chartButt = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +106,7 @@
             this.revButt.Size = new System.Drawing.Size(376, 339);
             this.revButt.TabIndex = 77;
             this.revButt.UseVisualStyleBackColor = true;
+            this.revButt.Click += new System.EventHandler(this.revButt_Click);
             // 
             // incButt
             // 
@@ -122,6 +123,7 @@
             this.incButt.Size = new System.Drawing.Size(376, 339);
             this.incButt.TabIndex = 78;
             this.incButt.UseVisualStyleBackColor = true;
+            this.incButt.Click += new System.EventHandler(this.incButt_Click);
             // 
             // label1
             // 
@@ -177,6 +179,17 @@
             this.panel1.Size = new System.Drawing.Size(472, 758);
             this.panel1.TabIndex = 88;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Location = new System.Drawing.Point(30, 42);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(401, 44);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "PROGRESS REPORT";
+            // 
             // chartButt
             // 
             this.chartButt.FlatAppearance.BorderSize = 0;
@@ -186,23 +199,12 @@
             this.chartButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartButt.ForeColor = System.Drawing.Color.White;
             this.chartButt.Image = ((System.Drawing.Image)(resources.GetObject("chartButt.Image")));
-            this.chartButt.Location = new System.Drawing.Point(23, 104);
+            this.chartButt.Location = new System.Drawing.Point(32, 104);
             this.chartButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chartButt.Name = "chartButt";
             this.chartButt.Size = new System.Drawing.Size(414, 371);
             this.chartButt.TabIndex = 89;
             this.chartButt.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label5.Location = new System.Drawing.Point(21, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(422, 44);
-            this.label5.TabIndex = 89;
-            this.label5.Text = "PROGRESS REPORT?";
             // 
             // financesUI
             // 

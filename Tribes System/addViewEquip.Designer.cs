@@ -441,6 +441,7 @@
             this.snl.TabIndex = 68;
             this.snl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.snl.TextChanged += new System.EventHandler(this.snl_TextChanged);
+            this.snl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.snl_KeyPress);
             // 
             // lvw
             // 
@@ -454,6 +455,7 @@
             this.lvw.TabIndex = 69;
             this.lvw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.lvw.TextChanged += new System.EventHandler(this.lvw_TextChanged);
+            this.lvw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lvw_KeyPress);
             // 
             // vcs
             // 
@@ -467,6 +469,7 @@
             this.vcs.TabIndex = 70;
             this.vcs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.vcs.TextChanged += new System.EventHandler(this.vcs_TextChanged);
+            this.vcs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vcs_KeyPress);
             // 
             // msc
             // 
@@ -480,6 +483,7 @@
             this.msc.TabIndex = 71;
             this.msc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.msc.TextChanged += new System.EventHandler(this.msc_TextChanged);
+            this.msc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.msc_KeyPress);
             // 
             // label8
             // 
@@ -516,6 +520,7 @@
             this.stg.Size = new System.Drawing.Size(221, 34);
             this.stg.TabIndex = 75;
             this.stg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.stg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stg_KeyPress);
             // 
             // label9
             // 

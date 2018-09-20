@@ -113,25 +113,23 @@
             // 
             this.userBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.userBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userBox.ForeColor = System.Drawing.Color.DimGray;
-            this.userBox.Location = new System.Drawing.Point(98, 222);
+            this.userBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.userBox.Location = new System.Drawing.Point(106, 222);
             this.userBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.userBox.Name = "userBox";
-            this.userBox.Size = new System.Drawing.Size(270, 34);
+            this.userBox.Size = new System.Drawing.Size(262, 34);
             this.userBox.TabIndex = 2;
-            this.userBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // passBox
             // 
             this.passBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passBox.ForeColor = System.Drawing.Color.DimGray;
-            this.passBox.Location = new System.Drawing.Point(98, 272);
+            this.passBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.passBox.Location = new System.Drawing.Point(106, 272);
             this.passBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(270, 34);
+            this.passBox.Size = new System.Drawing.Size(262, 34);
             this.passBox.TabIndex = 3;
-            this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passBox.Enter += new System.EventHandler(this.passBox_Enter);
             // 
             // panel1
@@ -171,7 +169,7 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(51, 214);
+            this.button1.Location = new System.Drawing.Point(62, 214);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(41, 42);
@@ -185,7 +183,7 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(51, 265);
+            this.button2.Location = new System.Drawing.Point(62, 265);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(41, 42);

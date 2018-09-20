@@ -51,11 +51,11 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.financesUI1 = new Tribes_System.financesUI();
+            this.payrollUI1 = new Tribes_System.salaryUI();
             this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
-            this.financesUI1 = new Tribes_System.financesUI();
-            this.payrollUI1 = new Tribes_System.salaryUI();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -91,9 +91,9 @@
             this.profButt.Location = new System.Drawing.Point(0, 590);
             this.profButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.profButt.Name = "profButt";
-            this.profButt.Size = new System.Drawing.Size(325, 34);
+            this.profButt.Size = new System.Drawing.Size(370, 34);
             this.profButt.TabIndex = 6;
-            this.profButt.Text = "           EDIT PROFILE";
+            this.profButt.Text = "           EDIT PROFILES";
             this.profButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.profButt.UseVisualStyleBackColor = false;
             this.profButt.Click += new System.EventHandler(this.profButt_Click);
@@ -110,7 +110,7 @@
             this.outButt.Location = new System.Drawing.Point(0, 635);
             this.outButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.outButt.Name = "outButt";
-            this.outButt.Size = new System.Drawing.Size(325, 34);
+            this.outButt.Size = new System.Drawing.Size(370, 34);
             this.outButt.TabIndex = 5;
             this.outButt.Text = "           LOG OUT";
             this.outButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -129,9 +129,9 @@
             this.finButt.Location = new System.Drawing.Point(0, 410);
             this.finButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.finButt.Name = "finButt";
-            this.finButt.Size = new System.Drawing.Size(325, 46);
+            this.finButt.Size = new System.Drawing.Size(370, 46);
             this.finButt.TabIndex = 4;
-            this.finButt.Text = "   FINANCIAL REPORT";
+            this.finButt.Text = " FINANCIAL REPORTS";
             this.finButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.finButt.UseVisualStyleBackColor = false;
             this.finButt.Click += new System.EventHandler(this.finButt_Click);
@@ -148,9 +148,9 @@
             this.payButt.Location = new System.Drawing.Point(0, 343);
             this.payButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.payButt.Name = "payButt";
-            this.payButt.Size = new System.Drawing.Size(325, 46);
+            this.payButt.Size = new System.Drawing.Size(370, 46);
             this.payButt.TabIndex = 3;
-            this.payButt.Text = "   SALARY";
+            this.payButt.Text = " SALARY";
             this.payButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.payButt.UseVisualStyleBackColor = false;
             this.payButt.Click += new System.EventHandler(this.payButt_Click);
@@ -167,9 +167,9 @@
             this.eventButt.Location = new System.Drawing.Point(0, 276);
             this.eventButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventButt.Name = "eventButt";
-            this.eventButt.Size = new System.Drawing.Size(325, 46);
+            this.eventButt.Size = new System.Drawing.Size(370, 46);
             this.eventButt.TabIndex = 2;
-            this.eventButt.Text = "   EVENT SCHEDULE";
+            this.eventButt.Text = " EVENT SCHEDULE";
             this.eventButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eventButt.UseVisualStyleBackColor = false;
             this.eventButt.Click += new System.EventHandler(this.eventButt_Click);
@@ -186,9 +186,9 @@
             this.invButt.Location = new System.Drawing.Point(0, 209);
             this.invButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.invButt.Name = "invButt";
-            this.invButt.Size = new System.Drawing.Size(325, 46);
+            this.invButt.Size = new System.Drawing.Size(370, 46);
             this.invButt.TabIndex = 1;
-            this.invButt.Text = "   EQUIPMENT";
+            this.invButt.Text = " EQUIPMENT";
             this.invButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.invButt.UseVisualStyleBackColor = false;
             this.invButt.Click += new System.EventHandler(this.button3_Click);
@@ -205,9 +205,9 @@
             this.empButt.Location = new System.Drawing.Point(0, 142);
             this.empButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.empButt.Name = "empButt";
-            this.empButt.Size = new System.Drawing.Size(325, 46);
+            this.empButt.Size = new System.Drawing.Size(370, 46);
             this.empButt.TabIndex = 0;
-            this.empButt.Text = "   EMPLOYEES";
+            this.empButt.Text = " EMPLOYEES";
             this.empButt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.empButt.UseVisualStyleBackColor = false;
             this.empButt.Click += new System.EventHandler(this.empButt_Click);
@@ -400,6 +400,22 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
+            // financesUI1
+            // 
+            this.financesUI1.Location = new System.Drawing.Point(119, 63);
+            this.financesUI1.Name = "financesUI1";
+            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
+            this.financesUI1.TabIndex = 11;
+            this.financesUI1.Visible = false;
+            // 
+            // payrollUI1
+            // 
+            this.payrollUI1.Location = new System.Drawing.Point(140, 59);
+            this.payrollUI1.Name = "payrollUI1";
+            this.payrollUI1.Size = new System.Drawing.Size(1315, 800);
+            this.payrollUI1.TabIndex = 12;
+            this.payrollUI1.Visible = false;
+            // 
             // equipment1
             // 
             this.equipment1.Location = new System.Drawing.Point(140, 73);
@@ -427,22 +443,6 @@
             this.employeeTab.TabIndex = 10;
             this.employeeTab.Visible = false;
             // 
-            // financesUI1
-            // 
-            this.financesUI1.Location = new System.Drawing.Point(119, 63);
-            this.financesUI1.Name = "financesUI1";
-            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
-            this.financesUI1.TabIndex = 11;
-            this.financesUI1.Visible = false;
-            // 
-            // payrollUI1
-            // 
-            this.payrollUI1.Location = new System.Drawing.Point(140, 73);
-            this.payrollUI1.Name = "payrollUI1";
-            this.payrollUI1.Size = new System.Drawing.Size(1315, 800);
-            this.payrollUI1.TabIndex = 12;
-            this.payrollUI1.Visible = false;
-            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -453,11 +453,11 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
-            this.Controls.Add(this.financesUI1);
             this.Controls.Add(this.payrollUI1);
             this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
+            this.Controls.Add(this.financesUI1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "equipButt";
