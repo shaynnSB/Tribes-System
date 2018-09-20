@@ -25,26 +25,21 @@ namespace Tribes_System
 
         private void categoryBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int rowCount = availEmpGrid.Rows.Count;
-            //loop dg1 and save it to datagridview2
-            if (rowCount > 0)
-            {
-
+          
                 var x = categoryBox.SelectedIndex + 1;
                 if (statusBox.SelectedIndex == -1)
                 {
+                   
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x);
                 }
 
                 else
                 {
+                   
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
                 }
-            }
-            else
-            {
-                //MessageBox.Show("Nothing is selected");
-            }
+            
+
            
         }
         public void refresh(string query)
@@ -56,7 +51,7 @@ namespace Tribes_System
             availEmpGrid.Columns.Clear();
             availEmpGrid.DataSource = table;
             availEmpGrid.Columns[0].Visible = false;
-            availEmpGrid.Columns[4].Visible = false;
+
             availEmpGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[1].HeaderCell.Value = "Model Number";
             availEmpGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -69,10 +64,14 @@ namespace Tribes_System
             availEmpGrid.Columns[3].HeaderCell.Value = "Category";
             availEmpGrid.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            availEmpGrid.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            availEmpGrid.Columns[4].HeaderCell.Value = "Status";
+            availEmpGrid.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            availEmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
             addEquipGrid.Columns[0].Visible = false;
-            addEquipGrid.Columns[4].Visible = false;
+        
             addEquipGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[1].HeaderCell.Value = "Model Number";
             addEquipGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -85,13 +84,13 @@ namespace Tribes_System
             addEquipGrid.Columns[3].HeaderCell.Value = "Category";
             addEquipGrid.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            addEquipGrid.Columns[4].HeaderCell.Value = "Category";
+            addEquipGrid.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            addEquipGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int rowCount = availEmpGrid.Rows.Count;
-            //loop dg1 and save it to datagridview2
-            if (rowCount > 0)
-            {
+          
                 var x = categoryBox.SelectedIndex + 1;
                 if (categoryBox.SelectedIndex == -1)
                 {
@@ -102,11 +101,7 @@ namespace Tribes_System
                 {
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
                 }
-            }
-            else
-            {
-                //MessageBox.Show("Nothing is selected");
-            }
+          
            
         }
 
@@ -174,7 +169,7 @@ namespace Tribes_System
             //loop dg1 and save it to datagridview2
            for(var i=0; i<rowCount; i++)
             {
-                (System.Windows.Forms.Application.OpenForms["addViewEquip"] as addViewEquip).listEmpGrid.Rows.Add(addEquipGrid.Rows[i].Cells[0].Value.ToString(), addEquipGrid.Rows[i].Cells[1].Value.ToString(), addEquipGrid.Rows[i].Cells[2].Value.ToString(), addEquipGrid.Rows[i].Cells[3].Value.ToString());
+                (System.Windows.Forms.Application.OpenForms["addViewEquip"] as addViewEquip).listEmpGrid.Rows.Add(addEquipGrid.Rows[i].Cells[0].Value.ToString(), addEquipGrid.Rows[i].Cells[1].Value.ToString(), addEquipGrid.Rows[i].Cells[2].Value.ToString(), addEquipGrid.Rows[i].Cells[3].Value.ToString(), addEquipGrid.Rows[i].Cells[4].Value.ToString());
             }
             this.Dispose();
 
@@ -183,6 +178,7 @@ namespace Tribes_System
         public string modelnumber;
         public string name;
         public string category;
+        public string status;
 
         private void addButt_Click(object sender, EventArgs e)
         {
@@ -193,9 +189,10 @@ namespace Tribes_System
                 modelnumber = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[1].Value.ToString();
                 name = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[2].Value.ToString();
                 category = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[3].Value.ToString();
+                status = availEmpGrid.Rows[availEmpGrid.SelectedRows[0].Index].Cells[4].Value.ToString();
                 availEmpGrid.Rows.RemoveAt(availEmpGrid.SelectedRows[0].Index);
 
-                addEquipGrid.Rows.Add(id, modelnumber, name, category);
+                addEquipGrid.Rows.Add(id, modelnumber, name, category,status);
             }
             else
             {
@@ -206,6 +203,7 @@ namespace Tribes_System
         public string modelnumberremove;
         public string nameremove;
         public string categoryremove;
+        public string statusremove;
         private void removeButt_Click(object sender, EventArgs e)
         {
 
@@ -217,14 +215,16 @@ namespace Tribes_System
             modelnumberremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[1].Value.ToString();
             nameremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[2].Value.ToString();
             categoryremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[3].Value.ToString();
-            addEquipGrid.Rows.RemoveAt(addEquipGrid.SelectedRows[0].Index);
+            statusremove = addEquipGrid.Rows[addEquipGrid.SelectedRows[0].Index].Cells[4].Value.ToString();
+                addEquipGrid.Rows.RemoveAt(addEquipGrid.SelectedRows[0].Index);
                 DataTable dataTable = (DataTable)availEmpGrid.DataSource;
                 DataRow drToAdd = dataTable.NewRow();   
                     drToAdd[0] = idremove;
                     drToAdd[1] = modelnumberremove;
                     drToAdd[2] = nameremove;
                     drToAdd[3] = categoryremove;
-                    dataTable.Rows.Add(drToAdd);
+                    drToAdd[4] = statusremove;
+                dataTable.Rows.Add(drToAdd);
                     dataTable.AcceptChanges();
 
                 }
@@ -242,16 +242,11 @@ namespace Tribes_System
         {
             int rowCount = availEmpGrid.Rows.Count;
             //loop dg1 and save it to datagridview2
-            if (rowCount > 0)
-            {
-                categoryBox.SelectedIndex = -1;
-                statusBox.SelectedIndex = -1;
+
+            categoryBox.SelectedIndex = -1;
+            statusBox.SelectedIndex = -1;
                 refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
-            }
-            else
-            {
-                MessageBox.Show("Nothing is selected");
-            }
+            
         }
 
         private void customPack_Load(object sender, EventArgs e)

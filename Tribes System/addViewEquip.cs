@@ -23,7 +23,7 @@ namespace Tribes_System
         {
             InitializeComponent();
             this.form = form;
-            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = "+eventSched.id);
+            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
             
         }
 
@@ -49,7 +49,7 @@ namespace Tribes_System
             set { this.idPassed = value; }
         }
 
-        public void refresh(string query = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID;")
+        public void refresh(string query = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID;")
         {
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
@@ -70,6 +70,10 @@ namespace Tribes_System
             assignedGrid.Columns[3].HeaderCell.Value = "Category";
             assignedGrid.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             assignedGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            assignedGrid.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            assignedGrid.Columns[4].HeaderCell.Value = "Status";
+            assignedGrid.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            assignedGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             count = assignedGrid.Rows.Count;
         }
 
@@ -98,7 +102,7 @@ namespace Tribes_System
                 {
                     listEmpGrid.Rows.RemoveAt(0);
                 }
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -179,7 +183,7 @@ namespace Tribes_System
             {
                 string insertQuery1 = "UPDATE itemcontent SET eventID='0' where  eventID=" + eventSched.id+" and itemcontent.id = "+assignedGrid.Rows[assignedGrid.SelectedRows[0].Index].Cells[0].Value.ToString();
                 executeMyQuery(insertQuery1);
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
         
             }
             else
@@ -212,7 +216,7 @@ namespace Tribes_System
                     listEmpGrid.Rows.RemoveAt(0);
                 }
                 MessageBox.Show("Success");
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
             }
             else
             {
