@@ -138,14 +138,14 @@
             // 
             // nameBox
             // 
-            this.nameBox.BackColor = System.Drawing.Color.LightGray;
-            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.BackColor = System.Drawing.Color.White;
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.ForeColor = System.Drawing.Color.Gray;
+            this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.nameBox.Location = new System.Drawing.Point(47, 162);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(657, 27);
+            this.nameBox.Size = new System.Drawing.Size(657, 34);
             this.nameBox.TabIndex = 9;
             this.nameBox.Text = "First Name";
             this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -153,14 +153,14 @@
             // 
             // addressBox
             // 
-            this.addressBox.BackColor = System.Drawing.Color.LightGray;
-            this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addressBox.BackColor = System.Drawing.Color.White;
+            this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addressBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressBox.ForeColor = System.Drawing.Color.Gray;
+            this.addressBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.addressBox.Location = new System.Drawing.Point(46, 232);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(657, 27);
+            this.addressBox.Size = new System.Drawing.Size(657, 34);
             this.addressBox.TabIndex = 10;
             this.addressBox.Text = "Address of Employee";
             this.addressBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -168,14 +168,14 @@
             // 
             // numBox
             // 
-            this.numBox.BackColor = System.Drawing.Color.LightGray;
-            this.numBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numBox.BackColor = System.Drawing.Color.White;
+            this.numBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox.ForeColor = System.Drawing.Color.Gray;
+            this.numBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.numBox.Location = new System.Drawing.Point(46, 267);
             this.numBox.Margin = new System.Windows.Forms.Padding(4);
             this.numBox.Name = "numBox";
-            this.numBox.Size = new System.Drawing.Size(657, 27);
+            this.numBox.Size = new System.Drawing.Size(657, 34);
             this.numBox.TabIndex = 12;
             this.numBox.Text = "Contact Number of Employee";
             this.numBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -366,7 +366,7 @@
             this.alertLabel.AutoSize = true;
             this.alertLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alertLabel.ForeColor = System.Drawing.Color.Red;
-            this.alertLabel.Location = new System.Drawing.Point(27, 70);
+            this.alertLabel.Location = new System.Drawing.Point(27, 77);
             this.alertLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alertLabel.Name = "alertLabel";
             this.alertLabel.Size = new System.Drawing.Size(298, 36);
@@ -387,28 +387,28 @@
             // 
             // emergencyContact
             // 
-            this.emergencyContact.BackColor = System.Drawing.Color.LightGray;
-            this.emergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emergencyContact.BackColor = System.Drawing.Color.White;
+            this.emergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emergencyContact.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emergencyContact.ForeColor = System.Drawing.Color.Gray;
+            this.emergencyContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.emergencyContact.Location = new System.Drawing.Point(29, 4);
             this.emergencyContact.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyContact.Name = "emergencyContact";
-            this.emergencyContact.Size = new System.Drawing.Size(657, 27);
+            this.emergencyContact.Size = new System.Drawing.Size(657, 34);
             this.emergencyContact.TabIndex = 33;
             this.emergencyContact.Text = "Emergency Contact";
             this.emergencyContact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emergencyName
             // 
-            this.emergencyName.BackColor = System.Drawing.Color.LightGray;
-            this.emergencyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emergencyName.BackColor = System.Drawing.Color.White;
+            this.emergencyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emergencyName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emergencyName.ForeColor = System.Drawing.Color.Gray;
+            this.emergencyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.emergencyName.Location = new System.Drawing.Point(28, 39);
             this.emergencyName.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyName.Name = "emergencyName";
-            this.emergencyName.Size = new System.Drawing.Size(657, 27);
+            this.emergencyName.Size = new System.Drawing.Size(658, 34);
             this.emergencyName.TabIndex = 34;
             this.emergencyName.Text = "Emergency Contact Name";
             this.emergencyName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -499,14 +499,14 @@
             // 
             // lastnameBox
             // 
-            this.lastnameBox.BackColor = System.Drawing.Color.LightGray;
-            this.lastnameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lastnameBox.BackColor = System.Drawing.Color.White;
+            this.lastnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lastnameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameBox.ForeColor = System.Drawing.Color.Gray;
+            this.lastnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lastnameBox.Location = new System.Drawing.Point(47, 197);
             this.lastnameBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastnameBox.Name = "lastnameBox";
-            this.lastnameBox.Size = new System.Drawing.Size(657, 27);
+            this.lastnameBox.Size = new System.Drawing.Size(657, 34);
             this.lastnameBox.TabIndex = 38;
             this.lastnameBox.Text = "Last Name";
             this.lastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

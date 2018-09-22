@@ -115,7 +115,7 @@
             this.addButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.addButt.Location = new System.Drawing.Point(45, 514);
+            this.addButt.Location = new System.Drawing.Point(45, 560);
             this.addButt.Margin = new System.Windows.Forms.Padding(4);
             this.addButt.Name = "addButt";
             this.addButt.Size = new System.Drawing.Size(236, 31);
@@ -133,7 +133,7 @@
             this.cancelButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancelButt.Location = new System.Drawing.Point(289, 514);
+            this.cancelButt.Location = new System.Drawing.Point(289, 560);
             this.cancelButt.Margin = new System.Windows.Forms.Padding(4);
             this.cancelButt.Name = "cancelButt";
             this.cancelButt.Size = new System.Drawing.Size(236, 31);
@@ -144,47 +144,41 @@
             // 
             // nameBox
             // 
-            this.nameBox.BackColor = System.Drawing.Color.LightGray;
-            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nameBox.BackColor = System.Drawing.Color.White;
+            this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.ForeColor = System.Drawing.Color.Gray;
-            this.nameBox.Location = new System.Drawing.Point(231, 142);
+            this.nameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.nameBox.Location = new System.Drawing.Point(231, 150);
             this.nameBox.Margin = new System.Windows.Forms.Padding(4);
             this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(473, 27);
+            this.nameBox.Size = new System.Drawing.Size(473, 34);
             this.nameBox.TabIndex = 9;
-            this.nameBox.Text = "First Name";
-            this.nameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.nameBox.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // addressBox
             // 
-            this.addressBox.BackColor = System.Drawing.Color.LightGray;
-            this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addressBox.BackColor = System.Drawing.Color.White;
+            this.addressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.addressBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressBox.ForeColor = System.Drawing.Color.Gray;
-            this.addressBox.Location = new System.Drawing.Point(231, 212);
+            this.addressBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.addressBox.Location = new System.Drawing.Point(231, 220);
             this.addressBox.Margin = new System.Windows.Forms.Padding(4);
             this.addressBox.Name = "addressBox";
-            this.addressBox.Size = new System.Drawing.Size(473, 27);
+            this.addressBox.Size = new System.Drawing.Size(473, 34);
             this.addressBox.TabIndex = 10;
-            this.addressBox.Text = "Address of Employee";
-            this.addressBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.addressBox.Click += new System.EventHandler(this.locBox_Click);
             // 
             // numBox
             // 
-            this.numBox.BackColor = System.Drawing.Color.LightGray;
-            this.numBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numBox.BackColor = System.Drawing.Color.White;
+            this.numBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numBox.ForeColor = System.Drawing.Color.Gray;
-            this.numBox.Location = new System.Drawing.Point(231, 247);
+            this.numBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.numBox.Location = new System.Drawing.Point(231, 255);
             this.numBox.Margin = new System.Windows.Forms.Padding(4);
             this.numBox.Name = "numBox";
-            this.numBox.Size = new System.Drawing.Size(473, 27);
+            this.numBox.Size = new System.Drawing.Size(473, 34);
             this.numBox.TabIndex = 12;
-            this.numBox.Text = "Contact Number of Employee";
-            this.numBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numBox.Click += new System.EventHandler(this.conClientBox_Click);
             // 
             // panel1
@@ -196,7 +190,7 @@
             this.panel1.Location = new System.Drawing.Point(752, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 523);
+            this.panel1.Size = new System.Drawing.Size(1, 591);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -250,7 +244,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 523);
+            this.panel2.Size = new System.Drawing.Size(1, 591);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -287,7 +281,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 568);
+            this.panel4.Location = new System.Drawing.Point(1, 636);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(751, 1);
@@ -326,7 +320,7 @@
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(46, 333);
+            this.panel3.Location = new System.Drawing.Point(46, 364);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(323, 20);
             this.panel3.TabIndex = 26;
@@ -386,7 +380,7 @@
             this.alertLabel.AutoSize = true;
             this.alertLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alertLabel.ForeColor = System.Drawing.Color.Red;
-            this.alertLabel.Location = new System.Drawing.Point(40, 474);
+            this.alertLabel.Location = new System.Drawing.Point(40, 520);
             this.alertLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.alertLabel.Name = "alertLabel";
             this.alertLabel.Size = new System.Drawing.Size(298, 36);
@@ -396,37 +390,33 @@
             // 
             // emergencyContact
             // 
-            this.emergencyContact.BackColor = System.Drawing.Color.LightGray;
-            this.emergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emergencyContact.BackColor = System.Drawing.Color.White;
+            this.emergencyContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emergencyContact.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emergencyContact.ForeColor = System.Drawing.Color.Gray;
-            this.emergencyContact.Location = new System.Drawing.Point(231, 396);
+            this.emergencyContact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.emergencyContact.Location = new System.Drawing.Point(231, 442);
             this.emergencyContact.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyContact.Name = "emergencyContact";
-            this.emergencyContact.Size = new System.Drawing.Size(473, 27);
+            this.emergencyContact.Size = new System.Drawing.Size(473, 34);
             this.emergencyContact.TabIndex = 33;
-            this.emergencyContact.Text = "Emergency Contact";
-            this.emergencyContact.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // emergencyName
             // 
-            this.emergencyName.BackColor = System.Drawing.Color.LightGray;
-            this.emergencyName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emergencyName.BackColor = System.Drawing.Color.White;
+            this.emergencyName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.emergencyName.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emergencyName.ForeColor = System.Drawing.Color.Gray;
-            this.emergencyName.Location = new System.Drawing.Point(231, 431);
+            this.emergencyName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.emergencyName.Location = new System.Drawing.Point(231, 477);
             this.emergencyName.Margin = new System.Windows.Forms.Padding(4);
             this.emergencyName.Name = "emergencyName";
-            this.emergencyName.Size = new System.Drawing.Size(473, 27);
+            this.emergencyName.Size = new System.Drawing.Size(473, 34);
             this.emergencyName.TabIndex = 34;
-            this.emergencyName.Text = "Emergency Contact Name";
-            this.emergencyName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-mm-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(231, 281);
+            this.dateTimePicker1.Location = new System.Drawing.Point(231, 297);
             this.dateTimePicker1.MaxDate = new System.DateTime(2018, 8, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(235, 22);
@@ -437,7 +427,7 @@
             // 
             this.ENameLab.AutoSize = true;
             this.ENameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ENameLab.Location = new System.Drawing.Point(43, 438);
+            this.ENameLab.Location = new System.Drawing.Point(43, 484);
             this.ENameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ENameLab.Name = "ENameLab";
             this.ENameLab.Size = new System.Drawing.Size(147, 20);
@@ -448,7 +438,7 @@
             // 
             this.EmergencyContactLab.AutoSize = true;
             this.EmergencyContactLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmergencyContactLab.Location = new System.Drawing.Point(43, 403);
+            this.EmergencyContactLab.Location = new System.Drawing.Point(43, 449);
             this.EmergencyContactLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmergencyContactLab.Name = "EmergencyContactLab";
             this.EmergencyContactLab.Size = new System.Drawing.Size(161, 20);
@@ -459,7 +449,7 @@
             // 
             this.StatusLab.AutoSize = true;
             this.StatusLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StatusLab.Location = new System.Drawing.Point(43, 219);
+            this.StatusLab.Location = new System.Drawing.Point(43, 227);
             this.StatusLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StatusLab.Name = "StatusLab";
             this.StatusLab.Size = new System.Drawing.Size(76, 20);
@@ -470,7 +460,7 @@
             // 
             this.BdayLab.AutoSize = true;
             this.BdayLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdayLab.Location = new System.Drawing.Point(43, 283);
+            this.BdayLab.Location = new System.Drawing.Point(43, 299);
             this.BdayLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BdayLab.Name = "BdayLab";
             this.BdayLab.Size = new System.Drawing.Size(82, 20);
@@ -481,7 +471,7 @@
             // 
             this.NameLab.AutoSize = true;
             this.NameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLab.Location = new System.Drawing.Point(43, 149);
+            this.NameLab.Location = new System.Drawing.Point(43, 157);
             this.NameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NameLab.Name = "NameLab";
             this.NameLab.Size = new System.Drawing.Size(97, 20);
@@ -492,7 +482,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(43, 254);
+            this.label4.Location = new System.Drawing.Point(43, 262);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 20);
@@ -506,7 +496,7 @@
             this.panel5.Controls.Add(this.radioButton5);
             this.panel5.Controls.Add(this.radioButton6);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(46, 309);
+            this.panel5.Location = new System.Drawing.Point(46, 332);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(371, 20);
             this.panel5.TabIndex = 29;
@@ -566,7 +556,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(42, 109);
+            this.label6.Location = new System.Drawing.Point(42, 117);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(202, 29);
@@ -578,7 +568,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(42, 369);
+            this.label7.Location = new System.Drawing.Point(42, 415);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 25);
@@ -589,7 +579,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(43, 184);
+            this.label8.Location = new System.Drawing.Point(43, 192);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 20);
@@ -598,24 +588,22 @@
             // 
             // lastnameBox
             // 
-            this.lastnameBox.BackColor = System.Drawing.Color.LightGray;
-            this.lastnameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lastnameBox.BackColor = System.Drawing.Color.White;
+            this.lastnameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lastnameBox.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameBox.ForeColor = System.Drawing.Color.Gray;
-            this.lastnameBox.Location = new System.Drawing.Point(231, 177);
+            this.lastnameBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lastnameBox.Location = new System.Drawing.Point(231, 185);
             this.lastnameBox.Margin = new System.Windows.Forms.Padding(4);
             this.lastnameBox.Name = "lastnameBox";
-            this.lastnameBox.Size = new System.Drawing.Size(473, 27);
+            this.lastnameBox.Size = new System.Drawing.Size(473, 34);
             this.lastnameBox.TabIndex = 43;
-            this.lastnameBox.Text = "Last Name";
-            this.lastnameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(372, 335);
+            this.label9.Location = new System.Drawing.Point(372, 366);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 20);
@@ -625,7 +613,7 @@
             // 
             // salarayBox
             // 
-            this.salarayBox.Location = new System.Drawing.Point(448, 333);
+            this.salarayBox.Location = new System.Drawing.Point(448, 364);
             this.salarayBox.Name = "salarayBox";
             this.salarayBox.Size = new System.Drawing.Size(256, 22);
             this.salarayBox.TabIndex = 45;
@@ -637,7 +625,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 569);
+            this.ClientSize = new System.Drawing.Size(753, 637);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.salarayBox);
             this.Controls.Add(this.label8);

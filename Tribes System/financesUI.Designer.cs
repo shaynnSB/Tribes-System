@@ -66,7 +66,7 @@
             this.salaryButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salaryButt.ForeColor = System.Drawing.Color.White;
             this.salaryButt.Image = ((System.Drawing.Image)(resources.GetObject("salaryButt.Image")));
-            this.salaryButt.Location = new System.Drawing.Point(19, 50);
+            this.salaryButt.Location = new System.Drawing.Point(9, 50);
             this.salaryButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.salaryButt.Name = "salaryButt";
             this.salaryButt.Size = new System.Drawing.Size(376, 339);
@@ -83,7 +83,7 @@
             this.expButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.expButt.ForeColor = System.Drawing.Color.White;
             this.expButt.Image = ((System.Drawing.Image)(resources.GetObject("expButt.Image")));
-            this.expButt.Location = new System.Drawing.Point(429, 50);
+            this.expButt.Location = new System.Drawing.Point(419, 50);
             this.expButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.expButt.Name = "expButt";
             this.expButt.Size = new System.Drawing.Size(376, 339);
@@ -100,7 +100,7 @@
             this.revButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revButt.ForeColor = System.Drawing.Color.White;
             this.revButt.Image = ((System.Drawing.Image)(resources.GetObject("revButt.Image")));
-            this.revButt.Location = new System.Drawing.Point(19, 420);
+            this.revButt.Location = new System.Drawing.Point(9, 420);
             this.revButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.revButt.Name = "revButt";
             this.revButt.Size = new System.Drawing.Size(376, 339);
@@ -117,7 +117,7 @@
             this.incButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incButt.ForeColor = System.Drawing.Color.White;
             this.incButt.Image = ((System.Drawing.Image)(resources.GetObject("incButt.Image")));
-            this.incButt.Location = new System.Drawing.Point(429, 420);
+            this.incButt.Location = new System.Drawing.Point(419, 420);
             this.incButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.incButt.Name = "incButt";
             this.incButt.Size = new System.Drawing.Size(376, 339);
@@ -130,7 +130,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(119, 393);
+            this.label1.Location = new System.Drawing.Point(109, 393);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 25);
             this.label1.TabIndex = 84;
@@ -141,7 +141,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(505, 393);
+            this.label2.Location = new System.Drawing.Point(495, 393);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(225, 25);
             this.label2.TabIndex = 85;
@@ -152,7 +152,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(111, 761);
+            this.label3.Location = new System.Drawing.Point(101, 761);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(192, 25);
             this.label3.TabIndex = 86;
@@ -163,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(507, 761);
+            this.label4.Location = new System.Drawing.Point(497, 761);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(221, 25);
             this.label4.TabIndex = 87;
@@ -174,9 +174,9 @@
             this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.chartButt);
-            this.panel1.Location = new System.Drawing.Point(840, 50);
+            this.panel1.Location = new System.Drawing.Point(840, 164);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(472, 758);
+            this.panel1.Size = new System.Drawing.Size(472, 517);
             this.panel1.TabIndex = 88;
             // 
             // label5

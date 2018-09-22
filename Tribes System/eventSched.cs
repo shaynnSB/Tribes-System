@@ -109,7 +109,7 @@ namespace Tribes_System
                 numLabel.Text = reader["client_contact"].ToString();
                 mailLabel.Text = reader["client_email"].ToString();
 
-                if (reader["event_price"].ToString() == "")
+                if (reader["event_price"].ToString() == "" || reader["event_price"].ToString() == "0.00")
                 {
                     amLabel.Text = "PHP " + reader["prices"].ToString();
                 }

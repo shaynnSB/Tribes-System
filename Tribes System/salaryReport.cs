@@ -402,7 +402,7 @@ namespace Tribes_System
         {
             if (qmonthBox.Text == "First Quarter")
             {
-                quarter = first;
+                quarter = first;    
             }
             else if (qmonthBox.Text == "Second Quarter")
             {

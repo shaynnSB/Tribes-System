@@ -48,14 +48,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.printMonth = new System.Windows.Forms.Button();
             this.monthPanel = new System.Windows.Forms.Panel();
-            this.callMonth = new System.Windows.Forms.Label();
-            this.bonusMonth = new System.Windows.Forms.Label();
-            this.vioMonth = new System.Windows.Forms.Label();
-            this.fullMonth = new System.Windows.Forms.Label();
+            this.feeMonth = new System.Windows.Forms.Label();
+            this.amMonth = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.monthLabel = new System.Windows.Forms.Label();
@@ -64,14 +60,10 @@
             this.totMonth = new System.Windows.Forms.Label();
             this.printQuart = new System.Windows.Forms.Button();
             this.quartPanel = new System.Windows.Forms.Panel();
-            this.callQuart = new System.Windows.Forms.Label();
-            this.bonusQuart = new System.Windows.Forms.Label();
-            this.vioQuart = new System.Windows.Forms.Label();
-            this.fullQuart = new System.Windows.Forms.Label();
+            this.feeQuart = new System.Windows.Forms.Label();
+            this.amQuart = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.quarterLabel = new System.Windows.Forms.Label();
@@ -80,20 +72,22 @@
             this.totQuart = new System.Windows.Forms.Label();
             this.printYear = new System.Windows.Forms.Button();
             this.yearPanel = new System.Windows.Forms.Panel();
-            this.callYear = new System.Windows.Forms.Label();
-            this.bonusYear = new System.Windows.Forms.Label();
-            this.vioYear = new System.Windows.Forms.Label();
-            this.fullYear = new System.Windows.Forms.Label();
+            this.feeYear = new System.Windows.Forms.Label();
+            this.amYear = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.yearLabel = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.totYear = new System.Windows.Forms.Label();
+            this.discMonth = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.discQuart = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.discYear = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -138,10 +132,11 @@
             // 
             this.ayearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ayearBox.FormattingEnabled = true;
-            this.ayearBox.Location = new System.Drawing.Point(749, 24);
+            this.ayearBox.Location = new System.Drawing.Point(713, 35);
             this.ayearBox.Name = "ayearBox";
             this.ayearBox.Size = new System.Drawing.Size(130, 28);
             this.ayearBox.TabIndex = 5;
+            this.ayearBox.SelectedIndexChanged += new System.EventHandler(this.ayearBox_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -161,10 +156,11 @@
             // 
             this.myearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.myearBox.FormattingEnabled = true;
-            this.myearBox.Location = new System.Drawing.Point(749, 24);
+            this.myearBox.Location = new System.Drawing.Point(713, 35);
             this.myearBox.Name = "myearBox";
             this.myearBox.Size = new System.Drawing.Size(130, 28);
             this.myearBox.TabIndex = 1;
+            this.myearBox.SelectedIndexChanged += new System.EventHandler(this.myearBox_SelectedIndexChanged);
             // 
             // mmonthBox
             // 
@@ -183,19 +179,21 @@
             "October",
             "November",
             "December"});
-            this.mmonthBox.Location = new System.Drawing.Point(579, 24);
+            this.mmonthBox.Location = new System.Drawing.Point(543, 35);
             this.mmonthBox.Name = "mmonthBox";
             this.mmonthBox.Size = new System.Drawing.Size(164, 28);
             this.mmonthBox.TabIndex = 0;
+            this.mmonthBox.SelectedIndexChanged += new System.EventHandler(this.mmonthBox_SelectedIndexChanged);
             // 
             // qyearBox
             // 
             this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qyearBox.FormattingEnabled = true;
-            this.qyearBox.Location = new System.Drawing.Point(749, 24);
+            this.qyearBox.Location = new System.Drawing.Point(713, 35);
             this.qyearBox.Name = "qyearBox";
             this.qyearBox.Size = new System.Drawing.Size(130, 28);
             this.qyearBox.TabIndex = 3;
+            this.qyearBox.SelectedIndexChanged += new System.EventHandler(this.qyearBox_SelectedIndexChanged);
             // 
             // qmonthBox
             // 
@@ -206,10 +204,11 @@
             "Second Quarter",
             "Third Quarter",
             "Fourth Quarter"});
-            this.qmonthBox.Location = new System.Drawing.Point(579, 24);
+            this.qmonthBox.Location = new System.Drawing.Point(543, 35);
             this.qmonthBox.Name = "qmonthBox";
             this.qmonthBox.Size = new System.Drawing.Size(164, 28);
             this.qmonthBox.TabIndex = 2;
+            this.qmonthBox.SelectedIndexChanged += new System.EventHandler(this.qmonthBox_SelectedIndexChanged);
             // 
             // tabPage2
             // 
@@ -288,6 +287,7 @@
             this.minButt.Size = new System.Drawing.Size(41, 46);
             this.minButt.TabIndex = 1;
             this.minButt.UseVisualStyleBackColor = true;
+            this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
             // closeButt
             // 
@@ -332,18 +332,17 @@
             this.printMonth.TabIndex = 107;
             this.printMonth.Text = "PRINT";
             this.printMonth.UseVisualStyleBackColor = false;
+            this.printMonth.Click += new System.EventHandler(this.printMonth_Click);
             // 
             // monthPanel
             // 
             this.monthPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.monthPanel.Controls.Add(this.callMonth);
-            this.monthPanel.Controls.Add(this.bonusMonth);
-            this.monthPanel.Controls.Add(this.vioMonth);
-            this.monthPanel.Controls.Add(this.fullMonth);
+            this.monthPanel.Controls.Add(this.discMonth);
+            this.monthPanel.Controls.Add(this.label6);
+            this.monthPanel.Controls.Add(this.feeMonth);
+            this.monthPanel.Controls.Add(this.amMonth);
             this.monthPanel.Controls.Add(this.label12);
             this.monthPanel.Controls.Add(this.label11);
-            this.monthPanel.Controls.Add(this.label10);
-            this.monthPanel.Controls.Add(this.label9);
             this.monthPanel.Controls.Add(this.label8);
             this.monthPanel.Controls.Add(this.label7);
             this.monthPanel.Controls.Add(this.monthLabel);
@@ -355,56 +354,34 @@
             this.monthPanel.Size = new System.Drawing.Size(785, 568);
             this.monthPanel.TabIndex = 106;
             // 
-            // callMonth
+            // feeMonth
             // 
-            this.callMonth.AutoSize = true;
-            this.callMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.callMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.callMonth.Location = new System.Drawing.Point(512, 244);
-            this.callMonth.Name = "callMonth";
-            this.callMonth.Size = new System.Drawing.Size(29, 29);
-            this.callMonth.TabIndex = 109;
-            this.callMonth.Text = "--";
+            this.feeMonth.AutoSize = true;
+            this.feeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.feeMonth.Location = new System.Drawing.Point(512, 303);
+            this.feeMonth.Name = "feeMonth";
+            this.feeMonth.Size = new System.Drawing.Size(29, 29);
+            this.feeMonth.TabIndex = 109;
+            this.feeMonth.Text = "--";
             // 
-            // bonusMonth
+            // amMonth
             // 
-            this.bonusMonth.AutoSize = true;
-            this.bonusMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusMonth.Location = new System.Drawing.Point(512, 334);
-            this.bonusMonth.Name = "bonusMonth";
-            this.bonusMonth.Size = new System.Drawing.Size(29, 29);
-            this.bonusMonth.TabIndex = 108;
-            this.bonusMonth.Text = "--";
-            // 
-            // vioMonth
-            // 
-            this.vioMonth.AutoSize = true;
-            this.vioMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vioMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioMonth.Location = new System.Drawing.Point(512, 391);
-            this.vioMonth.Name = "vioMonth";
-            this.vioMonth.Size = new System.Drawing.Size(29, 29);
-            this.vioMonth.TabIndex = 107;
-            this.vioMonth.Text = "--";
-            // 
-            // fullMonth
-            // 
-            this.fullMonth.AutoSize = true;
-            this.fullMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullMonth.Location = new System.Drawing.Point(512, 197);
-            this.fullMonth.Name = "fullMonth";
-            this.fullMonth.Size = new System.Drawing.Size(29, 29);
-            this.fullMonth.TabIndex = 106;
-            this.fullMonth.Text = "--";
+            this.amMonth.AutoSize = true;
+            this.amMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.amMonth.Location = new System.Drawing.Point(512, 256);
+            this.amMonth.Name = "amMonth";
+            this.amMonth.Size = new System.Drawing.Size(29, 29);
+            this.amMonth.TabIndex = 106;
+            this.amMonth.Text = "--";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label12.Location = new System.Drawing.Point(375, 492);
+            this.label12.Location = new System.Drawing.Point(375, 431);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 29);
             this.label12.TabIndex = 105;
@@ -415,62 +392,40 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label11.Location = new System.Drawing.Point(375, 197);
+            this.label11.Location = new System.Drawing.Point(375, 256);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 29);
             this.label11.TabIndex = 104;
             this.label11.Text = "PHP";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(98, 391);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 29);
-            this.label10.TabIndex = 103;
-            this.label10.Text = "Violations";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label9.Location = new System.Drawing.Point(98, 334);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 29);
-            this.label9.TabIndex = 102;
-            this.label9.Text = "Bonus";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(98, 244);
+            this.label8.Location = new System.Drawing.Point(98, 303);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 29);
+            this.label8.Size = new System.Drawing.Size(169, 29);
             this.label8.TabIndex = 101;
-            this.label8.Text = "On-Call Salary";
+            this.label8.Text = "Additional Fee";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(98, 197);
+            this.label7.Location = new System.Drawing.Point(98, 256);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(190, 29);
+            this.label7.Size = new System.Drawing.Size(94, 29);
             this.label7.TabIndex = 100;
-            this.label7.Text = "Full-Time Salary";
+            this.label7.Text = "Amount";
             // 
             // monthLabel
             // 
             this.monthLabel.AutoSize = true;
             this.monthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.monthLabel.Location = new System.Drawing.Point(97, 120);
+            this.monthLabel.Location = new System.Drawing.Point(97, 179);
             this.monthLabel.Name = "monthLabel";
             this.monthLabel.Size = new System.Drawing.Size(94, 32);
             this.monthLabel.TabIndex = 99;
@@ -481,7 +436,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(98, 492);
+            this.label3.Location = new System.Drawing.Point(98, 431);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 29);
             this.label3.TabIndex = 96;
@@ -492,11 +447,11 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(271, 42);
+            this.label4.Location = new System.Drawing.Point(252, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(264, 32);
+            this.label4.Size = new System.Drawing.Size(289, 32);
             this.label4.TabIndex = 98;
-            this.label4.Text = "SALARY REPORT";
+            this.label4.Text = "REVENUE REPORT";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // totMonth
@@ -504,7 +459,7 @@
             this.totMonth.AutoSize = true;
             this.totMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totMonth.Location = new System.Drawing.Point(512, 492);
+            this.totMonth.Location = new System.Drawing.Point(512, 431);
             this.totMonth.Name = "totMonth";
             this.totMonth.Size = new System.Drawing.Size(31, 29);
             this.totMonth.TabIndex = 97;
@@ -526,18 +481,17 @@
             this.printQuart.TabIndex = 107;
             this.printQuart.Text = "PRINT";
             this.printQuart.UseVisualStyleBackColor = false;
+            this.printQuart.Click += new System.EventHandler(this.printQuart_Click);
             // 
             // quartPanel
             // 
             this.quartPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.quartPanel.Controls.Add(this.callQuart);
-            this.quartPanel.Controls.Add(this.bonusQuart);
-            this.quartPanel.Controls.Add(this.vioQuart);
-            this.quartPanel.Controls.Add(this.fullQuart);
+            this.quartPanel.Controls.Add(this.discQuart);
+            this.quartPanel.Controls.Add(this.label10);
+            this.quartPanel.Controls.Add(this.feeQuart);
+            this.quartPanel.Controls.Add(this.amQuart);
             this.quartPanel.Controls.Add(this.label20);
             this.quartPanel.Controls.Add(this.label21);
-            this.quartPanel.Controls.Add(this.label22);
-            this.quartPanel.Controls.Add(this.label23);
             this.quartPanel.Controls.Add(this.label24);
             this.quartPanel.Controls.Add(this.label25);
             this.quartPanel.Controls.Add(this.quarterLabel);
@@ -549,56 +503,34 @@
             this.quartPanel.Size = new System.Drawing.Size(785, 568);
             this.quartPanel.TabIndex = 106;
             // 
-            // callQuart
+            // feeQuart
             // 
-            this.callQuart.AutoSize = true;
-            this.callQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.callQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.callQuart.Location = new System.Drawing.Point(512, 244);
-            this.callQuart.Name = "callQuart";
-            this.callQuart.Size = new System.Drawing.Size(29, 29);
-            this.callQuart.TabIndex = 109;
-            this.callQuart.Text = "--";
+            this.feeQuart.AutoSize = true;
+            this.feeQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.feeQuart.Location = new System.Drawing.Point(512, 303);
+            this.feeQuart.Name = "feeQuart";
+            this.feeQuart.Size = new System.Drawing.Size(29, 29);
+            this.feeQuart.TabIndex = 109;
+            this.feeQuart.Text = "--";
             // 
-            // bonusQuart
+            // amQuart
             // 
-            this.bonusQuart.AutoSize = true;
-            this.bonusQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusQuart.Location = new System.Drawing.Point(512, 334);
-            this.bonusQuart.Name = "bonusQuart";
-            this.bonusQuart.Size = new System.Drawing.Size(29, 29);
-            this.bonusQuart.TabIndex = 108;
-            this.bonusQuart.Text = "--";
-            // 
-            // vioQuart
-            // 
-            this.vioQuart.AutoSize = true;
-            this.vioQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vioQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioQuart.Location = new System.Drawing.Point(512, 391);
-            this.vioQuart.Name = "vioQuart";
-            this.vioQuart.Size = new System.Drawing.Size(29, 29);
-            this.vioQuart.TabIndex = 107;
-            this.vioQuart.Text = "--";
-            // 
-            // fullQuart
-            // 
-            this.fullQuart.AutoSize = true;
-            this.fullQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullQuart.Location = new System.Drawing.Point(512, 197);
-            this.fullQuart.Name = "fullQuart";
-            this.fullQuart.Size = new System.Drawing.Size(29, 29);
-            this.fullQuart.TabIndex = 106;
-            this.fullQuart.Text = "--";
+            this.amQuart.AutoSize = true;
+            this.amQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.amQuart.Location = new System.Drawing.Point(512, 256);
+            this.amQuart.Name = "amQuart";
+            this.amQuart.Size = new System.Drawing.Size(29, 29);
+            this.amQuart.TabIndex = 106;
+            this.amQuart.Text = "--";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label20.Location = new System.Drawing.Point(375, 492);
+            this.label20.Location = new System.Drawing.Point(375, 432);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 29);
             this.label20.TabIndex = 105;
@@ -609,62 +541,40 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label21.Location = new System.Drawing.Point(375, 197);
+            this.label21.Location = new System.Drawing.Point(375, 256);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(62, 29);
             this.label21.TabIndex = 104;
             this.label21.Text = "PHP";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label22.Location = new System.Drawing.Point(98, 391);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(118, 29);
-            this.label22.TabIndex = 103;
-            this.label22.Text = "Violations";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label23.Location = new System.Drawing.Point(98, 334);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(81, 29);
-            this.label23.TabIndex = 102;
-            this.label23.Text = "Bonus";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label24.Location = new System.Drawing.Point(98, 244);
+            this.label24.Location = new System.Drawing.Point(98, 303);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(168, 29);
+            this.label24.Size = new System.Drawing.Size(169, 29);
             this.label24.TabIndex = 101;
-            this.label24.Text = "On-Call Salary";
+            this.label24.Text = "Additional Fee";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label25.Location = new System.Drawing.Point(98, 197);
+            this.label25.Location = new System.Drawing.Point(98, 256);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(190, 29);
+            this.label25.Size = new System.Drawing.Size(94, 29);
             this.label25.TabIndex = 100;
-            this.label25.Text = "Full-Time Salary";
+            this.label25.Text = "Amount";
             // 
             // quarterLabel
             // 
             this.quarterLabel.AutoSize = true;
             this.quarterLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.quarterLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.quarterLabel.Location = new System.Drawing.Point(97, 120);
+            this.quarterLabel.Location = new System.Drawing.Point(97, 179);
             this.quarterLabel.Name = "quarterLabel";
             this.quarterLabel.Size = new System.Drawing.Size(111, 32);
             this.quarterLabel.TabIndex = 99;
@@ -675,7 +585,7 @@
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label27.Location = new System.Drawing.Point(98, 492);
+            this.label27.Location = new System.Drawing.Point(98, 432);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(97, 29);
             this.label27.TabIndex = 96;
@@ -686,11 +596,11 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.Location = new System.Drawing.Point(271, 42);
+            this.label28.Location = new System.Drawing.Point(252, 101);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(264, 32);
+            this.label28.Size = new System.Drawing.Size(289, 32);
             this.label28.TabIndex = 98;
-            this.label28.Text = "SALARY REPORT";
+            this.label28.Text = "REVENUE REPORT";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // totQuart
@@ -698,7 +608,7 @@
             this.totQuart.AutoSize = true;
             this.totQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totQuart.Location = new System.Drawing.Point(512, 492);
+            this.totQuart.Location = new System.Drawing.Point(512, 432);
             this.totQuart.Name = "totQuart";
             this.totQuart.Size = new System.Drawing.Size(31, 29);
             this.totQuart.TabIndex = 97;
@@ -720,18 +630,17 @@
             this.printYear.TabIndex = 106;
             this.printYear.Text = "PRINT";
             this.printYear.UseVisualStyleBackColor = false;
+            this.printYear.Click += new System.EventHandler(this.printYear_Click);
             // 
             // yearPanel
             // 
             this.yearPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.yearPanel.Controls.Add(this.callYear);
-            this.yearPanel.Controls.Add(this.bonusYear);
-            this.yearPanel.Controls.Add(this.vioYear);
-            this.yearPanel.Controls.Add(this.fullYear);
+            this.yearPanel.Controls.Add(this.discYear);
+            this.yearPanel.Controls.Add(this.label14);
+            this.yearPanel.Controls.Add(this.feeYear);
+            this.yearPanel.Controls.Add(this.amYear);
             this.yearPanel.Controls.Add(this.label34);
             this.yearPanel.Controls.Add(this.label35);
-            this.yearPanel.Controls.Add(this.label36);
-            this.yearPanel.Controls.Add(this.label37);
             this.yearPanel.Controls.Add(this.label38);
             this.yearPanel.Controls.Add(this.label39);
             this.yearPanel.Controls.Add(this.yearLabel);
@@ -743,56 +652,34 @@
             this.yearPanel.Size = new System.Drawing.Size(785, 568);
             this.yearPanel.TabIndex = 105;
             // 
-            // callYear
+            // feeYear
             // 
-            this.callYear.AutoSize = true;
-            this.callYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.callYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.callYear.Location = new System.Drawing.Point(512, 244);
-            this.callYear.Name = "callYear";
-            this.callYear.Size = new System.Drawing.Size(29, 29);
-            this.callYear.TabIndex = 109;
-            this.callYear.Text = "--";
+            this.feeYear.AutoSize = true;
+            this.feeYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feeYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.feeYear.Location = new System.Drawing.Point(512, 303);
+            this.feeYear.Name = "feeYear";
+            this.feeYear.Size = new System.Drawing.Size(29, 29);
+            this.feeYear.TabIndex = 109;
+            this.feeYear.Text = "--";
             // 
-            // bonusYear
+            // amYear
             // 
-            this.bonusYear.AutoSize = true;
-            this.bonusYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bonusYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusYear.Location = new System.Drawing.Point(512, 334);
-            this.bonusYear.Name = "bonusYear";
-            this.bonusYear.Size = new System.Drawing.Size(29, 29);
-            this.bonusYear.TabIndex = 108;
-            this.bonusYear.Text = "--";
-            // 
-            // vioYear
-            // 
-            this.vioYear.AutoSize = true;
-            this.vioYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vioYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioYear.Location = new System.Drawing.Point(512, 391);
-            this.vioYear.Name = "vioYear";
-            this.vioYear.Size = new System.Drawing.Size(29, 29);
-            this.vioYear.TabIndex = 107;
-            this.vioYear.Text = "--";
-            // 
-            // fullYear
-            // 
-            this.fullYear.AutoSize = true;
-            this.fullYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullYear.Location = new System.Drawing.Point(512, 197);
-            this.fullYear.Name = "fullYear";
-            this.fullYear.Size = new System.Drawing.Size(29, 29);
-            this.fullYear.TabIndex = 106;
-            this.fullYear.Text = "--";
+            this.amYear.AutoSize = true;
+            this.amYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.amYear.Location = new System.Drawing.Point(512, 256);
+            this.amYear.Name = "amYear";
+            this.amYear.Size = new System.Drawing.Size(29, 29);
+            this.amYear.TabIndex = 106;
+            this.amYear.Text = "--";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label34.Location = new System.Drawing.Point(375, 492);
+            this.label34.Location = new System.Drawing.Point(375, 429);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(65, 29);
             this.label34.TabIndex = 105;
@@ -803,62 +690,40 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label35.Location = new System.Drawing.Point(375, 197);
+            this.label35.Location = new System.Drawing.Point(375, 256);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(62, 29);
             this.label35.TabIndex = 104;
             this.label35.Text = "PHP";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label36.Location = new System.Drawing.Point(98, 391);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(118, 29);
-            this.label36.TabIndex = 103;
-            this.label36.Text = "Violations";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label37.Location = new System.Drawing.Point(98, 334);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(81, 29);
-            this.label37.TabIndex = 102;
-            this.label37.Text = "Bonus";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label38.Location = new System.Drawing.Point(98, 244);
+            this.label38.Location = new System.Drawing.Point(98, 303);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(168, 29);
+            this.label38.Size = new System.Drawing.Size(169, 29);
             this.label38.TabIndex = 101;
-            this.label38.Text = "On-Call Salary";
+            this.label38.Text = "Additional Fee";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label39.Location = new System.Drawing.Point(98, 197);
+            this.label39.Location = new System.Drawing.Point(98, 256);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(190, 29);
+            this.label39.Size = new System.Drawing.Size(94, 29);
             this.label39.TabIndex = 100;
-            this.label39.Text = "Full-Time Salary";
+            this.label39.Text = "Amount";
             // 
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
             this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.yearLabel.Location = new System.Drawing.Point(97, 120);
+            this.yearLabel.Location = new System.Drawing.Point(97, 179);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(75, 32);
             this.yearLabel.TabIndex = 99;
@@ -869,7 +734,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label41.Location = new System.Drawing.Point(98, 492);
+            this.label41.Location = new System.Drawing.Point(98, 429);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(97, 29);
             this.label41.TabIndex = 96;
@@ -880,22 +745,88 @@
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label42.Location = new System.Drawing.Point(271, 42);
+            this.label42.Location = new System.Drawing.Point(252, 101);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(264, 32);
+            this.label42.Size = new System.Drawing.Size(289, 32);
             this.label42.TabIndex = 98;
-            this.label42.Text = "SALARY REPORT";
+            this.label42.Text = "REVENUE REPORT";
             // 
             // totYear
             // 
             this.totYear.AutoSize = true;
             this.totYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totYear.Location = new System.Drawing.Point(512, 492);
+            this.totYear.Location = new System.Drawing.Point(512, 429);
             this.totYear.Name = "totYear";
             this.totYear.Size = new System.Drawing.Size(31, 29);
             this.totYear.TabIndex = 97;
             this.totYear.Text = "--";
+            // 
+            // discMonth
+            // 
+            this.discMonth.AutoSize = true;
+            this.discMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discMonth.Location = new System.Drawing.Point(512, 348);
+            this.discMonth.Name = "discMonth";
+            this.discMonth.Size = new System.Drawing.Size(29, 29);
+            this.discMonth.TabIndex = 111;
+            this.discMonth.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(98, 348);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 29);
+            this.label6.TabIndex = 110;
+            this.label6.Text = "Discount";
+            // 
+            // discQuart
+            // 
+            this.discQuart.AutoSize = true;
+            this.discQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discQuart.Location = new System.Drawing.Point(512, 350);
+            this.discQuart.Name = "discQuart";
+            this.discQuart.Size = new System.Drawing.Size(29, 29);
+            this.discQuart.TabIndex = 111;
+            this.discQuart.Text = "--";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(98, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 29);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "Discount";
+            // 
+            // discYear
+            // 
+            this.discYear.AutoSize = true;
+            this.discYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discYear.Location = new System.Drawing.Point(512, 348);
+            this.discYear.Name = "discYear";
+            this.discYear.Size = new System.Drawing.Size(29, 29);
+            this.discYear.TabIndex = 111;
+            this.discYear.Text = "--";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(98, 348);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 29);
+            this.label14.TabIndex = 110;
+            this.label14.Text = "Discount";
             // 
             // revenueReport
             // 
@@ -912,6 +843,7 @@
             this.Name = "revenueReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "revenueReport";
+            this.Load += new System.EventHandler(this.revenueReport_Load);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -949,14 +881,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button printMonth;
         private System.Windows.Forms.Panel monthPanel;
-        private System.Windows.Forms.Label callMonth;
-        private System.Windows.Forms.Label bonusMonth;
-        private System.Windows.Forms.Label vioMonth;
-        private System.Windows.Forms.Label fullMonth;
+        private System.Windows.Forms.Label feeMonth;
+        private System.Windows.Forms.Label amMonth;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label monthLabel;
@@ -965,14 +893,10 @@
         private System.Windows.Forms.Label totMonth;
         private System.Windows.Forms.Button printQuart;
         private System.Windows.Forms.Panel quartPanel;
-        private System.Windows.Forms.Label callQuart;
-        private System.Windows.Forms.Label bonusQuart;
-        private System.Windows.Forms.Label vioQuart;
-        private System.Windows.Forms.Label fullQuart;
+        private System.Windows.Forms.Label feeQuart;
+        private System.Windows.Forms.Label amQuart;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label quarterLabel;
@@ -981,19 +905,21 @@
         private System.Windows.Forms.Label totQuart;
         private System.Windows.Forms.Button printYear;
         private System.Windows.Forms.Panel yearPanel;
-        private System.Windows.Forms.Label callYear;
-        private System.Windows.Forms.Label bonusYear;
-        private System.Windows.Forms.Label vioYear;
-        private System.Windows.Forms.Label fullYear;
+        private System.Windows.Forms.Label feeYear;
+        private System.Windows.Forms.Label amYear;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label yearLabel;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label totYear;
+        private System.Windows.Forms.Label discMonth;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label discQuart;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label discYear;
+        private System.Windows.Forms.Label label14;
     }
 }
