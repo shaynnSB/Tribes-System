@@ -19,8 +19,19 @@ namespace Tribes_System
         public customPack()
         {
             InitializeComponent();
-            refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
-
+            string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ";
+            if (addViewEquip.rowCount1 == 0)
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
+            }
+            else
+            {      
+                for (int i = 0; i <addViewEquip.test.Length; i++)
+                {         
+                        a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();  
+                }
+                refresh(a);
+            }
         }
 
         private void categoryBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -29,15 +40,41 @@ namespace Tribes_System
                 var x = categoryBox.SelectedIndex + 1;
                 if (statusBox.SelectedIndex == -1)
                 {
-                   
+                string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id = " + x;
+                if (addViewEquip.rowCount1 == 0)
+                {
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x);
+                }
+                else
+                {
+                    for (int i = 0; i < addViewEquip.test.Length; i++)
+                    {
+                        a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();
+                    }
+                    refresh(a);
+                }
+
+               
                 }
 
                 else
                 {
-                   
+                string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'";
+             
+                if (addViewEquip.rowCount1 == 0)
+                {
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
                 }
+                else
+                {
+                    for (int i = 0; i < addViewEquip.test.Length; i++)
+                    {
+                        a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();
+                    }
+                    refresh(a);
+                }
+
+            }
             
 
            
@@ -94,13 +131,40 @@ namespace Tribes_System
                 var x = categoryBox.SelectedIndex + 1;
                 if (categoryBox.SelectedIndex == -1)
                 {
+                  
+                string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and items.status ='" + statusBox.Text + "'";
+                if (addViewEquip.rowCount1 == 0)
+                {
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and items.status ='" + statusBox.Text + "'");
                 }
+                else
+                {
+                    for (int i = 0; i < addViewEquip.test.Length; i++)
+                    {
+                        a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();
+                    }
+                    refresh(a);
+                }
+            }
 
                 else
                 {
+                
+                string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'";
+                if (addViewEquip.rowCount1 == 0)
+                {
                     refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 and category.id =" + x + " and items.status ='" + statusBox.Text + "'");
                 }
+                else
+                {
+                    for (int i = 0; i < addViewEquip.test.Length; i++)
+                    {
+                        a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();
+                    }
+                    refresh(a);
+                }
+
+            }
           
            
         }
@@ -245,8 +309,20 @@ namespace Tribes_System
 
             categoryBox.SelectedIndex = -1;
             statusBox.SelectedIndex = -1;
-                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
             
+            string a = "select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ";
+            if (addViewEquip.rowCount1 == 0)
+            {
+                refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = 0 ");
+            }
+            else
+            {
+                for (int i = 0; i < addViewEquip.test.Length; i++)
+                {
+                    a = a + " and itemcontent.id !=" + addViewEquip.test[i].ToString();
+                }
+                refresh(a);
+            }
         }
 
         private void customPack_Load(object sender, EventArgs e)

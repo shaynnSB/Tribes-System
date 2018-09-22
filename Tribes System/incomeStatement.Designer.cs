@@ -36,33 +36,21 @@
             this.closeButt = new System.Windows.Forms.Button();
             this.reportTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.monthInc = new System.Windows.Forms.DataGridView();
             this.myearBox = new System.Windows.Forms.ComboBox();
             this.mmonthBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.quarInc = new System.Windows.Forms.DataGridView();
             this.qyearBox = new System.Windows.Forms.ComboBox();
             this.qmonthBox = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.annInc = new System.Windows.Forms.DataGridView();
             this.ayearBox = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.reportTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthInc)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.quarInc)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.annInc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -145,11 +133,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.dataGridView2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.monthInc);
             this.tabPage1.Controls.Add(this.myearBox);
             this.tabPage1.Controls.Add(this.mmonthBox);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -159,15 +142,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monthly Statement";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // monthInc
-            // 
-            this.monthInc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.monthInc.Location = new System.Drawing.Point(21, 326);
-            this.monthInc.Name = "monthInc";
-            this.monthInc.RowTemplate.Height = 24;
-            this.monthInc.Size = new System.Drawing.Size(858, 284);
-            this.monthInc.TabIndex = 2;
             // 
             // myearBox
             // 
@@ -202,7 +176,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.quarInc);
             this.tabPage2.Controls.Add(this.qyearBox);
             this.tabPage2.Controls.Add(this.qmonthBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -212,15 +185,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Quarterly Statement";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // quarInc
-            // 
-            this.quarInc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.quarInc.Location = new System.Drawing.Point(21, 74);
-            this.quarInc.Name = "quarInc";
-            this.quarInc.RowTemplate.Height = 24;
-            this.quarInc.Size = new System.Drawing.Size(858, 610);
-            this.quarInc.TabIndex = 4;
             // 
             // qyearBox
             // 
@@ -247,7 +211,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.annInc);
             this.tabPage3.Controls.Add(this.ayearBox);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -256,15 +219,6 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Annual Statement";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // annInc
-            // 
-            this.annInc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.annInc.Location = new System.Drawing.Point(21, 76);
-            this.annInc.Name = "annInc";
-            this.annInc.RowTemplate.Height = 24;
-            this.annInc.Size = new System.Drawing.Size(858, 610);
-            this.annInc.TabIndex = 6;
             // 
             // ayearBox
             // 
@@ -305,46 +259,6 @@
             this.panel3.Size = new System.Drawing.Size(1000, 1);
             this.panel3.TabIndex = 101;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 109);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(417, 195);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(462, 109);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(417, 195);
-            this.dataGridView2.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(14, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 39);
-            this.label3.TabIndex = 102;
-            this.label3.Text = "Expenses";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(455, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 39);
-            this.label4.TabIndex = 103;
-            this.label4.Text = "Salary";
-            // 
             // incomeStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -364,14 +278,8 @@
             this.title.PerformLayout();
             this.reportTab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.monthInc)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.quarInc)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.annInc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,22 +294,15 @@
         private System.Windows.Forms.Button closeButt;
         private System.Windows.Forms.TabControl reportTab;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView monthInc;
         private System.Windows.Forms.ComboBox myearBox;
         private System.Windows.Forms.ComboBox mmonthBox;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DataGridView quarInc;
         private System.Windows.Forms.ComboBox qyearBox;
         private System.Windows.Forms.ComboBox qmonthBox;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView annInc;
         private System.Windows.Forms.ComboBox ayearBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }

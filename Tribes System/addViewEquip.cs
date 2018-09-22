@@ -77,7 +77,7 @@ namespace Tribes_System
             count = assignedGrid.Rows.Count;
         }
 
-
+       
         private void confirmButt_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Confirm changes in list of equipment?", "List of Equipment", MessageBoxButtons.YesNo);
@@ -87,12 +87,13 @@ namespace Tribes_System
                 //end_time = , client_name = , client_contact = WHERE id_event = " + idValue;
                 //executeMyQuery(editQuery);
                 //Bind datagridview to linq 
-                int rowCount = listEmpGrid.Rows.Count;
+                rowCount1 = listEmpGrid.Rows.Count;
                 //loop dg1 and save it to datagridview2
-                for (var i = 0; i < rowCount; i++)
+                for (var i = 0; i < rowCount1; i++)
                 {
                  
                     string insertQuery = "UPDATE itemcontent SET eventID='" + eventSched.id + "' where  id=" + listEmpGrid.Rows[i].Cells[0].Value.ToString();
+                  
                     string insertQuery1 = "UPDATE event SET prices='" + total.Text + "' where  id_event=" + eventSched.id;
                     executeMyQuery(insertQuery);
                     executeMyQuery(insertQuery1);
@@ -167,9 +168,21 @@ namespace Tribes_System
         {
             WindowState = FormWindowState.Minimized;
         }
-
+        public static int[] test;
+        public static int rowCount1;
         private void customButt_Click(object sender, EventArgs e)
         {
+            rowCount1 = listEmpGrid.Rows.Count;
+            int i = 0;
+            test = new int[rowCount1];
+            if (rowCount1 > 0)
+            {
+                for (i = 0; i < rowCount1; i++)
+                {          
+                    test[i] = int.Parse(listEmpGrid.Rows[i].Cells[0].Value.ToString());
+                }
+            }
+
             customPack form = new customPack();
             form.ShowDialog();
         }
@@ -497,6 +510,40 @@ namespace Tribes_System
                 && (sender as TextBox).Text.IndexOf('.') > -1)
             {
                 e.Handled = true;
+            }
+        }
+
+     
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            if (tabControl1.SelectedIndex == 1)
+            {
+                label4.Visible = true;
+                label5.Visible = true;
+                label9.Visible = true;
+                label6.Visible = true;
+                label7.Visible = true;
+                label8.Visible = true;
+                snl.Visible = true;
+                lvw.Visible = true;
+                stg.Visible = true;
+                vcs.Visible = true;
+                msc.Visible = true;
+            }
+            else
+            {
+                label4.Visible = false;
+                label5.Visible = false;
+                label9.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                snl.Visible = false;
+                lvw.Visible = false;
+                stg.Visible = false;
+                vcs.Visible = false;
+                msc.Visible = false;
             }
         }
     }

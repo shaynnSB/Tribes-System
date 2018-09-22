@@ -29,6 +29,9 @@ namespace Tribes_System
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
+        string constantM = DateTime.Now.ToString("MM");
+        string constantY = DateTime.Now.ToString("yyyy");
+
         public salaryReport()
         {
             InitializeComponent();
@@ -789,6 +792,5 @@ namespace Tribes_System
         {
             Print(this.yearPanel);
         }
-
     }
 }
