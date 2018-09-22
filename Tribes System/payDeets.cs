@@ -142,7 +142,7 @@ namespace Tribes_System
 
         private void addAmButt_Click(object sender, EventArgs e)
         {
-            if (recievedBox.Text != "" && dateBox.Text != "")
+            if (recievedBox.Text != "" && dateBox.MaskCompleted)
             {
                 string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", " 
                     + recievedBox.Text + ", '" + dateBox.Text + "')";
@@ -212,7 +212,7 @@ namespace Tribes_System
 
         private void editAmButt_Click(object sender, EventArgs e)
         {
-           if (recievedBox.Text != "" && dateBox.Text != "")
+           if (recievedBox.Text != "" && dateBox.MaskCompleted)
             {
                 string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE event_id = " 
                     + id_Passed + " AND id = " + id_amount;
@@ -234,7 +234,7 @@ namespace Tribes_System
 
         private void remAmButt_Click(object sender, EventArgs e)
         {
-            if (recievedBox.Text != "" && dateBox.Text != "")
+            if (recievedBox.Text != "" && dateBox.MaskCompleted)
             {
                 string editQuery = "DELETE FROM amount_paid WHERE event_id = " + id_Passed + " AND id = " + id_amount;
 
@@ -321,55 +321,22 @@ namespace Tribes_System
 
         private void editExpButt_Click(object sender, EventArgs e)
         {
-            /*if (amExpBox.Text != "" && expBox.Text != "")
+            if (amExpBox.Text != "" && expBox.Text != "")
             {
-                string query = "select count(*) from expenses where exp_name = '" + expBox.Text + "' AND event_id = " + id_Passed;
-
-                using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
-                {
-
-                    DataTable dt = new DataTable();
-
-                    adpt.Fill(dt);
-
-                    if (dt.Rows[0][0].ToString() == "1")
-                    {
-                        getPastExp();
-
-                        double sum = Convert.ToDouble(past_exp) + Convert.ToDouble(amExpBox.Text);
-
-                        string updateQuery = "UPDATE expenses SET exp_price = " + sum + " WHERE exp_name = '" + expBox.Text + "' AND event_id = "
-                            + id_Passed;
-
-                        executeMyQuery(updateQuery);
-
-                        string remQuery = "DELETE FROM expenses WHERE event_id = " + id_Passed + " AND no_exp = " + id_exp;
-
-                        executeMyQuery(remQuery);
-
-                        MessageBox.Show("Edited Successfully");
-
-                        DisplayExpData();
-                        ClearExpData();
-                    }
-                    else
-                    {
-                        string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
+                string editQuery = "UPDATE expenses SET exp_name = '" + expBox.Text + "', exp_price = " + amExpBox.Text + " WHERE no_exp = " + id_exp
                     + " AND event_id = " + id_Passed;
 
-                        executeMyQuery(editQuery);
-                        MessageBox.Show("Edited Successfully");
+                executeMyQuery(editQuery);
+                MessageBox.Show("Edited Successfully");
 
-                        DisplayExpData();
-                        ClearExpData();
-                    }
-                }
-                
+                DisplayExpData();
+                ClearExpData();
+
             }
             else
             {
                 MessageBox.Show("Please Select Record to Update!");
-            }*/
+            }
         }
 
         private void remExpButt_Click(object sender, EventArgs e)
@@ -634,14 +601,14 @@ namespace Tribes_System
 
         private void getEventPrice()
         {
-            string selectQuery = "select event_price from event where id_event = " + id_Passed;
+            string selectQuery = "select prices from event where id_event = " + id_Passed;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                eventPrice = reader["event_price"].ToString();
+                eventPrice = reader["prices"].ToString();
             }
             closeConnection();
 
@@ -685,6 +652,10 @@ namespace Tribes_System
             gross = Convert.ToString(total) + ".00";
 
             totalLabel.Text = gross;
+
+            string addQuery = "UPDATE event SET event_price = " + gross + " WHERE id_event = " + id_Passed;
+
+            executeMyQuery(addQuery);
         }
 
         string accRec;

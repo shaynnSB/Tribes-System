@@ -61,17 +61,21 @@ namespace Tribes_System
             form.locateBox = locLabel.Text;
             form.passNoteBox = notesBox.Text;
             form.clientNameBox = clientLabel.Text;
-            form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            form.idValue = id_select;
             form.startD = start;
             form.endD = end;
             form.mail = mailLabel.Text;
             form.ShowDialog();
+
+            deetPanel.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             addEvent form = new addEvent();
             form.ShowDialog();
+
+            deetPanel.Visible = false;
         }
 
         string id_select;
@@ -96,7 +100,7 @@ namespace Tribes_System
 
             while (reader.Read())
             {
-                nameLabel.Text = reader["event_name"].ToString();
+                nameLabel.Text = reader["event_name"].ToString() + " - " + reader["event_status"].ToString(); 
                 //dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
                 timeLabel.Text = reader["start_time"].ToString() + " - " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
@@ -104,6 +108,16 @@ namespace Tribes_System
                 clientLabel.Text = reader["client_name"].ToString();
                 numLabel.Text = reader["client_contact"].ToString();
                 mailLabel.Text = reader["client_email"].ToString();
+
+                if (reader["event_price"].ToString() == "")
+                {
+                    amLabel.Text = "PHP " + reader["prices"].ToString();
+                }
+                else
+                {
+                    amLabel.Text = "PHP " + reader["event_price"].ToString();
+                }
+
             }
             closeConnection();
 
@@ -169,6 +183,8 @@ namespace Tribes_System
             form.eventName = nameLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
+
+            deetPanel.Visible = false;
         }
 
         private void viewStaff_Click(object sender, EventArgs e)
@@ -177,6 +193,8 @@ namespace Tribes_System
             form.eventName = nameLabel.Text;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
+
+            deetPanel.Visible = false;
         }   
 
         private void cancellationButt_Click(object sender, EventArgs e)
@@ -184,7 +202,7 @@ namespace Tribes_System
             DialogResult dialogResult = MessageBox.Show("Confirm cancellation of event?", "Cancel Event", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
+                string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + id_select;
                 openConnection();
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cancelQuery, con);
                 closeConnection();
@@ -202,6 +220,8 @@ namespace Tribes_System
             form.idValue = id_select;
             form.statusOfEvent = event_stat;
             form.ShowDialog();
+
+            deetPanel.Visible = false;
         }
 
         private void label9_Click(object sender, EventArgs e)

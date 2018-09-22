@@ -24,7 +24,6 @@ namespace Tribes_System
         PrintPreviewDialog previewdlg = new PrintPreviewDialog();
         Panel pannel = null;
         
-
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
 
@@ -146,7 +145,6 @@ namespace Tribes_System
             monthChange();
             fillMonth();
         }
-
 
         private void yearChange()
         {
@@ -478,12 +476,12 @@ namespace Tribes_System
 
         private void changeAnnYear()
         {
-            aYear = "Year " + ayearBox.Text;
+            aYear = ayearBox.Text;
         }
 
         private void fillYear()
         {
-            yearLabel.Text = ayearBox.Text;
+            yearLabel.Text = "Year " + ayearBox.Text;
             calcFoodYear();
             calcFuelYear();
             calcTransYear();

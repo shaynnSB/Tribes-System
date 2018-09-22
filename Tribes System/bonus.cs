@@ -96,7 +96,7 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted)
             {
                 string insertQuery = "INSERT INTO bonus(id_emp, bonus_amount, date) VALUES (" + idPassed + ", "
                     + amBox.Text + ", '" + dateBox.Text + "')";
@@ -116,7 +116,7 @@ namespace Tribes_System
 
         private void editButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted)
             {
                 string editQuery = "UPDATE bonus SET bonus_amount = " + amBox.Text + ", date = '" + dateBox.Text + "' WHERE id_emp = " + idPassed 
                     + " AND id = " + id_amount;
@@ -136,7 +136,7 @@ namespace Tribes_System
 
         private void remButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted)
             {
                 string editQuery = "DELETE FROM bonus WHERE id_emp = " + idPassed + " AND id = " + id_amount;
 

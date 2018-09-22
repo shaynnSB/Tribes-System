@@ -101,7 +101,7 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "" && descBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted && descBox.Text != "")
             {
                 checking();
 
@@ -236,7 +236,7 @@ namespace Tribes_System
 
         private void editButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "" && descBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted && descBox.Text != "")
             {
                 string editQuery = "UPDATE violations SET violation_amount = " + amBox.Text + ", date = '" + dateBox.Text + "', reason = '"
                     + descBox.Text + "' WHERE id_emp = " + idPassed + " AND id = " + id_amount;
@@ -264,7 +264,7 @@ namespace Tribes_System
 
         private void remButt_Click(object sender, EventArgs e)
         {
-            if (amBox.Text != "" && dateBox.Text != "" && descBox.Text != "")
+            if (amBox.Text != "" && dateBox.MaskCompleted && descBox.Text != "")
             {
                 string editQuery = "DELETE FROM violations WHERE id_emp = " + idPassed + " AND id = " + id_amount;
 
