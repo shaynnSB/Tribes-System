@@ -37,7 +37,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.salaryBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.assignedGrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -144,7 +144,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.button2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.salaryBox);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.assignedGrid);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -171,13 +171,14 @@
             this.button2.TabIndex = 92;
             this.button2.Text = "Add Salary";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox1
+            // salaryBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(618, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(135, 22);
-            this.textBox1.TabIndex = 91;
+            this.salaryBox.Location = new System.Drawing.Point(614, 36);
+            this.salaryBox.Name = "salaryBox";
+            this.salaryBox.Size = new System.Drawing.Size(135, 22);
+            this.salaryBox.TabIndex = 91;
             // 
             // button1
             // 
@@ -201,6 +202,7 @@
             // 
             this.assignedGrid.AllowUserToAddRows = false;
             this.assignedGrid.AllowUserToDeleteRows = false;
+            this.assignedGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.assignedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assignedGrid.Location = new System.Drawing.Point(16, 21);
             this.assignedGrid.Name = "assignedGrid";
@@ -275,6 +277,7 @@
             // 
             this.addGrid.AllowUserToAddRows = false;
             this.addGrid.AllowUserToDeleteRows = false;
+            this.addGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.addGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.addGrid.Location = new System.Drawing.Point(394, 94);
             this.addGrid.Name = "addGrid";
@@ -355,6 +358,7 @@
             // 
             this.listEmpGrid.AllowUserToAddRows = false;
             this.listEmpGrid.AllowUserToDeleteRows = false;
+            this.listEmpGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.listEmpGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listEmpGrid.Location = new System.Drawing.Point(16, 94);
             this.listEmpGrid.Name = "listEmpGrid";
@@ -466,6 +470,6 @@
         private System.Windows.Forms.Label eventLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox salaryBox;
     }
 }

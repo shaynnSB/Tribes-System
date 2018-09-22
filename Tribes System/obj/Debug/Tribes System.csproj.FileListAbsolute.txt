@@ -325,3 +325,102 @@ C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\pt\Micros
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\A8-7600k\Desktop\Tribes\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Tribes System.exe.config
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Tribes System.exe
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Tribes System.pdb
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\EnvDTE.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\stdole.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Microsoft.MSXML.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\MySql.Data.xml
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csprojAssemblyReference.cache
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddContent.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addDiscount.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEmployee.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddEquip.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEvent.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addFee.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewEquip.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addViewStaff.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.bonus.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.customPack.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditContent.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.editDiscount.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEmployee.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.EditEquip.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.editEvent.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.editFee.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.EmployeeTab.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.Equipment.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipmentUI.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.EquipViewUI.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.eventSched.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.expenseReport.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.financesUI.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.equipButt.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.incomeStatement.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.logIn.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.payDeets.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.paymentDetails.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.revenueReport.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryUI.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.Properties.Resources.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.salaryReport.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.violations.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.GenerateResource.cache
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.CoreCompileInputs.cache
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csproj.CopyComplete
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.exe
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.pdb
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\MySql.Data.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Google.Protobuf.dll
