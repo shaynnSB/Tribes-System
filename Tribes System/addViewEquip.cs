@@ -512,5 +512,39 @@ namespace Tribes_System
                 e.Handled = true;
             }
         }
+
+     
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+            if (tabControl1.SelectedIndex == 1)
+            {
+                label4.Visible = true;
+                label5.Visible = true;
+                label9.Visible = true;
+                label6.Visible = true;
+                label7.Visible = true;
+                label8.Visible = true;
+                snl.Visible = true;
+                lvw.Visible = true;
+                stg.Visible = true;
+                vcs.Visible = true;
+                msc.Visible = true;
+            }
+            else
+            {
+                label4.Visible = false;
+                label5.Visible = false;
+                label9.Visible = false;
+                label6.Visible = false;
+                label7.Visible = false;
+                label8.Visible = false;
+                snl.Visible = false;
+                lvw.Visible = false;
+                stg.Visible = false;
+                vcs.Visible = false;
+                msc.Visible = false;
+            }
+        }
     }
 }
