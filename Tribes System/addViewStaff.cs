@@ -66,12 +66,12 @@ namespace Tribes_System
                             "SELECT staff_id FROM staff_lineup " +
                             "INNER JOIN event " +
                             "ON staff_lineup.no_event = event.id_event " +
-                            "WHERE start_date BETWEEN '" + start + "' AND '" + end + "' " +
+                            "WHERE start_date NOT BETWEEN '" + start + "' AND '" + end + "' " +
                             ") AS c " + 
                             "ON em.id_emp = c.staff_id " + 
                             "LEFT JOIN employee " + 
                             "ON employee.id_emp = c.staff_id " +
-                            "WHERE employee.id_emp";
+                            "WHERE employee.id_emp IS NULL";
                     DataTable available_table = new DataTable();
                     adapter = new MySqlDataAdapter(query, con);
                     adapter.Fill(available_table);
