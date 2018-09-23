@@ -22,6 +22,7 @@ namespace Tribes_System
         int selectedRow = 0;
         int addSelectedRow = 0;
         int assignedSelectedRow;
+        DateTime start, end;
 
         //int tempID = 1;
 
@@ -35,7 +36,7 @@ namespace Tribes_System
             DataTable emp_table = new DataTable();
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            string emps = "";
+            //string emps = "";
             adapter.Fill(table);
 
             query = "select * from event where id_event = '" + idPassed + "'"; //select the event we are currently changing the lineup for
@@ -56,14 +57,21 @@ namespace Tribes_System
                     adapter.Fill(emp_table);
                     assignedGrid.DataSource = emp_table;
                     assignedGrid.Columns[0].Visible = assignedGrid.Columns[3].Visible = false;
+                    assignedGrid.Columns[1].HeaderText = "First Name";
+                    assignedGrid.Columns[2].HeaderText = "Last Name";
                     //--------------select available employees---------------------------------------
-                    query = "SELECT em.id_emp, em.first_name, em.last_name " + //I coded the query below myself, but I don't fully understand it, so bugs might happen when selecting available employees thx. --syed
+                    query = "SELECT DISTINCT em.id_emp, em.first_name, em.last_name " + //I coded the query below myself, but I don't fully understand it, so bugs might happen when selecting available employees thx. --syed
                             "FROM (SELECT * FROM employee WHERE emp_status != 'Inactive') em " +
-                            "LEFT JOIN (SELECT staff_id FROM staff_lineup WHERE no_event = '" + idPassed + "') AS c " + 
+                            "LEFT JOIN (" +
+                            "SELECT staff_id FROM staff_lineup " +
+                            "INNER JOIN event " +
+                            "ON staff_lineup.no_event = event.id_event " +
+                            "WHERE start_date BETWEEN '" + start + "' AND '" + end + "' " +
+                            ") AS c " + 
                             "ON em.id_emp = c.staff_id " + 
                             "LEFT JOIN employee " + 
                             "ON employee.id_emp = c.staff_id " +
-                            "WHERE employee.id_emp IS NULL";
+                            "WHERE employee.id_emp";
                     DataTable available_table = new DataTable();
                     adapter = new MySqlDataAdapter(query, con);
                     adapter.Fill(available_table);
@@ -130,13 +138,14 @@ namespace Tribes_System
             InitializeComponent();
             this.form = form;
             addGrid.Columns.Add("id_emp", "ID");
-            addGrid.Columns.Add("first_name", "first name");
-            addGrid.Columns.Add("last_name", "last name");
+            addGrid.Columns.Add("irst_name", "First Name");
+            addGrid.Columns.Add("last_name", "Last Name");
             listEmpGrid.Columns.Add("id_emp", "ID");
-            listEmpGrid.Columns.Add("first_name", "first name");
-            listEmpGrid.Columns.Add("last_name", "last name");
+            listEmpGrid.Columns.Add("first_name", "First Name");
+            listEmpGrid.Columns.Add("last_name", "Last Name");
             listEmpGrid.Columns[0].Visible = false;
             addGrid.Columns[0].Visible = false;
+            
         }
 
         private void closeButt_Click(object sender, EventArgs e)
@@ -213,7 +222,16 @@ namespace Tribes_System
         public string idValue
         {
             get { return idPassed; }
-            set { idPassed = value; refresh(); }
+            set {
+                idPassed = value;
+                refresh();
+                string getdate = "SELECT start_date, end_date FROM event WHERE id_event = " + idPassed;
+                DataTable temp = new DataTable();
+                MySqlDataAdapter a = new MySqlDataAdapter(getdate, con);
+                a.Fill(temp);
+                start = (DateTime)temp.Rows[0].ItemArray[0];
+                end = (DateTime)temp.Rows[0].ItemArray[1];
+            }
         }
 
         private void removeButt_Click(object sender, EventArgs e)
@@ -257,6 +275,34 @@ namespace Tribes_System
                 cmd.ExecuteNonQuery();
                 con.Close();
                 refresh();
+            }
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string q = "UPDATE staff_lineup SET salary = " + salaryBox.Text + " WHERE staff_id = " + assignedGrid.Rows[assignedSelectedRow].Cells[0].FormattedValue.ToString() + " AND no_event = "+ idPassed;
+            try
+            {
+                decimal n = Decimal.Parse(salaryBox.Text);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand(q, con);
+                if(cmd.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Changed successfully");
+                }
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Enter a correct value");
+            }
+            catch(MySqlException)
+            {
+                MessageBox.Show("MySQL has returned an error");
+            }
+            finally
+            {
+                con.Close();
             }
             
         }

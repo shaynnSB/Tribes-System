@@ -18,15 +18,16 @@ namespace Tribes_System
         MySqlCommand cmd;
         private Point startPoint = new Point(0, 0);
         eventSched form = new eventSched();
-
+        MySqlCommand adapter;
         public addViewEquip(eventSched form)
         {
             InitializeComponent();
             this.form = form;
             refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
-            
+            setTextform("select event.prices,event.soundAndLights,event.ledVideoWall,event.miscellaneous,event.staging,event.videoCameraServices from event where event.id_event = " + eventSched.id);
         }
 
+        
         public string eventName
         {
             get { return eventLabel.Text; }
@@ -87,16 +88,59 @@ namespace Tribes_System
                 //end_time = , client_name = , client_contact = WHERE id_event = " + idValue;
                 //executeMyQuery(editQuery);
                 //Bind datagridview to linq 
+                string soundNlights;
+                string ledvideowall;
+                string miscellaneous;
+                string staging;
+                string videoCameraServices;
+                if(snl.Text == "")
+                {
+                    soundNlights = "0";
+                }
+                else
+                {
+                    soundNlights = snl.Text;
+                }
+                if (lvw.Text == "")
+                {
+                    ledvideowall = "0";
+                }
+                else
+                {
+                    ledvideowall = lvw.Text;
+                }
+                if (stg.Text == "")
+                {
+                    staging = "0";
+                }
+                else
+                {
+                    staging = stg.Text;
+                }
+                if (vcs.Text == "")
+                {
+                    videoCameraServices = "0";
+                }
+                else
+                {
+                    videoCameraServices = vcs.Text;
+                }
+                if (msc.Text == "")
+                {
+                    miscellaneous = "0";
+                }
+                else
+                {
+                    miscellaneous = msc.Text;
+                }
                 rowCount1 = listEmpGrid.Rows.Count;
                 //loop dg1 and save it to datagridview2
                 for (var i = 0; i < rowCount1; i++)
                 {
                  
                     string insertQuery = "UPDATE itemcontent SET eventID='" + eventSched.id + "' where  id=" + listEmpGrid.Rows[i].Cells[0].Value.ToString();
-                  
-                    string insertQuery1 = "UPDATE event SET prices='" + total.Text + "' where  id_event=" + eventSched.id;
+ 
                     executeMyQuery(insertQuery);
-                    executeMyQuery(insertQuery1);
                 }
                 MessageBox.Show("Success");
                 while (listEmpGrid.Rows.Count > 0)
@@ -104,6 +148,8 @@ namespace Tribes_System
                     listEmpGrid.Rows.RemoveAt(0);
                 }
                 refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
+                string insertQuery1 = "UPDATE event SET prices='" + total.Text + "', soundAndLights='" + soundNlights + "', ledVideoWall='" + ledvideowall + "', miscellaneous='" + miscellaneous + "', staging='" + staging + "', videoCameraServices='" + videoCameraServices + "' where  event.id_event=" + eventSched.id;
+                executeMyQuery(insertQuery1);
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -245,14 +291,15 @@ namespace Tribes_System
             int snl1 = 0;
             int vcs1 = 0;
             int msc1 = 0;
-
+            int stg1 = 0;
             if (lvw.Text == "")
             {
                 lvw1 = 0;
             }
             else
             {
-                lvw1 = int.Parse(lvw.Text);
+                lvw1 = int.Parse(Convert.ToInt64(Convert.ToDouble(lvw.Text)).ToString()); ;
+
             }
             if (snl.Text == "")
             {
@@ -260,7 +307,7 @@ namespace Tribes_System
             }
             else
             {
-                snl1 = int.Parse(snl.Text);
+                snl1 =  int.Parse(Convert.ToInt64(Convert.ToDouble(snl.Text)).ToString());
             }
 
             if (vcs.Text == "")
@@ -269,7 +316,7 @@ namespace Tribes_System
             }
             else
             {
-                vcs1 = int.Parse(vcs.Text);
+                vcs1 = int.Parse(Convert.ToInt64(Convert.ToDouble(vcs.Text)).ToString()); ;
             }
             if (msc.Text == "")
             {
@@ -277,9 +324,17 @@ namespace Tribes_System
             }
             else
             {
-                msc1 = int.Parse(msc.Text);
+                msc1 = int.Parse(Convert.ToInt64(Convert.ToDouble(msc.Text)).ToString()); ;
             }
-            int a = lvw1 + snl1 + vcs1 + msc1;
+            if (stg.Text == "")
+            {
+                stg1 = 0;
+            }
+            else
+            {
+                stg1 = int.Parse(Convert.ToInt64(Convert.ToDouble(stg.Text)).ToString()); ;
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1 + stg1;
             total.Text = a.ToString();
         }
 
@@ -289,14 +344,14 @@ namespace Tribes_System
             int snl1 = 0;
             int vcs1 = 0;
             int msc1 = 0;
-
+            int stg1 = 0;
             if (lvw.Text == "")
             {
                 lvw1 = 0;
             }
             else
             {
-                lvw1 = int.Parse(lvw.Text);
+                lvw1 = int.Parse(Convert.ToInt64(Convert.ToDouble(lvw.Text)).ToString());
             }
             if (snl.Text == "")
             {
@@ -304,7 +359,7 @@ namespace Tribes_System
             }
             else
             {
-                snl1 = int.Parse(snl.Text);
+                snl1 = int.Parse(Convert.ToInt64(Convert.ToDouble(snl.Text)).ToString());
             }
 
             if (vcs.Text == "")
@@ -313,7 +368,7 @@ namespace Tribes_System
             }
             else
             {
-                vcs1 = int.Parse(vcs.Text);
+                vcs1 = int.Parse(Convert.ToInt64(Convert.ToDouble(vcs.Text)).ToString());
             }
             if (msc.Text == "")
             {
@@ -321,9 +376,17 @@ namespace Tribes_System
             }
             else
             {
-                msc1 = int.Parse(msc.Text);
+                msc1 = int.Parse(Convert.ToInt64(Convert.ToDouble(msc.Text)).ToString());
             }
-            int a = lvw1 + snl1 + vcs1 + msc1;
+            if (stg.Text == "")
+            {
+                stg1 = 0;
+            }
+            else
+            {
+                stg1 = int.Parse(Convert.ToInt64(Convert.ToDouble(stg.Text)).ToString());
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1 + stg1;
             total.Text = a.ToString();
         }
 
@@ -333,14 +396,14 @@ namespace Tribes_System
             int snl1 = 0;
             int vcs1 = 0;
             int msc1 = 0;
-
+            int stg1 = 0;
             if (lvw.Text == "")
             {
                 lvw1 = 0;
             }
             else
             {
-                lvw1 = int.Parse(lvw.Text);
+                lvw1 = int.Parse(Convert.ToInt64(Convert.ToDouble(lvw.Text)).ToString());
             }
             if (snl.Text == "")
             {
@@ -348,7 +411,7 @@ namespace Tribes_System
             }
             else
             {
-                snl1 = int.Parse(snl.Text);
+                snl1 = int.Parse(Convert.ToInt64(Convert.ToDouble(snl.Text)).ToString());
             }
 
             if (vcs.Text == "")
@@ -357,7 +420,7 @@ namespace Tribes_System
             }
             else
             {
-                vcs1 = int.Parse(vcs.Text);
+                vcs1 = int.Parse(Convert.ToInt64(Convert.ToDouble(vcs.Text)).ToString());
             }
             if (msc.Text == "")
             {
@@ -365,15 +428,24 @@ namespace Tribes_System
             }
             else
             {
-                msc1 = int.Parse(msc.Text);
+                msc1 = int.Parse(Convert.ToInt64(Convert.ToDouble(msc.Text)).ToString());
             }
-            int a = lvw1 + snl1 + vcs1 + msc1;
+            if (stg.Text == "")
+            {
+                stg1 = 0;
+            }
+            else
+            {
+                stg1 = int.Parse(Convert.ToInt64(Convert.ToDouble(stg.Text)).ToString());
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1 + stg1;
             total.Text = a.ToString();
         }
 
         private void msc_TextChanged(object sender, EventArgs e)
         {
             int lvw1 = 0;
+            int stg1= 0;
             int snl1 = 0;
             int vcs1 = 0;
             int msc1 = 0;
@@ -384,7 +456,7 @@ namespace Tribes_System
             }
             else
             {
-                lvw1 = int.Parse(lvw.Text);
+                lvw1 = int.Parse(Convert.ToInt64(Convert.ToDouble(lvw.Text)).ToString());
             }
             if (snl.Text == "")
             {
@@ -392,7 +464,7 @@ namespace Tribes_System
             }
             else
             {
-                snl1 = int.Parse(snl.Text);
+                snl1 = int.Parse(Convert.ToInt64(Convert.ToDouble(snl.Text)).ToString());
             }
 
             if (vcs.Text == "")
@@ -401,7 +473,7 @@ namespace Tribes_System
             }
             else
             {
-                vcs1 = int.Parse(vcs.Text);
+                vcs1 = int.Parse(Convert.ToInt64(Convert.ToDouble(vcs.Text)).ToString());
             }
             if (msc.Text == "")
             {
@@ -409,9 +481,17 @@ namespace Tribes_System
             }
             else
             {
-                msc1 = int.Parse(msc.Text);
+                msc1 = int.Parse(Convert.ToInt64(Convert.ToDouble(msc.Text)).ToString());
             }
-            int a = lvw1 + snl1 + vcs1 + msc1;
+            if (stg.Text == "")
+            {
+                stg1 = 0;
+            }
+            else
+            {
+                stg1 = int.Parse(Convert.ToInt64(Convert.ToDouble(stg.Text)).ToString());
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1+stg1;
             total.Text = a.ToString();
         }
 
@@ -530,6 +610,7 @@ namespace Tribes_System
                 stg.Visible = true;
                 vcs.Visible = true;
                 msc.Visible = true;
+                total.Visible = true;
             }
             else
             {
@@ -544,7 +625,77 @@ namespace Tribes_System
                 stg.Visible = false;
                 vcs.Visible = false;
                 msc.Visible = false;
+                total.Visible = false;
             }
+        }
+
+        private void stg_TextChanged(object sender, EventArgs e)
+        {
+            int lvw1 = 0;
+            int snl1 = 0;
+            int vcs1 = 0;
+            int msc1 = 0;
+            int stg1 = 0;
+            if (lvw.Text == "")
+            {
+                lvw1 = 0;
+            }
+            else
+            {
+                lvw1 = int.Parse(Convert.ToInt64(Convert.ToDouble(lvw.Text)).ToString());
+            }
+            if (snl.Text == "")
+            {
+                snl1 = 0;
+            }
+            else
+            {
+                snl1 = int.Parse(Convert.ToInt64(Convert.ToDouble(snl.Text)).ToString());
+            }
+
+            if (vcs.Text == "")
+            {
+                vcs1 = 0;
+            }
+            else
+            {
+                vcs1 = int.Parse(Convert.ToInt64(Convert.ToDouble(vcs.Text)).ToString());
+            }
+            if (msc.Text == "")
+            {
+                msc1 = 0;
+            }
+            else
+            {
+                msc1 = int.Parse(Convert.ToInt64(Convert.ToDouble(msc.Text)).ToString());
+            }
+            if (stg.Text == "")
+            {
+                stg1 = 0;
+            }
+            else
+            {
+                stg1 = int.Parse(Convert.ToInt64(Convert.ToDouble(stg.Text)).ToString());
+            }
+            int a = lvw1 + snl1 + vcs1 + msc1 + stg1;
+            total.Text = a.ToString();
+        }
+        public void setTextform(string query)
+        {
+            openConnection();
+            adapter = new MySqlCommand(query, con);
+            MySqlDataReader myreader = adapter.ExecuteReader();
+            if (myreader.Read())
+            {
+                total.Text = myreader.GetValue(0).ToString();
+                snl.Text = myreader.GetValue(1).ToString();
+                lvw.Text = myreader.GetValue(2).ToString();
+                msc.Text = myreader.GetValue(3).ToString();
+                stg.Text = myreader.GetValue(4).ToString();
+                vcs.Text = myreader.GetValue(5).ToString();
+            }
+            myreader.Close();
+            closeConnection();
         }
     }
 }

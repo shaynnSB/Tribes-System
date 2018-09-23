@@ -44,6 +44,19 @@ namespace Tribes_System
             //DateTime dt = ;
             dateTimePicker1.Value = (DateTime)table.Rows[0].ItemArray[7];
 
+            /*
+            string nem = table.Rows[0].ItemArray[9].ToString();
+            string username = "";
+
+            foreach (string letter in nem.Split(' '))
+            {
+                username += letter[0];
+            }
+            username += table.Rows[0].ItemArray[10].ToString();
+
+            Console.WriteLine(username);
+            */
+
             switch (table.Rows[0].ItemArray[4].ToString())
             {
                 case "On-Call":
@@ -151,7 +164,7 @@ namespace Tribes_System
                         string insertQuery = "UPDATE employee SET " +
                             "emp_address = '" + addressBox.Text + "', emp_contact = '" + numBox.Text + "', emp_status = '" + stat + "'," +
                             "emergency_contact = '" + emergencyContact.Text + "', emergency_name = '" + emergencyName.Text + "', birthdate = '" + 
-                            dateTimePicker1.Value.ToString("yyyy-mm-dd") + "', gender = '"+ this.gender +"', first_name = '" + nameBox.Text + "', last_name = '" + lastnameBox.Text + "', emp_salary = "+ salarayBox.Text +
+                            dateTimePicker1.Value.ToString("yyyy-MM-dd") + "', gender = '"+ this.gender +"', first_name = '" + nameBox.Text + "', last_name = '" + lastnameBox.Text + "', emp_salary = "+ salarayBox.Text +
                             " WHERE id_emp = "+ this.empid;
                         executeMyQuery(insertQuery);
                         this.DialogResult = System.Windows.Forms.DialogResult.OK;
