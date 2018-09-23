@@ -52,8 +52,17 @@ namespace Tribes_System
                 if (dt.Rows.Count == 1)
                 {
                     this.Hide();
-                    equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString()); // nilagyan ko ng parameter para mapass ang account type
-                    form.ShowDialog();
+                    try
+                    {
+                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString(), (int)dt.Rows[0].ItemArray[4]); // nilagyan ko ng parameter para mapass ang account type
+                        form.ShowDialog();
+                    }
+                    catch(InvalidCastException)
+                    {
+                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString()); // nilagyan ko ng parameter para mapass ang account type
+                        form.ShowDialog();
+                    }
+                    
                     this.Close();
                 }
                 else
