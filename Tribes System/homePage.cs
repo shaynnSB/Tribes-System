@@ -16,12 +16,15 @@ namespace Tribes_System
         bool hidden;
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
+        string access; // use this to access account type
 
-        public equipButt()
+        public equipButt(string access)
         {
             InitializeComponent();
             PW = panelMenu.Width;
             hidden = false;
+            this.access = access;
+            Console.WriteLine(this.access);
         }
 
         private void minButt_Click(object sender, EventArgs e)

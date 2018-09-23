@@ -40,8 +40,8 @@ namespace Tribes_System
         {
             MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
 
-            string query = "select count(*) from accounts where acc_username ='" + userBox.Text + "' and acc_pass ='" + passBox.Text + "'";
-
+            string query = "select * from accounts where acc_username ='" + userBox.Text + "' and acc_pass ='" + passBox.Text + "'";
+            // ganito nalang ang query para ma access ang account type in one query
             using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
             {
 
@@ -49,10 +49,10 @@ namespace Tribes_System
 
                 adpt.Fill(dt);
 
-                if (dt.Rows[0][0].ToString() == "1")
+                if (dt.Rows.Count == 1)
                 {
                     this.Hide();
-                    equipButt form = new equipButt();
+                    equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString()); // nilagyan ko ng parameter para mapass ang account type
                     form.ShowDialog();
                     this.Close();
                 }
