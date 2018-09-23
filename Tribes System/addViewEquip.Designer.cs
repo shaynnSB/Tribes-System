@@ -142,7 +142,6 @@
             this.tabControl1.Size = new System.Drawing.Size(575, 540);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
-    
             // 
             // tabPage1
             // 
@@ -262,7 +261,7 @@
             this.confirmButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.confirmButt.Location = new System.Drawing.Point(433, 481);
+            this.confirmButt.Location = new System.Drawing.Point(433, 477);
             this.confirmButt.Name = "confirmButt";
             this.confirmButt.Size = new System.Drawing.Size(124, 24);
             this.confirmButt.TabIndex = 90;
@@ -523,6 +522,7 @@
             this.stg.TabIndex = 75;
             this.stg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.stg.Visible = false;
+            this.stg.TextChanged += new System.EventHandler(this.stg_TextChanged);
             this.stg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stg_KeyPress);
             // 
             // label9
