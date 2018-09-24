@@ -179,22 +179,26 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(780, 364);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Location = new System.Drawing.Point(780, 344);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(79, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(780, 393);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button2.ForeColor = System.Drawing.SystemColors.Control;
+            this.button2.Location = new System.Drawing.Point(780, 382);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(79, 34);
             this.button2.TabIndex = 2;
             this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
@@ -253,12 +257,14 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(780, 335);
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(780, 303);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(79, 35);
             this.button4.TabIndex = 10;
             this.button4.Text = "Add";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // tabControl1
@@ -427,34 +433,40 @@
             // 
             // mtor
             // 
-            this.mtor.Location = new System.Drawing.Point(647, 81);
+            this.mtor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mtor.ForeColor = System.Drawing.SystemColors.Control;
+            this.mtor.Location = new System.Drawing.Point(647, 75);
             this.mtor.Name = "mtor";
-            this.mtor.Size = new System.Drawing.Size(123, 23);
+            this.mtor.Size = new System.Drawing.Size(127, 29);
             this.mtor.TabIndex = 12;
             this.mtor.Text = "Move to On-repair";
-            this.mtor.UseVisualStyleBackColor = true;
+            this.mtor.UseVisualStyleBackColor = false;
             this.mtor.Visible = false;
             this.mtor.Click += new System.EventHandler(this.mtor_Click);
             // 
             // rep
             // 
+            this.rep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.rep.ForeColor = System.Drawing.SystemColors.Control;
             this.rep.Location = new System.Drawing.Point(452, 23);
             this.rep.Name = "rep";
-            this.rep.Size = new System.Drawing.Size(133, 23);
+            this.rep.Size = new System.Drawing.Size(133, 36);
             this.rep.TabIndex = 13;
             this.rep.Text = "Mark as Repaired";
-            this.rep.UseVisualStyleBackColor = true;
+            this.rep.UseVisualStyleBackColor = false;
             this.rep.Visible = false;
             this.rep.Click += new System.EventHandler(this.rep_Click);
             // 
             // dbr
             // 
+            this.dbr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dbr.ForeColor = System.Drawing.SystemColors.Control;
             this.dbr.Location = new System.Drawing.Point(591, 23);
             this.dbr.Name = "dbr";
-            this.dbr.Size = new System.Drawing.Size(179, 23);
+            this.dbr.Size = new System.Drawing.Size(183, 36);
             this.dbr.TabIndex = 14;
             this.dbr.Text = "Mark as Damage Beyond Repair";
-            this.dbr.UseVisualStyleBackColor = true;
+            this.dbr.UseVisualStyleBackColor = false;
             this.dbr.Visible = false;
             this.dbr.Click += new System.EventHandler(this.dbr_Click);
             // 

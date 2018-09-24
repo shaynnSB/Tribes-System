@@ -59,6 +59,7 @@ namespace Tribes_System
                     executeMyQuery(insertQuery);
                     (System.Windows.Forms.Application.OpenForms["EquipViewUI"] as EquipViewUI).refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
                     (System.Windows.Forms.Application.OpenForms["EquipViewUI"] as EquipViewUI).damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2 group by itemcontent.modelNumber");
+                    (System.Windows.Forms.Application.OpenForms["EquipViewUI"] as EquipViewUI).setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
                     MessageBox.Show("Successfully Updated");
                     //(System.Windows.Forms.Application.OpenForms["Form2"] as Form2).setTextform("SELECT items.id,items.name,category.description,items.description,COUNT(itemcontent.id) AS test FROM items left join category on items.categoryID = category.id left join itemcontent on itemcontent.itemID=items.id and items.id =" + UserControl1.sendtext);
                     this.DialogResult = System.Windows.Forms.DialogResult.OK;

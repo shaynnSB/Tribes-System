@@ -26,7 +26,7 @@ namespace Tribes_System
             onrepairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 3 group by itemcontent.modelNumber");
             dbrrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 4");
             repairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,repairlogs.daterepaired from items left join itemcontent on items.id = itemcontent.itemID inner JOIN repairlogs on  itemcontent.id = repairlogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 1");
-            setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = "+Equipment.sendtext+" and itemcontent.tagID = 1");
+            setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = "+Equipment.sendtext+" and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
             setStatus("SELECT * FROM status where itemID = " + Equipment.sendtext);
             deploy("select itemcontent.id, itemcontent.modelNumber,items.name,category.description from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID > 0 and items.id ="+ Equipment.sendtext);
 
@@ -282,7 +282,7 @@ namespace Tribes_System
             if (a.DialogResult == DialogResult.OK)
             {
                 refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
-
+                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
             }
         }
        
@@ -296,7 +296,7 @@ namespace Tribes_System
                     string insertQuery = "DELETE FROM itemcontent WHERE id =" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[2].Value.ToString();
                     executeMyQuery(insertQuery);
                     refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
-                    setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
+                    setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
 
 
                 }
@@ -383,8 +383,8 @@ namespace Tribes_System
                 string insertQuery = "UPDATE itemcontent SET tagID=3 where itemID =" + Equipment.sendtext + " and id=" + dataGridView2.Rows[dataGridView2.SelectedRows[0].Index].Cells[2].Value.ToString();
                 executeMyQuery(insertQuery);
                 refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
-                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
- 
+                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
+
                 damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2 group by itemcontent.modelNumber");
                 onrepairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 3 group by itemcontent.modelNumber");
                 MessageBox.Show("Process Complete");
@@ -402,7 +402,7 @@ namespace Tribes_System
                 executeMyQuery(insertQuery);
                 executeMyQuery(insertQuery1);
                 refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
-                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
+                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
 
                 damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2");
                 onrepairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 3");
@@ -421,7 +421,7 @@ namespace Tribes_System
                 executeMyQuery(insertQuery);
                 executeMyQuery(insertQuery1);
                 refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2");
-                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1");
+                setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
                 damagerefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 2");
                 onrepairrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 3");
                 dbrrefresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id,damagelogs.datedamaged from items left join itemcontent on items.id = itemcontent.itemID inner JOIN damagelogs on  itemcontent.id = damagelogs.itemid where items.id =" + Equipment.sendtext + " and itemcontent.tagID = 4");
