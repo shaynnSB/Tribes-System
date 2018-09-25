@@ -20,7 +20,7 @@ namespace Tribes_System
         private Point startPoint = new Point(0, 0);
 
         private string stat = "On-call";
-        private string gender = "male";
+        private string gender = "Male";
         private int autoincrement;
 
         public addEmployee()
@@ -258,7 +258,7 @@ namespace Tribes_System
         {
             if (radioButton6.Checked)
             {
-                this.gender = "male";
+                this.gender = "Male";
             }
         }
 
@@ -266,7 +266,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "female";
+                this.gender = "Female";
             }
         }
 
@@ -274,7 +274,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "other";
+                this.gender = "Oother";
             }
         }
 

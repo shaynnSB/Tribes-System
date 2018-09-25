@@ -20,6 +20,8 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
+        string cDate = DateTime.Now.ToString("yyyy-MM-dd");
+
         public editEvent(eventSched form)
         {
             InitializeComponent();
@@ -157,19 +159,30 @@ namespace Tribes_System
 
         private void saveButt_Click(object sender, EventArgs e)
         {
+            DateTime chosen = DateTime.Parse(startDate.Text);
+            DateTime current = DateTime.Parse(cDate);
+            DateTime chosen_end = DateTime.Parse(endDate.Text);
+
             DialogResult dialogResult = MessageBox.Show("Confirm changes?", "Edit Event Details", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 if (eventBox.Text != "" && locBox.Text != "" && startHour.Text != "" && startMin.Text != "" && startMeri.Text != "" && endHour.Text != "" && endMin.Text != "" 
                     && endMeri.Text != "" && nameClientBox.Text != "")
                 {
-                    string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
-                    "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text +
-                    "', start_date = '" + startDate.Text + "', end_date = '" + endDate.Text + "', client_name = '" + nameClientBox.Text + "', client_contact = '+(63) "
-                    + numClientBox.Text + "' , client_email = '" + emailClient.Text + "' WHERE id_event = " + idPassed;
-                    executeMyQuery(editQuery);
-                    MessageBox.Show("Edited Successfully!");
-                    this.Close();
+                    if (current >= chosen || chosen > chosen_end)
+                    {
+                        MessageBox.Show("Date chosen is not valid");
+                    }
+                    else
+                    {
+                        string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
+                        "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text +
+                        "', start_date = '" + startDate.Text + "', end_date = '" + endDate.Text + "', client_name = '" + nameClientBox.Text + "', client_contact = '+(63) "
+                        + numClientBox.Text + "' , client_email = '" + emailClient.Text + "' WHERE id_event = " + idPassed;
+                        executeMyQuery(editQuery);
+                        MessageBox.Show("Edited Successfully!");
+                        this.Close();
+                    }                   
                 }
                 else
                 {

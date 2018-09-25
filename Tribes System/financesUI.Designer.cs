@@ -205,6 +205,7 @@
             this.chartButt.Size = new System.Drawing.Size(414, 371);
             this.chartButt.TabIndex = 89;
             this.chartButt.UseVisualStyleBackColor = true;
+            this.chartButt.Click += new System.EventHandler(this.chartButt_Click);
             // 
             // financesUI
             // 

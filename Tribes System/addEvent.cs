@@ -19,6 +19,8 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
+        string cDate = DateTime.Now.ToString("yyyy-MM-dd");
+
         public addEvent()
         {
             InitializeComponent();
@@ -54,18 +56,29 @@ namespace Tribes_System
         
         private void addButt_Click(object sender, EventArgs e)
         {
-            if(nameBox.Text != "" && locBox.Text != "" && startHr.Text != "" && startMin.Text != "" &&  startMeri.Text != "" && endHr.Text != "" &&  endMin.Text != "" && 
+            DateTime chosen = DateTime.Parse(startDate.Text);
+            DateTime current = DateTime.Parse(cDate);
+            DateTime chosen_end = DateTime.Parse(endDate.Text);
+
+            if (nameBox.Text != "" && locBox.Text != "" && startHr.Text != "" && startMin.Text != "" &&  startMeri.Text != "" && endHr.Text != "" &&  endMin.Text != "" && 
                 endMeri.Text != "" && nameClientBox.Text != "")
             {
-                string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                "client_name, client_contact, event_status, client_email) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
-                + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid', '" +
-                emailClient.Text + "')";
+                if(current > chosen || chosen > chosen_end)
+                {
+                    MessageBox.Show("Date chosen is not valid");
+                }
+                else
+                {
+                    string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
+                    "client_name, client_contact, event_status, client_email) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
+                    + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
+                    endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid', '" +
+                    emailClient.Text + "')";
 
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
-                this.Close();
+                    executeMyQuery(insertQuery);
+                    MessageBox.Show("Added Successfully");
+                    this.Close();
+                }
             }
             else
             {

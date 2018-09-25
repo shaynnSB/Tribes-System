@@ -40,5 +40,11 @@ namespace Tribes_System
             incomeStatement form = new incomeStatement();
             form.ShowDialog();
         }
+
+        private void chartButt_Click(object sender, EventArgs e)
+        {
+            progressRep form = new progressRep();
+            form.ShowDialog();
+        }
     }
 }

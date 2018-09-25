@@ -77,17 +77,17 @@ namespace Tribes_System
 
             switch (table.Rows[0].ItemArray[8].ToString())
             {
-                case "male":
+                case "Male":
                     radioButton6.Checked = true;
-                    this.gender = "male";
+                    this.gender = "Male";
                     break;
-                case "female":
+                case "Female":
                     radioButton5.Checked = true;
-                    this.gender = "female";
+                    this.gender = "Female";
                     break;
-                case "other":
+                case "Other":
                     radioButton4.Checked = true;
-                    this.gender = "other";
+                    this.gender = "Other";
                     break;
                 default:
                     break;
@@ -325,7 +325,7 @@ namespace Tribes_System
         {
             if (radioButton6.Checked)
             {
-                this.gender = "male";
+                this.gender = "Male";
             }
         }
 
@@ -333,7 +333,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "female";
+                this.gender = "Female";
             }
         }
 
@@ -341,7 +341,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "other";
+                this.gender = "Other";
             }
         }
 

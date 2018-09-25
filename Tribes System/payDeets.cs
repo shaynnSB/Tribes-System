@@ -140,20 +140,32 @@ namespace Tribes_System
             }
         }
 
+        string cDate = DateTime.Now.ToString("yyyy-MM-dd");
+
         private void addAmButt_Click(object sender, EventArgs e)
         {
             if (recievedBox.Text != "" && dateBox.MaskCompleted)
             {
-                string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", " 
+                DateTime chosen = DateTime.Parse(dateBox.Text);
+                DateTime current = DateTime.Parse(cDate);
+
+                if (current < chosen)
+                {
+                    MessageBox.Show("Date chosen is not valid");
+                }
+                else
+                {
+                    string insertQuery = "INSERT INTO amount_paid(event_id, amount, date_paid) VALUES (" + id_Passed + ", "
                     + recievedBox.Text + ", '" + dateBox.Text + "')";
 
-                string editQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
+                    string editQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
 
-                executeMyQuery(insertQuery);
-                MessageBox.Show("Added Successfully");
+                    executeMyQuery(insertQuery);
+                    MessageBox.Show("Added Successfully");
 
-                DisplayData();
-                ClearData();
+                    DisplayData();
+                    ClearData();
+                }
             }
             else
             {
@@ -214,14 +226,24 @@ namespace Tribes_System
         {
            if (recievedBox.Text != "" && dateBox.MaskCompleted)
             {
-                string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE event_id = " 
+                DateTime chosen = DateTime.Parse(dateBox.Text);
+                DateTime current = DateTime.Parse(cDate);
+
+                if (current < chosen)
+                {
+                    MessageBox.Show("Date chosen is not valid");
+                }
+                else
+                {
+                    string editQuery = "UPDATE amount_paid SET amount = " + recievedBox.Text + ", date_paid = '" + dateBox.Text + "' WHERE event_id = "
                     + id_Passed + " AND id = " + id_amount;
 
-                executeMyQuery(editQuery);
-                MessageBox.Show("Edited Successfully");
+                    executeMyQuery(editQuery);
+                    MessageBox.Show("Edited Successfully");
 
-                DisplayData();
-                ClearData();
+                    DisplayData();
+                    ClearData();
+                }
             }
             else
             {

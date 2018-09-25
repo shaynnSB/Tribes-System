@@ -62,7 +62,7 @@ namespace Tribes_System
                 numLab.Text = "Contact: ";
                 addressLab.Text = "Address: ";
                 genderLab.Text = "Gender: ";
-                salaryLab.Text = "Salary: ";
+                //salaryLab.Text = "Salary: ";
 
                 dataGridView2.DataSource = null;
             }
@@ -95,6 +95,8 @@ namespace Tribes_System
 
         private void cellClick(object sender, DataGridViewCellEventArgs e)
         {
+            panel1.Visible = true; 
+
             if (e.RowIndex >= 0)
             {
                 this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
@@ -106,7 +108,7 @@ namespace Tribes_System
                 numLab.Text = "Contact: " + EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 addressLab.Text = "Address: " + EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 genderLab.Text = "Gender: " + EmpGrid.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
-                salaryLab.Text = "Salary: " + EmpGrid.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
+                //salaryLab.Text = "Salary: " + EmpGrid.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
 
                 DataTable sched = new DataTable();
                 string q = "SELECT event_name, event_location, start_date, end_date FROM event " +
@@ -117,6 +119,14 @@ namespace Tribes_System
                 MySqlDataAdapter adapter = new MySqlDataAdapter(q, con);
                 adapter.Fill(sched);
                 dataGridView2.DataSource = sched;
+
+                dataGridView2.Columns[0].HeaderCell.Value = "Event Name";
+                dataGridView2.Columns[1].HeaderCell.Value = "Event Location";
+                dataGridView2.Columns[2].HeaderCell.Value = "Start Date";
+                dataGridView2.Columns[3].HeaderCell.Value = "End Date";
+
+                dataGridView2.Columns[2].Width = 80;
+                dataGridView2.Columns[3].Width = 80;
             }
             
         }

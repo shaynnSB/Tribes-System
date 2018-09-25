@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.editButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
+            this.remCanButt = new System.Windows.Forms.Button();
             this.mailLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.amLabel = new System.Windows.Forms.Label();
@@ -56,14 +57,14 @@
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.remCanButt = new System.Windows.Forms.Button();
+            this.finishedButt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // calendar
             // 
-            this.calendar.Location = new System.Drawing.Point(28, 119);
+            this.calendar.Location = new System.Drawing.Point(28, 103);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 0;
             this.calendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.calendar_DateChanged);
@@ -75,7 +76,7 @@
             this.eventGrid.BackgroundColor = System.Drawing.SystemColors.ControlDark;
             this.eventGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.eventGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventGrid.Location = new System.Drawing.Point(26, 334);
+            this.eventGrid.Location = new System.Drawing.Point(26, 318);
             this.eventGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventGrid.Name = "eventGrid";
             this.eventGrid.ReadOnly = true;
@@ -93,7 +94,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(48, 715);
+            this.button2.Location = new System.Drawing.Point(48, 699);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(263, 37);
@@ -153,6 +154,25 @@
             this.deetPanel.Size = new System.Drawing.Size(920, 680);
             this.deetPanel.TabIndex = 70;
             this.deetPanel.Visible = false;
+            // 
+            // remCanButt
+            // 
+            this.remCanButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.remCanButt.FlatAppearance.BorderSize = 0;
+            this.remCanButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.remCanButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.remCanButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remCanButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remCanButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.remCanButt.Location = new System.Drawing.Point(622, 586);
+            this.remCanButt.Margin = new System.Windows.Forms.Padding(4);
+            this.remCanButt.Name = "remCanButt";
+            this.remCanButt.Size = new System.Drawing.Size(256, 37);
+            this.remCanButt.TabIndex = 86;
+            this.remCanButt.Text = "Remove Cancellation";
+            this.remCanButt.UseVisualStyleBackColor = false;
+            this.remCanButt.Visible = false;
+            this.remCanButt.Click += new System.EventHandler(this.remCanButt_Click);
             // 
             // mailLabel
             // 
@@ -451,29 +471,28 @@
             this.label9.TabIndex = 71;
             this.label9.Text = "EVENT  SCHEDULE";
             // 
-            // remCanButt
+            // finishedButt
             // 
-            this.remCanButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.remCanButt.FlatAppearance.BorderSize = 0;
-            this.remCanButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.remCanButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.remCanButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remCanButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remCanButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.remCanButt.Location = new System.Drawing.Point(622, 586);
-            this.remCanButt.Margin = new System.Windows.Forms.Padding(4);
-            this.remCanButt.Name = "remCanButt";
-            this.remCanButt.Size = new System.Drawing.Size(256, 37);
-            this.remCanButt.TabIndex = 86;
-            this.remCanButt.Text = "Remove Cancellation";
-            this.remCanButt.UseVisualStyleBackColor = false;
-            this.remCanButt.Visible = false;
-            this.remCanButt.Click += new System.EventHandler(this.remCanButt_Click);
+            this.finishedButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.finishedButt.FlatAppearance.BorderSize = 0;
+            this.finishedButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.finishedButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.finishedButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.finishedButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finishedButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.finishedButt.Location = new System.Drawing.Point(48, 743);
+            this.finishedButt.Margin = new System.Windows.Forms.Padding(4);
+            this.finishedButt.Name = "finishedButt";
+            this.finishedButt.Size = new System.Drawing.Size(263, 37);
+            this.finishedButt.TabIndex = 72;
+            this.finishedButt.Text = "Finished Events";
+            this.finishedButt.UseVisualStyleBackColor = false;
             // 
             // eventSched
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.finishedButt);
             this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.calendar);
@@ -522,5 +541,6 @@
         private System.Windows.Forms.Label mailLabel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button remCanButt;
+        private System.Windows.Forms.Button finishedButt;
     }
 }

@@ -20,7 +20,6 @@ namespace Tribes_System
         DataTable grid = new DataTable();
         int selectedRow;
 
-        //DateTime today = DateTime.Today;
         string currentDate = DateTime.Today.ToString("yyyy-MM-dd");
 
 
@@ -54,7 +53,8 @@ namespace Tribes_System
             form.mail = mailLabel.Text;
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            show_deets();
+            date();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,6 +67,7 @@ namespace Tribes_System
 
         string id_select;
         string event_stat;
+        string event_name;
 
         public static string id;
 
@@ -81,8 +82,10 @@ namespace Tribes_System
 
             while (reader.Read())
             {
+                event_name = reader["event_name"].ToString();
+
                 cancel = reader["event_status"].ToString();
-                nameLabel.Text = reader["event_name"].ToString() + " - " + reader["event_status"].ToString();
+                nameLabel.Text = event_name + " - " + reader["event_status"].ToString();
                 //dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
                 timeLabel.Text = reader["start_time"].ToString() + " - " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
@@ -198,21 +201,23 @@ namespace Tribes_System
         private void viewEquip_Click(object sender, EventArgs e)
         {
             addViewEquip form = new addViewEquip(this);
-            form.eventName = nameLabel.Text;
+            form.eventName = event_name;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            show_deets();
+            date();
         }
 
         private void viewStaff_Click(object sender, EventArgs e)
         {
             addViewStaff form = new addViewStaff(this);
-            form.eventName = nameLabel.Text;
+            form.eventName = event_name;
             form.idValue = eventGrid.CurrentRow.Cells[0].Value.ToString();
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            show_deets();
+            date();
         }   
 
         private void cancellationButt_Click(object sender, EventArgs e)
@@ -234,12 +239,13 @@ namespace Tribes_System
         private void viewPay_Click(object sender, EventArgs e)
         {
             payDeets form = new payDeets(this);
-            form.nameBox = nameLabel.Text;
+            form.nameBox = event_name;
             form.idValue = id_select;
             form.statusOfEvent = event_stat;
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            show_deets();
+            date();
         }
 
         private void label9_Click(object sender, EventArgs e)
