@@ -383,7 +383,6 @@ C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\pt\Microsoft
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csprojAssemblyReference.cache
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.AddContent.resources
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addDiscount.resources
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.addEmployee.resources
@@ -424,3 +423,6 @@ C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes Syste
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.pdb
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\MySql.Data.dll
 C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\bin\Debug\Google.Protobuf.dll
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.editAccounts.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes_System.employeeView.resources
+C:\Users\jan\Documents\GitHub\Tribes-System\Tribes System\obj\Debug\Tribes System.csprojAssemblyReference.cache

@@ -26,6 +26,15 @@ namespace Tribes_System
             hidden = false;
             this.access = access;
             this.empid = empid;
+            if (access.Equals("employee"))
+            {
+                panelMenu.Visible = false;
+                menuIcon.Visible = false;
+                //employeeView1.Visible = true;
+                employeeView uc = new employeeView(empid.ToString());
+                uc.Location = new Point(67, 51);
+                this.Controls.Add(uc);
+            }
         }
 
         private void minButt_Click(object sender, EventArgs e)
@@ -50,6 +59,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = true;
+            editAccounts1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -59,6 +69,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            editAccounts1.Visible = false;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -98,6 +109,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            editAccounts1.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -109,6 +121,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = true;
+            editAccounts1.Visible = false;
         }
 
         private void eventButt_Click(object sender, EventArgs e)
@@ -120,6 +133,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
             equipment1.Visible = false;
+            editAccounts1.Visible = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -143,6 +157,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             employeeTab.Visible = false;
             eventSched1.Visible = false;
+            editAccounts1.Visible = false;
             equipment1.Visible = false;
         }
 
@@ -155,11 +170,18 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
-            
+            editAccounts1.Visible = false;
+
         }
 
         private void profButt_Click(object sender, EventArgs e)
         {
+            editAccounts1.Visible = true;
+            payrollUI1.Visible = false;
+            financesUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
+            equipment1.Visible = false;
             timer.Start();
         }
 
@@ -221,6 +243,11 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+        }
+
+        private void payrollUI1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

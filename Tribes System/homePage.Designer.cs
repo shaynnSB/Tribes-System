@@ -51,11 +51,12 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.financesUI1 = new Tribes_System.financesUI();
             this.payrollUI1 = new Tribes_System.salaryUI();
             this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
+            this.financesUI1 = new Tribes_System.financesUI();
+            this.editAccounts1 = new Tribes_System.editAccounts();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -75,7 +76,7 @@
             this.panelMenu.Location = new System.Drawing.Point(60, 46);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(325, 904);
+            this.panelMenu.Size = new System.Drawing.Size(325, 903);
             this.panelMenu.TabIndex = 4;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -384,10 +385,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(385, 949);
+            this.panel1.Location = new System.Drawing.Point(60, 949);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1115, 1);
+            this.panel1.Size = new System.Drawing.Size(1440, 1);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -400,21 +401,14 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
-            // financesUI1
-            // 
-            this.financesUI1.Location = new System.Drawing.Point(119, 63);
-            this.financesUI1.Name = "financesUI1";
-            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
-            this.financesUI1.TabIndex = 11;
-            this.financesUI1.Visible = false;
-            // 
             // payrollUI1
             // 
-            this.payrollUI1.Location = new System.Drawing.Point(140, 59);
+            this.payrollUI1.Location = new System.Drawing.Point(66, 51);
             this.payrollUI1.Name = "payrollUI1";
             this.payrollUI1.Size = new System.Drawing.Size(1315, 800);
             this.payrollUI1.TabIndex = 12;
             this.payrollUI1.Visible = false;
+            this.payrollUI1.Load += new System.EventHandler(this.payrollUI1_Load);
             // 
             // equipment1
             // 
@@ -443,16 +437,34 @@
             this.employeeTab.TabIndex = 10;
             this.employeeTab.Visible = false;
             // 
+            // financesUI1
+            // 
+            this.financesUI1.Location = new System.Drawing.Point(119, 63);
+            this.financesUI1.Name = "financesUI1";
+            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
+            this.financesUI1.TabIndex = 11;
+            this.financesUI1.Visible = false;
+            // 
+            // editAccounts1
+            // 
+            this.editAccounts1.Location = new System.Drawing.Point(67, 52);
+            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
+            this.editAccounts1.Name = "editAccounts1";
+            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
+            this.editAccounts1.TabIndex = 14;
+            this.editAccounts1.Visible = false;
+            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 950);
+            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.editAccounts1);
             this.Controls.Add(this.payrollUI1);
             this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
@@ -499,5 +511,6 @@
         private financesUI financesUI1;
         private salaryUI payrollUI1;
         private Equipment equipment1;
+        private editAccounts editAccounts1;
     }
 }
