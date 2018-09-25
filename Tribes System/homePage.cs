@@ -24,8 +24,21 @@ namespace Tribes_System
             InitializeComponent();
             PW = panelMenu.Width;
             hidden = false;
+
             this.access = access;
             this.empid = empid;
+            checkStat();
+        }
+
+        private void checkStat()
+        {
+            if(access == "employee")
+            {
+                payButt.Enabled = false;
+                finButt.Enabled = false;
+                finIcon.Enabled = false;
+                payIcon.Enabled = false;
+            }
         }
 
         private void minButt_Click(object sender, EventArgs e)

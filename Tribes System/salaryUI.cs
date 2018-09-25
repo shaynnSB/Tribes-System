@@ -33,6 +33,9 @@ namespace Tribes_System
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
+        string m = DateTime.Now.ToString("MM");
+        string y = DateTime.Now.ToString("yyyy");
+
         private void assignMonth()
         {
             if (sMonth == "01")
@@ -93,6 +96,16 @@ namespace Tribes_System
             {
                 monthBox.Text = "December";
                 fullMonthBox.Text = "December";
+            }
+        }
+
+        private void addYear()
+        {
+            for (int i = 0; i < 80; i++)
+            {
+                int num = 2018 + i;
+                yearBox.Items.Add(num);
+                fullYearBox.Items.Add(num);
             }
         }
 
@@ -161,7 +174,8 @@ namespace Tribes_System
 
         private void salaryTable()
         {
-            string query = "select event_name, salary from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event"; 
+            string query = "select event_name, salary from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event" +
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(end_date, 1,4) = '" + sYear + "'"; 
             DataTable table = new DataTable(); 
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -180,7 +194,8 @@ namespace Tribes_System
 
         private void salaryFullTable()
         {
-            string query = "select event_name from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event";
+            string query = "select event_name from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event" +
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(end_date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -274,7 +289,8 @@ namespace Tribes_System
 
         private void violations()
         {
-            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp;
+            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -302,7 +318,8 @@ namespace Tribes_System
 
         private void violationsFull()
         {
-            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp;
+            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -330,7 +347,8 @@ namespace Tribes_System
 
         private void bonus()
         {
-            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp;
+            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -358,7 +376,8 @@ namespace Tribes_System
 
         private void bonusFull()
         {
-            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp;
+            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -411,6 +430,34 @@ namespace Tribes_System
             closeConnection();
         }
 
+        private void salaryFull()
+        {
+            string query = "select emp_salary from employee where id_emp = " + selectedEmp;
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (reader["emp_salary"] != DBNull.Value)
+                {
+                    salary_amount = reader["emp_salary"].ToString();
+                }
+                else
+                {
+                    salary_amount = "0";
+                }
+
+            }
+
+            salLabel.Text = salary_amount;
+            closeConnection();
+        }
+
         private void compute()
         {
             salary();
@@ -428,7 +475,7 @@ namespace Tribes_System
 
         private void computeFull()
         {
-            salary();
+            salaryFull();
 
             double vio = Convert.ToDouble(vio_amount);
             double bon = Convert.ToDouble(bonus_amount);
@@ -461,37 +508,213 @@ namespace Tribes_System
             deetPanel.Visible = false;
         }
 
-        private void addYear()
-        {
-            for (int i = 0; i < 80; i++)
-            {
-                int num = 2018 + i;
-                yearBox.Items.Add(num);
-                fullYearBox.Items.Add(num);
-            }
-        }
-
         private void monthBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(selectedEmp != "")
+            monthChange();
+            int nextm = Convert.ToInt32(sMonth);
+            int formerm = Convert.ToInt32(m);
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if ((nextm > formerm) && (nexty == formery))
             {
-                salaryTable();
+                sMonth = m;
+                assignMonth();
+                MessageBox.Show("Details Are Not Yet Available!");
             }
             else
             {
+                if (selectedEmp != "")
+                {
+                    salaryTable();
+                }
+                else
+                {
 
-            }           
+                }
+            }          
         }
 
         private void yearBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (selectedEmp != "")
+            yearChange2();
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
             {
-                salaryTable();
+                sYear = y;
+                yearBox.Text = sYear;
+                MessageBox.Show("Details Are Not Yet Available!");
             }
             else
             {
+                if (selectedEmp != "")
+                {
+                    salaryTable();
+                }
+            }
+        }
 
+        private void fullMonthBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            monthChange2();
+            int nextm = Convert.ToInt32(sMonth);
+            int formerm = Convert.ToInt32(m);
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if ((nextm > formerm) && (nexty == formery))
+            {
+                sMonth = m;
+                assignMonth();
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                if (selectedEmp != "")
+                {
+                    salaryFullTable();
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void yearChange2()
+        {
+            sYear = yearBox.Text;
+        }
+
+        private void yearChange()
+        {
+            sYear = fullYearBox.Text;
+        }
+
+        private void fullYearBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            yearChange();
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
+            {
+                sYear = y;
+                fullYearBox.Text = sYear;
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                if (selectedEmp != "")
+                {
+                    salaryFullTable();
+                }
+            }
+        }
+
+        private void monthChange()
+        {
+            if (monthBox.Text == "January")
+            {
+                sMonth = "01";
+            }
+            else if (monthBox.Text == "February")
+            {
+                sMonth = "02";
+            }
+            else if (monthBox.Text == "March")
+            {
+                sMonth = "03";
+            }
+            else if (monthBox.Text == "April")
+            {
+                sMonth = "04";
+            }
+            else if (monthBox.Text == "May")
+            {
+                sMonth = "05";
+            }
+            else if (monthBox.Text == "June")
+            {
+                sMonth = "06";
+            }
+            else if (monthBox.Text == "July")
+            {
+                sMonth = "07";
+            }
+            else if (monthBox.Text == "August")
+            {
+                sMonth = "08";
+            }
+            else if (monthBox.Text == "September")
+            {
+                sMonth = "09";
+            }
+            else if (monthBox.Text == "October")
+            {
+                sMonth = "10";
+            }
+            else if (monthBox.Text == "November")
+            {
+                sMonth = "11";
+            }
+            else if (monthBox.Text == "December")
+            {
+                sMonth = "12";
+            }
+        }
+
+        private void monthChange2()
+        {
+            if (fullMonthBox.Text == "January")
+            {
+                sMonth = "01";
+            }
+            else if (fullMonthBox.Text == "February")
+            {
+                sMonth = "02";
+            }
+            else if (fullMonthBox.Text == "March")
+            {
+                sMonth = "03";
+            }
+            else if (fullMonthBox.Text == "April")
+            {
+                sMonth = "04";
+            }
+            else if (fullMonthBox.Text == "May")
+            {
+                sMonth = "05";
+            }
+            else if (fullMonthBox.Text == "June")
+            {
+                sMonth = "06";
+            }
+            else if (fullMonthBox.Text == "July")
+            {
+                sMonth = "07";
+            }
+            else if (fullMonthBox.Text == "August")
+            {
+                sMonth = "08";
+            }
+            else if (fullMonthBox.Text == "September")
+            {
+                sMonth = "09";
+            }
+            else if (fullMonthBox.Text == "October")
+            {
+                sMonth = "10";
+            }
+            else if (fullMonthBox.Text == "November")
+            {
+                sMonth = "11";
+            }
+            else if (fullMonthBox.Text == "December")
+            {
+                sMonth = "12";
             }
         }
 

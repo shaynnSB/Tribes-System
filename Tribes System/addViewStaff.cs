@@ -45,57 +45,42 @@ namespace Tribes_System
 
             try
             {
-                if (table.Rows.Count > 0) //if may lineup na, select employees
-                {
-                    //--------------select assigned employees---------------------------------------
-                    query = "SELECT employee.id_emp, employee.first_name, employee.last_name, staff_lineup.id_line " +
-                            "FROM employee " +
-                            "INNER JOIN staff_lineup " +
-                            "ON employee.id_emp = staff_lineup.staff_id " +
-                            "WHERE no_event = '" + idPassed + "'";
-                    adapter = new MySqlDataAdapter(query, con);
-                    adapter.Fill(emp_table);
-                    assignedGrid.DataSource = emp_table;
-                    assignedGrid.Columns[0].Visible = assignedGrid.Columns[3].Visible = false;
-                    assignedGrid.Columns[1].HeaderText = "First Name";
-                    assignedGrid.Columns[2].HeaderText = "Last Name";
-                    //--------------select available employees---------------------------------------
-                    query = "SELECT DISTINCT em.id_emp, em.first_name, em.last_name " + //I coded the query below myself, but I don't fully understand it, so bugs might happen when selecting available employees thx. --syed
-                            "FROM (SELECT * FROM employee WHERE emp_status != 'Inactive') em " +
-                            "LEFT JOIN (" +
-                            "SELECT staff_id FROM staff_lineup " +
-                            "INNER JOIN event " +
-                            "ON staff_lineup.no_event = event.id_event " +
-                            "WHERE start_date NOT BETWEEN '" + start + "' AND '" + end + "' " +
-                            ") AS c " + 
-                            "ON em.id_emp = c.staff_id " + 
-                            "LEFT JOIN employee " + 
-                            "ON employee.id_emp = c.staff_id " +
-                            "WHERE employee.id_emp IS NULL";
-                    DataTable available_table = new DataTable();
-                    adapter = new MySqlDataAdapter(query, con);
-                    adapter.Fill(available_table);
-                    //listEmpGrid.DataSource = available_table;
-                    foreach (DataRow row in available_table.Rows) //foreach to put each row from db into the datagridview.
-                    {  //im using this instead of setting a datasource kasi temporary values pa yung sa listempgrid and addgrid
-                        listEmpGrid.Rows.Add(row[0], row[1], row[2]);
-                    }
-                    //------------------------------------------------------------------------------
+                //--------------select assigned employees---------------------------------------
+                query = "SELECT employee.id_emp, employee.first_name, employee.last_name, staff_lineup.id_line " +
+                        "FROM employee " +
+                        "INNER JOIN staff_lineup " +
+                        "ON employee.id_emp = staff_lineup.staff_id " +
+                        "WHERE no_event = '" + idPassed + "'";
+                adapter = new MySqlDataAdapter(query, con);
+                adapter.Fill(emp_table);
+                assignedGrid.DataSource = emp_table;
+                assignedGrid.Columns[0].Visible = assignedGrid.Columns[3].Visible = false;
+                assignedGrid.Columns[1].HeaderText = "First Name";
+                assignedGrid.Columns[2].HeaderText = "Last Name";
+                //--------------select available employees---------------------------------------
+                query = "SELECT DISTINCT em.id_emp, em.first_name, em.last_name " + //I coded the query below myself, but I don't fully understand it, so bugs might happen when selecting available employees thx. --syed
+                        "FROM (SELECT * FROM employee WHERE emp_status != 'Inactive') em " +
+                        "LEFT JOIN (" +
+                        "SELECT staff_id FROM staff_lineup " +
+                        "INNER JOIN event " +
+                        "ON staff_lineup.no_event = event.id_event " +
+                        "WHERE start_date NOT BETWEEN '" + start + "' AND '" + end + "' " +
+                        ") AS c " +
+                        "ON em.id_emp = c.staff_id " +
+                        "LEFT JOIN employee " +
+                        "ON employee.id_emp = c.staff_id " +
+                        "WHERE employee.id_emp IS NULL";
+                DataTable available_table = new DataTable();
+                adapter = new MySqlDataAdapter(query, con);
+                adapter.Fill(available_table);
+                //listEmpGrid.DataSource = available_table;
+                foreach (DataRow row in available_table.Rows) //foreach to put each row from db into the datagridview.
+                {  //im using this instead of setting a datasource kasi temporary values pa yung sa listempgrid and addgrid
+                    listEmpGrid.Rows.Add(row[0], row[1], row[2]);
                 }
-                else //if wala pang lineup, all employees will be available
-                {
-                    query = "SELECT employee.id_emp, employee.first_name, employee.last_name FROM employee WHERE employee.emp_status <> 'Inactive'";
-                    DataTable available_table = new DataTable();
-                    adapter = new MySqlDataAdapter(query, con);
-                    adapter.Fill(available_table);
-                    //listEmpGrid.DataSource = available_table;
-                    foreach (DataRow row in available_table.Rows)
-                    {
-                        listEmpGrid.Rows.Add(row[0], row[1], row[2]);
-                    }
-                }
+                //------------------------------------------------------------------------------
             }
-            catch(MySqlException)
+            catch (MySqlException)
             {
                 MessageBox.Show("MySQL has returned an error while refreshing. Please contact your systems administrator.");
             }
@@ -103,13 +88,13 @@ namespace Tribes_System
             {
                 MessageBox.Show("An unknown error has occured. Please contact your systems administrator.");
             }
-            
+
 
         }
 
-        private void listEmpGrid_CellClick(object sender, DataGridViewCellEventArgs e) 
+        private void listEmpGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-             selectedRow = e.RowIndex;
+            selectedRow = e.RowIndex;
         }
 
         private void addButt_Click(object sender, EventArgs e)
@@ -127,7 +112,7 @@ namespace Tribes_System
             {
                 MessageBox.Show("ERROR! no employee selected!");
             }
-            
+
             //addGrid.DataSource = addedEmployees;
             //MessageBox.Show();
 
@@ -145,7 +130,7 @@ namespace Tribes_System
             listEmpGrid.Columns.Add("last_name", "Last Name");
             listEmpGrid.Columns[0].Visible = false;
             addGrid.Columns[0].Visible = false;
-            
+
         }
 
         private void closeButt_Click(object sender, EventArgs e)
@@ -168,7 +153,7 @@ namespace Tribes_System
                 //executeMyQuery(editQuery);
                 string query = "";
                 con.Open();
-                if(addGrid.Rows.Count > 0)
+                if (addGrid.Rows.Count > 0)
                 {
                     for (int i = 0; i < addGrid.Rows.Count; i++) //add each employee to the lineup
                     {
@@ -201,7 +186,7 @@ namespace Tribes_System
                 {
                     MessageBox.Show("No employee has been added");
                 }
-                
+
                 //query = "INSERT INTO staff_lineup(no_event, staff_id, salary) " +
                 //"VALUES ('"+idPassed+"', '"++"', '100')";
                 con.Close();
@@ -222,7 +207,8 @@ namespace Tribes_System
         public string idValue
         {
             get { return idPassed; }
-            set {
+            set
+            {
                 idPassed = value;
                 refresh();
                 string getdate = "SELECT start_date, end_date FROM event WHERE id_event = " + idPassed;
@@ -276,27 +262,27 @@ namespace Tribes_System
                 con.Close();
                 refresh();
             }
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string q = "UPDATE staff_lineup SET salary = " + salaryBox.Text + " WHERE staff_id = " + assignedGrid.Rows[assignedSelectedRow].Cells[0].FormattedValue.ToString() + " AND no_event = "+ idPassed;
+            string q = "UPDATE staff_lineup SET salary = " + salaryBox.Text + " WHERE staff_id = " + assignedGrid.Rows[assignedSelectedRow].Cells[0].FormattedValue.ToString() + " AND no_event = " + idPassed;
             try
             {
                 decimal n = Decimal.Parse(salaryBox.Text);
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand(q, con);
-                if(cmd.ExecuteNonQuery() == 1)
+                if (cmd.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Changed successfully");
                 }
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 MessageBox.Show("Enter a correct value");
             }
-            catch(MySqlException)
+            catch (MySqlException)
             {
                 MessageBox.Show("MySQL has returned an error");
             }
@@ -304,7 +290,7 @@ namespace Tribes_System
             {
                 con.Close();
             }
-            
+
         }
     }
 }

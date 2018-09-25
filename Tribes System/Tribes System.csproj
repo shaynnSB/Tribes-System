@@ -236,6 +236,12 @@
     <Compile Include="paymentDetails.Designer.cs">
       <DependentUpon>paymentDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="progressRep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="progressRep.Designer.cs">
+      <DependentUpon>progressRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="revenueReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="paymentDetails.resx">
       <DependentUpon>paymentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="progressRep.resx">
+      <DependentUpon>progressRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="revenueReport.resx">
       <DependentUpon>revenueReport.cs</DependentUpon>

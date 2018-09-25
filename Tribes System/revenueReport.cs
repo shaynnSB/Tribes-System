@@ -29,6 +29,9 @@ namespace Tribes_System
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
+        string m = DateTime.Now.ToString("MM");
+        string y = DateTime.Now.ToString("yyyy");
+
         public revenueReport()
         {
             InitializeComponent();
@@ -178,7 +181,7 @@ namespace Tribes_System
 
         private void calAmMonth()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -196,7 +199,7 @@ namespace Tribes_System
         private void calFeeMonth()
         {
             string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id AND substring(start_date, 6,2) = '" + sMonth + 
-                "' AND substring(start_date, 1,4) = '" + sYear + "'";
+                "' AND substring(start_date, 1,4) = '" + sYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -214,7 +217,7 @@ namespace Tribes_System
         private void calDiscMonth()
         {
             string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id AND substring(start_date, 6,2) = '" + sMonth +
-                "' AND substring(start_date, 1,4) = '" + sYear + "'";
+                "' AND substring(start_date, 1,4) = '" + sYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -281,78 +284,116 @@ namespace Tribes_System
         private void mmonthBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             monthChange();
-            fillMonth();
+            int nextm = Convert.ToInt32(sMonth);
+            int formerm = Convert.ToInt32(m);
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if ((nextm > formerm) && (nexty == formery))
+            {
+                sMonth = m;
+                assignMonth();
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                fillMonth();
+            }
         }
 
         private void myearBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             yearChange();
-            fillMonth();
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
+            {
+                sYear = y;
+                myearBox.Text = sYear;
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                fillMonth();
+            }
         }
 
         //-----------------For Quarterly Calculations------------------------------------
-
+        int q;
         private void assignMonth()
         {
             if (sMonth == "01")
             {
                 mmonthBox.Text = "January";
                 qmonthBox.Text = "First Quarter";
+                q = 3;
             }
             else if (sMonth == "02")
             {
                 mmonthBox.Text = "February";
                 qmonthBox.Text = "First Quarter";
+                q = 3;
             }
             else if (sMonth == "03")
             {
                 mmonthBox.Text = "March";
                 qmonthBox.Text = "First Quarter";
+                q = 3;
             }
             else if (sMonth == "04")
             {
                 mmonthBox.Text = "April";
                 qmonthBox.Text = "Second Quarter";
+                q = 6;
             }
             else if (sMonth == "05")
             {
                 mmonthBox.Text = "May";
                 qmonthBox.Text = "Second Quarter";
+                q = 6;
             }
             else if (sMonth == "06")
             {
                 mmonthBox.Text = "June";
                 qmonthBox.Text = "Second Quarter";
+                q = 6;
             }
             else if (sMonth == "07")
             {
                 mmonthBox.Text = "July";
                 qmonthBox.Text = "Third Quarter";
+                q = 9;
             }
             else if (sMonth == "08")
             {
                 mmonthBox.Text = "August";
                 qmonthBox.Text = "Third Quarter";
+                q = 9;
             }
             else if (sMonth == "09")
             {
                 mmonthBox.Text = "September";
                 qmonthBox.Text = "Third Quarter";
+                q = 9;
             }
             else if (sMonth == "10")
             {
                 mmonthBox.Text = "October";
                 qmonthBox.Text = "Fourth Quarter";
+                q = 12;
             }
             else if (sMonth == "11")
             {
                 mmonthBox.Text = "November";
                 qmonthBox.Text = "Fourth Quarter";
+                q = 12;
             }
             else if (sMonth == "12")
             {
                 mmonthBox.Text = "December";
                 qmonthBox.Text = "Fourth Quarter";
+                q = 12;
             }
         }
 
@@ -362,24 +403,28 @@ namespace Tribes_System
         string fourth = "(substring(start_date, 6,2) = '10' OR substring(start_date, 6,2) = '11' OR substring(start_date, 6,2) = '12')";
 
         string quarter;
-
+        int newq;
         private void changeQuarter()
         {
             if (qmonthBox.Text == "First Quarter")
             {
                 quarter = first;
+                newq = 3;
             }
             else if (qmonthBox.Text == "Second Quarter")
             {
                 quarter = second;
+                newq = 6;
             }
             else if (qmonthBox.Text == "Third Quarter")
             {
                 quarter = third;
+                newq = 9;
             }
             else if (qmonthBox.Text == "Fourth Quarter")
             {
                 quarter = fourth;
+                newq = 12;
             }
         }
 
@@ -394,7 +439,7 @@ namespace Tribes_System
 
         private void calAmQuart()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + qYear + "' AND " + quarter;
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + qYear + "' AND event_status <> 'Cancelled' AND " + quarter;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -412,7 +457,7 @@ namespace Tribes_System
         private void calFeeQuart()
         {
             string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + qYear + "' AND " + quarter;
+                "AND substring(start_date, 1,4) = '" + qYear + "' AND event_status <> 'Cancelled' AND " + quarter;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -430,7 +475,7 @@ namespace Tribes_System
         private void calDiscQuart()
         {
             string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + qYear + "' AND " + quarter ;
+                "AND substring(start_date, 1,4) = '" + qYear + "' AND event_status <> 'Cancelled' AND " + quarter ;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -497,13 +542,39 @@ namespace Tribes_System
         private void qmonthBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeQuarter();
-            fillQuarter();
+
+            int nexty = Convert.ToInt32(qYear);
+            int formery = Convert.ToInt32(y);
+
+            if ((newq > q) && (nexty == formery))
+            {
+                sMonth = m;
+                assignMonth();
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                fillQuarter();
+            }
         }
 
         private void qyearBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeQuartYear();
-            fillQuarter();
+
+            int nexty = Convert.ToInt32(qYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
+            {
+                qYear = y;
+                qyearBox.Text = qYear;
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                fillQuarter();
+            }
         }
 
         //-----------------For Yearly Calculations------------------------------------
@@ -528,7 +599,7 @@ namespace Tribes_System
 
         private void calAmYear()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + qYear + "'";
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -546,7 +617,7 @@ namespace Tribes_System
         private void calFeeYear()
         {
             string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + qYear + "'";
+                "AND substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -564,7 +635,7 @@ namespace Tribes_System
         private void calDiscYear()
         {
             string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + qYear + "'";
+                "AND substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -621,7 +692,20 @@ namespace Tribes_System
         private void ayearBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             changeAnnYear();
-            fillYear();
+
+            int nexty = Convert.ToInt32(aYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
+            {
+                aYear = y;
+                ayearBox.Text = aYear;
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                fillYear();
+            }
         }
 
         //--------------Print------------------------

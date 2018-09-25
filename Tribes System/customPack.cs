@@ -92,19 +92,19 @@ namespace Tribes_System
             availEmpGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[1].HeaderCell.Value = "Model Number";
             availEmpGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            availEmpGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            availEmpGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             availEmpGrid.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[2].HeaderCell.Value = "Equipment Name";
             availEmpGrid.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            availEmpGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            availEmpGrid.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; ;
             availEmpGrid.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[3].HeaderCell.Value = "Category";
             availEmpGrid.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            availEmpGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            availEmpGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             availEmpGrid.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             availEmpGrid.Columns[4].HeaderCell.Value = "Status";
             availEmpGrid.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            availEmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            availEmpGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
 
             addEquipGrid.Columns[0].Visible = false;
@@ -112,7 +112,7 @@ namespace Tribes_System
             addEquipGrid.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[1].HeaderCell.Value = "Model Number";
             addEquipGrid.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            addEquipGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            addEquipGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             addEquipGrid.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[2].HeaderCell.Value = "Equipment Name";
             addEquipGrid.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -120,10 +120,10 @@ namespace Tribes_System
             addEquipGrid.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             addEquipGrid.Columns[3].HeaderCell.Value = "Category";
             addEquipGrid.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            addEquipGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            addEquipGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             addEquipGrid.Columns[4].HeaderCell.Value = "Category";
             addEquipGrid.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            addEquipGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            addEquipGrid.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

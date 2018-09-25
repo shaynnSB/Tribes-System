@@ -34,20 +34,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.ayearBox = new System.Windows.Forms.ComboBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.myearBox = new System.Windows.Forms.ComboBox();
-            this.mmonthBox = new System.Windows.Forms.ComboBox();
-            this.qyearBox = new System.Windows.Forms.ComboBox();
-            this.qmonthBox = new System.Windows.Forms.ComboBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.reportTab = new System.Windows.Forms.TabControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.title = new System.Windows.Forms.Panel();
-            this.minButt = new System.Windows.Forms.Button();
-            this.closeButt = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.printMonth = new System.Windows.Forms.Button();
             this.monthPanel = new System.Windows.Forms.Panel();
+            this.discMonth = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.feeMonth = new System.Windows.Forms.Label();
             this.amMonth = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -58,8 +48,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.totMonth = new System.Windows.Forms.Label();
+            this.myearBox = new System.Windows.Forms.ComboBox();
+            this.mmonthBox = new System.Windows.Forms.ComboBox();
+            this.qyearBox = new System.Windows.Forms.ComboBox();
+            this.qmonthBox = new System.Windows.Forms.ComboBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.printQuart = new System.Windows.Forms.Button();
             this.quartPanel = new System.Windows.Forms.Panel();
+            this.discQuart = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.feeQuart = new System.Windows.Forms.Label();
             this.amQuart = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -70,8 +67,11 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.totQuart = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.printYear = new System.Windows.Forms.Button();
             this.yearPanel = new System.Windows.Forms.Panel();
+            this.discYear = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.feeYear = new System.Windows.Forms.Label();
             this.amYear = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -82,20 +82,20 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.totYear = new System.Windows.Forms.Label();
-            this.discMonth = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.discQuart = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.discYear = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.reportTab = new System.Windows.Forms.TabControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.title = new System.Windows.Forms.Panel();
+            this.minButt = new System.Windows.Forms.Button();
+            this.closeButt = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
+            this.monthPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.quartPanel.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.yearPanel.SuspendLayout();
             this.reportTab.SuspendLayout();
             this.title.SuspendLayout();
-            this.monthPanel.SuspendLayout();
-            this.quartPanel.SuspendLayout();
-            this.yearPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -131,6 +131,7 @@
             // ayearBox
             // 
             this.ayearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ayearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ayearBox.FormattingEnabled = true;
             this.ayearBox.Location = new System.Drawing.Point(713, 35);
             this.ayearBox.Name = "ayearBox";
@@ -151,170 +152,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Monthly Report";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // myearBox
-            // 
-            this.myearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myearBox.FormattingEnabled = true;
-            this.myearBox.Location = new System.Drawing.Point(713, 35);
-            this.myearBox.Name = "myearBox";
-            this.myearBox.Size = new System.Drawing.Size(130, 28);
-            this.myearBox.TabIndex = 1;
-            this.myearBox.SelectedIndexChanged += new System.EventHandler(this.myearBox_SelectedIndexChanged);
-            // 
-            // mmonthBox
-            // 
-            this.mmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mmonthBox.FormattingEnabled = true;
-            this.mmonthBox.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.mmonthBox.Location = new System.Drawing.Point(543, 35);
-            this.mmonthBox.Name = "mmonthBox";
-            this.mmonthBox.Size = new System.Drawing.Size(164, 28);
-            this.mmonthBox.TabIndex = 0;
-            this.mmonthBox.SelectedIndexChanged += new System.EventHandler(this.mmonthBox_SelectedIndexChanged);
-            // 
-            // qyearBox
-            // 
-            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qyearBox.FormattingEnabled = true;
-            this.qyearBox.Location = new System.Drawing.Point(713, 35);
-            this.qyearBox.Name = "qyearBox";
-            this.qyearBox.Size = new System.Drawing.Size(130, 28);
-            this.qyearBox.TabIndex = 3;
-            this.qyearBox.SelectedIndexChanged += new System.EventHandler(this.qyearBox_SelectedIndexChanged);
-            // 
-            // qmonthBox
-            // 
-            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qmonthBox.FormattingEnabled = true;
-            this.qmonthBox.Items.AddRange(new object[] {
-            "First Quarter",
-            "Second Quarter",
-            "Third Quarter",
-            "Fourth Quarter"});
-            this.qmonthBox.Location = new System.Drawing.Point(543, 35);
-            this.qmonthBox.Name = "qmonthBox";
-            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
-            this.qmonthBox.TabIndex = 2;
-            this.qmonthBox.SelectedIndexChanged += new System.EventHandler(this.qmonthBox_SelectedIndexChanged);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.printQuart);
-            this.tabPage2.Controls.Add(this.quartPanel);
-            this.tabPage2.Controls.Add(this.qyearBox);
-            this.tabPage2.Controls.Add(this.qmonthBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(901, 709);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Quarterly Report";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.printYear);
-            this.tabPage3.Controls.Add(this.yearPanel);
-            this.tabPage3.Controls.Add(this.ayearBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(901, 709);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Annual Report";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // reportTab
-            // 
-            this.reportTab.Controls.Add(this.tabPage1);
-            this.reportTab.Controls.Add(this.tabPage2);
-            this.reportTab.Controls.Add(this.tabPage3);
-            this.reportTab.Location = new System.Drawing.Point(44, 113);
-            this.reportTab.Name = "reportTab";
-            this.reportTab.SelectedIndex = 0;
-            this.reportTab.Size = new System.Drawing.Size(909, 738);
-            this.reportTab.TabIndex = 92;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(13, 7);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 27);
-            this.label2.TabIndex = 87;
-            this.label2.Text = "Revenue Report";
-            // 
-            // title
-            // 
-            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.title.Controls.Add(this.label2);
-            this.title.Controls.Add(this.minButt);
-            this.title.Controls.Add(this.closeButt);
-            this.title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title.Location = new System.Drawing.Point(0, 0);
-            this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(1000, 46);
-            this.title.TabIndex = 91;
-            // 
-            // minButt
-            // 
-            this.minButt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minButt.FlatAppearance.BorderSize = 0;
-            this.minButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
-            this.minButt.Location = new System.Drawing.Point(918, 0);
-            this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.minButt.Name = "minButt";
-            this.minButt.Size = new System.Drawing.Size(41, 46);
-            this.minButt.TabIndex = 1;
-            this.minButt.UseVisualStyleBackColor = true;
-            this.minButt.Click += new System.EventHandler(this.minButt_Click);
-            // 
-            // closeButt
-            // 
-            this.closeButt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.closeButt.FlatAppearance.BorderSize = 0;
-            this.closeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
-            this.closeButt.Location = new System.Drawing.Point(959, 0);
-            this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.closeButt.Name = "closeButt";
-            this.closeButt.Size = new System.Drawing.Size(41, 46);
-            this.closeButt.TabIndex = 0;
-            this.closeButt.UseVisualStyleBackColor = true;
-            this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(36, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(309, 46);
-            this.label1.TabIndex = 90;
-            this.label1.Text = "Revenue Report";
             // 
             // printMonth
             // 
@@ -353,6 +190,28 @@
             this.monthPanel.Name = "monthPanel";
             this.monthPanel.Size = new System.Drawing.Size(785, 568);
             this.monthPanel.TabIndex = 106;
+            // 
+            // discMonth
+            // 
+            this.discMonth.AutoSize = true;
+            this.discMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discMonth.Location = new System.Drawing.Point(512, 348);
+            this.discMonth.Name = "discMonth";
+            this.discMonth.Size = new System.Drawing.Size(29, 29);
+            this.discMonth.TabIndex = 111;
+            this.discMonth.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(98, 348);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 29);
+            this.label6.TabIndex = 110;
+            this.label6.Text = "Discount";
             // 
             // feeMonth
             // 
@@ -465,6 +324,82 @@
             this.totMonth.TabIndex = 97;
             this.totMonth.Text = "--";
             // 
+            // myearBox
+            // 
+            this.myearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.myearBox.FormattingEnabled = true;
+            this.myearBox.Location = new System.Drawing.Point(713, 35);
+            this.myearBox.Name = "myearBox";
+            this.myearBox.Size = new System.Drawing.Size(130, 28);
+            this.myearBox.TabIndex = 1;
+            this.myearBox.SelectedIndexChanged += new System.EventHandler(this.myearBox_SelectedIndexChanged);
+            // 
+            // mmonthBox
+            // 
+            this.mmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mmonthBox.FormattingEnabled = true;
+            this.mmonthBox.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.mmonthBox.Location = new System.Drawing.Point(543, 35);
+            this.mmonthBox.Name = "mmonthBox";
+            this.mmonthBox.Size = new System.Drawing.Size(164, 28);
+            this.mmonthBox.TabIndex = 0;
+            this.mmonthBox.SelectedIndexChanged += new System.EventHandler(this.mmonthBox_SelectedIndexChanged);
+            // 
+            // qyearBox
+            // 
+            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qyearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qyearBox.FormattingEnabled = true;
+            this.qyearBox.Location = new System.Drawing.Point(713, 35);
+            this.qyearBox.Name = "qyearBox";
+            this.qyearBox.Size = new System.Drawing.Size(130, 28);
+            this.qyearBox.TabIndex = 3;
+            this.qyearBox.SelectedIndexChanged += new System.EventHandler(this.qyearBox_SelectedIndexChanged);
+            // 
+            // qmonthBox
+            // 
+            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qmonthBox.FormattingEnabled = true;
+            this.qmonthBox.Items.AddRange(new object[] {
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Fourth Quarter"});
+            this.qmonthBox.Location = new System.Drawing.Point(543, 35);
+            this.qmonthBox.Name = "qmonthBox";
+            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
+            this.qmonthBox.TabIndex = 2;
+            this.qmonthBox.SelectedIndexChanged += new System.EventHandler(this.qmonthBox_SelectedIndexChanged);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.printQuart);
+            this.tabPage2.Controls.Add(this.quartPanel);
+            this.tabPage2.Controls.Add(this.qyearBox);
+            this.tabPage2.Controls.Add(this.qmonthBox);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(901, 709);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Quarterly Report";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // printQuart
             // 
             this.printQuart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -502,6 +437,28 @@
             this.quartPanel.Name = "quartPanel";
             this.quartPanel.Size = new System.Drawing.Size(785, 568);
             this.quartPanel.TabIndex = 106;
+            // 
+            // discQuart
+            // 
+            this.discQuart.AutoSize = true;
+            this.discQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discQuart.Location = new System.Drawing.Point(512, 350);
+            this.discQuart.Name = "discQuart";
+            this.discQuart.Size = new System.Drawing.Size(29, 29);
+            this.discQuart.TabIndex = 111;
+            this.discQuart.Text = "--";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label10.Location = new System.Drawing.Point(98, 350);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 29);
+            this.label10.TabIndex = 110;
+            this.label10.Text = "Discount";
             // 
             // feeQuart
             // 
@@ -614,6 +571,19 @@
             this.totQuart.TabIndex = 97;
             this.totQuart.Text = "--";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.printYear);
+            this.tabPage3.Controls.Add(this.yearPanel);
+            this.tabPage3.Controls.Add(this.ayearBox);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(901, 709);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Annual Report";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // printYear
             // 
             this.printYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -651,6 +621,28 @@
             this.yearPanel.Name = "yearPanel";
             this.yearPanel.Size = new System.Drawing.Size(785, 568);
             this.yearPanel.TabIndex = 105;
+            // 
+            // discYear
+            // 
+            this.discYear.AutoSize = true;
+            this.discYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.discYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.discYear.Location = new System.Drawing.Point(512, 348);
+            this.discYear.Name = "discYear";
+            this.discYear.Size = new System.Drawing.Size(29, 29);
+            this.discYear.TabIndex = 111;
+            this.discYear.Text = "--";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(98, 348);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(106, 29);
+            this.label14.TabIndex = 110;
+            this.label14.Text = "Discount";
             // 
             // feeYear
             // 
@@ -762,71 +754,84 @@
             this.totYear.TabIndex = 97;
             this.totYear.Text = "--";
             // 
-            // discMonth
+            // reportTab
             // 
-            this.discMonth.AutoSize = true;
-            this.discMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.discMonth.Location = new System.Drawing.Point(512, 348);
-            this.discMonth.Name = "discMonth";
-            this.discMonth.Size = new System.Drawing.Size(29, 29);
-            this.discMonth.TabIndex = 111;
-            this.discMonth.Text = "--";
+            this.reportTab.Controls.Add(this.tabPage1);
+            this.reportTab.Controls.Add(this.tabPage2);
+            this.reportTab.Controls.Add(this.tabPage3);
+            this.reportTab.Location = new System.Drawing.Point(44, 113);
+            this.reportTab.Name = "reportTab";
+            this.reportTab.SelectedIndex = 0;
+            this.reportTab.Size = new System.Drawing.Size(909, 738);
+            this.reportTab.TabIndex = 92;
             // 
-            // label6
+            // label2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(98, 348);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 29);
-            this.label6.TabIndex = 110;
-            this.label6.Text = "Discount";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(13, 7);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(165, 27);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Revenue Report";
             // 
-            // discQuart
+            // title
             // 
-            this.discQuart.AutoSize = true;
-            this.discQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.discQuart.Location = new System.Drawing.Point(512, 350);
-            this.discQuart.Name = "discQuart";
-            this.discQuart.Size = new System.Drawing.Size(29, 29);
-            this.discQuart.TabIndex = 111;
-            this.discQuart.Text = "--";
+            this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.title.Controls.Add(this.label2);
+            this.title.Controls.Add(this.minButt);
+            this.title.Controls.Add(this.closeButt);
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.title.Location = new System.Drawing.Point(0, 0);
+            this.title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.title.Name = "title";
+            this.title.Size = new System.Drawing.Size(1000, 46);
+            this.title.TabIndex = 91;
             // 
-            // label10
+            // minButt
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(98, 350);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 29);
-            this.label10.TabIndex = 110;
-            this.label10.Text = "Discount";
+            this.minButt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.minButt.FlatAppearance.BorderSize = 0;
+            this.minButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.minButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.minButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minButt.Image = ((System.Drawing.Image)(resources.GetObject("minButt.Image")));
+            this.minButt.Location = new System.Drawing.Point(918, 0);
+            this.minButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.minButt.Name = "minButt";
+            this.minButt.Size = new System.Drawing.Size(41, 46);
+            this.minButt.TabIndex = 1;
+            this.minButt.UseVisualStyleBackColor = true;
+            this.minButt.Click += new System.EventHandler(this.minButt_Click);
             // 
-            // discYear
+            // closeButt
             // 
-            this.discYear.AutoSize = true;
-            this.discYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.discYear.Location = new System.Drawing.Point(512, 348);
-            this.discYear.Name = "discYear";
-            this.discYear.Size = new System.Drawing.Size(29, 29);
-            this.discYear.TabIndex = 111;
-            this.discYear.Text = "--";
+            this.closeButt.Dock = System.Windows.Forms.DockStyle.Right;
+            this.closeButt.FlatAppearance.BorderSize = 0;
+            this.closeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.closeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.closeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButt.Image = ((System.Drawing.Image)(resources.GetObject("closeButt.Image")));
+            this.closeButt.Location = new System.Drawing.Point(959, 0);
+            this.closeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.closeButt.Name = "closeButt";
+            this.closeButt.Size = new System.Drawing.Size(41, 46);
+            this.closeButt.TabIndex = 0;
+            this.closeButt.UseVisualStyleBackColor = true;
+            this.closeButt.Click += new System.EventHandler(this.closeButt_Click);
             // 
-            // label14
+            // label1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(98, 348);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(106, 29);
-            this.label14.TabIndex = 110;
-            this.label14.Text = "Discount";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label1.Location = new System.Drawing.Point(36, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(309, 46);
+            this.label1.TabIndex = 90;
+            this.label1.Text = "Revenue Report";
             // 
             // revenueReport
             // 
@@ -845,17 +850,17 @@
             this.Text = "revenueReport";
             this.Load += new System.EventHandler(this.revenueReport_Load);
             this.tabPage1.ResumeLayout(false);
+            this.monthPanel.ResumeLayout(false);
+            this.monthPanel.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.quartPanel.ResumeLayout(false);
+            this.quartPanel.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.yearPanel.ResumeLayout(false);
+            this.yearPanel.PerformLayout();
             this.reportTab.ResumeLayout(false);
             this.title.ResumeLayout(false);
             this.title.PerformLayout();
-            this.monthPanel.ResumeLayout(false);
-            this.monthPanel.PerformLayout();
-            this.quartPanel.ResumeLayout(false);
-            this.quartPanel.PerformLayout();
-            this.yearPanel.ResumeLayout(false);
-            this.yearPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -15,6 +15,7 @@ namespace Tribes_System
     {
 
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root; Convert Zero Datetime = True;");
+        MySqlCommand cmd;
 
         DataTable grid = new DataTable();
         int selectedRow;
@@ -26,22 +27,8 @@ namespace Tribes_System
         public eventSched()
         {
             InitializeComponent();
-        }
 
-        public void openConnection()
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-        }
-
-        public void closeConnection()
-        {
-            if (con.State == ConnectionState.Open)
-            {
-                con.Close();
-            }
+            boldEvents();      
         }
 
         private void calendar_DateChanged(object sender, DateRangeEventArgs e)
@@ -83,24 +70,19 @@ namespace Tribes_System
 
         public static string id;
 
-        private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void show_deets()
         {
-            deetPanel.Visible = true;
-
-            selectedRow = e.RowIndex;
-            DataGridViewRow row = eventGrid.Rows[selectedRow];
-            id = eventGrid.CurrentRow.Cells[0].Value.ToString();
-            id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
-            event_stat = eventGrid.CurrentRow.Cells[11].Value.ToString(); 
-
             string selectQuery = "select * from event where id_event = " + eventGrid.CurrentRow.Cells[0].Value.ToString();
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
+            string cancel;
+
             while (reader.Read())
             {
-                nameLabel.Text = reader["event_name"].ToString() + " - " + reader["event_status"].ToString(); 
+                cancel = reader["event_status"].ToString();
+                nameLabel.Text = reader["event_name"].ToString() + " - " + reader["event_status"].ToString();
                 //dateLabel.Text = reader["start_date"].ToString() + " - " + reader["end_date"].ToString();
                 timeLabel.Text = reader["start_time"].ToString() + " - " + reader["end_time"].ToString();
                 locLabel.Text = reader["event_location"].ToString();
@@ -118,8 +100,39 @@ namespace Tribes_System
                     amLabel.Text = "PHP " + reader["event_price"].ToString();
                 }
 
+                if (cancel == "Cancelled")
+                {
+                    viewEquip.Enabled = false;
+                    viewStaff.Enabled = false;
+                    viewPay.Enabled = false;
+                    editButt.Enabled = false;
+                    cancellationButt.Enabled = false;
+                    remCanButt.Visible = true;
+                }
+                else
+                {
+                    viewEquip.Enabled = true;
+                    viewStaff.Enabled = true;
+                    viewPay.Enabled = true;
+                    editButt.Enabled = true;
+                    cancellationButt.Enabled = true;
+                    remCanButt.Visible = false;
+                }
             }
             closeConnection();
+        }
+
+        private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            deetPanel.Visible = true;
+
+            selectedRow = e.RowIndex;
+            DataGridViewRow row = eventGrid.Rows[selectedRow];
+            id = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
+            event_stat = eventGrid.CurrentRow.Cells[11].Value.ToString();
+
+            show_deets();
 
             date();
         }
@@ -207,10 +220,10 @@ namespace Tribes_System
             DialogResult dialogResult = MessageBox.Show("Confirm cancellation of event?", "Cancel Event", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                string cancelQuery = "UPDATE event SET status = 'Cancelled' WHERE id_event = " + id_select;
-                openConnection();
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cancelQuery, con);
-                closeConnection();
+                string cancelQuery = "UPDATE event SET event_status = 'Cancelled' WHERE id_event = " + id_select;
+                executeMyQuery(cancelQuery);
+                MessageBox.Show("Event Cancelled");
+                show_deets();
             }
             else if (dialogResult == DialogResult.No)
             {
@@ -232,6 +245,111 @@ namespace Tribes_System
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
+        }
+
+        private void remCanButt_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Confirm removal of cancellation?", "Cancelled Event", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                string cancelQuery = "UPDATE event SET event_status = 'Unpaid' WHERE id_event = " + id_select;
+                executeMyQuery(cancelQuery);
+                MessageBox.Show("Event Cancellation Removed");
+                show_deets();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
+        }
+
+        //------------Color----------------
+
+        public DataTable GetDates()
+        {
+            DataTable table = new DataTable();
+            string query = "SELECT * FROM event";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            return table;
+        }
+
+        private void boldEvents()
+        {
+            /*string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
+                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' UNION SELECT * FROM event WHERE start_date <= '" +
+                calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' AND end_date >= '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";*/
+
+            string selectQuery = "select substring(start_date, 1, 4), substring(end_date, 1, 4), substring(start_date, 6, 2), substring(end_date, 6, 2), " +
+                "substring(start_date, 9, 2), substring(end_date, 9, 2) from event";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string firstd = reader["substring(start_date, 9, 2)"].ToString();
+                int fd = Convert.ToInt32(firstd);
+                string firstm = reader["substring(start_date, 6, 2)"].ToString();
+                int fm = Convert.ToInt32(firstm);
+                string firsty = reader["substring(start_date, 1, 4)"].ToString();
+                int fy = Convert.ToInt32(firsty);
+                string lastd = reader["substring(end_date, 9, 2)"].ToString();
+                int ld = Convert.ToInt32(lastd);
+                string lastm = reader["substring(end_date, 6, 2)"].ToString();
+                int lm = Convert.ToInt32(lastm);
+                string lasty = reader["substring(end_date, 1, 4)"].ToString();
+                int ly = Convert.ToInt32(lasty);
+
+                calendar.BoldedDates = new DateTime[] { new DateTime(fy, fm, fd, 0, 0, 0, 0), new DateTime(ly, lm, ld, 0, 0, 0, 0) };
+            }
+            closeConnection();        
         }
 
         //http://geekswithblogs.net/dotNETvinz/archive/2009/05/03/changing-the-background-color-of-the-calendar-control-based-on.aspx

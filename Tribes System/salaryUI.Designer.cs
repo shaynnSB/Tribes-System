@@ -61,6 +61,8 @@
             this.fullGrid = new System.Windows.Forms.DataGridView();
             this.fullStatLabel = new System.Windows.Forms.Label();
             this.fullEmpLabel = new System.Windows.Forms.Label();
+            this.salLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
@@ -334,6 +336,8 @@
             // fullPanel
             // 
             this.fullPanel.BackColor = System.Drawing.Color.Silver;
+            this.fullPanel.Controls.Add(this.salLabel);
+            this.fullPanel.Controls.Add(this.label6);
             this.fullPanel.Controls.Add(this.fullYearBox);
             this.fullPanel.Controls.Add(this.fullMonthBox);
             this.fullPanel.Controls.Add(this.fullVio);
@@ -362,6 +366,7 @@
             this.fullYearBox.Name = "fullYearBox";
             this.fullYearBox.Size = new System.Drawing.Size(130, 28);
             this.fullYearBox.TabIndex = 100;
+            this.fullYearBox.SelectedIndexChanged += new System.EventHandler(this.fullYearBox_SelectedIndexChanged);
             // 
             // fullMonthBox
             // 
@@ -385,6 +390,7 @@
             this.fullMonthBox.Name = "fullMonthBox";
             this.fullMonthBox.Size = new System.Drawing.Size(164, 28);
             this.fullMonthBox.TabIndex = 99;
+            this.fullMonthBox.SelectedIndexChanged += new System.EventHandler(this.fullMonthBox_SelectedIndexChanged);
             // 
             // fullVio
             // 
@@ -497,7 +503,7 @@
             this.fullGrid.Location = new System.Drawing.Point(21, 130);
             this.fullGrid.Name = "fullGrid";
             this.fullGrid.RowTemplate.Height = 24;
-            this.fullGrid.Size = new System.Drawing.Size(471, 323);
+            this.fullGrid.Size = new System.Drawing.Size(471, 280);
             this.fullGrid.TabIndex = 91;
             // 
             // fullStatLabel
@@ -521,6 +527,28 @@
             this.fullEmpLabel.Size = new System.Drawing.Size(205, 29);
             this.fullEmpLabel.TabIndex = 89;
             this.fullEmpLabel.Text = "Employees Name";
+            // 
+            // salLabel
+            // 
+            this.salLabel.AutoSize = true;
+            this.salLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.salLabel.Location = new System.Drawing.Point(353, 434);
+            this.salLabel.Name = "salLabel";
+            this.salLabel.Size = new System.Drawing.Size(26, 25);
+            this.salLabel.TabIndex = 102;
+            this.salLabel.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(213, 434);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 25);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Salary:";
             // 
             // salaryUI
             // 
@@ -583,5 +611,7 @@
         private System.Windows.Forms.DataGridView fullGrid;
         private System.Windows.Forms.Label fullStatLabel;
         private System.Windows.Forms.Label fullEmpLabel;
+        private System.Windows.Forms.Label salLabel;
+        private System.Windows.Forms.Label label6;
     }
 }
