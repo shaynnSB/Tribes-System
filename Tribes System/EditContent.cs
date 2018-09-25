@@ -173,5 +173,17 @@ namespace Tribes_System
         {
 
         }
+
+        private void dtp1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime dateTime = DateTime.Now;
+            DateTime a = dtp1.Value;
+                                     
+            if ( a >dateTime)
+            {
+                MessageBox.Show("Input should not exceed today's date.");
+                dtp1.Value = DateTime.Now;
+            }
+        }
     }
 }
