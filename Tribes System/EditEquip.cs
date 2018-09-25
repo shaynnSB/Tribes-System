@@ -33,7 +33,7 @@ namespace Tribes_System
                 DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
                 if (dg == DialogResult.Yes)
                 {
-                    string insertQuery = "UPDATE items SET name='" + textBox1.Text + "' , categoryID =" + a+ " , description=" + textBox2.Text+" where items.id = " + Equipment.sendtext;
+                    string insertQuery = "UPDATE items SET name='" + textBox1.Text + "' , categoryID =" + a+ " , description='" + textBox2.Text+"' where items.id = " + Equipment.sendtext;
                     executeMyQuery(insertQuery);
                  
                     //(System.Windows.Forms.Application.OpenForms["Form2"] as Form2).setTextform("SELECT items.id,items.name,category.description,items.description,COUNT(itemcontent.id) AS test FROM items left join category on items.categoryID = category.id left join itemcontent on itemcontent.itemID=items.id and items.id =" + UserControl1.sendtext);

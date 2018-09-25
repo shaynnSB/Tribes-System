@@ -83,6 +83,7 @@
             this.dtp1.Size = new System.Drawing.Size(222, 20);
             this.dtp1.TabIndex = 4;
             this.dtp1.Visible = false;
+            this.dtp1.ValueChanged += new System.EventHandler(this.dtp1_ValueChanged);
             // 
             // dd
             // 
