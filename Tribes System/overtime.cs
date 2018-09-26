@@ -11,9 +11,8 @@ using MySql.Data.MySqlClient;
 
 namespace Tribes_System
 {
-    public partial class bonus : Form
+    public partial class overtime : Form
     {
-
         salaryUI form = new salaryUI();
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
@@ -22,7 +21,7 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        public bonus(salaryUI form)
+        public overtime(salaryUI form)
         {
             InitializeComponent();
             this.form = form;
@@ -31,6 +30,31 @@ namespace Tribes_System
         private void closeButt_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void minButt_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void amBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.'
+                && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dateBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
         public void openConnection()
@@ -101,7 +125,7 @@ namespace Tribes_System
         {
             if (amBox.Text != "" && dateBox.MaskCompleted)
             {
-                string insertQuery = "INSERT INTO bonus(id_emp, bonus_amount, date) VALUES (" + idPassed + ", "
+                string insertQuery = "INSERT INTO overtime(id_emp, over_amount, date) VALUES (" + idPassed + ", "
                     + amBox.Text + ", '" + dateBox.Text + "')";
 
                 executeMyQuery(insertQuery);
@@ -121,7 +145,7 @@ namespace Tribes_System
         {
             if (amBox.Text != "" && dateBox.MaskCompleted)
             {
-                string editQuery = "UPDATE bonus SET bonus_amount = " + amBox.Text + ", date = '" + dateBox.Text + "' WHERE id_emp = " + idPassed 
+                string editQuery = "UPDATE overtime SET over_amount = " + amBox.Text + ", date = '" + dateBox.Text + "' WHERE id_emp = " + idPassed
                     + " AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
@@ -141,7 +165,7 @@ namespace Tribes_System
         {
             if (amBox.Text != "" && dateBox.MaskCompleted)
             {
-                string editQuery = "DELETE FROM bonus WHERE id_emp = " + idPassed + " AND id = " + id_amount;
+                string editQuery = "DELETE FROM overtime WHERE id_emp = " + idPassed + " AND id = " + id_amount;
 
                 executeMyQuery(editQuery);
                 MessageBox.Show("Removed Successfully");
@@ -158,27 +182,27 @@ namespace Tribes_System
 
         private void DisplayData()
         {
-            string query = "select * from bonus where id_emp = " + idPassed;
+            string query = "select * from overtime where id_emp = " + idPassed;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
 
-            bonusGrid.Columns.Clear();
-            bonusGrid.DataSource = table;
-            bonusGrid.Columns[0].Visible = false;
-            bonusGrid.Columns[1].Visible = false;
-            bonusGrid.Columns[2].HeaderCell.Value = "Date";
-            bonusGrid.Columns[3].HeaderCell.Value = "Amount";
+            overGrid.Columns.Clear();
+            overGrid.DataSource = table;
+            overGrid.Columns[0].Visible = false;
+            overGrid.Columns[1].Visible = false;
+            overGrid.Columns[2].HeaderCell.Value = "Date";
+            overGrid.Columns[3].HeaderCell.Value = "Amount";
 
-            bonusGrid.RowHeadersVisible = false;
+            overGrid.RowHeadersVisible = false;
 
-            bonusGrid.Columns[2].Width = 150;
-            bonusGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            overGrid.Columns[2].Width = 150;
+            overGrid.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void total()
         {
-            string query = "select SUM(bonus_amount) from bonus where id_emp = " + idPassed;
+            string query = "select SUM(over_amount) from overtime where id_emp = " + idPassed;
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -189,40 +213,20 @@ namespace Tribes_System
 
             while (reader.Read())
             {
-                totLabel.Text = reader["SUM(bonus_amount)"].ToString();
+                totLabel.Text = reader["SUM(over_amount)"].ToString();
             }
 
             closeConnection();
         }
 
-        private void amBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void overGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if (e.KeyChar == '.'
-                && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
+            amBox.Text = overGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+            dateBox.Text = overGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            id_amount = overGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
         }
 
-        private void minButt_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-
-        private void bonusGrid_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            amBox.Text = bonusGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateBox.Text = bonusGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_amount = bonusGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
-        }
-
-        private void bonus_Load(object sender, EventArgs e)
+        private void overtime_Load(object sender, EventArgs e)
         {
             DisplayData();
             total();

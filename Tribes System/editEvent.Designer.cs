@@ -175,7 +175,6 @@
             // saveButt
             // 
             this.saveButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.saveButt.Enabled = false;
             this.saveButt.FlatAppearance.BorderSize = 0;
             this.saveButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.saveButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;

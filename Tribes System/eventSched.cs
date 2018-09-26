@@ -43,7 +43,7 @@ namespace Tribes_System
         private void button1_Click(object sender, EventArgs e)
         {
             editEvent form = new editEvent(this);
-            form.nameBox = nameLabel.Text;
+            form.nameBox = event_name;
             form.locateBox = locLabel.Text;
             form.passNoteBox = notesBox.Text;
             form.clientNameBox = clientLabel.Text;

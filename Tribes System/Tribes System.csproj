@@ -224,6 +224,12 @@
     <Compile Include="logIn.Designer.cs">
       <DependentUpon>logIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="overtime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="overtime.Designer.cs">
+      <DependentUpon>overtime.cs</DependentUpon>
+    </Compile>
     <Compile Include="payDeets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="logIn.resx">
       <DependentUpon>logIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="overtime.resx">
+      <DependentUpon>overtime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="payDeets.resx">
       <DependentUpon>payDeets.cs</DependentUpon>

@@ -108,17 +108,16 @@ namespace Tribes_System
 
         private void start_time()
         {
-            string selectQuery = "select substring(start_time, 1,2), substring(start_time, 3,4), substring(start_time, 7) from event where id_event = " + idPassed;
+            string selectQuery = "select substring(start_time, 1,2), substring(start_time, 4,2), substring(start_time, 7,2) from event where id_event = " + idPassed;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                string min = reader["substring(start_time, 3,4)"].ToString();
-                min = min.Substring(1);
+                string min = reader["substring(start_time, 4,2)"].ToString();
                 startHour.Text = reader["substring(start_time, 1,2)"].ToString();
-                startMeri.Text = reader["substring(start_time, 7)"].ToString();
+                startMeri.Text = reader["substring(start_time, 7,2)"].ToString();
                 startMin.Text = min;
             }
             closeConnection();
@@ -126,17 +125,16 @@ namespace Tribes_System
 
         private void end_time()
         {
-            string selectQuery = "select substring(end_time, 1,2), substring(end_time, 3,4), substring(end_time, 7) from event where id_event = " + idPassed;
+            string selectQuery = "select substring(end_time, 1,2), substring(end_time, 4,2), substring(end_time, 7,2) from event where id_event = " + idPassed;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                string min = reader["substring(end_time, 3,4)"].ToString();
-                min = min.Substring(1);
+                string min = reader["substring(end_time, 4,2)"].ToString();
                 endHour.Text = reader["substring(end_time, 1,2)"].ToString();
-                endMeri.Text = reader["substring(end_time, 7)"].ToString();
+                endMeri.Text = reader["substring(end_time, 7,2)"].ToString();
                 endMin.Text = min;
             }
             closeConnection();
@@ -163,6 +161,14 @@ namespace Tribes_System
             DateTime current = DateTime.Parse(cDate);
             DateTime chosen_end = DateTime.Parse(endDate.Text);
 
+            string startT = startHour.Text + ":" + startMin.Text + " " + startMeri.Text;
+            DateTime st;
+            DateTime.TryParse(startT, out st);
+
+            string endT = endHour.Text + ":" + endMin.Text + " " + endMeri.Text;
+            DateTime et;
+            DateTime.TryParse(endT, out et);
+
             DialogResult dialogResult = MessageBox.Show("Confirm changes?", "Edit Event Details", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -175,13 +181,20 @@ namespace Tribes_System
                     }
                     else
                     {
-                        string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
-                        "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text +
-                        "', start_date = '" + startDate.Text + "', end_date = '" + endDate.Text + "', client_name = '" + nameClientBox.Text + "', client_contact = '+(63) "
-                        + numClientBox.Text + "' , client_email = '" + emailClient.Text + "' WHERE id_event = " + idPassed;
-                        executeMyQuery(editQuery);
-                        MessageBox.Show("Edited Successfully!");
-                        this.Close();
+                        if (st >= et && chosen == chosen_end)
+                        {
+                            MessageBox.Show("Time chosen is not valid");
+                        }
+                        else
+                        {
+                            string editQuery = "UPDATE event SET event_name = '" + eventBox.Text + "' ,event_location = '" + locBox.Text + "' , event_notes = '" + notesBox.Text +
+                            "', start_time = '" + startHour.Text + ":" + startMin.Text + " " + startMeri.Text + "', end_time = '" + endHour.Text + ":" + endMin.Text + " " + endMeri.Text +
+                            "', start_date = '" + startDate.Text + "', end_date = '" + endDate.Text + "', client_name = '" + nameClientBox.Text + "', client_contact = '+(63) "
+                            + numClientBox.Text + "' , client_email = '" + emailClient.Text + "' WHERE id_event = " + idPassed;
+                            executeMyQuery(editQuery);
+                            MessageBox.Show("Edited Successfully!");
+                            this.Close();
+                        }                       
                     }                   
                 }
                 else

@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Tribes_System
 {
     public partial class equipButt : Form
     {
+        salaryUI form = new salaryUI();
+        MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
+        MySqlCommand cmd;
+
         int PW;
         bool hidden;
         private bool drag = false;
@@ -100,6 +105,11 @@ namespace Tribes_System
         private void homePage_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void checkSal()
+        {
+
         }
 
         private void empButt_Click(object sender, EventArgs e)
@@ -234,6 +244,50 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
         }
     }
 }

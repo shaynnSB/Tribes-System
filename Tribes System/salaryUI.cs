@@ -22,6 +22,7 @@ namespace Tribes_System
         string bonus_amount;
         string salary_amount;
         string computed_amount;
+        string over_amount;
 
         public salaryUI()
         {
@@ -109,33 +110,6 @@ namespace Tribes_System
             }
         }
 
-        /*private void loadMonth()
-        {
-            string sMonth = DateTime.Now.ToString("MM");
-            string query = "select * from event where substring(start_date, 6, 2) = " + monthBox.Text;
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                //vio_amount = reader["SUM(violation_amount)"].ToString();
-                if (reader["SUM(violation_amount)"] != DBNull.Value)
-                {
-                    vio_amount = reader["SUM(violation_amount)"].ToString();
-                }
-                else
-                {
-                    vio_amount = "0";
-                }
-            }
-            closeConnection();
-        }*/
-
         private void resetTable(string query = "select * from employee")
         {
 
@@ -175,7 +149,7 @@ namespace Tribes_System
         private void salaryTable()
         {
             string query = "select event_name, salary from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event" +
-                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(end_date, 1,4) = '" + sYear + "'"; 
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'"; 
             DataTable table = new DataTable(); 
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -190,23 +164,6 @@ namespace Tribes_System
             earnedGrid.RowHeadersVisible = false;
 
             earnedGrid.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
-        private void salaryFullTable()
-        {
-            string query = "select event_name from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event" +
-                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(end_date, 1,4) = '" + sYear + "'";
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            fullGrid.Columns.Clear();
-            fullGrid.DataSource = table;
-
-            fullGrid.Columns[0].HeaderCell.Value = "Event Name";
-            fullGrid.RowHeadersVisible = false;
-
-            fullGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void payrollUI_Load(object sender, EventArgs e)
@@ -264,6 +221,7 @@ namespace Tribes_System
                 salaryFullTable();
                 violationsFull();
                 bonusFull();
+                overFull();
                 computeFull();
             }            
         }
@@ -285,6 +243,11 @@ namespace Tribes_System
                     resetTable();
                     break;
             }
+        }
+
+        private void yearChange2()
+        {
+            sYear = yearBox.Text;
         }
 
         private void violations()
@@ -313,37 +276,8 @@ namespace Tribes_System
             }
             closeConnection();
 
-            vioLabel.Text = vio_amount;
-        }
-
-        private void violationsFull()
-        {
-            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp +
-                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                //vio_amount = reader["SUM(violation_amount)"].ToString();
-                if (reader["SUM(violation_amount)"] != DBNull.Value)
-                {
-                    vio_amount = reader["SUM(violation_amount)"].ToString();
-                }
-                else
-                {
-                    vio_amount = "0";
-                }
-            }
-            closeConnection();
-
-            fullVioLabel.Text = vio_amount;
-        }
+            vioLabel.Text = "(" + vio_amount + ")";
+        }       
 
         private void bonus()
         {
@@ -374,38 +308,10 @@ namespace Tribes_System
             bonusLabel.Text = bonus_amount;
         }
 
-        private void bonusFull()
-        {
-            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp +
-                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                //bonus_amount = reader["SUM(bonus_amount)"].ToString();
-                if (reader["SUM(bonus_amount)"] != DBNull.Value)
-                {
-                    bonus_amount = reader["SUM(bonus_amount)"].ToString();
-                }
-                else
-                {
-                    bonus_amount = "0";
-                }
-            }
-            closeConnection();
-
-            fullBoLabel.Text = bonus_amount;
-        }
-
         private void salary()
         {
-            string query = "select SUM(salary) from staff_lineup where staff_id = " + selectedEmp;
+            string query = "select SUM(salary) from event, staff_lineup where no_event = id_event AND staff_id = " + selectedEmp +
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'";
             DataTable table = new DataTable();
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
             adapter.Fill(table);
@@ -428,35 +334,7 @@ namespace Tribes_System
             }
 
             closeConnection();
-        }
-
-        private void salaryFull()
-        {
-            string query = "select emp_salary from employee where id_emp = " + selectedEmp;
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                if (reader["emp_salary"] != DBNull.Value)
-                {
-                    salary_amount = reader["emp_salary"].ToString();
-                }
-                else
-                {
-                    salary_amount = "0";
-                }
-
-            }
-
-            salLabel.Text = salary_amount;
-            closeConnection();
-        }
+        }     
 
         private void compute()
         {
@@ -473,29 +351,18 @@ namespace Tribes_System
             totalLabel.Text = computed_amount;
         }
 
-        private void computeFull()
-        {
-            salaryFull();
-
-            double vio = Convert.ToDouble(vio_amount);
-            double bon = Convert.ToDouble(bonus_amount);
-            double sal = Convert.ToDouble(salary_amount);
-
-            double total = (bon + sal) - vio;
-
-            computed_amount = Convert.ToString(total) + ".00";
-
-            fullTotLabel.Text = computed_amount;
-        }
-
         private void vioButt_Click(object sender, EventArgs e)
         {
             violations form = new violations(this);
             form.idValue = selectedEmp;
             form.nameBox = NameLab.Text;
+            form.statusVal = StatusLab.Text;
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            salaryTable();
+            violations();
+            bonus();
+            compute();
         }
 
         private void bonusButt_Click(object sender, EventArgs e)
@@ -505,7 +372,10 @@ namespace Tribes_System
             form.nameBox = NameLab.Text;
             form.ShowDialog();
 
-            deetPanel.Visible = false;
+            salaryTable();
+            violations();
+            bonus();
+            compute();
         }
 
         private void monthBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -527,6 +397,9 @@ namespace Tribes_System
                 if (selectedEmp != "")
                 {
                     salaryTable();
+                    violations();
+                    bonus();
+                    compute();
                 }
                 else
                 {
@@ -552,64 +425,9 @@ namespace Tribes_System
                 if (selectedEmp != "")
                 {
                     salaryTable();
-                }
-            }
-        }
-
-        private void fullMonthBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            monthChange2();
-            int nextm = Convert.ToInt32(sMonth);
-            int formerm = Convert.ToInt32(m);
-            int nexty = Convert.ToInt32(sYear);
-            int formery = Convert.ToInt32(y);
-
-            if ((nextm > formerm) && (nexty == formery))
-            {
-                sMonth = m;
-                assignMonth();
-                MessageBox.Show("Details Are Not Yet Available!");
-            }
-            else
-            {
-                if (selectedEmp != "")
-                {
-                    salaryFullTable();
-                }
-                else
-                {
-
-                }
-            }
-        }
-
-        private void yearChange2()
-        {
-            sYear = yearBox.Text;
-        }
-
-        private void yearChange()
-        {
-            sYear = fullYearBox.Text;
-        }
-
-        private void fullYearBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            yearChange();
-            int nexty = Convert.ToInt32(sYear);
-            int formery = Convert.ToInt32(y);
-
-            if (nexty > formery)
-            {
-                sYear = y;
-                fullYearBox.Text = sYear;
-                MessageBox.Show("Details Are Not Yet Available!");
-            }
-            else
-            {
-                if (selectedEmp != "")
-                {
-                    salaryFullTable();
+                    violations();
+                    bonus();
+                    compute();
                 }
             }
         }
@@ -666,6 +484,215 @@ namespace Tribes_System
             }
         }
 
+        //--------------------Full Time-------------------
+
+        private void violationsFull()
+        {
+            string query = "select SUM(violation_amount) from violations where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //vio_amount = reader["SUM(violation_amount)"].ToString();
+                if (reader["SUM(violation_amount)"] != DBNull.Value)
+                {
+                    vio_amount = reader["SUM(violation_amount)"].ToString();
+                }
+                else
+                {
+                    vio_amount = "0";
+                }
+            }
+            closeConnection();
+
+            fullVioLabel.Text = "(" + vio_amount + ")";
+        }
+
+        private void bonusFull()
+        {
+            string query = "select SUM(bonus_amount) from bonus where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //bonus_amount = reader["SUM(bonus_amount)"].ToString();
+                if (reader["SUM(bonus_amount)"] != DBNull.Value)
+                {
+                    bonus_amount = reader["SUM(bonus_amount)"].ToString();
+                }
+                else
+                {
+                    bonus_amount = "0";
+                }
+            }
+            closeConnection();
+
+            fullBoLabel.Text = bonus_amount;
+        }
+
+        private void overFull()
+        {
+            string query = "select SUM(over_amount) from overtime where id_emp = " + selectedEmp +
+                " AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                //bonus_amount = reader["SUM(bonus_amount)"].ToString();
+                if (reader["SUM(over_amount)"] != DBNull.Value)
+                {
+                    over_amount = reader["SUM(over_amount)"].ToString();
+                }
+                else
+                {
+                    over_amount = "0";
+                }
+            }
+            closeConnection();
+
+            overtimeLabel.Text = over_amount;
+        }
+
+        string check;
+        string doublecheck;
+
+        private void salaryFull()
+        {
+            string query = "select SUM(salary) from event, staff_lineup where no_event = id_event AND staff_id = " + selectedEmp +
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(query, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                if (reader["SUM(salary)"] != DBNull.Value)
+                {
+                    check = reader["SUM(salary)"].ToString();
+                }
+                else
+                {
+                    check = "0";
+                }
+
+            }
+
+            closeConnection();
+
+            string query2 = "select emp_salary from employee where id_emp = " + selectedEmp;
+            DataTable table2 = new DataTable();
+            MySqlDataAdapter adapter2 = new MySqlDataAdapter(query2, con);
+            adapter2.Fill(table2);
+
+            openConnection();
+            MySqlCommand cmd2 = new MySqlCommand(query2, con);
+            MySqlDataReader reader2 = cmd2.ExecuteReader();
+
+            while (reader2.Read())
+            {
+                if (reader2["emp_salary"] != DBNull.Value)
+                {
+                    salary_amount = reader2["emp_salary"].ToString();
+                }
+                else
+                {
+                    salary_amount = "0";
+                }
+
+            }
+
+            double tot = Convert.ToDouble(check) + Convert.ToDouble(salary_amount);
+
+            doublecheck = Convert.ToString(tot);
+            salLabel.Text = doublecheck + ".00";
+            closeConnection();
+        }
+
+        private void fullMonthBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            monthChange2();
+            int nextm = Convert.ToInt32(sMonth);
+            int formerm = Convert.ToInt32(m);
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if ((nextm > formerm) && (nexty == formery))
+            {
+                sMonth = m;
+                assignMonth();
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                if (selectedEmp != "")
+                {
+                    salaryFullTable();
+                    violationsFull();
+                    bonusFull();
+                    overFull();
+                    computeFull();
+                }
+                else
+                {
+
+                }
+            }
+        }
+
+        private void yearChange()
+        {
+            sYear = fullYearBox.Text;
+        }
+
+        private void fullYearBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            yearChange();
+            int nexty = Convert.ToInt32(sYear);
+            int formery = Convert.ToInt32(y);
+
+            if (nexty > formery)
+            {
+                sYear = y;
+                fullYearBox.Text = sYear;
+                MessageBox.Show("Details Are Not Yet Available!");
+            }
+            else
+            {
+                if (selectedEmp != "")
+                {
+                    salaryFullTable();
+                    violationsFull();
+                    bonusFull();
+                    overFull();
+                    computeFull();
+                }
+            }
+        }
+
         private void monthChange2()
         {
             if (fullMonthBox.Text == "January")
@@ -718,14 +745,53 @@ namespace Tribes_System
             }
         }
 
+        private void computeFull()
+        {
+            salaryFull();
+
+            double vio = Convert.ToDouble(vio_amount);
+            double bon = Convert.ToDouble(bonus_amount);
+            double sal = Convert.ToDouble(doublecheck);
+            double over = Convert.ToDouble(over_amount);
+
+            double total = (bon + sal + over) - vio;
+
+            computed_amount = Convert.ToString(total) + ".00";
+
+            fullTotLabel.Text = computed_amount;
+        }
+
+        private void salaryFullTable()
+        {
+            string query = "select event_name from staff_lineup, event where staff_id = " + selectedEmp + " AND id_event = no_event" +
+                " AND substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
+
+            fullGrid.Columns.Clear();
+            fullGrid.DataSource = table;
+
+            fullGrid.Columns[0].HeaderCell.Value = "Event Name";
+            fullGrid.RowHeadersVisible = false;
+
+            fullGrid.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+
         private void fullVio_Click(object sender, EventArgs e)
         {
             violations form = new violations(this);
             form.idValue = selectedEmp;
             form.nameBox = fullEmpLabel.Text;
+            form.statusVal = fullStatLabel.Text;
             form.ShowDialog();
 
-            fullPanel.Visible = false;
+            salaryFullTable();
+            violationsFull();
+            bonusFull();
+            overFull();
+            computeFull();
         }
 
         private void fullBonus_Click(object sender, EventArgs e)
@@ -735,7 +801,25 @@ namespace Tribes_System
             form.nameBox = fullEmpLabel.Text;
             form.ShowDialog();
 
-            fullPanel.Visible = false;
+            salaryFullTable();
+            violationsFull();
+            bonusFull();
+            overFull();
+            computeFull();
+        }
+
+        private void overButt_Click(object sender, EventArgs e)
+        {
+            overtime form = new overtime(this);
+            form.idValue = selectedEmp;
+            form.nameBox = fullEmpLabel.Text;          
+            form.ShowDialog();
+
+            salaryFullTable();
+            violationsFull();
+            bonusFull();
+            overFull();
+            computeFull();
         }
     }
 }

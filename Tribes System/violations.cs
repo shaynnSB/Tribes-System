@@ -64,6 +64,14 @@ namespace Tribes_System
             set { this.idPassed = value; }
         }
 
+        string stat;
+
+        public string statusVal
+        {
+            get { return this.stat; }
+            set { this.stat = value; }
+        }
+
         public void executeMyQuery(string query)
         {
             try
@@ -105,7 +113,7 @@ namespace Tribes_System
             {
                 checking();
 
-                if(checkneg > 0)
+                if(checkneg >= 0)
                 {
                     string insertQuery = "INSERT INTO violations(id_emp, violation_amount, date, reason) VALUES (" + idPassed + ", "
                     + amBox.Text + ", '" + dateBox.Text + "', '" + descBox.Text + "')";
@@ -132,22 +140,50 @@ namespace Tribes_System
 
         private void salary()
         {
-            string query = "select SUM(salary) from staff_lineup where staff_id = " + idPassed;
-            DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            openConnection();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            if(stat == "Full-Time")
             {
-                salary_amount = reader["SUM(salary)"].ToString();
-            }
+                string query = "select emp_salary from employee where id_emp = " + idPassed;
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+                adapter.Fill(table);
 
-            closeConnection();
+                openConnection();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (reader["emp_salary"] != DBNull.Value)
+                    {
+                        salary_amount = reader["emp_salary"].ToString();
+                    }
+                    else
+                    {
+                        salary_amount = "0";
+                    }
+                }
+                closeConnection();
+            }
+            else {
+                string query = "select SUM(salary) from staff_lineup where staff_id = " + idPassed;
+                DataTable table = new DataTable();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+                adapter.Fill(table);
+
+                openConnection();
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    salary_amount = reader["SUM(salary)"].ToString();
+                }
+
+                closeConnection();
+            }
         }
+
+
 
         string bonus_amount;
 
@@ -226,9 +262,28 @@ namespace Tribes_System
             bonus();
             salary();
 
-            double vio = Convert.ToDouble(totLabel.Text);
+            double vio;
+            double bon;
+
+            if (totLabel.Text == "")
+            {
+                vio = 0;
+            }else
+            {
+                vio = Convert.ToDouble(totLabel.Text);
+            }
+            
             double vio2 = Convert.ToDouble(amBox.Text);
-            double bon = Convert.ToDouble(bonus_amount);
+
+            if (bonus_amount == "")
+            {
+                bon = 0;
+            }
+            else
+            {
+                bon = Convert.ToDouble(bonus_amount);
+            }
+            
             double sal = Convert.ToDouble(salary_amount);
 
             checkneg = (bon + sal) - (vio + vio2);

@@ -60,6 +60,14 @@ namespace Tribes_System
             DateTime current = DateTime.Parse(cDate);
             DateTime chosen_end = DateTime.Parse(endDate.Text);
 
+            string startT = startHr.Text + ":" + startMin.Text + " " + startMeri.Text;
+            DateTime st;
+            DateTime.TryParse(startT, out st);
+
+            string endT = endHr.Text + ":" + endMin.Text + " " + endMeri.Text;
+            DateTime et;
+            DateTime.TryParse(endT, out et);
+
             if (nameBox.Text != "" && locBox.Text != "" && startHr.Text != "" && startMin.Text != "" &&  startMeri.Text != "" && endHr.Text != "" &&  endMin.Text != "" && 
                 endMeri.Text != "" && nameClientBox.Text != "")
             {
@@ -69,15 +77,22 @@ namespace Tribes_System
                 }
                 else
                 {
-                    string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
-                    "client_name, client_contact, event_status, client_email) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
-                    + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
-                    endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid', '" +
-                    emailClient.Text + "')";
+                    if (st >= et && chosen == chosen_end)
+                    {
+                        MessageBox.Show("Time chosen is not valid");
+                    }
+                    else
+                    {
+                        string insertQuery = "INSERT INTO event(event_name, event_location, event_notes, start_date, end_date, start_time, end_time, " +
+                        "client_name, client_contact, event_status, client_email) VALUES ('" + nameBox.Text + "','" + locBox.Text + "','" + notesBox.Text + "','"
+                        + startDate.Text + "','" + endDate.Text + "','" + startHr.Text + ":" + startMin.Text + " " + startMeri.Text + "','" +
+                        endHr.Text + ":" + endMin.Text + " " + endMeri.Text + "','" + nameClientBox.Text + "', '+(63) " + conClientBox.Text + "', 'Unpaid', '" +
+                        emailClient.Text + "')";
 
-                    executeMyQuery(insertQuery);
-                    MessageBox.Show("Added Successfully");
-                    this.Close();
+                        executeMyQuery(insertQuery);
+                        MessageBox.Show("Added Successfully");
+                        this.Close();
+                    }
                 }
             }
             else

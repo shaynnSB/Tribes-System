@@ -48,6 +48,8 @@
             this.StatusLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.fullPanel = new System.Windows.Forms.Panel();
+            this.salLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.fullYearBox = new System.Windows.Forms.ComboBox();
             this.fullMonthBox = new System.Windows.Forms.ComboBox();
             this.fullVio = new System.Windows.Forms.Button();
@@ -61,8 +63,9 @@
             this.fullGrid = new System.Windows.Forms.DataGridView();
             this.fullStatLabel = new System.Windows.Forms.Label();
             this.fullEmpLabel = new System.Windows.Forms.Label();
-            this.salLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.overtimeLabel = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
+            this.overButt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
@@ -336,6 +339,9 @@
             // fullPanel
             // 
             this.fullPanel.BackColor = System.Drawing.Color.Silver;
+            this.fullPanel.Controls.Add(this.overButt);
+            this.fullPanel.Controls.Add(this.overtimeLabel);
+            this.fullPanel.Controls.Add(this.label);
             this.fullPanel.Controls.Add(this.salLabel);
             this.fullPanel.Controls.Add(this.label6);
             this.fullPanel.Controls.Add(this.fullYearBox);
@@ -356,6 +362,28 @@
             this.fullPanel.Size = new System.Drawing.Size(516, 575);
             this.fullPanel.TabIndex = 101;
             this.fullPanel.Visible = false;
+            // 
+            // salLabel
+            // 
+            this.salLabel.AutoSize = true;
+            this.salLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.salLabel.Location = new System.Drawing.Point(353, 393);
+            this.salLabel.Name = "salLabel";
+            this.salLabel.Size = new System.Drawing.Size(26, 25);
+            this.salLabel.TabIndex = 102;
+            this.salLabel.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(213, 393);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 25);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Salary:";
             // 
             // fullYearBox
             // 
@@ -444,7 +472,7 @@
             this.fullBoLabel.AutoSize = true;
             this.fullBoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullBoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullBoLabel.Location = new System.Drawing.Point(353, 503);
+            this.fullBoLabel.Location = new System.Drawing.Point(353, 505);
             this.fullBoLabel.Name = "fullBoLabel";
             this.fullBoLabel.Size = new System.Drawing.Size(26, 25);
             this.fullBoLabel.TabIndex = 96;
@@ -455,7 +483,7 @@
             this.fullTotLabel.AutoSize = true;
             this.fullTotLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullTotLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullTotLabel.Location = new System.Drawing.Point(353, 538);
+            this.fullTotLabel.Location = new System.Drawing.Point(353, 543);
             this.fullTotLabel.Name = "fullTotLabel";
             this.fullTotLabel.Size = new System.Drawing.Size(28, 25);
             this.fullTotLabel.TabIndex = 95;
@@ -466,7 +494,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label8.Location = new System.Drawing.Point(213, 538);
+            this.label8.Location = new System.Drawing.Point(213, 543);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 25);
             this.label8.TabIndex = 94;
@@ -477,7 +505,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label10.Location = new System.Drawing.Point(213, 503);
+            this.label10.Location = new System.Drawing.Point(213, 505);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(74, 25);
             this.label10.TabIndex = 93;
@@ -503,7 +531,7 @@
             this.fullGrid.Location = new System.Drawing.Point(21, 130);
             this.fullGrid.Name = "fullGrid";
             this.fullGrid.RowTemplate.Height = 24;
-            this.fullGrid.Size = new System.Drawing.Size(471, 280);
+            this.fullGrid.Size = new System.Drawing.Size(471, 242);
             this.fullGrid.TabIndex = 91;
             // 
             // fullStatLabel
@@ -528,27 +556,45 @@
             this.fullEmpLabel.TabIndex = 89;
             this.fullEmpLabel.Text = "Employees Name";
             // 
-            // salLabel
+            // overtimeLabel
             // 
-            this.salLabel.AutoSize = true;
-            this.salLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.salLabel.Location = new System.Drawing.Point(353, 434);
-            this.salLabel.Name = "salLabel";
-            this.salLabel.Size = new System.Drawing.Size(26, 25);
-            this.salLabel.TabIndex = 102;
-            this.salLabel.Text = "--";
+            this.overtimeLabel.AutoSize = true;
+            this.overtimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overtimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overtimeLabel.Location = new System.Drawing.Point(353, 431);
+            this.overtimeLabel.Name = "overtimeLabel";
+            this.overtimeLabel.Size = new System.Drawing.Size(26, 25);
+            this.overtimeLabel.TabIndex = 104;
+            this.overtimeLabel.Text = "--";
             // 
-            // label6
+            // label
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(213, 434);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 25);
-            this.label6.TabIndex = 101;
-            this.label6.Text = "Salary:";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label.Location = new System.Drawing.Point(213, 431);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(97, 25);
+            this.label.TabIndex = 103;
+            this.label.Text = "Overtime:";
+            // 
+            // overButt
+            // 
+            this.overButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overButt.FlatAppearance.BorderSize = 0;
+            this.overButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.overButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.overButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.overButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.overButt.Location = new System.Drawing.Point(21, 429);
+            this.overButt.Margin = new System.Windows.Forms.Padding(4);
+            this.overButt.Name = "overButt";
+            this.overButt.Size = new System.Drawing.Size(144, 37);
+            this.overButt.TabIndex = 105;
+            this.overButt.Text = "Overtime";
+            this.overButt.UseVisualStyleBackColor = false;
+            this.overButt.Click += new System.EventHandler(this.overButt_Click);
             // 
             // salaryUI
             // 
@@ -559,8 +605,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmpGrid);
-            this.Controls.Add(this.fullPanel);
             this.Controls.Add(this.deetPanel);
+            this.Controls.Add(this.fullPanel);
             this.Name = "salaryUI";
             this.Size = new System.Drawing.Size(1315, 800);
             this.Load += new System.EventHandler(this.payrollUI_Load);
@@ -613,5 +659,8 @@
         private System.Windows.Forms.Label fullEmpLabel;
         private System.Windows.Forms.Label salLabel;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button overButt;
+        private System.Windows.Forms.Label overtimeLabel;
+        private System.Windows.Forms.Label label;
     }
 }
