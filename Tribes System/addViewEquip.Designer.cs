@@ -393,7 +393,6 @@
             this.label4.Size = new System.Drawing.Size(180, 25);
             this.label4.TabIndex = 64;
             this.label4.Text = "Sound and Lights";
-            this.label4.Visible = false;
             // 
             // label5
             // 
@@ -405,7 +404,6 @@
             this.label5.Size = new System.Drawing.Size(162, 25);
             this.label5.TabIndex = 65;
             this.label5.Text = "LED Video Wall";
-            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -417,7 +415,6 @@
             this.label6.Size = new System.Drawing.Size(237, 25);
             this.label6.TabIndex = 66;
             this.label6.Text = "Video Camera Services";
-            this.label6.Visible = false;
             // 
             // label7
             // 
@@ -429,7 +426,6 @@
             this.label7.Size = new System.Drawing.Size(150, 25);
             this.label7.TabIndex = 67;
             this.label7.Text = "Miscellaneous";
-            this.label7.Visible = false;
             // 
             // snl
             // 
@@ -441,7 +437,6 @@
             this.snl.Size = new System.Drawing.Size(167, 29);
             this.snl.TabIndex = 68;
             this.snl.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.snl.Visible = false;
             this.snl.TextChanged += new System.EventHandler(this.snl_TextChanged);
             this.snl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.snl_KeyPress);
             // 
@@ -455,7 +450,6 @@
             this.lvw.Size = new System.Drawing.Size(167, 29);
             this.lvw.TabIndex = 69;
             this.lvw.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.lvw.Visible = false;
             this.lvw.TextChanged += new System.EventHandler(this.lvw_TextChanged);
             this.lvw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lvw_KeyPress);
             // 
@@ -469,7 +463,6 @@
             this.vcs.Size = new System.Drawing.Size(167, 29);
             this.vcs.TabIndex = 70;
             this.vcs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.vcs.Visible = false;
             this.vcs.TextChanged += new System.EventHandler(this.vcs_TextChanged);
             this.vcs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vcs_KeyPress);
             // 
@@ -483,7 +476,6 @@
             this.msc.Size = new System.Drawing.Size(167, 29);
             this.msc.TabIndex = 71;
             this.msc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.msc.Visible = false;
             this.msc.TextChanged += new System.EventHandler(this.msc_TextChanged);
             this.msc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.msc_KeyPress);
             // 
@@ -497,7 +489,6 @@
             this.label8.Size = new System.Drawing.Size(66, 25);
             this.label8.TabIndex = 72;
             this.label8.Text = "Total:";
-            this.label8.Visible = false;
             // 
             // total
             // 
@@ -509,7 +500,6 @@
             this.total.Size = new System.Drawing.Size(24, 25);
             this.total.TabIndex = 73;
             this.total.Text = "0";
-            this.total.Visible = false;
             // 
             // stg
             // 
@@ -521,7 +511,6 @@
             this.stg.Size = new System.Drawing.Size(167, 29);
             this.stg.TabIndex = 75;
             this.stg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.stg.Visible = false;
             this.stg.TextChanged += new System.EventHandler(this.stg_TextChanged);
             this.stg.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.stg_KeyPress);
             // 
@@ -535,7 +524,6 @@
             this.label9.Size = new System.Drawing.Size(85, 25);
             this.label9.TabIndex = 74;
             this.label9.Text = "Staging";
-            this.label9.Visible = false;
             // 
             // addViewEquip
             // 

@@ -599,33 +599,21 @@ namespace Tribes_System
           
             if (tabControl1.SelectedIndex == 1)
             {
-                label4.Visible = true;
-                label5.Visible = true;
-                label9.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                snl.Visible = true;
-                lvw.Visible = true;
-                stg.Visible = true;
-                vcs.Visible = true;
-                msc.Visible = true;
-                total.Visible = true;
+                snl.Enabled = true;
+                lvw.Enabled = true;
+                stg.Enabled = true;
+                vcs.Enabled = true;
+                msc.Enabled = true;
             }
             else
             {
-                label4.Visible = false;
-                label5.Visible = false;
-                label9.Visible = false;
-                label6.Visible = false;
-                label7.Visible = false;
-                label8.Visible = false;
-                snl.Visible = false;
-                lvw.Visible = false;
-                stg.Visible = false;
-                vcs.Visible = false;
-                msc.Visible = false;
-                total.Visible = false;
+                
+                snl.Enabled = false;
+                lvw.Enabled = false;
+                stg.Enabled = false;
+                vcs.Enabled = false;
+                msc.Enabled = false;
+               
             }
         }
 

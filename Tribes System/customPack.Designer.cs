@@ -76,12 +76,13 @@
             this.categoryBox.FormattingEnabled = true;
             this.categoryBox.Items.AddRange(new object[] {
             "Staging",
-            "Lights",
-            "Speakers",
+            "Lighting",
+            "Sound System",
             "Misc.",
             "Video",
             "LED Wall",
-            "LCD"});
+            "LCD",
+            "Bands"});
             this.categoryBox.Location = new System.Drawing.Point(98, 61);
             this.categoryBox.Margin = new System.Windows.Forms.Padding(2);
             this.categoryBox.Name = "categoryBox";

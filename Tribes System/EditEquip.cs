@@ -44,7 +44,7 @@ namespace Tribes_System
             }
             else
             {
-                MessageBox.Show("Successfully Updated");
+                MessageBox.Show("Please fill up all the required fields.");
             }
 
         }
@@ -116,6 +116,11 @@ namespace Tribes_System
         }
 
         private void EditEquip_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

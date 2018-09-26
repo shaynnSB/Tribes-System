@@ -293,12 +293,14 @@ namespace Tribes_System
                 DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
                 if (dg == DialogResult.Yes)
                 {
+                    string insertQuery1 = "INSERT INTO archiveditemcontent(itemcontentID, itemname,modelNumber, category) VALUES (" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[2].Value.ToString() + ",'" + name.Text + "','" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[1].Value.ToString() + "','"+cat.Text+"')";
+                    executeMyQuery(insertQuery1);
+               
                     string insertQuery = "DELETE FROM itemcontent WHERE id =" + dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].Cells[2].Value.ToString();
                     executeMyQuery(insertQuery);
                     refresh("SELECT items.id,itemcontent.modelNumber,itemcontent.id from items left join itemcontent on items.id = itemcontent.itemID where items.id =" + Equipment.sendtext + " and itemcontent.tagID < 2 and eventID = 0");
                     setCount("Select COUNT(itemcontent.id) as test from itemcontent where itemcontent.itemID = " + Equipment.sendtext + " and itemcontent.tagID = 1 and itemcontent.eventID <1 ");
-
-
+                    MessageBox.Show("Deleted");
                 }
             }
             else
@@ -370,6 +372,13 @@ namespace Tribes_System
                 button2.Visible = true;
                 button1.Visible = true;
                 button4.Visible = true;
+            }
+            if (tabControl1.SelectedIndex == 3)
+            {
+                mtor.Visible = false;
+                button2.Visible = false;
+                button1.Visible = false;
+                button4.Visible = false;
             }
 
 

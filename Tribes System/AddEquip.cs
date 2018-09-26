@@ -70,7 +70,7 @@ namespace Tribes_System
             
             verify("Select COUNT(*) FROM items where name ='" + textBox1.Text + "'");
      
-                if (textBox1.Text != "" || textBox2.Text != "")
+                if (textBox1.Text != "" )
                 {
                 if (last < 1)
                 {
@@ -104,7 +104,7 @@ namespace Tribes_System
             }
             else
             {
-                MessageBox.Show("Already Exist", "Error. ",
+                MessageBox.Show("Please fill out all the required fields!", "Error. ",
        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
