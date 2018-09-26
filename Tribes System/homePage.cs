@@ -17,15 +17,19 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
         string access; // use this to access account type
+        string username;
         int empid;
 
-        public equipButt(string access, int empid = 0)
+        public equipButt(string access, string username, int empid = 0)
         {
             InitializeComponent();
             PW = panelMenu.Width;
             hidden = false;
             this.access = access;
             this.empid = empid;
+            this.username = username;
+            editAccounts1.username = username;
+            Console.WriteLine(username);
             if (access.Equals("employee"))
             {
                 panelMenu.Visible = false;
@@ -176,6 +180,7 @@ namespace Tribes_System
 
         private void profButt_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("WARNING: Be careful when handling profiles.\nDO NOT GIVE UNAUTHORIZED USERS COMPLETE ACCESS TO THE SYSTEM. UNAUTHORIZED ACCESS TO THIS SCREEN IS PUNISHABLE.", "FATAL WARNING", MessageBoxButtons.OK ,MessageBoxIcon.Warning);
             editAccounts1.Visible = true;
             payrollUI1.Visible = false;
             financesUI1.Visible = false;

@@ -46,7 +46,7 @@ namespace Tribes_System
             try
             {
                 //--------------select assigned employees---------------------------------------
-                query = "SELECT employee.id_emp, employee.first_name, employee.last_name, staff_lineup.id_line " +
+                query = "SELECT employee.id_emp, employee.first_name, employee.last_name, staff_lineup.id_line, employee.emp_status " +
                         "FROM employee " +
                         "INNER JOIN staff_lineup " +
                         "ON employee.id_emp = staff_lineup.staff_id " +
@@ -57,6 +57,7 @@ namespace Tribes_System
                 assignedGrid.Columns[0].Visible = assignedGrid.Columns[3].Visible = false;
                 assignedGrid.Columns[1].HeaderText = "First Name";
                 assignedGrid.Columns[2].HeaderText = "Last Name";
+                assignedGrid.Columns[4].HeaderText = "Status";
                 //--------------select available employees---------------------------------------
                 query = "SELECT DISTINCT em.id_emp, em.first_name, em.last_name " + //I coded the query below myself, but I don't fully understand it, so bugs might happen when selecting available employees thx. --syed
                         "FROM (SELECT * FROM employee WHERE emp_status != 'Inactive') em " +
@@ -247,7 +248,33 @@ namespace Tribes_System
 
         private void assignedGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            assignedSelectedRow = e.RowIndex;
+            try
+            {
+                if(assignedGrid[4, e.RowIndex].Value.ToString().Equals("On-Call"))
+                {
+                    salaryBox.Visible = true;
+                    button2.Visible = true;
+                    assignedSelectedRow = e.RowIndex;
+                    DataTable t = new DataTable();
+                    string q = "SELECT salary FROM staff_lineup WHERE id_line = " + assignedGrid[3, e.RowIndex].Value.ToString();
+                    MySqlDataAdapter a = new MySqlDataAdapter(q, con);
+                    a.Fill(t);
+
+                    salaryBox.Text = t.Rows[0].ItemArray[0].ToString();
+                }
+                else
+                {
+                    salaryBox.Visible = false;
+                    button2.Visible = false; ;
+                }
+                
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                MessageBox.Show("A error has occured.");
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

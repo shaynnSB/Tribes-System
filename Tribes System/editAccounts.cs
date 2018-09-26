@@ -15,9 +15,12 @@ namespace Tribes_System
     {
 
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root;Convert Zero Datetime = True;");
-
+        MySqlCommand cmd;
         DataTable grid = new DataTable();
-        string selectedEmp ="";
+        string selectedEmp = "";
+        string stat = "";
+        public string username;
+        int selected = 0;
 
         public editAccounts()
         {
@@ -53,6 +56,7 @@ namespace Tribes_System
                 radioButton6.Checked = false;
                 radioButton7.Checked = false;
                 radioButton8.Checked = false;
+                selected = 0;
 
                 /*
 
@@ -70,12 +74,12 @@ namespace Tribes_System
                 dataGridView2.DataSource = null;
                 */
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
-            
-            
+
+
 
 
         }
@@ -84,7 +88,7 @@ namespace Tribes_System
         {
             addEmployee win = new addEmployee();
             win.ShowDialog();
-            if(win.DialogResult == DialogResult.OK)
+            if (win.DialogResult == DialogResult.OK)
             {
                 resetTable();
             }
@@ -104,19 +108,31 @@ namespace Tribes_System
 
                 nameBox.Text = EmpGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 passBox.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                selected = e.RowIndex;
                 switch (EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString())
                 {
                     case "superUser":
+                        stat = "superUser";
                         radioButton1.Checked = true;
+                        radioButton4.Visible = false;
                         break;
                     case "owner":
+                        stat = "owner";
                         radioButton2.Checked = true;
+                        radioButton4.Visible = false;
                         break;
                     case "employee":
+                        stat = "employee";
                         radioButton4.Checked = true;
+                        radioButton4.Visible = true;
+                        radioButton1.Visible = false;
+                        radioButton2.Visible = false;
+                        radioButton3.Visible = false;
                         break;
                     case "secretary":
+                        stat = "secretary";
                         radioButton3.Checked = true;
+                        radioButton4.Visible = false;
                         break;
                     default:
                         break;
@@ -125,6 +141,7 @@ namespace Tribes_System
                 {
                     try
                     {
+                        this.stat = "employee";
                         string q = "SELECT first_name, last_name FROM employee WHERE id_emp = " + EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
                         MySqlDataAdapter a = new MySqlDataAdapter(q, con);
                         DataTable t = new DataTable();
@@ -142,11 +159,11 @@ namespace Tribes_System
                     {
                         MessageBox.Show("ERROR!");
                     }
-                    
+
                 }
 
             }
-            
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,7 +187,7 @@ namespace Tribes_System
 
         private void button3_Click(object sender, EventArgs e)
         {
-            resetTable("select * from employee where emp_name like '%"+ textBox1.Text +"%'");
+            resetTable("select * from employee where emp_name like '%" + textBox1.Text + "%'");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -180,7 +197,8 @@ namespace Tribes_System
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            if (!this.selectedEmp.Equals("")) { 
+            if (!this.selectedEmp.Equals(""))
+            {
                 editEmployee win = new editEmployee(selectedEmp);
                 win.ShowDialog();
                 if (win.DialogResult == DialogResult.OK)
@@ -217,6 +235,129 @@ namespace Tribes_System
         private void editAccounts_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string query = "UPDATE accounts SET " +
+                "acc_username = '" + nameBox.Text + "', " + 
+                "acc_pass = '"+passBox.Text + "', " + 
+                "acc_status = '" + stat + "' " + 
+                "WHERE id_acc = " + EmpGrid.Rows[selected].Cells[0].Value.ToString();
+
+            DialogResult dr1; //= MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+            if (EmpGrid.Rows[selected].Cells[1].ToString().Equals(username))
+            {
+                dr1 = MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                dr1 = DialogResult.OK;
+            }
+            if(dr1 == DialogResult.OK)
+            {
+                executeMyQuery(query);
+            }
+            resetTable();
+        }
+
+        public void openConnection()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+        }
+
+        public void closeConnection()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        public void executeMyQuery(string query)
+        {
+            try
+            {
+                openConnection();
+                cmd = new MySqlCommand(query, con);
+
+                if (cmd.ExecuteNonQuery() == 1)
+                {
+                    //MessageBox.Show("Executed");
+                    MessageBox.Show("Employee Edited Successfully");
+                }
+
+                else
+                {
+                    MessageBox.Show("Not Executed");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                closeConnection();
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (radioButton1.Checked)
+            {
+                this.stat = "superUser";
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                this.stat = "owner";
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                this.stat = "secretary";
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!radioButton4.Checked)
+            {
+                radioButton1.Visible = true;
+                radioButton2.Visible = true;
+                radioButton3.Visible = true;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            string addstat = "";
+            if (radioButton8.Checked)
+            {
+                addstat = "superUser";
+            }
+            if (radioButton7.Checked)
+            {
+                addstat = "owner";
+            }
+            if (radioButton6.Checked)
+            {
+                addstat = "secretary";
+            }
+            string s = "INSERT INTO accounts(acc_username, acc_pass, acc_status) VALUES ('"+ addNameBox +"', '"+addPassBox+"', '"+addstat+"')";
+            executeMyQuery(s);
         }
     }
 }

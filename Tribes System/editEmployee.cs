@@ -42,6 +42,8 @@ namespace Tribes_System
             salarayBox.Text = table.Rows[0].ItemArray[11].ToString();
             salaraylastvalidinput = table.Rows[0].ItemArray[11].ToString();
             //DateTime dt = ;
+            dateTimePicker1.MaxDate = DateTime.Now.AddYears(-18);
+
             dateTimePicker1.Value = (DateTime)table.Rows[0].ItemArray[7];
 
             /*
