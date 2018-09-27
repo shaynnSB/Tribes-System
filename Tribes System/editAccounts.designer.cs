@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.EmpGrid = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.nameLab = new System.Windows.Forms.Label();
+            this.passBox2 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.empLab = new System.Windows.Forms.Label();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -50,9 +51,11 @@
             this.nameBox = new System.Windows.Forms.TextBox();
             this.NameLabs = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.addPassBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -68,22 +71,6 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(124, 90);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(217, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add New Employee";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // EmpGrid
             // 
@@ -111,7 +98,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Control;
-            this.button3.Location = new System.Drawing.Point(1183, 95);
+            this.button3.Location = new System.Drawing.Point(446, 101);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 38);
@@ -124,44 +111,11 @@
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.textBox1.Location = new System.Drawing.Point(750, 99);
+            this.textBox1.Location = new System.Drawing.Point(13, 105);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(425, 30);
             this.textBox1.TabIndex = 7;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Location = new System.Drawing.Point(13, 90);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(103, 45);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Refresh";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "All",
-            "On-Call",
-            "Full-Time",
-            "Inactive"});
-            this.comboBox1.Location = new System.Drawing.Point(570, 100);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.MaxDropDownItems = 3;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 28);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -177,8 +131,12 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button7);
+            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.nameLab);
+            this.panel1.Controls.Add(this.passBox2);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.empLab);
             this.panel1.Controls.Add(this.radioButton4);
@@ -193,8 +151,19 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(570, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 286);
+            this.panel1.Size = new System.Drawing.Size(551, 321);
             this.panel1.TabIndex = 73;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(13, 108);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(59, 18);
+            this.label7.TabIndex = 94;
+            this.label7.Text = "re-enter";
             // 
             // button7
             // 
@@ -203,7 +172,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(11, 238);
+            this.button7.Location = new System.Drawing.Point(6, 251);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(149, 44);
@@ -212,22 +181,56 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(496, 124);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 23);
+            this.button2.TabIndex = 93;
+            this.button2.Text = "Show";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // nameLab
             // 
             this.nameLab.AutoSize = true;
             this.nameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLab.Location = new System.Drawing.Point(49, 181);
+            this.nameLab.Location = new System.Drawing.Point(53, 213);
             this.nameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLab.Name = "nameLab";
             this.nameLab.Size = new System.Drawing.Size(316, 25);
             this.nameLab.TabIndex = 87;
             this.nameLab.Text = "Lastname, Firstname Secondname";
             // 
+            // passBox2
+            // 
+            this.passBox2.BackColor = System.Drawing.Color.LightGray;
+            this.passBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passBox2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passBox2.ForeColor = System.Drawing.Color.Gray;
+            this.passBox2.Location = new System.Drawing.Point(125, 118);
+            this.passBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.passBox2.Name = "passBox2";
+            this.passBox2.Size = new System.Drawing.Size(364, 27);
+            this.passBox2.TabIndex = 92;
+            this.passBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.passBox2.UseSystemPasswordChar = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(7, 124);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(104, 25);
+            this.label12.TabIndex = 91;
+            this.label12.Text = "Password:";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 117);
+            this.label5.Location = new System.Drawing.Point(11, 149);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 25);
@@ -238,7 +241,7 @@
             // 
             this.empLab.AutoSize = true;
             this.empLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empLab.Location = new System.Drawing.Point(6, 146);
+            this.empLab.Location = new System.Drawing.Point(10, 178);
             this.empLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.empLab.Name = "empLab";
             this.empLab.Size = new System.Drawing.Size(162, 25);
@@ -248,7 +251,7 @@
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(95, 121);
+            this.radioButton4.Location = new System.Drawing.Point(100, 153);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(91, 21);
             this.radioButton4.TabIndex = 84;
@@ -260,7 +263,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(273, 122);
+            this.radioButton3.Location = new System.Drawing.Point(278, 154);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(90, 21);
             this.radioButton3.TabIndex = 83;
@@ -272,7 +275,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(197, 122);
+            this.radioButton2.Location = new System.Drawing.Point(202, 154);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 21);
             this.radioButton2.TabIndex = 82;
@@ -284,7 +287,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(96, 122);
+            this.radioButton1.Location = new System.Drawing.Point(101, 154);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(95, 21);
             this.radioButton1.TabIndex = 81;
@@ -364,35 +367,12 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Profile Details:";
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(349, 90);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 44);
-            this.button2.TabIndex = 74;
-            this.button2.Text = "Edit Employee";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(510, 103);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Filter:";
-            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.addPassBox2);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.radioButton6);
@@ -404,10 +384,55 @@
             this.panel2.Controls.Add(this.addNameBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(569, 435);
+            this.panel2.Location = new System.Drawing.Point(569, 477);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(551, 286);
             this.panel2.TabIndex = 88;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 108);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 18);
+            this.label3.TabIndex = 90;
+            this.label3.Text = "re-enter";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(496, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 23);
+            this.button1.TabIndex = 89;
+            this.button1.Text = "Show";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // addPassBox2
+            // 
+            this.addPassBox2.BackColor = System.Drawing.Color.LightGray;
+            this.addPassBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.addPassBox2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addPassBox2.ForeColor = System.Drawing.Color.Gray;
+            this.addPassBox2.Location = new System.Drawing.Point(125, 118);
+            this.addPassBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.addPassBox2.Name = "addPassBox2";
+            this.addPassBox2.Size = new System.Drawing.Size(364, 27);
+            this.addPassBox2.TabIndex = 88;
+            this.addPassBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.addPassBox2.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(7, 124);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 25);
+            this.label2.TabIndex = 87;
+            this.label2.Text = "Password:";
             // 
             // button6
             // 
@@ -416,7 +441,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(7, 150);
+            this.button6.Location = new System.Drawing.Point(12, 191);
             this.button6.Margin = new System.Windows.Forms.Padding(4);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(149, 44);
@@ -429,7 +454,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 117);
+            this.label6.Location = new System.Drawing.Point(11, 158);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 25);
@@ -439,7 +464,7 @@
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(273, 122);
+            this.radioButton6.Location = new System.Drawing.Point(278, 163);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(90, 21);
             this.radioButton6.TabIndex = 83;
@@ -450,7 +475,7 @@
             // radioButton7
             // 
             this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(197, 122);
+            this.radioButton7.Location = new System.Drawing.Point(202, 163);
             this.radioButton7.Name = "radioButton7";
             this.radioButton7.Size = new System.Drawing.Size(70, 21);
             this.radioButton7.TabIndex = 82;
@@ -461,7 +486,7 @@
             // radioButton8
             // 
             this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(96, 122);
+            this.radioButton8.Location = new System.Drawing.Point(101, 163);
             this.radioButton8.Name = "radioButton8";
             this.radioButton8.Size = new System.Drawing.Size(95, 21);
             this.radioButton8.TabIndex = 81;
@@ -543,16 +568,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.EmpGrid);
-            this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "editAccounts";
             this.Size = new System.Drawing.Size(1300, 800);
@@ -568,19 +588,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView EmpGrid;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label NameLabs;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.Label label4;
@@ -605,5 +619,13 @@
         private System.Windows.Forms.TextBox addNameBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox passBox2;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox addPassBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

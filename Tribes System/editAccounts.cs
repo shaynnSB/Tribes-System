@@ -108,6 +108,7 @@ namespace Tribes_System
 
                 nameBox.Text = EmpGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
                 passBox.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                passBox2.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 selected = e.RowIndex;
                 switch (EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString())
                 {
@@ -166,25 +167,6 @@ namespace Tribes_System
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (comboBox1.SelectedItem.ToString())
-            {
-                case "Full-Time":
-                    resetTable("select * from employee where emp_status = 'Full-Time'");
-                    break;
-                case "On-Call":
-                    resetTable("select * from employee where emp_status = 'On-Call'");
-                    break;
-                case "Inactive":
-                    resetTable("select * from employee where emp_status = 'Inactive'");
-                    break;
-                default:
-                    resetTable();
-                    break;
-            }
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             resetTable("select * from employee where emp_name like '%" + textBox1.Text + "%'");
@@ -239,26 +221,39 @@ namespace Tribes_System
 
         private void button7_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE accounts SET " +
-                "acc_username = '" + nameBox.Text + "', " + 
-                "acc_pass = '"+passBox.Text + "', " + 
-                "acc_status = '" + stat + "' " + 
+            try
+            {
+                if (!passBox.Text.Equals(passBox2.Text)) { throw new hindiParehoAngPasswordsException(); }
+                string query = "UPDATE accounts SET " +
+                "acc_username = '" + nameBox.Text + "', " +
+                "acc_pass = '" + passBox.Text + "', " +
+                "acc_status = '" + stat + "' " +
                 "WHERE id_acc = " + EmpGrid.Rows[selected].Cells[0].Value.ToString();
 
-            DialogResult dr1; //= MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
-            if (EmpGrid.Rows[selected].Cells[1].ToString().Equals(username))
-            {
-                dr1 = MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+                DialogResult dr1; //= MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+                if (EmpGrid.Rows[selected].Cells[1].ToString().Equals(username))
+                {
+                    dr1 = MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    dr1 = DialogResult.OK;
+                }
+                if (dr1 == DialogResult.OK)
+                {
+                    executeMyQuery(query);
+                }
+                resetTable();
             }
-            else
+            catch(hindiParehoAngPasswordsException)
             {
-                dr1 = DialogResult.OK;
+                MessageBox.Show("The entered passwords do not match.");
             }
-            if(dr1 == DialogResult.OK)
+            catch
             {
-                executeMyQuery(query);
+
             }
-            resetTable();
+            
         }
 
         public void openConnection()
@@ -343,21 +338,51 @@ namespace Tribes_System
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string addstat = "";
-            if (radioButton8.Checked)
+            try
             {
-                addstat = "superUser";
+                if (!addPassBox.Text.Equals(addPassBox2.Text)) { throw new hindiParehoAngPasswordsException(); }
+                string q = "SELECT acc_username FROM accounts WHERE acc_username = '" + nameBox.Text + "'";
+                MySqlDataAdapter a = new MySqlDataAdapter(q, con);
+                DataTable t = new DataTable();
+                a.Fill(t);
+                if (t.Rows.Count > 0)
+                {
+                    MessageBox.Show("Username exists. Choose another one.");
+                }
+                else
+                {
+                    string addstat = "";
+                    if (radioButton8.Checked)
+                    {
+                        addstat = "superUser";
+                    }
+                    if (radioButton7.Checked)
+                    {
+                        addstat = "owner";
+                    }
+                    if (radioButton6.Checked)
+                    {
+                        addstat = "secretary";
+                    }
+                    string s = "INSERT INTO accounts(acc_username, acc_pass, acc_status) VALUES ('" + addNameBox.Text + "', '" + addPassBox.Text + "', '" + addstat + "')";
+                    executeMyQuery(s);
+                }
             }
-            if (radioButton7.Checked)
+            catch(hindiParehoAngPasswordsException)
             {
-                addstat = "owner";
+
             }
-            if (radioButton6.Checked)
+            catch
             {
-                addstat = "secretary";
+
             }
-            string s = "INSERT INTO accounts(acc_username, acc_pass, acc_status) VALUES ('"+ addNameBox +"', '"+addPassBox+"', '"+addstat+"')";
-            executeMyQuery(s);
+            
+            
         }
+    }
+
+    class hindiParehoAngPasswordsException : Exception
+    {
+
     }
 }

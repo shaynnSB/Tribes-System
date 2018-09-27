@@ -35,7 +35,7 @@ namespace Tribes_System
                 {
                     if (empData.Rows[0].ItemArray[4].ToString().Equals("Inactive"))
                     {
-                        throw new EmployeeIsInactiveException();
+                        throw new EmployeeIsInactiveException(); //throw custom exception i defined below if inactive. just dont show anything if the employee is inactive.
                     }
                     NameLab.Text = "Name: " + empData.Rows[0].ItemArray[9].ToString() + " " + empData.Rows[0].ItemArray[10].ToString().ToString();
                     StatusLab.Text = "Status: " + empData.Rows[0].ItemArray[4].ToString();
@@ -95,7 +95,7 @@ namespace Tribes_System
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTable d = new DataTable();
-            string query = "SELECT event_name, event_location, start_date, end_date, start_time, end_time FROM event WHERE id_event = " + dataGridView2[4, e.RowIndex].Value.ToString();
+            string query = "SELECT event_name, event_location, start_date, end_date, start_time, end_time, id_event FROM event WHERE id_event = " + dataGridView2[4, e.RowIndex].Value.ToString();
             MySqlDataAdapter a = new MySqlDataAdapter(query, con);
             a.Fill(d);
 
@@ -115,6 +115,14 @@ namespace Tribes_System
             a = new MySqlDataAdapter(query, con);
             a.Fill(s);
 
+            DataTable i = new DataTable();
+            query = "SELECT * FROM itemcontent" +
+                "INNER JOIN event ON event.id_event = itemcontent.eventID" +
+                "WHERE itemcontent.eventID = " + d.Rows[0].ItemArray[6].ToString();
+            a = new MySqlDataAdapter(query,con);
+
+
+            dataGridView3.DataSource = i;
             dataGridView1.DataSource = s;
 
             //dataGridView3.DataSource = d;

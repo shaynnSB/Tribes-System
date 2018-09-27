@@ -31,6 +31,17 @@
             this.welcomeLab = new System.Windows.Forms.Label();
             this.dateLab = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.eventEndTime = new System.Windows.Forms.Label();
+            this.eventStartDate = new System.Windows.Forms.Label();
+            this.eventEndDate = new System.Windows.Forms.Label();
+            this.eventStartTime = new System.Windows.Forms.Label();
+            this.eventLocation = new System.Windows.Forms.Label();
+            this.eventName = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.salaryLab = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.genderLab = new System.Windows.Forms.Label();
@@ -43,22 +54,11 @@
             this.BdayLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.eventName = new System.Windows.Forms.Label();
-            this.eventLocation = new System.Windows.Forms.Label();
-            this.eventStartTime = new System.Windows.Forms.Label();
-            this.eventEndDate = new System.Windows.Forms.Label();
-            this.eventStartDate = new System.Windows.Forms.Label();
-            this.eventEndTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // welcomeLab
@@ -114,6 +114,137 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1191, 638);
             this.panel1.TabIndex = 75;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(830, 267);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(243, 32);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "List of Equipment:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(412, 267);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(281, 32);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "Employees in Event: ";
+            // 
+            // eventEndTime
+            // 
+            this.eventEndTime.AutoSize = true;
+            this.eventEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventEndTime.Location = new System.Drawing.Point(444, 155);
+            this.eventEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventEndTime.Name = "eventEndTime";
+            this.eventEndTime.Size = new System.Drawing.Size(102, 25);
+            this.eventEndTime.TabIndex = 43;
+            this.eventEndTime.Text = "End Time:";
+            // 
+            // eventStartDate
+            // 
+            this.eventStartDate.AutoSize = true;
+            this.eventStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventStartDate.Location = new System.Drawing.Point(444, 82);
+            this.eventStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventStartDate.Name = "eventStartDate";
+            this.eventStartDate.Size = new System.Drawing.Size(105, 25);
+            this.eventStartDate.TabIndex = 42;
+            this.eventStartDate.Text = "Start Date:";
+            // 
+            // eventEndDate
+            // 
+            this.eventEndDate.AutoSize = true;
+            this.eventEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventEndDate.Location = new System.Drawing.Point(443, 105);
+            this.eventEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventEndDate.Name = "eventEndDate";
+            this.eventEndDate.Size = new System.Drawing.Size(99, 25);
+            this.eventEndDate.TabIndex = 41;
+            this.eventEndDate.Text = "End Date:";
+            // 
+            // eventStartTime
+            // 
+            this.eventStartTime.AutoSize = true;
+            this.eventStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventStartTime.Location = new System.Drawing.Point(443, 130);
+            this.eventStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventStartTime.Name = "eventStartTime";
+            this.eventStartTime.Size = new System.Drawing.Size(108, 25);
+            this.eventStartTime.TabIndex = 39;
+            this.eventStartTime.Text = "Start Time:";
+            // 
+            // eventLocation
+            // 
+            this.eventLocation.AutoSize = true;
+            this.eventLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLocation.Location = new System.Drawing.Point(443, 57);
+            this.eventLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventLocation.Name = "eventLocation";
+            this.eventLocation.Size = new System.Drawing.Size(92, 25);
+            this.eventLocation.TabIndex = 38;
+            this.eventLocation.Text = "Location:";
+            // 
+            // eventName
+            // 
+            this.eventName.AutoSize = true;
+            this.eventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventName.Location = new System.Drawing.Point(443, 32);
+            this.eventName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventName.Name = "eventName";
+            this.eventName.Size = new System.Drawing.Size(70, 25);
+            this.eventName.TabIndex = 36;
+            this.eventName.Text = "Name:";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(836, 303);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.Size = new System.Drawing.Size(355, 323);
+            this.dataGridView3.TabIndex = 35;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(412, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(191, 32);
+            this.label2.TabIndex = 34;
+            this.label2.Text = "Event Details:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(418, 303);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(407, 323);
+            this.dataGridView1.TabIndex = 33;
             // 
             // salaryLab
             // 
@@ -253,137 +384,6 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "Your Info:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(418, 303);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(407, 323);
-            this.dataGridView1.TabIndex = 33;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(412, 0);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 32);
-            this.label2.TabIndex = 34;
-            this.label2.Text = "Event Details:";
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(836, 303);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(355, 323);
-            this.dataGridView3.TabIndex = 35;
-            // 
-            // eventName
-            // 
-            this.eventName.AutoSize = true;
-            this.eventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventName.Location = new System.Drawing.Point(443, 32);
-            this.eventName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventName.Name = "eventName";
-            this.eventName.Size = new System.Drawing.Size(70, 25);
-            this.eventName.TabIndex = 36;
-            this.eventName.Text = "Name:";
-            // 
-            // eventLocation
-            // 
-            this.eventLocation.AutoSize = true;
-            this.eventLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventLocation.Location = new System.Drawing.Point(443, 57);
-            this.eventLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventLocation.Name = "eventLocation";
-            this.eventLocation.Size = new System.Drawing.Size(92, 25);
-            this.eventLocation.TabIndex = 38;
-            this.eventLocation.Text = "Location:";
-            // 
-            // eventStartTime
-            // 
-            this.eventStartTime.AutoSize = true;
-            this.eventStartTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventStartTime.Location = new System.Drawing.Point(443, 130);
-            this.eventStartTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventStartTime.Name = "eventStartTime";
-            this.eventStartTime.Size = new System.Drawing.Size(108, 25);
-            this.eventStartTime.TabIndex = 39;
-            this.eventStartTime.Text = "Start Time:";
-            // 
-            // eventEndDate
-            // 
-            this.eventEndDate.AutoSize = true;
-            this.eventEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventEndDate.Location = new System.Drawing.Point(443, 105);
-            this.eventEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventEndDate.Name = "eventEndDate";
-            this.eventEndDate.Size = new System.Drawing.Size(99, 25);
-            this.eventEndDate.TabIndex = 41;
-            this.eventEndDate.Text = "End Date:";
-            // 
-            // eventStartDate
-            // 
-            this.eventStartDate.AutoSize = true;
-            this.eventStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventStartDate.Location = new System.Drawing.Point(444, 82);
-            this.eventStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventStartDate.Name = "eventStartDate";
-            this.eventStartDate.Size = new System.Drawing.Size(105, 25);
-            this.eventStartDate.TabIndex = 42;
-            this.eventStartDate.Text = "Start Date:";
-            // 
-            // eventEndTime
-            // 
-            this.eventEndTime.AutoSize = true;
-            this.eventEndTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventEndTime.Location = new System.Drawing.Point(444, 155);
-            this.eventEndTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.eventEndTime.Name = "eventEndTime";
-            this.eventEndTime.Size = new System.Drawing.Size(102, 25);
-            this.eventEndTime.TabIndex = 43;
-            this.eventEndTime.Text = "End Time:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(412, 267);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(249, 32);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "Other Employees: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(830, 267);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(243, 32);
-            this.label5.TabIndex = 45;
-            this.label5.Text = "List of Equipment:";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -408,9 +408,9 @@
             this.Size = new System.Drawing.Size(1300, 800);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

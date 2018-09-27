@@ -106,6 +106,13 @@ namespace Tribes_System
                 numLab.Text = "Contact: " + EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString();
                 addressLab.Text = "Address: " + EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
                 genderLab.Text = "Gender: " + EmpGrid.Rows[e.RowIndex].Cells[8].FormattedValue.ToString();
+                if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString().Equals("On-Call") || EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString().Equals("Inactive"))
+                {
+                    salaryLab.Visible = false;
+                }else if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString().Equals("Full-Time"))
+                {
+                    salaryLab.Visible = true;
+                }
                 salaryLab.Text = "Salary: " + EmpGrid.Rows[e.RowIndex].Cells[11].FormattedValue.ToString();
 
                 DataTable sched = new DataTable();
@@ -135,7 +142,7 @@ namespace Tribes_System
                     resetTable("select * from employee where emp_status = 'Inactive'");
                     break;
                 default:
-                    resetTable();
+                    resetTable("select * from employee");
                     break;
             }
         }
