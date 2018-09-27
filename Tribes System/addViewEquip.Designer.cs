@@ -86,6 +86,7 @@
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(1014, 37);
             this.title.TabIndex = 58;
+            this.title.Paint += new System.Windows.Forms.PaintEventHandler(this.title_Paint);
             this.title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.title_MouseDown);
             this.title.MouseMove += new System.Windows.Forms.MouseEventHandler(this.title_MouseMove);
             this.title.MouseUp += new System.Windows.Forms.MouseEventHandler(this.title_MouseUp);

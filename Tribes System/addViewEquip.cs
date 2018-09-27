@@ -23,6 +23,11 @@ namespace Tribes_System
         {
             InitializeComponent();
             this.form = form;
+            snl.Enabled = false;
+            lvw.Enabled = false;
+            stg.Enabled = false;
+            vcs.Enabled = false;
+            msc.Enabled = false;
             refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
             setTextform("select event.prices,event.soundAndLights,event.ledVideoWall,event.miscellaneous,event.staging,event.videoCameraServices from event where event.id_event = " + eventSched.id);
         }
@@ -684,6 +689,11 @@ namespace Tribes_System
             }
             myreader.Close();
             closeConnection();
+        }
+
+        private void title_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
