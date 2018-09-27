@@ -37,6 +37,8 @@ namespace Tribes_System
                 //employeeView1.Visible = true;
                 employeeView uc = new employeeView(empid.ToString());
                 uc.Location = new Point(67, 51);
+                empLogout.Visible = true;
+                uc.SendToBack();
                 this.Controls.Add(uc);
             }
         }

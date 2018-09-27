@@ -30,6 +30,7 @@ namespace Tribes_System
 
         private void resetTable(string query = "select * from accounts")
         {
+            Console.WriteLine(username);
             try
             {
                 DataTable table = new DataTable();
@@ -47,8 +48,14 @@ namespace Tribes_System
                 //StatusLab.Text = "Status: ";
                 nameBox.Text = "";
                 passBox.Text = "";
+                passBox2.Text = "";
+                passBox.Visible = false;
+                passBox2.Visible = false;
+                label7.Visible = false;
+                label12.Visible = false;
                 addNameBox.Text = "";
                 addPassBox.Text = "";
+                addPassBox2.Text = "";
                 radioButton1.Checked = false;
                 radioButton2.Checked = false;
                 radioButton3.Checked = false;
@@ -107,8 +114,12 @@ namespace Tribes_System
             {
 
                 nameBox.Text = EmpGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString();
-                passBox.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
-                passBox2.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                //passBox.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                //passBox2.Text = EmpGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                passBox.Visible = false;
+                passBox2.Visible = false;
+                label7.Visible = false;
+                label12.Visible = false;
                 selected = e.RowIndex;
                 switch (EmpGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString())
                 {
@@ -116,11 +127,15 @@ namespace Tribes_System
                         stat = "superUser";
                         radioButton1.Checked = true;
                         radioButton4.Visible = false;
+                        empLab.Visible = false;
+                        nameLab.Visible = false;
                         break;
                     case "owner":
                         stat = "owner";
                         radioButton2.Checked = true;
                         radioButton4.Visible = false;
+                        empLab.Visible = false;
+                        nameLab.Visible = false;
                         break;
                     case "employee":
                         stat = "employee";
@@ -129,11 +144,15 @@ namespace Tribes_System
                         radioButton1.Visible = false;
                         radioButton2.Visible = false;
                         radioButton3.Visible = false;
+                        empLab.Visible = true;
+                        nameLab.Visible = true;
                         break;
                     case "secretary":
                         stat = "secretary";
                         radioButton3.Checked = true;
                         radioButton4.Visible = false;
+                        empLab.Visible = false;
+                        nameLab.Visible = false;
                         break;
                     default:
                         break;
@@ -224,22 +243,38 @@ namespace Tribes_System
             try
             {
                 if (!passBox.Text.Equals(passBox2.Text)) { throw new hindiParehoAngPasswordsException(); }
+                byte[] data = System.Text.Encoding.ASCII.GetBytes(passBox.Text);
+                data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                String hash = System.Text.Encoding.ASCII.GetString(data);
+
                 string query = "UPDATE accounts SET " +
                 "acc_username = '" + nameBox.Text + "', " +
-                "acc_pass = '" + passBox.Text + "', " +
+                "acc_pass = '" + hash + "', " +
                 "acc_status = '" + stat + "' " +
                 "WHERE id_acc = " + EmpGrid.Rows[selected].Cells[0].Value.ToString();
 
-                DialogResult dr1; //= MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
-                if (EmpGrid.Rows[selected].Cells[1].ToString().Equals(username))
+                if(passBox.Text.Equals(""))
                 {
-                    dr1 = MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+                    query = "UPDATE accounts SET " +
+                "acc_username = '" + nameBox.Text + "', " +
+                "acc_status = '" + stat + "' " +
+                "WHERE id_acc = " + EmpGrid.Rows[selected].Cells[0].Value.ToString();
+                }
+
+                DialogResult dr1; //= MessageBox.Show("You are about to change your own username. Please restart the system after changing", "FATAL ALERT", MessageBoxButtons.OKCancel);
+                if (EmpGrid.Rows[selected].Cells[1].Value.ToString().Equals(username) && !nameBox.Text.Equals(username))
+                {
+                    dr1 = MessageBox.Show("You are about to change your own username. Please logout after changing. Cancel if you change your mind.", "FATAL ALERT", MessageBoxButtons.OKCancel);
                 }
                 else
                 {
                     dr1 = DialogResult.OK;
                 }
-                if (dr1 == DialogResult.OK)
+
+                DialogResult dr2 = MessageBox.Show("Are you sure about these changes? Review them carefully.", "ALERT", MessageBoxButtons.OKCancel);
+                
+
+                if (dr1 == DialogResult.OK && dr2 == DialogResult.OK)
                 {
                     executeMyQuery(query);
                 }
@@ -282,12 +317,12 @@ namespace Tribes_System
                 if (cmd.ExecuteNonQuery() == 1)
                 {
                     //MessageBox.Show("Executed");
-                    MessageBox.Show("Employee Edited Successfully");
+                    MessageBox.Show("Success!");
                 }
 
                 else
                 {
-                    MessageBox.Show("Not Executed");
+                    MessageBox.Show("Failure has occured.");
                 }
 
             }
@@ -378,6 +413,19 @@ namespace Tribes_System
             }
             
             
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            passBox.Visible = true;
+            passBox2.Visible = true;
+            label7.Visible = true;
+            label12.Visible = true;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

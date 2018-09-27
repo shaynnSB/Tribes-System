@@ -66,6 +66,7 @@
             this.salarayBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.passBox = new System.Windows.Forms.TextBox();
+            this.passBox2 = new System.Windows.Forms.TextBox();
             this.title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -191,7 +192,7 @@
             this.panel1.Location = new System.Drawing.Point(752, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 528);
+            this.panel1.Size = new System.Drawing.Size(1, 560);
             this.panel1.TabIndex = 10;
             // 
             // button3
@@ -245,7 +246,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 528);
+            this.panel2.Size = new System.Drawing.Size(1, 560);
             this.panel2.TabIndex = 11;
             // 
             // button6
@@ -282,7 +283,7 @@
             this.panel4.Controls.Add(this.button9);
             this.panel4.Controls.Add(this.button10);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(1, 573);
+            this.panel4.Location = new System.Drawing.Point(1, 605);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(751, 1);
@@ -320,7 +321,7 @@
             this.panel3.Controls.Add(this.radioButton2);
             this.panel3.Controls.Add(this.radioButton1);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(44, 362);
+            this.panel3.Location = new System.Drawing.Point(47, 397);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(244, 20);
             this.panel3.TabIndex = 26;
@@ -379,7 +380,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(45, 315);
+            this.dateTimePicker1.Location = new System.Drawing.Point(48, 350);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(235, 22);
             this.dateTimePicker1.TabIndex = 32;
@@ -420,7 +421,7 @@
             this.panel5.Controls.Add(this.radioButton5);
             this.panel5.Controls.Add(this.radioButton6);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(44, 338);
+            this.panel5.Location = new System.Drawing.Point(47, 373);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(320, 20);
             this.panel5.TabIndex = 35;
@@ -514,22 +515,20 @@
             // 
             // panel6
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel6.Controls.Add(this.emergencyContact);
             this.panel6.Controls.Add(this.addButt);
             this.panel6.Controls.Add(this.cancelButt);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.alertLabel);
             this.panel6.Controls.Add(this.emergencyName);
-            this.panel6.Location = new System.Drawing.Point(15, 393);
+            this.panel6.Location = new System.Drawing.Point(14, 420);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(703, 176);
+            this.panel6.Size = new System.Drawing.Size(703, 172);
             this.panel6.TabIndex = 39;
             // 
             // salarayBox
             // 
-            this.salarayBox.Location = new System.Drawing.Point(369, 361);
+            this.salarayBox.Location = new System.Drawing.Point(372, 396);
             this.salarayBox.Name = "salarayBox";
             this.salarayBox.Size = new System.Drawing.Size(293, 22);
             this.salarayBox.TabIndex = 0;
@@ -542,7 +541,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Location = new System.Drawing.Point(293, 363);
+            this.label7.Location = new System.Drawing.Point(296, 398);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(61, 20);
@@ -564,11 +563,26 @@
             this.passBox.Text = "Employee Account Password";
             this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // passBox2
+            // 
+            this.passBox2.BackColor = System.Drawing.Color.LightGray;
+            this.passBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.passBox2.Font = new System.Drawing.Font("Microsoft Yi Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passBox2.ForeColor = System.Drawing.Color.Gray;
+            this.passBox2.Location = new System.Drawing.Point(48, 316);
+            this.passBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.passBox2.Name = "passBox2";
+            this.passBox2.Size = new System.Drawing.Size(657, 27);
+            this.passBox2.TabIndex = 41;
+            this.passBox2.Text = "Re-Enter Password";
+            this.passBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // addEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 574);
+            this.ClientSize = new System.Drawing.Size(753, 606);
+            this.Controls.Add(this.passBox2);
             this.Controls.Add(this.passBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel6);
@@ -646,5 +660,6 @@
         private System.Windows.Forms.TextBox salarayBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox passBox;
+        private System.Windows.Forms.TextBox passBox2;
     }
 }

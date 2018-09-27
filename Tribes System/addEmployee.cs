@@ -100,7 +100,7 @@ namespace Tribes_System
             
             if (nameBox.Text != "" && addressBox.Text != "" && numBox.Text != "" && stat != "" && emergencyContact.Text != "" && emergencyName.Text != "" && passBox.Text != "")
             {
-                if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee" && emergencyContact.Text != "Emergency Contact" && emergencyName.Text != "Emergency Contact Name" && passBox.Text != "Employee Account Password")
+                if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee" && emergencyContact.Text != "Emergency Contact" && emergencyName.Text != "Emergency Contact Name" && passBox.Text != "Employee Account Password" && passBox.Text.Equals(passBox2.Text))
                 {
                     string q = "select first_name, last_name FROM employee WHERE first_name = '"+nameBox.Text+"' AND last_name = '"+lastnameBox.Text+"'";
                     DataTable t = new DataTable();
@@ -112,6 +112,10 @@ namespace Tribes_System
                         DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
                         if (dg == DialogResult.Yes)
                         {
+                            byte[] data = System.Text.Encoding.ASCII.GetBytes(passBox.Text);
+                            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+                            String hash = System.Text.Encoding.ASCII.GetString(data);
+
                             string insertQuery = "INSERT INTO " +
                                 "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name, emp_salary) " +
                                 "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','" + emergencyContact.Text + "','" + emergencyName.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + this.gender + "', '" + nameBox.Text + "', '" + lastnameBox.Text + "', "+salarayBox.Text+")";
@@ -138,7 +142,7 @@ namespace Tribes_System
 
                             insertQuery = "INSERT INTO " + //second insert query para sa accounts table
                                 "accounts(acc_username, acc_pass, acc_status, reference_id) " +
-                                "VALUES ('" + uname + "', '" + passBox.Text + "', 'employee', " + autoincrement +")";
+                                "VALUES ('" + uname + "', '" + hash + "', 'employee', " + autoincrement +")";
                             executeMyQuery(insertQuery);
 
                             this.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -151,9 +155,14 @@ namespace Tribes_System
                     }
                     
                     
+                }else if (!passBox.Text.Equals(passBox2.Text))
+                {
+                    alertLabel.Text = "Passwords do not match!";
+                    alertLabel.Visible = true;
                 }
                 else
                 {
+                    alertLabel.Text = "Please fill in all fields!";
                     alertLabel.Visible = true;
                 }
             }

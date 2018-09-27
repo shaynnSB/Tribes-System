@@ -40,7 +40,11 @@ namespace Tribes_System
         {
             MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
 
-            string query = "select * from accounts where acc_username ='" + userBox.Text + "' and acc_pass ='" + passBox.Text + "'";
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(passBox.Text);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+
+            string query = "select * from accounts where acc_username ='" + userBox.Text + "' and acc_pass ='" + hash + "'";
             // ganito nalang ang query para ma access ang account type in one query
             using (MySqlDataAdapter adpt = new MySqlDataAdapter(query, con))
             {

@@ -51,12 +51,13 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.empLogout = new System.Windows.Forms.Button();
+            this.editAccounts1 = new Tribes_System.editAccounts();
             this.payrollUI1 = new Tribes_System.salaryUI();
             this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
-            this.editAccounts1 = new Tribes_System.editAccounts();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -401,6 +402,35 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
+            // empLogout
+            // 
+            this.empLogout.BackColor = System.Drawing.Color.Transparent;
+            this.empLogout.FlatAppearance.BorderSize = 0;
+            this.empLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MistyRose;
+            this.empLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.empLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.empLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empLogout.Location = new System.Drawing.Point(1083, 52);
+            this.empLogout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.empLogout.Name = "empLogout";
+            this.empLogout.Size = new System.Drawing.Size(146, 34);
+            this.empLogout.TabIndex = 7;
+            this.empLogout.Text = "           LOG OUT";
+            this.empLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.empLogout.UseVisualStyleBackColor = false;
+            this.empLogout.Visible = false;
+            this.empLogout.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // editAccounts1
+            // 
+            this.editAccounts1.Location = new System.Drawing.Point(67, 52);
+            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
+            this.editAccounts1.Name = "editAccounts1";
+            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
+            this.editAccounts1.TabIndex = 14;
+            this.editAccounts1.Visible = false;
+            // 
             // payrollUI1
             // 
             this.payrollUI1.Location = new System.Drawing.Point(66, 51);
@@ -445,20 +475,12 @@
             this.financesUI1.TabIndex = 11;
             this.financesUI1.Visible = false;
             // 
-            // editAccounts1
-            // 
-            this.editAccounts1.Location = new System.Drawing.Point(67, 52);
-            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
-            this.editAccounts1.Name = "editAccounts1";
-            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
-            this.editAccounts1.TabIndex = 14;
-            this.editAccounts1.Visible = false;
-            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1500, 950);
+            this.Controls.Add(this.empLogout);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -512,5 +534,6 @@
         private salaryUI payrollUI1;
         private Equipment equipment1;
         private editAccounts editAccounts1;
+        private System.Windows.Forms.Button empLogout;
     }
 }

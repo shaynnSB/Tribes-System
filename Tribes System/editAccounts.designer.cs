@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.nameLab = new System.Windows.Forms.Label();
             this.passBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -45,7 +44,6 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.button5 = new System.Windows.Forms.Button();
             this.passBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nameBox = new System.Windows.Forms.TextBox();
@@ -67,6 +65,8 @@
             this.addNameBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -131,9 +131,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.nameLab);
             this.panel1.Controls.Add(this.passBox2);
             this.panel1.Controls.Add(this.label12);
@@ -143,16 +143,17 @@
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.passBox);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.NameLabs);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label13);
             this.panel1.Location = new System.Drawing.Point(570, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(551, 321);
+            this.panel1.Size = new System.Drawing.Size(551, 361);
             this.panel1.TabIndex = 73;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label7
             // 
@@ -164,6 +165,7 @@
             this.label7.Size = new System.Drawing.Size(59, 18);
             this.label7.TabIndex = 94;
             this.label7.Text = "re-enter";
+            this.label7.Visible = false;
             // 
             // button7
             // 
@@ -172,7 +174,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Control;
-            this.button7.Location = new System.Drawing.Point(6, 251);
+            this.button7.Location = new System.Drawing.Point(6, 306);
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(149, 44);
@@ -181,25 +183,17 @@
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(496, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 23);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "Show";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // nameLab
             // 
             this.nameLab.AutoSize = true;
             this.nameLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLab.Location = new System.Drawing.Point(53, 213);
+            this.nameLab.Location = new System.Drawing.Point(47, 260);
             this.nameLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.nameLab.Name = "nameLab";
             this.nameLab.Size = new System.Drawing.Size(316, 25);
             this.nameLab.TabIndex = 87;
             this.nameLab.Text = "Lastname, Firstname Secondname";
+            this.nameLab.Visible = false;
             // 
             // passBox2
             // 
@@ -210,10 +204,11 @@
             this.passBox2.Location = new System.Drawing.Point(125, 118);
             this.passBox2.Margin = new System.Windows.Forms.Padding(4);
             this.passBox2.Name = "passBox2";
-            this.passBox2.Size = new System.Drawing.Size(364, 27);
+            this.passBox2.Size = new System.Drawing.Size(422, 27);
             this.passBox2.TabIndex = 92;
             this.passBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passBox2.UseSystemPasswordChar = true;
+            this.passBox2.Visible = false;
             // 
             // label12
             // 
@@ -225,12 +220,13 @@
             this.label12.Size = new System.Drawing.Size(104, 25);
             this.label12.TabIndex = 91;
             this.label12.Text = "Password:";
+            this.label12.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 149);
+            this.label5.Location = new System.Drawing.Point(5, 196);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 25);
@@ -241,17 +237,18 @@
             // 
             this.empLab.AutoSize = true;
             this.empLab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empLab.Location = new System.Drawing.Point(10, 178);
+            this.empLab.Location = new System.Drawing.Point(4, 225);
             this.empLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.empLab.Name = "empLab";
             this.empLab.Size = new System.Drawing.Size(162, 25);
             this.empLab.TabIndex = 85;
             this.empLab.Text = "Employee Name:";
+            this.empLab.Visible = false;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(100, 153);
+            this.radioButton4.Location = new System.Drawing.Point(94, 200);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(91, 21);
             this.radioButton4.TabIndex = 84;
@@ -263,7 +260,7 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(278, 154);
+            this.radioButton3.Location = new System.Drawing.Point(272, 201);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(90, 21);
             this.radioButton3.TabIndex = 83;
@@ -275,7 +272,7 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(202, 154);
+            this.radioButton2.Location = new System.Drawing.Point(196, 201);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(70, 21);
             this.radioButton2.TabIndex = 82;
@@ -287,7 +284,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(101, 154);
+            this.radioButton1.Location = new System.Drawing.Point(95, 201);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(95, 21);
             this.radioButton1.TabIndex = 81;
@@ -295,17 +292,6 @@
             this.radioButton1.Text = "superUser";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(496, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 23);
-            this.button5.TabIndex = 80;
-            this.button5.Text = "Show";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button5_MouseDown);
-            this.button5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button5_MouseUp);
             // 
             // passBox
             // 
@@ -316,10 +302,11 @@
             this.passBox.Location = new System.Drawing.Point(125, 83);
             this.passBox.Margin = new System.Windows.Forms.Padding(4);
             this.passBox.Name = "passBox";
-            this.passBox.Size = new System.Drawing.Size(364, 27);
+            this.passBox.Size = new System.Drawing.Size(422, 27);
             this.passBox.TabIndex = 79;
             this.passBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.passBox.UseSystemPasswordChar = true;
+            this.passBox.Visible = false;
             // 
             // label4
             // 
@@ -384,7 +371,7 @@
             this.panel2.Controls.Add(this.addNameBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Location = new System.Drawing.Point(569, 477);
+            this.panel2.Location = new System.Drawing.Point(569, 510);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(551, 286);
             this.panel2.TabIndex = 88;
@@ -563,6 +550,32 @@
             this.label11.TabIndex = 18;
             this.label11.Text = "Add Profile:";
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Location = new System.Drawing.Point(6, 158);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(156, 29);
+            this.button4.TabIndex = 95;
+            this.button4.Text = "Change Password";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(132, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(123, 24);
+            this.label13.TabIndex = 96;
+            this.label13.Text = "It\'s a secret. ;)";
+            // 
             // editAccounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -595,7 +608,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label NameLabs;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox nameBox;
@@ -620,12 +632,13 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox passBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox addPassBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label13;
     }
 }
