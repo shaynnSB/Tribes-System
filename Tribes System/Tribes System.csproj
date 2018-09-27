@@ -185,6 +185,12 @@
     <Compile Include="EmployeeTab.designer.cs">
       <DependentUpon>EmployeeTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="employeeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="employeeView.Designer.cs">
+      <DependentUpon>employeeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Equipment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeTab.resx">
       <DependentUpon>EmployeeTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="employeeView.resx">
+      <DependentUpon>employeeView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Equipment.resx">
       <DependentUpon>Equipment.cs</DependentUpon>

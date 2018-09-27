@@ -54,16 +54,18 @@ namespace Tribes_System
                     this.Hide();
                     try
                     {
-                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[1].ToString(), (int)dt.Rows[0].ItemArray[4]); // nilagyan ko ng parameter para mapass ang account type
+                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[1].ToString(), (int)dt.Rows[0].ItemArray[4]);
+                        // nilagyan ko ng parameter para mapass ang account type
                         form.ShowDialog();
                     }
                     catch (InvalidCastException)
                     {
-                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[1].ToString()); // nilagyan ko ng parameter para mapass ang account type
+                        equipButt form = new equipButt(dt.Rows[0].ItemArray[3].ToString(), dt.Rows[0].ItemArray[1].ToString()); 
+                        // nilagyan ko ng parameter para mapass ang account type
                         form.ShowDialog();
                     }
 
-                        this.Close();
+                    this.Close();
                 }
                 else
                 {

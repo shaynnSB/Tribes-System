@@ -52,13 +52,13 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.homepageUI1 = new Tribes_System.homepageUI();
+            this.editAccounts1 = new Tribes_System.editAccounts();
             this.payrollUI1 = new Tribes_System.salaryUI();
             this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
-            this.homepageUI1 = new Tribes_System.homepageUI();
-            this.editAccounts1 = new Tribes_System.editAccounts();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -421,6 +421,23 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
+            // homepageUI1
+            // 
+            this.homepageUI1.Location = new System.Drawing.Point(140, 59);
+            this.homepageUI1.Name = "homepageUI1";
+            this.homepageUI1.Size = new System.Drawing.Size(1315, 800);
+            this.homepageUI1.TabIndex = 14;
+            this.homepageUI1.Visible = false;
+            // 
+            // editAccounts1
+            // 
+            this.editAccounts1.Location = new System.Drawing.Point(140, 59);
+            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
+            this.editAccounts1.Name = "editAccounts1";
+            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
+            this.editAccounts1.TabIndex = 15;
+            this.editAccounts1.Visible = false;
+            // 
             // payrollUI1
             // 
             this.payrollUI1.Location = new System.Drawing.Point(140, 59);
@@ -464,21 +481,6 @@
             this.financesUI1.TabIndex = 11;
             this.financesUI1.Visible = false;
             // 
-            // homepageUI1
-            // 
-            this.homepageUI1.Location = new System.Drawing.Point(140, 59);
-            this.homepageUI1.Name = "homepageUI1";
-            this.homepageUI1.Size = new System.Drawing.Size(1315, 800);
-            this.homepageUI1.TabIndex = 14;
-            // 
-            // editAccounts1
-            // 
-            this.editAccounts1.Location = new System.Drawing.Point(140, 59);
-            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
-            this.editAccounts1.Name = "editAccounts1";
-            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
-            this.editAccounts1.TabIndex = 15;
-            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -489,13 +491,13 @@
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.iconPanel);
             this.Controls.Add(this.title);
+            this.Controls.Add(this.editAccounts1);
             this.Controls.Add(this.payrollUI1);
             this.Controls.Add(this.equipment1);
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
             this.Controls.Add(this.homepageUI1);
-            this.Controls.Add(this.editAccounts1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "equipButt";
