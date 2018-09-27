@@ -45,6 +45,7 @@
             this.ddlbl = new System.Windows.Forms.Label();
             this.ownertb = new System.Windows.Forms.TextBox();
             this.owner = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -53,12 +54,13 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Staging",
-            "Lights",
-            "Speakers",
+            "Lighting",
+            "Sound System",
             "Misc.",
             "Video",
             "LED Wall",
-            "LCD"});
+            "LCD",
+            "Band"});
             this.comboBox1.Location = new System.Drawing.Point(103, 116);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(137, 21);
@@ -193,11 +195,24 @@
             this.owner.Text = "Owner";
             this.owner.Visible = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(39, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 7);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "REQUIRED";
+            // 
             // AddEquip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(363, 392);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.owner);
             this.Controls.Add(this.ownertb);
             this.Controls.Add(this.ddlbl);
@@ -208,11 +223,11 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
             this.Name = "AddEquip";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddEquip";
@@ -240,5 +255,6 @@
         private System.Windows.Forms.Label ddlbl;
         private System.Windows.Forms.TextBox ownertb;
         private System.Windows.Forms.Label owner;
+        private System.Windows.Forms.Label label5;
     }
 }

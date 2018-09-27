@@ -119,6 +119,12 @@
     <Compile Include="addViewStaff.Designer.cs">
       <DependentUpon>addViewStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="archivedEquip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="archivedEquip.Designer.cs">
+      <DependentUpon>archivedEquip.cs</DependentUpon>
+    </Compile>
     <Compile Include="archivedEvents.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addViewStaff.resx">
       <DependentUpon>addViewStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="archivedEquip.resx">
+      <DependentUpon>archivedEquip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="archivedEvents.resx">
       <DependentUpon>archivedEvents.cs</DependentUpon>

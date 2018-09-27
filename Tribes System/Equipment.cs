@@ -109,12 +109,15 @@ namespace Tribes_System
                 DialogResult dg = MessageBox.Show("Are you sure?", "Alert!", MessageBoxButtons.YesNo);
                 if (dg == DialogResult.Yes)
                 {
+                    string insertQuery1 = "INSERT INTO archiveditems(itemID, name, category) VALUES (" + dgv.Rows[dgv.SelectedRows[0].Index].Cells[0].Value.ToString() + ",'"+ dgv.Rows[dgv.SelectedRows[0].Index].Cells[1].Value.ToString() + "','" + dgv.Rows[dgv.SelectedRows[0].Index].Cells[2].Value.ToString() + "')";
+                    executeMyQuery(insertQuery1);
                     string insertQuery = "DELETE FROM items WHERE id =" + dgv.Rows[dgv.SelectedRows[0].Index].Cells[0].Value.ToString();
                     executeMyQuery(insertQuery);
                     refresh("select items.id, items.name, category.description,items.status from items left join category on category.id = items.categoryID");
                     setCount("Select COUNT(*) as test from items ");
                     var a = new AddEquip();
                     a.setCount("SELECT id+1 AS next_id FROM items ORDER BY id DESC LIMIT 1");
+                    MessageBox.Show("Deleted");
                 }
             }
             else
@@ -154,7 +157,7 @@ namespace Tribes_System
                 if (cmd.ExecuteNonQuery() == 1)
                 {
                     //MessageBox.Show("Executed");
-                    MessageBox.Show("Deleted");
+                   // MessageBox.Show("Deleted");
 
                 }
 
@@ -236,6 +239,12 @@ namespace Tribes_System
     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var a = new archivedEquip();
+            a.Show();
         }
     }
 }

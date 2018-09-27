@@ -23,6 +23,11 @@ namespace Tribes_System
         {
             InitializeComponent();
             this.form = form;
+            snl.Enabled = false;
+            lvw.Enabled = false;
+            stg.Enabled = false;
+            vcs.Enabled = false;
+            msc.Enabled = false;
             refresh("select itemcontent.id, itemcontent.modelNumber,items.name,category.description,items.status from itemcontent left join items on items.id = itemcontent.itemID left join category on category.id = items.categoryID where eventID = " + eventSched.id);
             setTextform("select event.prices,event.soundAndLights,event.ledVideoWall,event.miscellaneous,event.staging,event.videoCameraServices from event where event.id_event = " + eventSched.id);
         }
@@ -599,33 +604,21 @@ namespace Tribes_System
           
             if (tabControl1.SelectedIndex == 1)
             {
-                label4.Visible = true;
-                label5.Visible = true;
-                label9.Visible = true;
-                label6.Visible = true;
-                label7.Visible = true;
-                label8.Visible = true;
-                snl.Visible = true;
-                lvw.Visible = true;
-                stg.Visible = true;
-                vcs.Visible = true;
-                msc.Visible = true;
-                total.Visible = true;
+                snl.Enabled = true;
+                lvw.Enabled = true;
+                stg.Enabled = true;
+                vcs.Enabled = true;
+                msc.Enabled = true;
             }
             else
             {
-                label4.Visible = false;
-                label5.Visible = false;
-                label9.Visible = false;
-                label6.Visible = false;
-                label7.Visible = false;
-                label8.Visible = false;
-                snl.Visible = false;
-                lvw.Visible = false;
-                stg.Visible = false;
-                vcs.Visible = false;
-                msc.Visible = false;
-                total.Visible = false;
+                
+                snl.Enabled = false;
+                lvw.Enabled = false;
+                stg.Enabled = false;
+                vcs.Enabled = false;
+                msc.Enabled = false;
+               
             }
         }
 
@@ -696,6 +689,11 @@ namespace Tribes_System
             }
             myreader.Close();
             closeConnection();
+        }
+
+        private void title_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
