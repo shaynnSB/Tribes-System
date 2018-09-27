@@ -27,6 +27,8 @@ namespace Tribes_System
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
 
+        string stamp = DateTime.Now.ToString();
+
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
@@ -51,6 +53,10 @@ namespace Tribes_System
             fillMonth();
             fillQuarter();
             fillYear();
+
+            timestampM.Text = stamp;
+            timestampQ.Text = stamp;
+            timestampY.Text = stamp;
 
             printdoc1.PrintPage += new PrintPageEventHandler(printdoc1_PrintPage);
         }
@@ -685,17 +691,23 @@ namespace Tribes_System
 
         private void printMonth_Click(object sender, EventArgs e)
         {
+            timestampM.Visible = true;
             Print(this.monthPanel);
+            timestampM.Visible = false;
         }
 
         private void printQuart_Click(object sender, EventArgs e)
         {
+            timestampQ.Visible = true;
             Print(this.quartPanel);
+            timestampQ.Visible = false;
         }
 
         private void printYear_Click(object sender, EventArgs e)
         {
+            timestampY.Visible = true;
             Print(this.yearPanel);
+            timestampY.Visible = false;
         }
     }
 

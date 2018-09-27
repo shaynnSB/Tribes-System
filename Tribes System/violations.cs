@@ -183,8 +183,6 @@ namespace Tribes_System
             }
         }
 
-
-
         string bonus_amount;
 
         private void bonus()
@@ -311,10 +309,13 @@ namespace Tribes_System
 
         private void violationsGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            amBox.Text = violationsGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateBox.Text = violationsGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            descBox.Text = violationsGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
-            id_amount = violationsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                amBox.Text = violationsGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateBox.Text = violationsGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                descBox.Text = violationsGrid.Rows[e.RowIndex].Cells[4].Value.ToString();
+                id_amount = violationsGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
         }
 
         private void remButt_Click(object sender, EventArgs e)

@@ -94,6 +94,9 @@
             this.closeButt = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.timestampY = new System.Windows.Forms.Label();
+            this.timestampQ = new System.Windows.Forms.Label();
+            this.timestampM = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.yearPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -169,6 +172,7 @@
             // yearPanel
             // 
             this.yearPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearPanel.Controls.Add(this.timestampY);
             this.yearPanel.Controls.Add(this.fuelYear);
             this.yearPanel.Controls.Add(this.transYear);
             this.yearPanel.Controls.Add(this.miscYear);
@@ -416,6 +420,7 @@
             // quartPanel
             // 
             this.quartPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.quartPanel.Controls.Add(this.timestampQ);
             this.quartPanel.Controls.Add(this.fuelQuart);
             this.quartPanel.Controls.Add(this.transQuart);
             this.quartPanel.Controls.Add(this.miscQuart);
@@ -649,6 +654,7 @@
             // monthPanel
             // 
             this.monthPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthPanel.Controls.Add(this.timestampM);
             this.monthPanel.Controls.Add(this.fuelMonth);
             this.monthPanel.Controls.Add(this.transMonth);
             this.monthPanel.Controls.Add(this.miscMonth);
@@ -912,6 +918,36 @@
             this.label1.TabIndex = 90;
             this.label1.Text = "Petty Cash Report";
             // 
+            // timestampY
+            // 
+            this.timestampY.AutoSize = true;
+            this.timestampY.Location = new System.Drawing.Point(5, 543);
+            this.timestampY.Name = "timestampY";
+            this.timestampY.Size = new System.Drawing.Size(18, 17);
+            this.timestampY.TabIndex = 128;
+            this.timestampY.Text = "--";
+            this.timestampY.Visible = false;
+            // 
+            // timestampQ
+            // 
+            this.timestampQ.AutoSize = true;
+            this.timestampQ.Location = new System.Drawing.Point(4, 545);
+            this.timestampQ.Name = "timestampQ";
+            this.timestampQ.Size = new System.Drawing.Size(18, 17);
+            this.timestampQ.TabIndex = 127;
+            this.timestampQ.Text = "--";
+            this.timestampQ.Visible = false;
+            // 
+            // timestampM
+            // 
+            this.timestampM.AutoSize = true;
+            this.timestampM.Location = new System.Drawing.Point(4, 545);
+            this.timestampM.Name = "timestampM";
+            this.timestampM.Size = new System.Drawing.Size(18, 17);
+            this.timestampM.TabIndex = 126;
+            this.timestampM.Text = "--";
+            this.timestampM.Visible = false;
+            // 
             // expenseReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1012,5 +1048,8 @@
         private System.Windows.Forms.Button printYear;
         private System.Windows.Forms.Button printQuart;
         private System.Windows.Forms.Button printMonth;
+        private System.Windows.Forms.Label timestampY;
+        private System.Windows.Forms.Label timestampQ;
+        private System.Windows.Forms.Label timestampM;
     }
 }

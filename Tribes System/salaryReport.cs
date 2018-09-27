@@ -26,6 +26,8 @@ namespace Tribes_System
         MySqlConnection con = new MySqlConnection("server=localhost;database=tribes_system;user=root;password=root");
         MySqlCommand cmd;
 
+        string stamp = DateTime.Now.ToString();
+
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
@@ -67,6 +69,10 @@ namespace Tribes_System
             fillMonth();
             fillQuarter();
             fillYear();
+
+            timestampM.Text = stamp;
+            timestampQ.Text = stamp;
+            timestampY.Text = stamp;
 
             printdoc1.PrintPage += new PrintPageEventHandler(printdoc1_PrintPage);
         }
@@ -229,6 +235,7 @@ namespace Tribes_System
             calcVioMonth();
             calcFullMonth();
             calcCallMonth();
+            calcOverMonth();
             calcTotMonth();
         }
 
@@ -268,18 +275,37 @@ namespace Tribes_System
             closeConnection();
         }
 
-        string fullM;
+        string overM;
 
-        private void calcFullMonth()
+        private void calcOverMonth()
         {
-            string selectQuery = "select SUM(emp_salary) from employee where emp_status = 'Full-Time'";
+            string selectQuery = "select SUM(over_amount) from overtime, employee where overtime.id_emp = employee.id_emp " +
+                "AND substring(date, 6,2) = '" + sMonth + "' AND substring(date, 1,4) = '" + sYear + "'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                fullM = reader["SUM(emp_salary)"].ToString();
+                overM = reader["SUM(over_amount)"].ToString();
+                overMonth.Text = overM;
+            }
+            closeConnection();
+        }
+
+        string fullM;
+
+        private void calcFullMonth()
+        {
+            string selectQuery = "select SUM(amount) from salary_full, employee where salary_full.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + sYear + "' AND substring(date, 6,2) = '" + sMonth + "'";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                fullM = reader["SUM(amount)"].ToString();
                 fullMonth.Text = fullM;
             }
             closeConnection();
@@ -310,6 +336,7 @@ namespace Tribes_System
             double full;
             double call;
             double bonus;
+            double over; 
             double violation;
 
             if (fullM == "" || fullM == "--")
@@ -339,6 +366,15 @@ namespace Tribes_System
                 bonus = Convert.ToDouble(bonusM);
             }
 
+            if (overM == "" || overM == "--")
+            {
+                over = 0;
+            }
+            else
+            {
+                over = Convert.ToDouble(overM);
+            }
+
             if (vioM == "" || vioM == "--")
             {
                 violation = 0;
@@ -348,8 +384,10 @@ namespace Tribes_System
                 violation = Convert.ToDouble(vioM);
             }
 
-            double total = (full + call + bonus) - violation;
+            double total = (full + call + bonus + over) - violation;
+            double fulltot = full + over;
 
+            fullTotMonth.Text = Convert.ToString(fulltot) + ".00";
             totM = Convert.ToString(total) + ".00";
             totMonth.Text = totM;
         }
@@ -504,7 +542,26 @@ namespace Tribes_System
             calcCallQuart();
             calcBonusQuart();
             calcVioQuart();
+            calcOverQuart();
             calcTotQuart();
+        }
+
+        string overQ;
+
+        private void calcOverQuart()
+        {
+            string selectQuery = "select SUM(over_amount) from overtime, employee where overtime.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + qYear + "' AND " + quarter2;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                overQ = reader["SUM(over_amount)"].ToString();
+                overQuart.Text = overQ;
+            }
+            closeConnection();
         }
 
         string bonusQ;
@@ -547,14 +604,15 @@ namespace Tribes_System
 
         private void calcFullQuart()
         {
-            string selectQuery = "select SUM(emp_salary) from employee where emp_status = 'Full-Time'";
+            string selectQuery = "select SUM(amount) from salary_full, employee where salary_full.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + qYear + "' AND " + quarter2;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                fullQ = reader["SUM(emp_salary)"].ToString();
+                fullQ = reader["SUM(amount)"].ToString();
                 fullQuart.Text = fullQ;
             }
             closeConnection();
@@ -585,6 +643,7 @@ namespace Tribes_System
             double full;
             double call;
             double bonus;
+            double over;
             double violation;
 
             if (fullQ == "" || fullQ == "--")
@@ -605,6 +664,15 @@ namespace Tribes_System
                 call = Convert.ToDouble(callQ);
             }
 
+            if (overQ == "" || overQ == "--")
+            {
+                over = 0;
+            }
+            else
+            {
+                over = Convert.ToDouble(overQ);
+            }
+
             if (bonusQ == "" || bonusQ == "--")
             {
                 bonus = 0;
@@ -623,8 +691,10 @@ namespace Tribes_System
                 violation = Convert.ToDouble(vioQ);
             }
 
-            double total = (full + call + bonus) - violation;
+            double total = (full + call + bonus + over) - violation;
+            double fulltot = full + over;
 
+            fullTotQuart.Text = Convert.ToString(fulltot) + ".00";
             totQ = Convert.ToString(total) + ".00";
             totQuart.Text = totQ;
         }
@@ -683,6 +753,8 @@ namespace Tribes_System
             calcCallYear();
             calcBonusYear();
             calcVioYear();
+            calcThreeYear();
+            calcOverYear();
             calcTotYear();
         }
 
@@ -690,14 +762,15 @@ namespace Tribes_System
 
         private void calcFullYear()
         {
-            string selectQuery = "select SUM(emp_salary) from employee where emp_status = 'Full-Time'";
+            string selectQuery = "select SUM(amount) from salary_full, employee where salary_full.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + aYear + "'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                fullY = reader["SUM(emp_salary)"].ToString();
+                fullY = reader["SUM(amount)"].ToString();
                 fullYear.Text = fullY;
             }
             closeConnection();
@@ -717,6 +790,24 @@ namespace Tribes_System
             {
                 callY = reader["SUM(salary)"].ToString();
                 callYear.Text = callY;
+            }
+            closeConnection();
+        }
+
+        string overY;
+
+        private void calcOverYear()
+        {
+            string selectQuery = "select SUM(over_amount) from overtime, employee where overtime.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + aYear + "'";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                overY = reader["SUM(over_amount)"].ToString();
+                overYear.Text = overY;
             }
             closeConnection();
         }
@@ -757,6 +848,31 @@ namespace Tribes_System
             closeConnection();
         }
 
+        string threeY;
+
+        private void calcThreeYear()
+        {
+            string selectQuery = "select SUM(amount) from salary_full, employee where salary_full.id_emp = employee.id_emp " +
+                " AND substring(date, 1,4) = '" + aYear + "' AND substring(date, 6,2) = '" + 12 + "'";
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                threeY = reader["SUM(amount)"].ToString();
+                if (threeY == "")
+                {
+                    lab13.Text = "0.00";
+                }
+                else
+                {
+                    lab13.Text = threeY;
+                }
+            }
+            closeConnection();
+        }
+
         string totY;
 
         private void calcTotYear()
@@ -764,6 +880,8 @@ namespace Tribes_System
             double full;
             double call;
             double bonus;
+            double over;
+            double three;
             double violation;
 
             if (fullY == "" || fullY == "--")
@@ -784,6 +902,15 @@ namespace Tribes_System
                 call = Convert.ToDouble(callY);
             }
 
+            if (overY == "" || overY == "--")
+            {
+                over = 0;
+            }
+            else
+            {
+                over = Convert.ToDouble(overY);
+            }
+
             if (bonusY == "" || bonusY == "--")
             {
                 bonus = 0;
@@ -802,8 +929,19 @@ namespace Tribes_System
                 violation = Convert.ToDouble(vioY);
             }
 
-            double total = (full + call + bonus) - violation;
+            if (threeY == "" || threeY == "--")
+            {
+                three = 0;
+            }
+            else
+            {
+                three = Convert.ToDouble(threeY);
+            }
 
+            double total = (full + call + bonus + over + three) - violation;
+            double fulltot = full + over + three;
+
+            fullTotYear.Text = Convert.ToString(fulltot) + ".00";
             totY = Convert.ToString(total) + ".00";
             totYear.Text = totY;
         }
@@ -860,17 +998,23 @@ namespace Tribes_System
 
         private void printMonth_Click(object sender, EventArgs e)
         {
+            timestampM.Visible = true;
             Print(this.monthPanel);
+            timestampM.Visible = false;
         }
 
         private void printQuart_Click(object sender, EventArgs e)
         {
+            timestampQ.Visible = true;
             Print(this.quartPanel);
+            timestampQ.Visible = false;
         }
 
         private void printYear_Click(object sender, EventArgs e)
         {
+            timestampY.Visible = true;
             Print(this.yearPanel);
+            timestampY.Visible = false;
         }
 
 

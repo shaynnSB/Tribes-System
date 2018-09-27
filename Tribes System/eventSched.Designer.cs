@@ -33,12 +33,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.editButt = new System.Windows.Forms.Button();
             this.deetPanel = new System.Windows.Forms.Panel();
-            this.remCanButt = new System.Windows.Forms.Button();
             this.mailLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.amLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cancellationButt = new System.Windows.Forms.Button();
             this.clientLabel = new System.Windows.Forms.Label();
             this.numLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
@@ -56,6 +54,8 @@
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
+            this.cancellationButt = new System.Windows.Forms.Button();
+            this.remCanButt = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.finishedButt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventGrid)).BeginInit();
@@ -124,12 +124,10 @@
             // deetPanel
             // 
             this.deetPanel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.deetPanel.Controls.Add(this.remCanButt);
             this.deetPanel.Controls.Add(this.mailLabel);
             this.deetPanel.Controls.Add(this.label7);
             this.deetPanel.Controls.Add(this.amLabel);
             this.deetPanel.Controls.Add(this.label6);
-            this.deetPanel.Controls.Add(this.cancellationButt);
             this.deetPanel.Controls.Add(this.clientLabel);
             this.deetPanel.Controls.Add(this.numLabel);
             this.deetPanel.Controls.Add(this.timeLabel);
@@ -148,31 +146,14 @@
             this.deetPanel.Controls.Add(this.label46);
             this.deetPanel.Controls.Add(this.label45);
             this.deetPanel.Controls.Add(this.nameLabel);
+            this.deetPanel.Controls.Add(this.cancellationButt);
+            this.deetPanel.Controls.Add(this.remCanButt);
             this.deetPanel.Location = new System.Drawing.Point(374, 100);
             this.deetPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deetPanel.Name = "deetPanel";
             this.deetPanel.Size = new System.Drawing.Size(920, 680);
             this.deetPanel.TabIndex = 70;
             this.deetPanel.Visible = false;
-            // 
-            // remCanButt
-            // 
-            this.remCanButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.remCanButt.FlatAppearance.BorderSize = 0;
-            this.remCanButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.remCanButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.remCanButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.remCanButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remCanButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.remCanButt.Location = new System.Drawing.Point(622, 586);
-            this.remCanButt.Margin = new System.Windows.Forms.Padding(4);
-            this.remCanButt.Name = "remCanButt";
-            this.remCanButt.Size = new System.Drawing.Size(256, 37);
-            this.remCanButt.TabIndex = 86;
-            this.remCanButt.Text = "Remove Cancellation";
-            this.remCanButt.UseVisualStyleBackColor = false;
-            this.remCanButt.Visible = false;
-            this.remCanButt.Click += new System.EventHandler(this.remCanButt_Click);
             // 
             // mailLabel
             // 
@@ -221,24 +202,6 @@
             this.label6.Size = new System.Drawing.Size(91, 25);
             this.label6.TabIndex = 82;
             this.label6.Text = "Amount: ";
-            // 
-            // cancellationButt
-            // 
-            this.cancellationButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cancellationButt.FlatAppearance.BorderSize = 0;
-            this.cancellationButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.cancellationButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.cancellationButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cancellationButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancellationButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.cancellationButt.Location = new System.Drawing.Point(622, 586);
-            this.cancellationButt.Margin = new System.Windows.Forms.Padding(4);
-            this.cancellationButt.Name = "cancellationButt";
-            this.cancellationButt.Size = new System.Drawing.Size(256, 37);
-            this.cancellationButt.TabIndex = 81;
-            this.cancellationButt.Text = "Cancel Event";
-            this.cancellationButt.UseVisualStyleBackColor = false;
-            this.cancellationButt.Click += new System.EventHandler(this.cancellationButt_Click);
             // 
             // clientLabel
             // 
@@ -459,6 +422,43 @@
             this.nameLabel.TabIndex = 4;
             this.nameLabel.Text = "NAME OF EVENT";
             // 
+            // cancellationButt
+            // 
+            this.cancellationButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cancellationButt.FlatAppearance.BorderSize = 0;
+            this.cancellationButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick;
+            this.cancellationButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.IndianRed;
+            this.cancellationButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancellationButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancellationButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.cancellationButt.Location = new System.Drawing.Point(622, 586);
+            this.cancellationButt.Margin = new System.Windows.Forms.Padding(4);
+            this.cancellationButt.Name = "cancellationButt";
+            this.cancellationButt.Size = new System.Drawing.Size(256, 37);
+            this.cancellationButt.TabIndex = 81;
+            this.cancellationButt.Text = "Cancel Event";
+            this.cancellationButt.UseVisualStyleBackColor = false;
+            this.cancellationButt.Click += new System.EventHandler(this.cancellationButt_Click);
+            // 
+            // remCanButt
+            // 
+            this.remCanButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.remCanButt.FlatAppearance.BorderSize = 0;
+            this.remCanButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.remCanButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.remCanButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.remCanButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remCanButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.remCanButt.Location = new System.Drawing.Point(622, 586);
+            this.remCanButt.Margin = new System.Windows.Forms.Padding(4);
+            this.remCanButt.Name = "remCanButt";
+            this.remCanButt.Size = new System.Drawing.Size(256, 37);
+            this.remCanButt.TabIndex = 86;
+            this.remCanButt.Text = "Remove Cancellation";
+            this.remCanButt.UseVisualStyleBackColor = false;
+            this.remCanButt.Visible = false;
+            this.remCanButt.Click += new System.EventHandler(this.remCanButt_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -487,6 +487,7 @@
             this.finishedButt.TabIndex = 72;
             this.finishedButt.Text = "Finished Events";
             this.finishedButt.UseVisualStyleBackColor = false;
+            this.finishedButt.Click += new System.EventHandler(this.finishedButt_Click);
             // 
             // eventSched
             // 

@@ -24,6 +24,11 @@ namespace Tribes_System
         string access; // use this to access account type
         int empid;
 
+        string currentDate = DateTime.Today.ToString("yyyy-MM-dd");
+
+        string sMonth = DateTime.Now.ToString("MM");
+        string sYear = DateTime.Now.ToString("yyyy");
+
         public equipButt(string access, int empid = 0)
         {
             InitializeComponent();
@@ -33,6 +38,7 @@ namespace Tribes_System
             this.access = access;
             this.empid = empid;
             checkStat();
+            checkSal();
         }
 
         private void checkStat()
@@ -107,15 +113,57 @@ namespace Tribes_System
             
         }
 
+        private void pastSal()
+        {
+            string selectQuery = "SELECT * from salary_full where substring(date, 1,4) = " + sYear + " AND " +
+                    "substring(date, 6, 2) = " + sMonth + " - 1 and id_emp = " + id;
+            openConnection();
+            MySqlCommand cmd = new MySqlCommand(selectQuery, con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                past_am = reader["amount"].ToString();
+            }
+            closeConnection();
+        }
+
+
+
+        string id;
+        string past_am;
         private void checkSal()
         {
+            string query = "select id_emp from employee where emp_status = 'Full-Time'";
+            DataTable table = new DataTable();
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
+            adapter.Fill(table);
 
+            foreach (DataRow row in table.Rows)
+            {
+                id = row["id_emp"].ToString();
+                string selectQuery = "SELECT * from salary_full where substring(date, 1,4) = " + sYear + " AND " +
+                    "substring(date, 6, 2) = " + sMonth + " and id_emp = " + id;
+
+                DataTable table2 = new DataTable();
+                MySqlDataAdapter adapter2 = new MySqlDataAdapter(selectQuery, con);
+                adapter2.Fill(table2);
+                foreach (DataRow row2 in table2.Rows)
+                {
+                    if (row2.IsNull("amount"))
+                    {
+                        pastSal();
+                        string q = "INSERT INTO salary_full(id_emp, date, amount) VALUES(" + id + ", " + currentDate + ", " + past_am + ")";
+                        executeMyQuery(q);
+                    }
+                }
+            }
         }
 
         private void empButt_Click(object sender, EventArgs e)
         {
             timer.Start();
-
+          
             employeeTab.Visible = true;
             financesUI1.Visible = false;
             payrollUI1.Visible = false;
@@ -288,6 +336,15 @@ namespace Tribes_System
             {
                 closeConnection();
             }
+        }
+
+        private void homeButt_Click(object sender, EventArgs e)
+        {
+            financesUI1.Visible = false;
+            payrollUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
+            equipment1.Visible = false;
         }
     }
 }

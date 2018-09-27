@@ -38,6 +38,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.printMonth = new System.Windows.Forms.Button();
             this.monthPanel = new System.Windows.Forms.Panel();
+            this.fullTotMonth = new System.Windows.Forms.Label();
+            this.overMonth = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.callMonth = new System.Windows.Forms.Label();
             this.bonusMonth = new System.Windows.Forms.Label();
             this.vioMonth = new System.Windows.Forms.Label();
@@ -57,6 +60,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.printQuart = new System.Windows.Forms.Button();
             this.quartPanel = new System.Windows.Forms.Panel();
+            this.fullTotQuart = new System.Windows.Forms.Label();
+            this.overQuart = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.callQuart = new System.Windows.Forms.Label();
             this.bonusQuart = new System.Windows.Forms.Label();
             this.vioQuart = new System.Windows.Forms.Label();
@@ -76,6 +82,11 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.printYear = new System.Windows.Forms.Button();
             this.yearPanel = new System.Windows.Forms.Panel();
+            this.fullTotYear = new System.Windows.Forms.Label();
+            this.overYear = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lab13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.callYear = new System.Windows.Forms.Label();
             this.bonusYear = new System.Windows.Forms.Label();
             this.vioYear = new System.Windows.Forms.Label();
@@ -94,17 +105,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.fullTotYear = new System.Windows.Forms.Label();
-            this.overYear = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lab13 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.overQuart = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.fullTotQuart = new System.Windows.Forms.Label();
-            this.fullTotMonth = new System.Windows.Forms.Label();
-            this.overMonth = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.timestampM = new System.Windows.Forms.Label();
+            this.timestampQ = new System.Windows.Forms.Label();
+            this.timestampY = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.reportTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -229,6 +232,7 @@
             // monthPanel
             // 
             this.monthPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthPanel.Controls.Add(this.timestampM);
             this.monthPanel.Controls.Add(this.fullTotMonth);
             this.monthPanel.Controls.Add(this.overMonth);
             this.monthPanel.Controls.Add(this.label18);
@@ -248,8 +252,41 @@
             this.monthPanel.Controls.Add(this.totMonth);
             this.monthPanel.Location = new System.Drawing.Point(58, 95);
             this.monthPanel.Name = "monthPanel";
-            this.monthPanel.Size = new System.Drawing.Size(785, 568);
+            this.monthPanel.Size = new System.Drawing.Size(785, 608);
             this.monthPanel.TabIndex = 104;
+            // 
+            // fullTotMonth
+            // 
+            this.fullTotMonth.AutoSize = true;
+            this.fullTotMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullTotMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullTotMonth.Location = new System.Drawing.Point(623, 236);
+            this.fullTotMonth.Name = "fullTotMonth";
+            this.fullTotMonth.Size = new System.Drawing.Size(29, 29);
+            this.fullTotMonth.TabIndex = 124;
+            this.fullTotMonth.Text = "--";
+            // 
+            // overMonth
+            // 
+            this.overMonth.AutoSize = true;
+            this.overMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overMonth.Location = new System.Drawing.Point(461, 236);
+            this.overMonth.Name = "overMonth";
+            this.overMonth.Size = new System.Drawing.Size(29, 29);
+            this.overMonth.TabIndex = 123;
+            this.overMonth.Text = "--";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label18.Location = new System.Drawing.Point(98, 236);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(111, 29);
+            this.label18.TabIndex = 122;
+            this.label18.Text = "Overtime";
             // 
             // callMonth
             // 
@@ -464,7 +501,7 @@
             this.printQuart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printQuart.ForeColor = System.Drawing.SystemColors.Control;
-            this.printQuart.Location = new System.Drawing.Point(57, 24);
+            this.printQuart.Location = new System.Drawing.Point(58, 24);
             this.printQuart.Margin = new System.Windows.Forms.Padding(4);
             this.printQuart.Name = "printQuart";
             this.printQuart.Size = new System.Drawing.Size(127, 37);
@@ -476,6 +513,7 @@
             // quartPanel
             // 
             this.quartPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.quartPanel.Controls.Add(this.timestampQ);
             this.quartPanel.Controls.Add(this.fullTotQuart);
             this.quartPanel.Controls.Add(this.overQuart);
             this.quartPanel.Controls.Add(this.label14);
@@ -493,10 +531,43 @@
             this.quartPanel.Controls.Add(this.label27);
             this.quartPanel.Controls.Add(this.label28);
             this.quartPanel.Controls.Add(this.totQuart);
-            this.quartPanel.Location = new System.Drawing.Point(57, 95);
+            this.quartPanel.Location = new System.Drawing.Point(58, 95);
             this.quartPanel.Name = "quartPanel";
-            this.quartPanel.Size = new System.Drawing.Size(785, 568);
+            this.quartPanel.Size = new System.Drawing.Size(785, 608);
             this.quartPanel.TabIndex = 104;
+            // 
+            // fullTotQuart
+            // 
+            this.fullTotQuart.AutoSize = true;
+            this.fullTotQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullTotQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullTotQuart.Location = new System.Drawing.Point(623, 236);
+            this.fullTotQuart.Name = "fullTotQuart";
+            this.fullTotQuart.Size = new System.Drawing.Size(29, 29);
+            this.fullTotQuart.TabIndex = 121;
+            this.fullTotQuart.Text = "--";
+            // 
+            // overQuart
+            // 
+            this.overQuart.AutoSize = true;
+            this.overQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overQuart.Location = new System.Drawing.Point(461, 236);
+            this.overQuart.Name = "overQuart";
+            this.overQuart.Size = new System.Drawing.Size(29, 29);
+            this.overQuart.TabIndex = 120;
+            this.overQuart.Text = "--";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label14.Location = new System.Drawing.Point(98, 236);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(111, 29);
+            this.label14.TabIndex = 119;
+            this.label14.Text = "Overtime";
             // 
             // callQuart
             // 
@@ -658,7 +729,7 @@
             this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qyearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.qyearBox.FormattingEnabled = true;
-            this.qyearBox.Location = new System.Drawing.Point(712, 24);
+            this.qyearBox.Location = new System.Drawing.Point(713, 24);
             this.qyearBox.Name = "qyearBox";
             this.qyearBox.Size = new System.Drawing.Size(130, 28);
             this.qyearBox.TabIndex = 3;
@@ -674,7 +745,7 @@
             "Second Quarter",
             "Third Quarter",
             "Fourth Quarter"});
-            this.qmonthBox.Location = new System.Drawing.Point(542, 24);
+            this.qmonthBox.Location = new System.Drawing.Point(543, 24);
             this.qmonthBox.Name = "qmonthBox";
             this.qmonthBox.Size = new System.Drawing.Size(164, 28);
             this.qmonthBox.TabIndex = 2;
@@ -714,6 +785,7 @@
             // yearPanel
             // 
             this.yearPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearPanel.Controls.Add(this.timestampY);
             this.yearPanel.Controls.Add(this.fullTotYear);
             this.yearPanel.Controls.Add(this.overYear);
             this.yearPanel.Controls.Add(this.label13);
@@ -735,15 +807,70 @@
             this.yearPanel.Controls.Add(this.totYear);
             this.yearPanel.Location = new System.Drawing.Point(58, 95);
             this.yearPanel.Name = "yearPanel";
-            this.yearPanel.Size = new System.Drawing.Size(785, 568);
+            this.yearPanel.Size = new System.Drawing.Size(785, 608);
             this.yearPanel.TabIndex = 103;
+            // 
+            // fullTotYear
+            // 
+            this.fullTotYear.AutoSize = true;
+            this.fullTotYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullTotYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.fullTotYear.Location = new System.Drawing.Point(623, 263);
+            this.fullTotYear.Name = "fullTotYear";
+            this.fullTotYear.Size = new System.Drawing.Size(29, 29);
+            this.fullTotYear.TabIndex = 119;
+            this.fullTotYear.Text = "--";
+            // 
+            // overYear
+            // 
+            this.overYear.AutoSize = true;
+            this.overYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overYear.Location = new System.Drawing.Point(461, 219);
+            this.overYear.Name = "overYear";
+            this.overYear.Size = new System.Drawing.Size(29, 29);
+            this.overYear.TabIndex = 118;
+            this.overYear.Text = "--";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label13.Location = new System.Drawing.Point(98, 219);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 29);
+            this.label13.TabIndex = 117;
+            this.label13.Text = "Overtime";
+            // 
+            // lab13
+            // 
+            this.lab13.AutoSize = true;
+            this.lab13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lab13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lab13.Location = new System.Drawing.Point(461, 263);
+            this.lab13.Name = "lab13";
+            this.lab13.Size = new System.Drawing.Size(29, 29);
+            this.lab13.TabIndex = 116;
+            this.lab13.Text = "--";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label6.Location = new System.Drawing.Point(98, 263);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(176, 29);
+            this.label6.TabIndex = 115;
+            this.label6.Text = "13th Month Pay";
             // 
             // callYear
             // 
             this.callYear.AutoSize = true;
             this.callYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.callYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.callYear.Location = new System.Drawing.Point(623, 291);
+            this.callYear.Location = new System.Drawing.Point(623, 308);
             this.callYear.Name = "callYear";
             this.callYear.Size = new System.Drawing.Size(29, 29);
             this.callYear.TabIndex = 109;
@@ -754,7 +881,7 @@
             this.bonusYear.AutoSize = true;
             this.bonusYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bonusYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bonusYear.Location = new System.Drawing.Point(623, 368);
+            this.bonusYear.Location = new System.Drawing.Point(623, 385);
             this.bonusYear.Name = "bonusYear";
             this.bonusYear.Size = new System.Drawing.Size(29, 29);
             this.bonusYear.TabIndex = 108;
@@ -765,7 +892,7 @@
             this.vioYear.AutoSize = true;
             this.vioYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vioYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.vioYear.Location = new System.Drawing.Point(623, 417);
+            this.vioYear.Location = new System.Drawing.Point(623, 434);
             this.vioYear.Name = "vioYear";
             this.vioYear.Size = new System.Drawing.Size(29, 29);
             this.vioYear.TabIndex = 107;
@@ -776,7 +903,7 @@
             this.fullYear.AutoSize = true;
             this.fullYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fullYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullYear.Location = new System.Drawing.Point(461, 159);
+            this.fullYear.Location = new System.Drawing.Point(461, 176);
             this.fullYear.Name = "fullYear";
             this.fullYear.Size = new System.Drawing.Size(29, 29);
             this.fullYear.TabIndex = 106;
@@ -787,7 +914,7 @@
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label34.Location = new System.Drawing.Point(375, 492);
+            this.label34.Location = new System.Drawing.Point(375, 509);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(65, 29);
             this.label34.TabIndex = 105;
@@ -798,7 +925,7 @@
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label35.Location = new System.Drawing.Point(375, 159);
+            this.label35.Location = new System.Drawing.Point(375, 176);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(62, 29);
             this.label35.TabIndex = 104;
@@ -809,7 +936,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label36.Location = new System.Drawing.Point(98, 417);
+            this.label36.Location = new System.Drawing.Point(98, 434);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(118, 29);
             this.label36.TabIndex = 103;
@@ -820,7 +947,7 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label37.Location = new System.Drawing.Point(98, 368);
+            this.label37.Location = new System.Drawing.Point(98, 385);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(81, 29);
             this.label37.TabIndex = 102;
@@ -831,7 +958,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label38.Location = new System.Drawing.Point(98, 291);
+            this.label38.Location = new System.Drawing.Point(98, 308);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(168, 29);
             this.label38.TabIndex = 101;
@@ -842,7 +969,7 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label39.Location = new System.Drawing.Point(98, 159);
+            this.label39.Location = new System.Drawing.Point(98, 176);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(190, 29);
             this.label39.TabIndex = 100;
@@ -853,7 +980,7 @@
             this.yearLabel.AutoSize = true;
             this.yearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.yearLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.yearLabel.Location = new System.Drawing.Point(97, 82);
+            this.yearLabel.Location = new System.Drawing.Point(97, 99);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(75, 32);
             this.yearLabel.TabIndex = 99;
@@ -864,7 +991,7 @@
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label41.Location = new System.Drawing.Point(98, 492);
+            this.label41.Location = new System.Drawing.Point(98, 509);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(97, 29);
             this.label41.TabIndex = 96;
@@ -886,7 +1013,7 @@
             this.totYear.AutoSize = true;
             this.totYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.totYear.Location = new System.Drawing.Point(623, 492);
+            this.totYear.Location = new System.Drawing.Point(623, 509);
             this.totYear.Name = "totYear";
             this.totYear.Size = new System.Drawing.Size(31, 29);
             this.totYear.TabIndex = 97;
@@ -934,126 +1061,35 @@
             this.panel3.Size = new System.Drawing.Size(1000, 1);
             this.panel3.TabIndex = 89;
             // 
-            // fullTotYear
+            // timestampM
             // 
-            this.fullTotYear.AutoSize = true;
-            this.fullTotYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullTotYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullTotYear.Location = new System.Drawing.Point(623, 246);
-            this.fullTotYear.Name = "fullTotYear";
-            this.fullTotYear.Size = new System.Drawing.Size(29, 29);
-            this.fullTotYear.TabIndex = 119;
-            this.fullTotYear.Text = "--";
+            this.timestampM.AutoSize = true;
+            this.timestampM.Location = new System.Drawing.Point(4, 586);
+            this.timestampM.Name = "timestampM";
+            this.timestampM.Size = new System.Drawing.Size(18, 17);
+            this.timestampM.TabIndex = 125;
+            this.timestampM.Text = "--";
+            this.timestampM.Visible = false;
             // 
-            // overYear
+            // timestampQ
             // 
-            this.overYear.AutoSize = true;
-            this.overYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.overYear.Location = new System.Drawing.Point(461, 202);
-            this.overYear.Name = "overYear";
-            this.overYear.Size = new System.Drawing.Size(29, 29);
-            this.overYear.TabIndex = 118;
-            this.overYear.Text = "--";
+            this.timestampQ.AutoSize = true;
+            this.timestampQ.Location = new System.Drawing.Point(4, 586);
+            this.timestampQ.Name = "timestampQ";
+            this.timestampQ.Size = new System.Drawing.Size(18, 17);
+            this.timestampQ.TabIndex = 126;
+            this.timestampQ.Text = "--";
+            this.timestampQ.Visible = false;
             // 
-            // label13
+            // timestampY
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label13.Location = new System.Drawing.Point(98, 202);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 29);
-            this.label13.TabIndex = 117;
-            this.label13.Text = "Overtime";
-            // 
-            // lab13
-            // 
-            this.lab13.AutoSize = true;
-            this.lab13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lab13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lab13.Location = new System.Drawing.Point(461, 246);
-            this.lab13.Name = "lab13";
-            this.lab13.Size = new System.Drawing.Size(29, 29);
-            this.lab13.TabIndex = 116;
-            this.lab13.Text = "--";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label6.Location = new System.Drawing.Point(98, 246);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 29);
-            this.label6.TabIndex = 115;
-            this.label6.Text = "13th Month Pay";
-            // 
-            // overQuart
-            // 
-            this.overQuart.AutoSize = true;
-            this.overQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.overQuart.Location = new System.Drawing.Point(461, 236);
-            this.overQuart.Name = "overQuart";
-            this.overQuart.Size = new System.Drawing.Size(29, 29);
-            this.overQuart.TabIndex = 120;
-            this.overQuart.Text = "--";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label14.Location = new System.Drawing.Point(98, 236);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(111, 29);
-            this.label14.TabIndex = 119;
-            this.label14.Text = "Overtime";
-            // 
-            // fullTotQuart
-            // 
-            this.fullTotQuart.AutoSize = true;
-            this.fullTotQuart.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullTotQuart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullTotQuart.Location = new System.Drawing.Point(623, 236);
-            this.fullTotQuart.Name = "fullTotQuart";
-            this.fullTotQuart.Size = new System.Drawing.Size(29, 29);
-            this.fullTotQuart.TabIndex = 121;
-            this.fullTotQuart.Text = "--";
-            // 
-            // fullTotMonth
-            // 
-            this.fullTotMonth.AutoSize = true;
-            this.fullTotMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fullTotMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.fullTotMonth.Location = new System.Drawing.Point(623, 236);
-            this.fullTotMonth.Name = "fullTotMonth";
-            this.fullTotMonth.Size = new System.Drawing.Size(29, 29);
-            this.fullTotMonth.TabIndex = 124;
-            this.fullTotMonth.Text = "--";
-            // 
-            // overMonth
-            // 
-            this.overMonth.AutoSize = true;
-            this.overMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overMonth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.overMonth.Location = new System.Drawing.Point(461, 236);
-            this.overMonth.Name = "overMonth";
-            this.overMonth.Size = new System.Drawing.Size(29, 29);
-            this.overMonth.TabIndex = 123;
-            this.overMonth.Text = "--";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label18.Location = new System.Drawing.Point(98, 236);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(111, 29);
-            this.label18.TabIndex = 122;
-            this.label18.Text = "Overtime";
+            this.timestampY.AutoSize = true;
+            this.timestampY.Location = new System.Drawing.Point(4, 586);
+            this.timestampY.Name = "timestampY";
+            this.timestampY.Size = new System.Drawing.Size(18, 17);
+            this.timestampY.TabIndex = 127;
+            this.timestampY.Text = "--";
+            this.timestampY.Visible = false;
             // 
             // salaryReport
             // 
@@ -1166,5 +1202,8 @@
         private System.Windows.Forms.Label fullTotMonth;
         private System.Windows.Forms.Label overMonth;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label timestampM;
+        private System.Windows.Forms.Label timestampQ;
+        private System.Windows.Forms.Label timestampY;
     }
 }

@@ -127,17 +127,18 @@ namespace Tribes_System
 
         private void eventGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            deetPanel.Visible = true;
-
             selectedRow = e.RowIndex;
-            DataGridViewRow row = eventGrid.Rows[selectedRow];
-            id = eventGrid.CurrentRow.Cells[0].Value.ToString();
-            id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
-            event_stat = eventGrid.CurrentRow.Cells[11].Value.ToString();
+            if(selectedRow != -1)
+            {
+                deetPanel.Visible = true;
+                DataGridViewRow row = eventGrid.Rows[selectedRow];
+                id = eventGrid.CurrentRow.Cells[0].Value.ToString();
+                id_select = eventGrid.CurrentRow.Cells[0].Value.ToString();
+                event_stat = eventGrid.CurrentRow.Cells[11].Value.ToString();
 
-            show_deets();
-
-            date();
+                show_deets();
+                date();
+            }
         }
 
         string start;
@@ -315,29 +316,18 @@ namespace Tribes_System
 
         //------------Color----------------
 
-        public DataTable GetDates()
-        {
-            DataTable table = new DataTable();
-            string query = "SELECT * FROM event";
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, con);
-            adapter.Fill(table);
-
-            return table;
-        }
+        List<DateTime> result = new List<DateTime>();
 
         private void boldEvents()
         {
-            /*string query = "SELECT * FROM event WHERE start_date = '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' OR end_date = '"
-                + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' UNION SELECT * FROM event WHERE start_date <= '" +
-                calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "' AND end_date >= '" + calendar.SelectionStart.Date.ToString("yyyy-MM-dd") + "'";*/
-
             string selectQuery = "select substring(start_date, 1, 4), substring(end_date, 1, 4), substring(start_date, 6, 2), substring(end_date, 6, 2), " +
                 "substring(start_date, 9, 2), substring(end_date, 9, 2) from event";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
+            cmd.CommandType = CommandType.Text;
 
+            DateTime[] record = null;
             while (reader.Read())
             {
                 string firstd = reader["substring(start_date, 9, 2)"].ToString();
@@ -351,13 +341,31 @@ namespace Tribes_System
                 string lastm = reader["substring(end_date, 6, 2)"].ToString();
                 int lm = Convert.ToInt32(lastm);
                 string lasty = reader["substring(end_date, 1, 4)"].ToString();
-                int ly = Convert.ToInt32(lasty);
 
-                calendar.BoldedDates = new DateTime[] { new DateTime(fy, fm, fd, 0, 0, 0, 0), new DateTime(ly, lm, ld, 0, 0, 0, 0) };
+                int ly = Convert.ToInt32(lasty);
+                string start = firsty + "-" + firstm + "-" + firstd;
+                DateTime one = Convert.ToDateTime(start);
+                string end = lasty + "," + lastm + "," + lastd;
+                DateTime two = Convert.ToDateTime(end);
+
+                result.Add(one);
+                result.Add(two);
+
+                for (DateTime x = one; x < two; x = x.AddDays(1))
+                {
+                    result.Add(x);
+                }
             }
+            record = result.ToArray();
+            calendar.BoldedDates = record; 
+
             closeConnection();        
         }
 
-        //http://geekswithblogs.net/dotNETvinz/archive/2009/05/03/changing-the-background-color-of-the-calendar-control-based-on.aspx
+        private void finishedButt_Click(object sender, EventArgs e)
+        {
+            archivedEvents form = new archivedEvents();
+            form.ShowDialog();
+        }
     }
 }

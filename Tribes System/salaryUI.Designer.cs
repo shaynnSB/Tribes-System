@@ -48,6 +48,9 @@
             this.StatusLab = new System.Windows.Forms.Label();
             this.NameLab = new System.Windows.Forms.Label();
             this.fullPanel = new System.Windows.Forms.Panel();
+            this.overButt = new System.Windows.Forms.Button();
+            this.overtimeLabel = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.salLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.fullYearBox = new System.Windows.Forms.ComboBox();
@@ -63,9 +66,6 @@
             this.fullGrid = new System.Windows.Forms.DataGridView();
             this.fullStatLabel = new System.Windows.Forms.Label();
             this.fullEmpLabel = new System.Windows.Forms.Label();
-            this.overtimeLabel = new System.Windows.Forms.Label();
-            this.label = new System.Windows.Forms.Label();
-            this.overButt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.EmpGrid)).BeginInit();
             this.deetPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.earnedGrid)).BeginInit();
@@ -363,6 +363,46 @@
             this.fullPanel.TabIndex = 101;
             this.fullPanel.Visible = false;
             // 
+            // overButt
+            // 
+            this.overButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overButt.FlatAppearance.BorderSize = 0;
+            this.overButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.overButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
+            this.overButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.overButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overButt.ForeColor = System.Drawing.SystemColors.Control;
+            this.overButt.Location = new System.Drawing.Point(21, 429);
+            this.overButt.Margin = new System.Windows.Forms.Padding(4);
+            this.overButt.Name = "overButt";
+            this.overButt.Size = new System.Drawing.Size(144, 37);
+            this.overButt.TabIndex = 105;
+            this.overButt.Text = "Overtime";
+            this.overButt.UseVisualStyleBackColor = false;
+            this.overButt.Click += new System.EventHandler(this.overButt_Click);
+            // 
+            // overtimeLabel
+            // 
+            this.overtimeLabel.AutoSize = true;
+            this.overtimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.overtimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.overtimeLabel.Location = new System.Drawing.Point(353, 431);
+            this.overtimeLabel.Name = "overtimeLabel";
+            this.overtimeLabel.Size = new System.Drawing.Size(26, 25);
+            this.overtimeLabel.TabIndex = 104;
+            this.overtimeLabel.Text = "--";
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label.Location = new System.Drawing.Point(213, 431);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(97, 25);
+            this.label.TabIndex = 103;
+            this.label.Text = "Overtime:";
+            // 
             // salLabel
             // 
             this.salLabel.AutoSize = true;
@@ -556,46 +596,6 @@
             this.fullEmpLabel.TabIndex = 89;
             this.fullEmpLabel.Text = "Employees Name";
             // 
-            // overtimeLabel
-            // 
-            this.overtimeLabel.AutoSize = true;
-            this.overtimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overtimeLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.overtimeLabel.Location = new System.Drawing.Point(353, 431);
-            this.overtimeLabel.Name = "overtimeLabel";
-            this.overtimeLabel.Size = new System.Drawing.Size(26, 25);
-            this.overtimeLabel.TabIndex = 104;
-            this.overtimeLabel.Text = "--";
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label.Location = new System.Drawing.Point(213, 431);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(97, 25);
-            this.label.TabIndex = 103;
-            this.label.Text = "Overtime:";
-            // 
-            // overButt
-            // 
-            this.overButt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.overButt.FlatAppearance.BorderSize = 0;
-            this.overButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.overButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LimeGreen;
-            this.overButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.overButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.overButt.ForeColor = System.Drawing.SystemColors.Control;
-            this.overButt.Location = new System.Drawing.Point(21, 429);
-            this.overButt.Margin = new System.Windows.Forms.Padding(4);
-            this.overButt.Name = "overButt";
-            this.overButt.Size = new System.Drawing.Size(144, 37);
-            this.overButt.TabIndex = 105;
-            this.overButt.Text = "Overtime";
-            this.overButt.UseVisualStyleBackColor = false;
-            this.overButt.Click += new System.EventHandler(this.overButt_Click);
-            // 
             // salaryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -605,8 +605,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmpGrid);
-            this.Controls.Add(this.deetPanel);
             this.Controls.Add(this.fullPanel);
+            this.Controls.Add(this.deetPanel);
             this.Name = "salaryUI";
             this.Size = new System.Drawing.Size(1315, 800);
             this.Load += new System.EventHandler(this.payrollUI_Load);

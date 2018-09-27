@@ -198,32 +198,36 @@ namespace Tribes_System
 
         private void EmpGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString() == "On-Call")
+            if (e.RowIndex != -1)
             {
-                fullPanel.Visible = false;
-                deetPanel.Visible = true;
+                if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString() == "On-Call")
+                {
+                    fullPanel.Visible = false;
+                    deetPanel.Visible = true;
 
-                this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                NameLab.Text = EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
-                StatusLab.Text = EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
-                salaryTable();
-                violations();
-                bonus();
-                compute();
-            } else if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString() == "Full-Time")
-            {
-                deetPanel.Visible = false; 
-                fullPanel.Visible = true;
+                    this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                    NameLab.Text = EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+                    StatusLab.Text = EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+                    salaryTable();
+                    violations();
+                    bonus();
+                    compute();
+                }
+                else if (EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString() == "Full-Time")
+                {
+                    deetPanel.Visible = false;
+                    fullPanel.Visible = true;
 
-                this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
-                fullEmpLabel.Text = EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
-                fullStatLabel.Text = EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
-                salaryFullTable();
-                violationsFull();
-                bonusFull();
-                overFull();
-                computeFull();
-            }            
+                    this.selectedEmp = EmpGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString();
+                    fullEmpLabel.Text = EmpGrid.Rows[e.RowIndex].Cells[9].FormattedValue.ToString() + " " + EmpGrid.Rows[e.RowIndex].Cells[10].FormattedValue.ToString();
+                    fullStatLabel.Text = EmpGrid.Rows[e.RowIndex].Cells[4].FormattedValue.ToString();
+                    salaryFullTable();
+                    violationsFull();
+                    bonusFull();
+                    overFull();
+                    computeFull();
+                }
+            }
         }
 
         private void statusBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -655,10 +659,6 @@ namespace Tribes_System
                     bonusFull();
                     overFull();
                     computeFull();
-                }
-                else
-                {
-
                 }
             }
         }

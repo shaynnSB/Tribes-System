@@ -88,6 +88,9 @@
             this.minButt = new System.Windows.Forms.Button();
             this.closeButt = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.timestampM = new System.Windows.Forms.Label();
+            this.timestampQ = new System.Windows.Forms.Label();
+            this.timestampY = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             this.monthPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -174,6 +177,7 @@
             // monthPanel
             // 
             this.monthPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthPanel.Controls.Add(this.timestampM);
             this.monthPanel.Controls.Add(this.discMonth);
             this.monthPanel.Controls.Add(this.label6);
             this.monthPanel.Controls.Add(this.feeMonth);
@@ -421,6 +425,7 @@
             // quartPanel
             // 
             this.quartPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.quartPanel.Controls.Add(this.timestampQ);
             this.quartPanel.Controls.Add(this.discQuart);
             this.quartPanel.Controls.Add(this.label10);
             this.quartPanel.Controls.Add(this.feeQuart);
@@ -605,6 +610,7 @@
             // yearPanel
             // 
             this.yearPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearPanel.Controls.Add(this.timestampY);
             this.yearPanel.Controls.Add(this.discYear);
             this.yearPanel.Controls.Add(this.label14);
             this.yearPanel.Controls.Add(this.feeYear);
@@ -833,6 +839,36 @@
             this.label1.TabIndex = 90;
             this.label1.Text = "Revenue Report";
             // 
+            // timestampM
+            // 
+            this.timestampM.AutoSize = true;
+            this.timestampM.Location = new System.Drawing.Point(4, 545);
+            this.timestampM.Name = "timestampM";
+            this.timestampM.Size = new System.Drawing.Size(18, 17);
+            this.timestampM.TabIndex = 126;
+            this.timestampM.Text = "--";
+            this.timestampM.Visible = false;
+            // 
+            // timestampQ
+            // 
+            this.timestampQ.AutoSize = true;
+            this.timestampQ.Location = new System.Drawing.Point(3, 546);
+            this.timestampQ.Name = "timestampQ";
+            this.timestampQ.Size = new System.Drawing.Size(18, 17);
+            this.timestampQ.TabIndex = 127;
+            this.timestampQ.Text = "--";
+            this.timestampQ.Visible = false;
+            // 
+            // timestampY
+            // 
+            this.timestampY.AutoSize = true;
+            this.timestampY.Location = new System.Drawing.Point(3, 546);
+            this.timestampY.Name = "timestampY";
+            this.timestampY.Size = new System.Drawing.Size(18, 17);
+            this.timestampY.TabIndex = 128;
+            this.timestampY.Text = "--";
+            this.timestampY.Visible = false;
+            // 
             // revenueReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -926,5 +962,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label discYear;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label timestampM;
+        private System.Windows.Forms.Label timestampQ;
+        private System.Windows.Forms.Label timestampY;
     }
 }

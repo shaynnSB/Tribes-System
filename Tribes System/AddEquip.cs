@@ -87,7 +87,7 @@ namespace Tribes_System
                         }
                             executeMyQuery(insertQuery);
                            
-                            MessageBox.Show("Item added Successfully");
+                            MessageBox.Show("Item Added Successfully");
                             //uc1.refresh("select items.id, items.name, category.description,items.status from items left join category on category.id = items.categoryID");
 
                             this.DialogResult = System.Windows.Forms.DialogResult.OK;

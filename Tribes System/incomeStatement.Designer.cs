@@ -56,13 +56,6 @@
             this.myearBox = new System.Windows.Forms.ComboBox();
             this.mmonthBox = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.qyearBox = new System.Windows.Forms.ComboBox();
-            this.qmonthBox = new System.Windows.Forms.ComboBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ayearBox = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.printQuart = new System.Windows.Forms.Button();
             this.quarterPanel = new System.Windows.Forms.Panel();
             this.totExpQuart = new System.Windows.Forms.Label();
@@ -80,6 +73,9 @@
             this.incLossQ = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.totQuart = new System.Windows.Forms.Label();
+            this.qyearBox = new System.Windows.Forms.ComboBox();
+            this.qmonthBox = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.printYear = new System.Windows.Forms.Button();
             this.yearPanel = new System.Windows.Forms.Panel();
             this.expTotYear = new System.Windows.Forms.Label();
@@ -97,13 +93,20 @@
             this.incLossY = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.totYear = new System.Windows.Forms.Label();
+            this.ayearBox = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.timestampY = new System.Windows.Forms.Label();
+            this.timestampQ = new System.Windows.Forms.Label();
+            this.timestampM = new System.Windows.Forms.Label();
             this.title.SuspendLayout();
             this.reportTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.monthPanel.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.quarterPanel.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.yearPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -221,6 +224,7 @@
             // monthPanel
             // 
             this.monthPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.monthPanel.Controls.Add(this.timestampM);
             this.monthPanel.Controls.Add(this.expTotMonth);
             this.monthPanel.Controls.Add(this.label10);
             this.monthPanel.Controls.Add(this.label5);
@@ -456,87 +460,6 @@
             this.tabPage2.Text = "Quarterly Statement";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // qyearBox
-            // 
-            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qyearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qyearBox.FormattingEnabled = true;
-            this.qyearBox.Location = new System.Drawing.Point(713, 35);
-            this.qyearBox.Name = "qyearBox";
-            this.qyearBox.Size = new System.Drawing.Size(130, 28);
-            this.qyearBox.TabIndex = 3;
-            this.qyearBox.SelectedIndexChanged += new System.EventHandler(this.qyearBox_SelectedIndexChanged);
-            // 
-            // qmonthBox
-            // 
-            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.qmonthBox.FormattingEnabled = true;
-            this.qmonthBox.Items.AddRange(new object[] {
-            "First Quarter",
-            "Second Quarter",
-            "Third Quarter",
-            "Fourth Quarter"});
-            this.qmonthBox.Location = new System.Drawing.Point(543, 35);
-            this.qmonthBox.Name = "qmonthBox";
-            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
-            this.qmonthBox.TabIndex = 2;
-            this.qmonthBox.SelectedIndexChanged += new System.EventHandler(this.qmonthBox_SelectedIndexChanged);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.printYear);
-            this.tabPage3.Controls.Add(this.yearPanel);
-            this.tabPage3.Controls.Add(this.ayearBox);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(901, 709);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Annual Statement";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // ayearBox
-            // 
-            this.ayearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ayearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ayearBox.FormattingEnabled = true;
-            this.ayearBox.Location = new System.Drawing.Point(713, 35);
-            this.ayearBox.Name = "ayearBox";
-            this.ayearBox.Size = new System.Drawing.Size(130, 28);
-            this.ayearBox.TabIndex = 5;
-            this.ayearBox.SelectedIndexChanged += new System.EventHandler(this.ayearBox_SelectedIndexChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(999, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 876);
-            this.panel2.TabIndex = 100;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1, 876);
-            this.panel1.TabIndex = 99;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 876);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1000, 1);
-            this.panel3.TabIndex = 101;
-            // 
             // printQuart
             // 
             this.printQuart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -558,6 +481,7 @@
             // quarterPanel
             // 
             this.quarterPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.quarterPanel.Controls.Add(this.timestampQ);
             this.quarterPanel.Controls.Add(this.totExpQuart);
             this.quarterPanel.Controls.Add(this.label9);
             this.quarterPanel.Controls.Add(this.label13);
@@ -744,6 +668,46 @@
             this.totQuart.TabIndex = 97;
             this.totQuart.Text = "--";
             // 
+            // qyearBox
+            // 
+            this.qyearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qyearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qyearBox.FormattingEnabled = true;
+            this.qyearBox.Location = new System.Drawing.Point(713, 35);
+            this.qyearBox.Name = "qyearBox";
+            this.qyearBox.Size = new System.Drawing.Size(130, 28);
+            this.qyearBox.TabIndex = 3;
+            this.qyearBox.SelectedIndexChanged += new System.EventHandler(this.qyearBox_SelectedIndexChanged);
+            // 
+            // qmonthBox
+            // 
+            this.qmonthBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.qmonthBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.qmonthBox.FormattingEnabled = true;
+            this.qmonthBox.Items.AddRange(new object[] {
+            "First Quarter",
+            "Second Quarter",
+            "Third Quarter",
+            "Fourth Quarter"});
+            this.qmonthBox.Location = new System.Drawing.Point(543, 35);
+            this.qmonthBox.Name = "qmonthBox";
+            this.qmonthBox.Size = new System.Drawing.Size(164, 28);
+            this.qmonthBox.TabIndex = 2;
+            this.qmonthBox.SelectedIndexChanged += new System.EventHandler(this.qmonthBox_SelectedIndexChanged);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.printYear);
+            this.tabPage3.Controls.Add(this.yearPanel);
+            this.tabPage3.Controls.Add(this.ayearBox);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(901, 709);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Annual Statement";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // printYear
             // 
             this.printYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -765,6 +729,7 @@
             // yearPanel
             // 
             this.yearPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.yearPanel.Controls.Add(this.timestampY);
             this.yearPanel.Controls.Add(this.expTotYear);
             this.yearPanel.Controls.Add(this.label14);
             this.yearPanel.Controls.Add(this.label16);
@@ -782,7 +747,7 @@
             this.yearPanel.Controls.Add(this.totYear);
             this.yearPanel.Location = new System.Drawing.Point(58, 106);
             this.yearPanel.Name = "yearPanel";
-            this.yearPanel.Size = new System.Drawing.Size(785, 568);
+            this.yearPanel.Size = new System.Drawing.Size(785, 597);
             this.yearPanel.TabIndex = 112;
             // 
             // expTotYear
@@ -951,6 +916,77 @@
             this.totYear.TabIndex = 97;
             this.totYear.Text = "--";
             // 
+            // ayearBox
+            // 
+            this.ayearBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ayearBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ayearBox.FormattingEnabled = true;
+            this.ayearBox.Location = new System.Drawing.Point(713, 35);
+            this.ayearBox.Name = "ayearBox";
+            this.ayearBox.Size = new System.Drawing.Size(130, 28);
+            this.ayearBox.TabIndex = 5;
+            this.ayearBox.SelectedIndexChanged += new System.EventHandler(this.ayearBox_SelectedIndexChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(999, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 876);
+            this.panel2.TabIndex = 100;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1, 876);
+            this.panel1.TabIndex = 99;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 876);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1000, 1);
+            this.panel3.TabIndex = 101;
+            // 
+            // timestampY
+            // 
+            this.timestampY.AutoSize = true;
+            this.timestampY.Location = new System.Drawing.Point(4, 573);
+            this.timestampY.Name = "timestampY";
+            this.timestampY.Size = new System.Drawing.Size(18, 17);
+            this.timestampY.TabIndex = 128;
+            this.timestampY.Text = "--";
+            this.timestampY.Visible = false;
+            // 
+            // timestampQ
+            // 
+            this.timestampQ.AutoSize = true;
+            this.timestampQ.Location = new System.Drawing.Point(4, 545);
+            this.timestampQ.Name = "timestampQ";
+            this.timestampQ.Size = new System.Drawing.Size(18, 17);
+            this.timestampQ.TabIndex = 127;
+            this.timestampQ.Text = "--";
+            this.timestampQ.Visible = false;
+            // 
+            // timestampM
+            // 
+            this.timestampM.AutoSize = true;
+            this.timestampM.Location = new System.Drawing.Point(4, 545);
+            this.timestampM.Name = "timestampM";
+            this.timestampM.Size = new System.Drawing.Size(18, 17);
+            this.timestampM.TabIndex = 126;
+            this.timestampM.Text = "--";
+            this.timestampM.Visible = false;
+            // 
             // incomeStatement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -974,9 +1010,9 @@
             this.monthPanel.ResumeLayout(false);
             this.monthPanel.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.quarterPanel.ResumeLayout(false);
             this.quarterPanel.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.yearPanel.ResumeLayout(false);
             this.yearPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -1054,5 +1090,8 @@
         private System.Windows.Forms.Label incLossY;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label totYear;
+        private System.Windows.Forms.Label timestampY;
+        private System.Windows.Forms.Label timestampQ;
+        private System.Windows.Forms.Label timestampM;
     }
 }

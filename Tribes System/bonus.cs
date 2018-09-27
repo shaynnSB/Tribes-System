@@ -217,9 +217,12 @@ namespace Tribes_System
 
         private void bonusGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            amBox.Text = bonusGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateBox.Text = bonusGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_amount = bonusGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                amBox.Text = bonusGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateBox.Text = bonusGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                id_amount = bonusGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
         }
 
         private void bonus_Load(object sender, EventArgs e)

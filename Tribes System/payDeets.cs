@@ -217,9 +217,12 @@ namespace Tribes_System
 
         private void paymentGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            recievedBox.Text = paymentGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            dateBox.Text = paymentGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_amount = paymentGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if(e.RowIndex != -1)
+            {
+                recievedBox.Text = paymentGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                dateBox.Text = paymentGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                id_amount = paymentGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
         }
 
         private void editAmButt_Click(object sender, EventArgs e)
@@ -433,9 +436,12 @@ namespace Tribes_System
 
         private void expensesGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            expBox.Text = expensesGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
-            amExpBox.Text = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_exp = expensesGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                expBox.Text = expensesGrid.Rows[e.RowIndex].Cells[1].Value.ToString();
+                amExpBox.Text = expensesGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                id_exp = expensesGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
         }
 
         string past_exp;
@@ -737,7 +743,7 @@ namespace Tribes_System
 
         private void changeStat3()
         {
-            string addQuery = "UPDATE event SET event_status = 'Partially Paid' WHERE id_event = " + id_Passed;
+            string addQuery = "UPDATE event SET event_status = 'Unpaid' WHERE id_event = " + id_Passed;
 
             executeMyQuery(addQuery);
 

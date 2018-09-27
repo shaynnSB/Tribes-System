@@ -116,6 +116,12 @@
     <Compile Include="addViewStaff.Designer.cs">
       <DependentUpon>addViewStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="archivedEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="archivedEvents.Designer.cs">
+      <DependentUpon>archivedEvents.cs</DependentUpon>
+    </Compile>
     <Compile Include="bonus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,12 @@
     <Compile Include="homePage.Designer.cs">
       <DependentUpon>homePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="homepageUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="homepageUI.Designer.cs">
+      <DependentUpon>homepageUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="incomeStatement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +310,9 @@
     <EmbeddedResource Include="addViewStaff.resx">
       <DependentUpon>addViewStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="archivedEvents.resx">
+      <DependentUpon>archivedEvents.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="bonus.resx">
       <DependentUpon>bonus.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="homePage.resx">
       <DependentUpon>homePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homepageUI.resx">
+      <DependentUpon>homepageUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="incomeStatement.resx">
       <DependentUpon>incomeStatement.cs</DependentUpon>

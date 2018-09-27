@@ -221,9 +221,12 @@ namespace Tribes_System
 
         private void overGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            amBox.Text = overGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
-            dateBox.Text = overGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
-            id_amount = overGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                amBox.Text = overGrid.Rows[e.RowIndex].Cells[3].Value.ToString();
+                dateBox.Text = overGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                id_amount = overGrid.Rows[e.RowIndex].Cells[0].Value.ToString();
+            }
         }
 
         private void overtime_Load(object sender, EventArgs e)

@@ -51,11 +51,13 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.financesUI1 = new Tribes_System.financesUI();
             this.payrollUI1 = new Tribes_System.salaryUI();
             this.equipment1 = new Tribes_System.Equipment();
             this.eventSched1 = new Tribes_System.eventSched();
             this.employeeTab = new Tribes_System.EmployeeTab();
+            this.financesUI1 = new Tribes_System.financesUI();
+            this.homepageUI1 = new Tribes_System.homepageUI();
+            this.homeButt = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -232,6 +234,7 @@
             // iconPanel
             // 
             this.iconPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.iconPanel.Controls.Add(this.homeButt);
             this.iconPanel.Controls.Add(this.empIcon);
             this.iconPanel.Controls.Add(this.finIcon);
             this.iconPanel.Controls.Add(this.calendarIcon);
@@ -400,14 +403,6 @@
             this.panel2.Size = new System.Drawing.Size(1, 903);
             this.panel2.TabIndex = 8;
             // 
-            // financesUI1
-            // 
-            this.financesUI1.Location = new System.Drawing.Point(119, 63);
-            this.financesUI1.Name = "financesUI1";
-            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
-            this.financesUI1.TabIndex = 11;
-            this.financesUI1.Visible = false;
-            // 
             // payrollUI1
             // 
             this.payrollUI1.Location = new System.Drawing.Point(140, 59);
@@ -443,6 +438,38 @@
             this.employeeTab.TabIndex = 10;
             this.employeeTab.Visible = false;
             // 
+            // financesUI1
+            // 
+            this.financesUI1.Location = new System.Drawing.Point(119, 63);
+            this.financesUI1.Name = "financesUI1";
+            this.financesUI1.Size = new System.Drawing.Size(1315, 800);
+            this.financesUI1.TabIndex = 11;
+            this.financesUI1.Visible = false;
+            // 
+            // homepageUI1
+            // 
+            this.homepageUI1.Location = new System.Drawing.Point(140, 59);
+            this.homepageUI1.Name = "homepageUI1";
+            this.homepageUI1.Size = new System.Drawing.Size(1315, 800);
+            this.homepageUI1.TabIndex = 14;
+            // 
+            // homeButt
+            // 
+            this.homeButt.FlatAppearance.BorderSize = 0;
+            this.homeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.homeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.homeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButt.ForeColor = System.Drawing.Color.White;
+            this.homeButt.Image = ((System.Drawing.Image)(resources.GetObject("homeButt.Image")));
+            this.homeButt.Location = new System.Drawing.Point(0, 82);
+            this.homeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.homeButt.Name = "homeButt";
+            this.homeButt.Size = new System.Drawing.Size(60, 46);
+            this.homeButt.TabIndex = 11;
+            this.homeButt.UseVisualStyleBackColor = true;
+            this.homeButt.Click += new System.EventHandler(this.homeButt_Click);
+            // 
             // equipButt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,6 +485,7 @@
             this.Controls.Add(this.eventSched1);
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
+            this.Controls.Add(this.homepageUI1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "equipButt";
@@ -499,5 +527,7 @@
         private financesUI financesUI1;
         private salaryUI payrollUI1;
         private Equipment equipment1;
+        private homepageUI homepageUI1;
+        private System.Windows.Forms.Button homeButt;
     }
 }
