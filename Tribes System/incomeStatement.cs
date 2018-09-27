@@ -184,7 +184,8 @@ namespace Tribes_System
 
         private void calAmMonth()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'";
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 6,2) = '" + sMonth + "' AND substring(start_date, 1,4) = '" + sYear + "'" +
+                " AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -201,7 +202,7 @@ namespace Tribes_System
         private void calFeeMonth()
         {
             string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id AND substring(start_date, 6,2) = '" + sMonth +
-                "' AND substring(start_date, 1,4) = '" + sYear + "'";
+                "' AND substring(start_date, 1,4) = '" + sYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -218,7 +219,7 @@ namespace Tribes_System
         private void calDiscMonth()
         {
             string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id AND substring(start_date, 6,2) = '" + sMonth +
-                "' AND substring(start_date, 1,4) = '" + sYear + "'";
+                "' AND substring(start_date, 1,4) = '" + sYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -680,7 +681,7 @@ namespace Tribes_System
 
         private void calAmQuart()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + qYear + "' AND " + quarter;
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + qYear + "' AND event_status <> 'Cancelled' AND " + quarter;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -696,7 +697,7 @@ namespace Tribes_System
 
         private void calFeeQuart()
         {
-            string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id " +
+            string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id  AND event_status <> 'Cancelled' " +
                 "AND substring(start_date, 1,4) = '" + qYear + "' AND " + quarter;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
@@ -713,7 +714,7 @@ namespace Tribes_System
 
         private void calDiscQuart()
         {
-            string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id " +
+            string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id AND event_status <> 'Cancelled'" +
                 "AND substring(start_date, 1,4) = '" + qYear + "' AND " + quarter;
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
@@ -1261,7 +1262,7 @@ namespace Tribes_System
 
         private void calAmYear()
         {
-            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + aYear + "'";
+            string selectQuery = "select SUM(prices) from event where substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -1278,7 +1279,7 @@ namespace Tribes_System
         private void calFeeYear()
         {
             string selectQuery = "select SUM(fee_amount) from event, additional_fees where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + aYear + "'";
+                "AND substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -1295,7 +1296,7 @@ namespace Tribes_System
         private void calDiscYear()
         {
             string selectQuery = "select SUM(disc_amount) from event, discount where id_event = event_id " +
-                "AND substring(start_date, 1,4) = '" + aYear + "'";
+                "AND substring(start_date, 1,4) = '" + aYear + "' AND event_status <> 'Cancelled'";
             openConnection();
             MySqlCommand cmd = new MySqlCommand(selectQuery, con);
             MySqlDataReader reader = cmd.ExecuteReader();

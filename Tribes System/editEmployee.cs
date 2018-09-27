@@ -42,6 +42,8 @@ namespace Tribes_System
             salarayBox.Text = table.Rows[0].ItemArray[11].ToString();
             salaraylastvalidinput = table.Rows[0].ItemArray[11].ToString();
             //DateTime dt = ;
+            dateTimePicker1.MaxDate = DateTime.Now.AddYears(-18);
+
             dateTimePicker1.Value = (DateTime)table.Rows[0].ItemArray[7];
 
             /*
@@ -77,17 +79,17 @@ namespace Tribes_System
 
             switch (table.Rows[0].ItemArray[8].ToString())
             {
-                case "Male":
+                case "male":
                     radioButton6.Checked = true;
-                    this.gender = "Male";
+                    this.gender = "male";
                     break;
-                case "Female":
+                case "female":
                     radioButton5.Checked = true;
-                    this.gender = "Female";
+                    this.gender = "female";
                     break;
-                case "Other":
+                case "other":
                     radioButton4.Checked = true;
-                    this.gender = "Other";
+                    this.gender = "other";
                     break;
                 default:
                     break;
@@ -325,7 +327,7 @@ namespace Tribes_System
         {
             if (radioButton6.Checked)
             {
-                this.gender = "Male";
+                this.gender = "male";
             }
         }
 
@@ -333,7 +335,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "Female";
+                this.gender = "female";
             }
         }
 
@@ -341,7 +343,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "Other";
+                this.gender = "other";
             }
         }
 

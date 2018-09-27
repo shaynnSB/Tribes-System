@@ -204,7 +204,7 @@
             this.assignedGrid.AllowUserToDeleteRows = false;
             this.assignedGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.assignedGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.assignedGrid.Location = new System.Drawing.Point(16, 21);
+            this.assignedGrid.Location = new System.Drawing.Point(6, 21);
             this.assignedGrid.Name = "assignedGrid";
             this.assignedGrid.RowHeadersVisible = false;
             this.assignedGrid.RowTemplate.Height = 24;

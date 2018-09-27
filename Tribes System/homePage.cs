@@ -23,13 +23,14 @@ namespace Tribes_System
         private Point startPoint = new Point(0, 0);
         string access; // use this to access account type
         int empid;
+        string username;
 
         string currentDate = DateTime.Today.ToString("yyyy-MM-dd");
 
         string sMonth = DateTime.Now.ToString("MM");
         string sYear = DateTime.Now.ToString("yyyy");
 
-        public equipButt(string access, int empid = 0)
+        public equipButt(string access, string username, int empid = 0)
         {
             InitializeComponent();
             PW = panelMenu.Width;
@@ -37,6 +38,19 @@ namespace Tribes_System
 
             this.access = access;
             this.empid = empid;
+            this.username = username;
+            editAccounts1.username = username;
+            Console.WriteLine(username);
+            if (access.Equals("employee"))
+            {
+                panelMenu.Visible = false;
+                menuIcon.Visible = false;
+                //employeeView1.Visible = true;
+                //employeeView uc = new employeeView(empid.ToString());
+                //uc.Location = new Point(67, 51);
+                //this.Controls.Add(uc);
+            }
+            
             checkStat();
             checkSal();
         }
@@ -74,6 +88,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = true;
+            //editAccounts1.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -83,6 +98,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -169,6 +185,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -180,6 +197,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = true;
+            //editAccounts1.Visible = false;
         }
 
         private void eventButt_Click(object sender, EventArgs e)
@@ -191,6 +209,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -215,6 +234,7 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void payButt_Click(object sender, EventArgs e)
@@ -226,11 +246,21 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
-            
+            //editAccounts1.Visible = false;
+
         }
 
         private void profButt_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("WARNING: Be careful when handling profiles.\nDO NOT GIVE UNAUTHORIZED USERS COMPLETE ACCESS TO THE SYSTEM. UNAUTHORIZED ACCESS TO THIS SCREEN " +
+                "IS PUNISHABLE.", "FATAL WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            editAccounts1.Visible = true;
+            payrollUI1.Visible = false;
+            financesUI1.Visible = false;
+            employeeTab.Visible = false;
+            eventSched1.Visible = false;
+            equipment1.Visible = false;
+            homepageUI1.Visible = false;
             timer.Start();
         }
 
@@ -269,6 +299,7 @@ namespace Tribes_System
             payrollUI1.Visible = false;
             eventSched1.Visible = true;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void payIcon_Click(object sender, EventArgs e)
@@ -278,6 +309,7 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         private void financesUI1_Load(object sender, EventArgs e)
@@ -292,6 +324,7 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            //editAccounts1.Visible = false;
         }
 
         public void openConnection()
@@ -345,6 +378,8 @@ namespace Tribes_System
             employeeTab.Visible = false;
             eventSched1.Visible = false;
             equipment1.Visible = false;
+            editAccounts1.Visible = false;
+            homepageUI1.Visible = true;
         }
     }
 }

@@ -329,3 +329,6 @@ C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.pro
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.overtime.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.homepageUI.resources
 C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.archivedEvents.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.editAccounts.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.employeeView.resources
+C:\Users\admin\Documents\GitHub\Tribes\Tribes System\obj\Debug\Tribes_System.employeeViewold.resources

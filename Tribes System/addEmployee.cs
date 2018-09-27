@@ -19,20 +19,22 @@ namespace Tribes_System
         private bool drag = false;
         private Point startPoint = new Point(0, 0);
 
-        private string stat = "On-call";
-        private string gender = "Male";
+        private string stat = "On-Call";
+        private string gender = "male";
         private int autoincrement;
 
         public addEmployee()
         {
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Now;
+            dateTimePicker1.Value = DateTime.Now.AddYears(-18);
 
             string q = "SELECT max(id_emp) FROM employee";
             DataTable t = new DataTable();
             MySqlDataAdapter a = new MySqlDataAdapter(q, con);
             a.Fill(t);
             autoincrement = (int)t.Rows[0].ItemArray[0] + 1;
+
+            dateTimePicker1.MaxDate = DateTime.Now.AddYears(-18);
 
         }
         
@@ -94,6 +96,8 @@ namespace Tribes_System
 
         private void addButt_Click(object sender, EventArgs e)
         {
+
+            
             if (nameBox.Text != "" && addressBox.Text != "" && numBox.Text != "" && stat != "" && emergencyContact.Text != "" && emergencyName.Text != "" && passBox.Text != "")
             {
                 if (nameBox.Text != "Name of Employee" && addressBox.Text != "Address of Employee" && numBox.Text != "Contact Number of Employee" && emergencyContact.Text != "Emergency Contact" && emergencyName.Text != "Emergency Contact Name" && passBox.Text != "Employee Account Password")
@@ -112,7 +116,7 @@ namespace Tribes_System
                                 "employee(emp_address, emp_contact, emp_status, emergency_contact, emergency_name, birthdate, gender, first_name, last_name, emp_salary) " +
                                 "VALUES ('" + addressBox.Text + "','" + numBox.Text + "','" + stat + "','" + emergencyContact.Text + "','" + emergencyName.Text + "','" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "','" + this.gender + "', '" + nameBox.Text + "', '" + lastnameBox.Text + "', "+salarayBox.Text+")";
                             executeMyQuery(insertQuery);
-                            
+
 
                             string fn = nameBox.Text;
                             string uname = "";
@@ -122,6 +126,15 @@ namespace Tribes_System
                             }
                             uname += lastnameBox.Text.Replace(" ", string.Empty);
                             uname = uname.ToLower();
+                            DataTable check = new DataTable();
+                            string checkQuery = "SELECT acc_username FROM accounts WHERE acc_username LIKE '" + uname + "%'";
+                            adapter = new MySqlDataAdapter(checkQuery, con);
+                            adapter.Fill(check);
+                            if(check.Rows.Count > 0)
+                            {
+                                uname += check.Rows.Count+1;
+                            }
+                            
 
                             insertQuery = "INSERT INTO " + //second insert query para sa accounts table
                                 "accounts(acc_username, acc_pass, acc_status, reference_id) " +
@@ -258,7 +271,7 @@ namespace Tribes_System
         {
             if (radioButton6.Checked)
             {
-                this.gender = "Male";
+                this.gender = "male";
             }
         }
 
@@ -266,7 +279,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "Female";
+                this.gender = "female";
             }
         }
 
@@ -274,7 +287,7 @@ namespace Tribes_System
         {
             if (radioButton5.Checked)
             {
-                this.gender = "Oother";
+                this.gender = "other";
             }
         }
 

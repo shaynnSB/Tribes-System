@@ -40,6 +40,7 @@
             this.empButt = new System.Windows.Forms.Button();
             this.empIcon = new System.Windows.Forms.Button();
             this.iconPanel = new System.Windows.Forms.Panel();
+            this.homeButt = new System.Windows.Forms.Button();
             this.finIcon = new System.Windows.Forms.Button();
             this.calendarIcon = new System.Windows.Forms.Button();
             this.payIcon = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.employeeTab = new Tribes_System.EmployeeTab();
             this.financesUI1 = new Tribes_System.financesUI();
             this.homepageUI1 = new Tribes_System.homepageUI();
-            this.homeButt = new System.Windows.Forms.Button();
+            this.editAccounts1 = new Tribes_System.editAccounts();
             this.panelMenu.SuspendLayout();
             this.iconPanel.SuspendLayout();
             this.title.SuspendLayout();
@@ -246,6 +247,23 @@
             this.iconPanel.Name = "iconPanel";
             this.iconPanel.Size = new System.Drawing.Size(60, 904);
             this.iconPanel.TabIndex = 5;
+            // 
+            // homeButt
+            // 
+            this.homeButt.FlatAppearance.BorderSize = 0;
+            this.homeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.homeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
+            this.homeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButt.ForeColor = System.Drawing.Color.White;
+            this.homeButt.Image = ((System.Drawing.Image)(resources.GetObject("homeButt.Image")));
+            this.homeButt.Location = new System.Drawing.Point(0, 82);
+            this.homeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.homeButt.Name = "homeButt";
+            this.homeButt.Size = new System.Drawing.Size(60, 46);
+            this.homeButt.TabIndex = 11;
+            this.homeButt.UseVisualStyleBackColor = true;
+            this.homeButt.Click += new System.EventHandler(this.homeButt_Click);
             // 
             // finIcon
             // 
@@ -453,22 +471,13 @@
             this.homepageUI1.Size = new System.Drawing.Size(1315, 800);
             this.homepageUI1.TabIndex = 14;
             // 
-            // homeButt
+            // editAccounts1
             // 
-            this.homeButt.FlatAppearance.BorderSize = 0;
-            this.homeButt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.homeButt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray;
-            this.homeButt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.homeButt.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.homeButt.ForeColor = System.Drawing.Color.White;
-            this.homeButt.Image = ((System.Drawing.Image)(resources.GetObject("homeButt.Image")));
-            this.homeButt.Location = new System.Drawing.Point(0, 82);
-            this.homeButt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.homeButt.Name = "homeButt";
-            this.homeButt.Size = new System.Drawing.Size(60, 46);
-            this.homeButt.TabIndex = 11;
-            this.homeButt.UseVisualStyleBackColor = true;
-            this.homeButt.Click += new System.EventHandler(this.homeButt_Click);
+            this.editAccounts1.Location = new System.Drawing.Point(140, 59);
+            this.editAccounts1.Margin = new System.Windows.Forms.Padding(4);
+            this.editAccounts1.Name = "editAccounts1";
+            this.editAccounts1.Size = new System.Drawing.Size(1300, 800);
+            this.editAccounts1.TabIndex = 15;
             // 
             // equipButt
             // 
@@ -486,6 +495,7 @@
             this.Controls.Add(this.employeeTab);
             this.Controls.Add(this.financesUI1);
             this.Controls.Add(this.homepageUI1);
+            this.Controls.Add(this.editAccounts1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "equipButt";
@@ -529,5 +539,6 @@
         private Equipment equipment1;
         private homepageUI homepageUI1;
         private System.Windows.Forms.Button homeButt;
+        private editAccounts editAccounts1;
     }
 }
